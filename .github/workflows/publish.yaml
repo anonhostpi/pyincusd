@@ -15,10 +15,20 @@ jobs:
     steps:
       - name: Check for new Incus release
         id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # Latest incus release tag (e.g. "v6.19.1")
-          TAG=$(curl -sf https://api.github.com/repos/lxc/incus/releases/latest | jq -r '.tag_name')
+          # Latest incus release tag (authenticated to avoid rate limits)
+          TAG=$(curl -sf -H "Authorization: bearer ${GH_TOKEN}" \
+            https://api.github.com/repos/lxc/incus/releases/latest | jq -r '.tag_name')
           VERSION="${TAG#v}"
+
+          # Guard: if we couldn't get a version, bail
+          if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
+            echo "ERROR: could not determine latest Incus release."
+            echo "new_release=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
           # What's currently on PyPI? (404 = never published)
           PYPI_VERSION=$(curl -sf https://pypi.org/pypi/pyincusd/json | jq -r '.info.version' 2>/dev/null || echo "")
