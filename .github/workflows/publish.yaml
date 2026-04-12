@@ -168,6 +168,9 @@ jobs:
           git add README.md
           git diff --cached --quiet || git commit -m "pyincusd ${VERSION}"
           git push
+          # gh release tags the current HEAD — make sure we're on the
+          # commit that includes the updated README
+          git pull --ff-only
 
       - name: Create GitHub release with artifacts
         env:
