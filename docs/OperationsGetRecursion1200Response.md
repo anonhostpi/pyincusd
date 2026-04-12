@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[Operation]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/Operation.md) | List of operations | [optional] 
+**metadata** | [**List[Operation]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/Operation.md) | List of operations | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

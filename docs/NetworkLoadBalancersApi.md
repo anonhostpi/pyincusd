@@ -4,14 +4,14 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_load_balancer_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_delete) | **DELETE** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Delete the network address load balancer
-[**network_load_balancer_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_get) | **GET** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Get the network address load balancer
-[**network_load_balancer_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_get_recursion1) | **GET** /1.0/networks/{networkName}/load-balancers?recursion&#x3D;1 | Get the network address load balancers
-[**network_load_balancer_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_patch) | **PATCH** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Partially update the network address load balancer
-[**network_load_balancer_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_put) | **PUT** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Update the network address load balancer
-[**network_load_balancer_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancer_state_get) | **GET** /1.0/networks/{networkName}/load-balancers/{listenAddress}/state | Get the network address load balancer state
-[**network_load_balancers_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancers_get) | **GET** /1.0/networks/{networkName}/load-balancers | Get the network address of load balancers
-[**network_load_balancers_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersApi.md#network_load_balancers_post) | **POST** /1.0/networks/{networkName}/load-balancers | Add a network load balancer
+[**network_load_balancer_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_delete) | **DELETE** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Delete the network address load balancer
+[**network_load_balancer_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_get) | **GET** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Get the network address load balancer
+[**network_load_balancer_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_get_recursion1) | **GET** /1.0/networks/{networkName}/load-balancers?recursion&#x3D;1 | Get the network address load balancers
+[**network_load_balancer_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_patch) | **PATCH** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Partially update the network address load balancer
+[**network_load_balancer_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_put) | **PUT** /1.0/networks/{networkName}/load-balancers/{listenAddress} | Update the network address load balancer
+[**network_load_balancer_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancer_state_get) | **GET** /1.0/networks/{networkName}/load-balancers/{listenAddress}/state | Get the network address load balancer state
+[**network_load_balancers_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancers_get) | **GET** /1.0/networks/{networkName}/load-balancers | Get the network address of load balancers
+[**network_load_balancers_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersApi.md#network_load_balancers_post) | **POST** /1.0/networks/{networkName}/load-balancers | Add a network load balancer
 
 
 # **network_load_balancer_delete**
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkLoadBalancerGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancerGet200Response.md)
+[**NetworkLoadBalancerGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancerGet200Response.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkLoadBalancerGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancerGetRecursion1200Response.md)
+[**NetworkLoadBalancerGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancerGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -274,12 +274,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **load_balancer** | [**NetworkLoadBalancerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancerPut.md)| Address load balancer configuration | 
+ **load_balancer** | [**NetworkLoadBalancerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancerPut.md)| Address load balancer configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -349,12 +349,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **load_balancer** | [**NetworkLoadBalancerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancerPut.md)| Address load balancer configuration | 
+ **load_balancer** | [**NetworkLoadBalancerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancerPut.md)| Address load balancer configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkLoadBalancerStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancerStateGet200Response.md)
+[**NetworkLoadBalancerStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancerStateGet200Response.md)
 
 ### Authorization
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkLoadBalancersGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersGet200Response.md)
+[**NetworkLoadBalancersGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersGet200Response.md)
 
 ### Authorization
 
@@ -566,12 +566,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **load_balancer** | [**NetworkLoadBalancersPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkLoadBalancersPost.md)| Load Balancer | 
+ **load_balancer** | [**NetworkLoadBalancersPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/NetworkLoadBalancersPost.md)| Load Balancer | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post9/docs/ServerPut200Response.md)
 
 ### Authorization
 
