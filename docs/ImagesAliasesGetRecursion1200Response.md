@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[ImageAliasesEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ImageAliasesEntry.md) | List of image aliases | [optional] 
+**metadata** | [**List[ImageAliasesEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ImageAliasesEntry.md) | List of image aliases | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

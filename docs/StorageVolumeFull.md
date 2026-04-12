@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backups** | [**List[StorageVolumeBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/StorageVolumeBackup.md) | List of backups. | [optional] 
+**backups** | [**List[StorageVolumeBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/StorageVolumeBackup.md) | List of backups. | [optional] 
 **config** | **object** | Storage volume configuration map (refer to doc/storage.md) | [optional] 
 **content_type** | **str** | Volume content type (filesystem or block) | [optional] 
 **created_at** | **datetime** | Volume creation timestamp | [optional] 
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **name** | **str** | Volume name | [optional] 
 **project** | **str** | Project containing the volume. | [optional] 
 **restore** | **str** | Name of a snapshot to restore | [optional] 
-**snapshots** | [**List[StorageVolumeSnapshot]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/StorageVolumeSnapshot.md) | List of snapshots. | [optional] 
-**state** | [**StorageVolumeState**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/StorageVolumeState.md) |  | [optional] 
+**snapshots** | [**List[StorageVolumeSnapshot]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/StorageVolumeSnapshot.md) | List of snapshots. | [optional] 
+**state** | [**StorageVolumeState**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/StorageVolumeState.md) |  | [optional] 
 **type** | **str** | Volume type | [optional] 
 **used_by** | **List[str]** | List of URLs of objects using this storage volume | [optional] 
 

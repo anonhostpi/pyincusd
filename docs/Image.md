@@ -6,7 +6,7 @@ Image represents an image
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aliases** | [**List[ImageAlias]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ImageAlias.md) | List of aliases | [optional] 
+**aliases** | [**List[ImageAlias]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ImageAlias.md) | List of aliases | [optional] 
 **architecture** | **str** | Architecture | [optional] 
 **auto_update** | **bool** | Whether the image should auto-update when a new build is available | [optional] 
 **cached** | **bool** | Whether the image is an automatically cached remote image | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **public** | **bool** | Whether the image is available to unauthenticated users | [optional] 
 **size** | **int** | Size of the image in bytes | [optional] 
 **type** | **str** | Type of image (container or virtual-machine) | [optional] 
-**update_source** | [**ImageSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ImageSource.md) |  | [optional] 
+**update_source** | [**ImageSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ImageSource.md) |  | [optional] 
 **uploaded_at** | **datetime** | When the image was added to this server | [optional] 
 
 ## Example

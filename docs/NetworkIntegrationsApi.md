@@ -4,14 +4,14 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_integration_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integration_delete) | **DELETE** /1.0/network-integrations/{integration} | Delete the network integration
-[**network_integration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integration_get) | **GET** /1.0/network-integrations/{integration} | Get the network integration
-[**network_integration_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integration_patch) | **PATCH** /1.0/network-integrations/{integration} | Partially update the network integration
-[**network_integration_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integration_post) | **POST** /1.0/network-integrations/{integration} | Rename the network integration
-[**network_integration_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integration_put) | **PUT** /1.0/network-integrations/{integration} | Update the network integration
-[**network_integrations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integrations_get) | **GET** /1.0/network-integrations | Get the network integrations
-[**network_integrations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integrations_get_recursion1) | **GET** /1.0/network-integrations?recursion&#x3D;1 | Get the network integrations
-[**network_integrations_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsApi.md#network_integrations_post) | **POST** /1.0/network-integrations | Add a network integration
+[**network_integration_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integration_delete) | **DELETE** /1.0/network-integrations/{integration} | Delete the network integration
+[**network_integration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integration_get) | **GET** /1.0/network-integrations/{integration} | Get the network integration
+[**network_integration_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integration_patch) | **PATCH** /1.0/network-integrations/{integration} | Partially update the network integration
+[**network_integration_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integration_post) | **POST** /1.0/network-integrations/{integration} | Rename the network integration
+[**network_integration_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integration_put) | **PUT** /1.0/network-integrations/{integration} | Update the network integration
+[**network_integrations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integrations_get) | **GET** /1.0/network-integrations | Get the network integrations
+[**network_integrations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integrations_get_recursion1) | **GET** /1.0/network-integrations?recursion&#x3D;1 | Get the network integrations
+[**network_integrations_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsApi.md#network_integrations_post) | **POST** /1.0/network-integrations | Add a network integration
 
 
 # **network_integration_delete**
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**NetworkIntegrationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationGet200Response.md)
+[**NetworkIntegrationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationGet200Response.md)
 
 ### Authorization
 
@@ -193,11 +193,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationPut.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationPut.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -266,11 +266,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationPost.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationPost.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -338,11 +338,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationPut.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationPut.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkIntegrationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsGet200Response.md)
+[**NetworkIntegrationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsGet200Response.md)
 
 ### Authorization
 
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkIntegrationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsGetRecursion1200Response.md)
+[**NetworkIntegrationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -551,11 +551,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkIntegrationsPost.md)| integration | 
+ **integration** | [**NetworkIntegrationsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkIntegrationsPost.md)| integration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
 
 ### Authorization
 
