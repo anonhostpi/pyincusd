@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the storage volume | [optional] 
 **name** | **str** | Volume name | [optional] 
 **restore** | **str** | Name of a snapshot to restore | [optional] 
-**source** | [**StorageVolumeSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/StorageVolumeSource.md) |  | [optional] 
+**source** | [**StorageVolumeSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/StorageVolumeSource.md) |  | [optional] 
 **type** | **str** | Volume type (container, custom, image or virtual-machine) | [optional] 
 
 ## Example

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **creation_date** | **int** | Image creation data (as UNIX epoch) | [optional] 
 **expiry_date** | **int** | Image expiry data (as UNIX epoch) | [optional] 
 **properties** | **Dict[str, str]** | Descriptive properties | [optional] 
-**templates** | [**Dict[str, ImageMetadataTemplate]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ImageMetadataTemplate.md) | Template for files in the image | [optional] 
+**templates** | [**Dict[str, ImageMetadataTemplate]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/ImageMetadataTemplate.md) | Template for files in the image | [optional] 
 
 ## Example
 
