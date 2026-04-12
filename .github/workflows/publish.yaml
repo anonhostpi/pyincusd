@@ -107,17 +107,19 @@ jobs:
 
       - name: Add Unix socket helper module
         run: |
-          cat > pyincusd/pyincusd/local.py << 'PYEOF'
+          python3 << 'PY'
+          import pathlib, textwrap
+          pathlib.Path("pyincusd/pyincusd/local.py").write_text(textwrap.dedent('''\
           """Connect to incusd via Unix socket.
 
           Usage:
               from pyincusd.local import Client
+              from pyincusd.api import instances_api
 
-              with Client() as c:
-                  from pyincusd.api import instances_api
-                  api = instances_api.InstancesApi(c)
-                  result = c.run(api.instances_get())
-                  print(result.metadata)
+              c = Client()
+              api = instances_api.InstancesApi(c)
+              result = c.run(api.instances_get())
+              print(result.metadata)
           """
 
           from __future__ import annotations
@@ -156,8 +158,8 @@ jobs:
               def run(coro):
                   """Run an async API call synchronously."""
                   return asyncio.run(coro)
-          PYEOF
-          sed -i 's/^          //' pyincusd/pyincusd/local.py
+          '''))
+          PY
 
       - name: Fix generated docs
         run: |
