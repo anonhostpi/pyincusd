@@ -4,7 +4,7 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**metadata_configuration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/DefaultApi.md#metadata_configuration_get) | **GET** /1.0/metadata/configuration | Get the metadata configuration
+[**metadata_configuration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/DefaultApi.md#metadata_configuration_get) | **GET** /1.0/metadata/configuration | Get the metadata configuration
 
 
 # **metadata_configuration_get**
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MetadataConfigurationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/MetadataConfigurationGet200Response.md)
+[**MetadataConfigurationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/MetadataConfigurationGet200Response.md)
 
 ### Authorization
 

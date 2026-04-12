@@ -6,7 +6,7 @@ NetworkLoadBalancerState is used for showing current state of a load balancer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backend_health** | [**Dict[str, NetworkLoadBalancerStateBackendHealth]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/NetworkLoadBalancerStateBackendHealth.md) |  | [optional] 
+**backend_health** | [**Dict[str, NetworkLoadBalancerStateBackendHealth]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkLoadBalancerStateBackendHealth.md) |  | [optional] 
 
 ## Example
 

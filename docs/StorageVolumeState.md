@@ -6,7 +6,7 @@ StorageVolumeState represents the live state of the volume
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**usage** | [**StorageVolumeStateUsage**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/StorageVolumeStateUsage.md) |  | [optional] 
+**usage** | [**StorageVolumeStateUsage**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/StorageVolumeStateUsage.md) |  | [optional] 
 
 ## Example
 
