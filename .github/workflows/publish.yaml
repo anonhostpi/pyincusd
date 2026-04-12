@@ -111,17 +111,16 @@ jobs:
           BASE="https://github.com/anonhostpi/pyincusd/blob/v${PUBLISH_VERSION}"
 
           # Fix pip install — replace everything from "### pip install" to "### Setuptools"
-          # with a clean single block
-          python3 -c "
-import re, pathlib
-p = pathlib.Path('pyincusd/README.md')
-text = p.read_text()
-text = re.sub(
-    r'### pip install.*?(?=### Setuptools)',
-    '### pip install\n\n\`\`\`sh\npip install pyincusd\n\`\`\`\n\n',
-    text, flags=re.DOTALL)
-p.write_text(text)
-"
+          python3 << 'PYEOF'
+          import re, pathlib
+          p = pathlib.Path('pyincusd/README.md')
+          text = p.read_text()
+          text = re.sub(
+              r'### pip install.*?(?=### Setuptools)',
+              '### pip install\n\n```sh\npip install pyincusd\n```\n\n',
+              text, flags=re.DOTALL)
+          p.write_text(text)
+          PYEOF
 
           # Fix "All URIs are relative to http://localhost" → point to incusd unix socket docs
           sed -i 's|All URIs are relative to \*http://localhost\*|All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).|g' pyincusd/README.md pyincusd/docs/*.md
