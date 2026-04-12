@@ -110,13 +110,18 @@ jobs:
           PUBLISH_VERSION="${{ needs.check-release.outputs.publish_version }}"
           BASE="https://github.com/anonhostpi/pyincusd/blob/v${PUBLISH_VERSION}"
 
-          # Fix pip install
-          sed -i '/### pip install/,/```$/{
-            /### pip install/!{
-              /```$/!d
-            }
-          }' pyincusd/README.md
-          sed -i 's|### pip install|### pip install\n\n```sh\npip install pyincusd\n```|' pyincusd/README.md
+          # Fix pip install — replace everything from "### pip install" to "### Setuptools"
+          # with a clean single block
+          python3 -c "
+import re, pathlib
+p = pathlib.Path('pyincusd/README.md')
+text = p.read_text()
+text = re.sub(
+    r'### pip install.*?(?=### Setuptools)',
+    '### pip install\n\n\`\`\`sh\npip install pyincusd\n\`\`\`\n\n',
+    text, flags=re.DOTALL)
+p.write_text(text)
+"
 
           # Fix README links to absolute blob/<tag> URLs
           sed -i "s|(docs/|(${BASE}/docs/|g" pyincusd/README.md
