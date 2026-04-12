@@ -175,13 +175,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git rm -rf --ignore-unmatch docs/ pyincusd/ 2>/dev/null || true
+          # The generator outputs to pyincusd/ which contains:
+          #   pyincusd/docs/      — API markdown docs
+          #   pyincusd/pyincusd/  — the Python package source
+          #   pyincusd/README.md  — generated README
+          # Move them to the repo root, avoiding self-copy conflicts.
+          git rm -rf --ignore-unmatch docs/ src/ 2>/dev/null || true
 
+          # Stage docs and source under distinct names to avoid pyincusd/pyincusd overlap
           cp -r pyincusd/docs docs
-          cp -r pyincusd/pyincusd pyincusd
+          mkdir -p src
+          cp -r pyincusd/pyincusd src/pyincusd
           cp pyincusd/README.md README.md
 
-          git add docs/ pyincusd/ README.md
+          git add docs/ src/ README.md
           git diff --cached --quiet || git commit -m "pyincusd ${PUBLISH_VERSION}"
           git push
           git pull --ff-only
