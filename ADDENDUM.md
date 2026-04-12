@@ -38,3 +38,7 @@ image_upload.revert()  # undo
 ```
 
 New patches are auto-discovered — drop a `.py` with `apply()`/`revert()` in `patches/` and `apply_all()` picks it up.
+
+## High-Level Client
+
+For an OOP abstraction layer built on pyincusd, see [incusd-client](https://github.com/anonhostpi/incusd-client) — provides classes like `Instance`, `StoragePool`, `Network`, `Cluster` with full coverage of the Incus REST API.
