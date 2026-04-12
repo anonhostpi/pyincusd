@@ -1,0 +1,155 @@
+name: Publish pyincusd
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 6am UTC
+  workflow_dispatch: {} # manual trigger
+
+jobs:
+  check-release:
+    runs-on: ubuntu-latest
+    outputs:
+      new_release: ${{ steps.check.outputs.new_release }}
+      version: ${{ steps.check.outputs.version }}
+      tag: ${{ steps.check.outputs.tag }}
+    steps:
+      - name: Check for new Incus release
+        id: check
+        run: |
+          # Latest incus release tag (e.g. "v6.19.1")
+          TAG=$(curl -sf https://api.github.com/repos/lxc/incus/releases/latest | jq -r '.tag_name')
+          VERSION="${TAG#v}"
+
+          # What's currently on PyPI? (404 = never published)
+          PYPI_VERSION=$(curl -sf https://pypi.org/pypi/pyincusd/json | jq -r '.info.version' 2>/dev/null || echo "")
+
+          echo "incus latest: ${VERSION}"
+          echo "pypi current: ${PYPI_VERSION:-none}"
+
+          if [ "$VERSION" != "$PYPI_VERSION" ]; then
+            echo "New release detected."
+            echo "new_release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Already up to date."
+            echo "new_release=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+  build-and-publish:
+    needs: check-release
+    if: needs.check-release.outputs.new_release == 'true'
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write # PyPI trusted publishing (no API token needed)
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch Incus Swagger spec for ${{ needs.check-release.outputs.tag }}
+        run: |
+          curl -fsSL -o rest-api.yaml \
+            "https://raw.githubusercontent.com/lxc/incus/${{ needs.check-release.outputs.tag }}/doc/rest-api.yaml"
+
+      - name: Generate Python client via OpenAPI Generator
+        run: |
+          docker run --rm \
+            -v "${{ github.workspace }}:/work" \
+            openapitools/openapi-generator-cli:latest generate \
+            -i /work/rest-api.yaml \
+            -g python \
+            -o /work/pyincusd \
+            --skip-validate-spec \
+            --additional-properties=packageName=pyincusd \
+            --additional-properties=packageVersion=${{ needs.check-release.outputs.version }} \
+            --additional-properties=projectName=pyincusd
+
+      - name: Patch generated pyproject.toml
+        run: |
+          VERSION="${{ needs.check-release.outputs.version }}"
+          cat > pyincusd/pyproject.toml << EOF
+          [project]
+          name = "pyincusd"
+          version = "${VERSION}"
+          description = "Auto-generated Python client for the Incus daemon REST API"
+          readme = "README.md"
+          license = {text = "Apache-2.0"}
+          requires-python = ">=3.8"
+          dependencies = [
+              "urllib3>=1.25.3",
+              "python-dateutil>=2.8.2",
+              "pydantic>=2",
+              "typing-extensions>=4.7.1",
+          ]
+
+          [project.urls]
+          Homepage = "https://github.com/anonhostpi/pyincusd"
+          "Incus Docs" = "https://linuxcontainers.org/incus/docs/main/rest-api/"
+          "Source Spec" = "https://github.com/lxc/incus/blob/main/doc/rest-api.yaml"
+
+          [build-system]
+          requires = ["setuptools>=68"]
+          build-backend = "setuptools.build_meta"
+          EOF
+
+          # Dedent (the heredoc above is indented due to YAML context)
+          sed -i 's/^          //' pyincusd/pyproject.toml
+
+      - name: Patch generated README
+        run: |
+          VERSION="${{ needs.check-release.outputs.version }}"
+          TAG="${{ needs.check-release.outputs.tag }}"
+          cat > pyincusd/README.md << EOF
+          # pyincusd
+
+          Auto-generated Python client for the [Incus](https://linuxcontainers.org/incus/) daemon REST API.
+
+          **Version ${VERSION}** — generated from [\`lxc/incus@${TAG}\`](https://github.com/lxc/incus/tree/${TAG}) Swagger spec.
+
+          ## Install
+
+          \`\`\`bash
+          pip install pyincusd
+          \`\`\`
+
+          ## Usage
+
+          \`\`\`python
+          import pyincusd
+          from pyincusd.api import instances_api
+
+          config = pyincusd.Configuration()
+          config.host = "http+unix://%2Frun%2Fincus%2Funix.socket"
+
+          with pyincusd.ApiClient(config) as client:
+              api = instances_api.InstancesApi(client)
+              instances = api.instances_get()
+          \`\`\`
+
+          ## Regeneration
+
+          This package is automatically regenerated nightly by
+          [GitHub Actions](https://github.com/anonhostpi/pyincusd/actions)
+          whenever a new Incus release is published.
+
+          Generated using [OpenAPI Generator](https://openapi-generator.tech/)
+          from the [Incus REST API spec](https://github.com/lxc/incus/blob/main/doc/rest-api.yaml).
+          EOF
+
+          sed -i 's/^          //' pyincusd/README.md
+
+      - name: Build wheel + sdist
+        run: |
+          pip install build
+          cd pyincusd
+          python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: pyincusd/dist/
