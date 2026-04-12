@@ -105,8 +105,10 @@ jobs:
             --git-repo-id=pyincusd
           sudo chown -R "$(id -u):$(id -g)" pyincusd/
 
-      - name: Add Unix socket helper module
-        run: cp local.py pyincusd/pyincusd/local.py
+      - name: Add custom modules (local client + patches)
+        run: |
+          cp local.py pyincusd/pyincusd/local.py
+          cp -r patches pyincusd/pyincusd/patches
 
       - name: Fix generated docs
         run: |
