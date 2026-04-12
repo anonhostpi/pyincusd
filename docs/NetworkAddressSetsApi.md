@@ -4,14 +4,14 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_address_set_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_set_delete) | **DELETE** /1.0/network-address-sets/{name} | Delete the network address set
-[**network_address_set_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_set_get) | **GET** /1.0/network-address-sets/{name} | Get the network address set
-[**network_address_set_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_set_patch) | **PATCH** /1.0/network-address-sets/{name} | Partially update the network address set
-[**network_address_set_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_set_post) | **POST** /1.0/network-address-sets/{name} | Rename the network address set
-[**network_address_set_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_set_put) | **PUT** /1.0/network-address-sets/{name} | Update the network address set
-[**network_address_sets_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_sets_get) | **GET** /1.0/network-address-sets | Get the network address sets
-[**network_address_sets_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_sets_get_recursion1) | **GET** /1.0/network-address-sets?recursion&#x3D;1 | Get the network address sets
-[**network_address_sets_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsApi.md#network_address_sets_post) | **POST** /1.0/network-address-sets | Add a network address set
+[**network_address_set_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_set_delete) | **DELETE** /1.0/network-address-sets/{name} | Delete the network address set
+[**network_address_set_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_set_get) | **GET** /1.0/network-address-sets/{name} | Get the network address set
+[**network_address_set_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_set_patch) | **PATCH** /1.0/network-address-sets/{name} | Partially update the network address set
+[**network_address_set_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_set_post) | **POST** /1.0/network-address-sets/{name} | Rename the network address set
+[**network_address_set_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_set_put) | **PUT** /1.0/network-address-sets/{name} | Update the network address set
+[**network_address_sets_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_sets_get) | **GET** /1.0/network-address-sets | Get the network address sets
+[**network_address_sets_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_sets_get_recursion1) | **GET** /1.0/network-address-sets?recursion&#x3D;1 | Get the network address sets
+[**network_address_sets_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsApi.md#network_address_sets_post) | **POST** /1.0/network-address-sets | Add a network address set
 
 
 # **network_address_set_delete**
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAddressSetGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetGet200Response.md)
+[**NetworkAddressSetGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetGet200Response.md)
 
 ### Authorization
 
@@ -202,12 +202,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetPut.md)| Address set configuration | 
+ **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetPut.md)| Address set configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -277,12 +277,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetPost.md)| Address set rename request | 
+ **address_set** | [**NetworkAddressSetPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetPost.md)| Address set rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -351,12 +351,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetPut.md)| Address set configuration | 
+ **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetPut.md)| Address set configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAddressSetsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsGet200Response.md)
+[**NetworkAddressSetsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsGet200Response.md)
 
 ### Authorization
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAddressSetsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsGetRecursion1200Response.md)
+[**NetworkAddressSetsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -574,12 +574,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkAddressSetsPost.md)| address set | 
+ **address_set** | [**NetworkAddressSetsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkAddressSetsPost.md)| address set | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ServerPut200Response.md)
 
 ### Authorization
 

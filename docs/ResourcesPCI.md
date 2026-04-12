@@ -6,7 +6,7 @@ ResourcesPCI represents the PCI devices available on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**devices** | [**List[ResourcesPCIDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ResourcesPCIDevice.md) | List of PCI devices | [optional] 
+**devices** | [**List[ResourcesPCIDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ResourcesPCIDevice.md) | List of PCI devices | [optional] 
 **total** | **int** | Total number of PCI devices | [optional] 
 
 ## Example

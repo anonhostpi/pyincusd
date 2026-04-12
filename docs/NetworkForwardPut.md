@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | **object** | Forward configuration map (refer to doc/network-forwards.md) | [optional] 
 **description** | **str** | Description of the forward listen IP | [optional] 
-**ports** | [**List[NetworkForwardPort]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkForwardPort.md) | Port forwards (optional) | [optional] 
+**ports** | [**List[NetworkForwardPort]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/NetworkForwardPort.md) | Port forwards (optional) | [optional] 
 
 ## Example
 
