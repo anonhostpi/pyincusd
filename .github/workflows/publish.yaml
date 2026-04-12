@@ -100,6 +100,7 @@ jobs:
             --additional-properties=packageName=pyincusd \
             --additional-properties=packageVersion=${{ needs.check-release.outputs.publish_version }} \
             --additional-properties=projectName=pyincusd \
+            --additional-properties=library=httpx \
             --git-user-id=anonhostpi \
             --git-repo-id=pyincusd
           sudo chown -R "$(id -u):$(id -g)" pyincusd/
@@ -150,7 +151,7 @@ jobs:
           license = {text = "Apache-2.0"}
           requires-python = ">=3.8"
           dependencies = [
-              "urllib3>=1.25.3",
+              "httpx>=0.20",
               "python-dateutil>=2.8.2",
               "pydantic>=2",
               "typing-extensions>=4.7.1",
