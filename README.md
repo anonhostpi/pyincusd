@@ -1,16 +1,11 @@
 # pyincusd
 
+[![PyPI version](https://img.shields.io/pypi/v/pyincusd)](https://pypi.org/project/pyincusd/)
+[![Incus version](https://img.shields.io/badge/incus-6.23.0-blue)](https://github.com/lxc/incus/releases/tag/v6.23.0)
+
 Auto-generated Python client for the [Incus](https://linuxcontainers.org/incus/) daemon REST API.
 
-Published to [PyPI](https://pypi.org/project/pyincusd/) nightly whenever a new Incus release is detected.
-
-## How it works
-
-A [GitHub Actions workflow](.github/workflows/publish.yaml) runs every night:
-
-1. **Check**: queries the latest [lxc/incus](https://github.com/lxc/incus/releases) release and compares against what's currently on PyPI
-2. **Build** (only if new release): fetches the Swagger spec for that release, generates a typed Python client via [OpenAPI Generator](https://openapi-generator.tech/), builds a wheel
-3. **Publish**: pushes to PyPI via [trusted publishing](https://docs.pypi.org/trusted-publishers/) (no API token)
+**Latest: 6.23.0** — generated from [`lxc/incus@v6.23.0`](https://github.com/lxc/incus/tree/v6.23.0)
 
 ## Install
 
@@ -18,14 +13,29 @@ A [GitHub Actions workflow](.github/workflows/publish.yaml) runs every night:
 pip install pyincusd
 ```
 
-## PyPI setup required
+## Usage
 
-For the first publish to work, configure [PyPI trusted publishing](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/):
+```python
+import pyincusd
+from pyincusd.api import instances_api
 
+config = pyincusd.Configuration()
+config.host = "http+unix://%2Frun%2Fincus%2Funix.socket"
+
+with pyincusd.ApiClient(config) as client:
+    api = instances_api.InstancesApi(client)
+    instances = api.instances_get()
+```
+
+## How it works
+
+A [GitHub Actions workflow](.github/workflows/publish.yaml) runs every night:
+1. Checks the latest [lxc/incus](https://github.com/lxc/incus/releases) release
+2. Compares against what's on PyPI
+3. If new: generates a typed Python client via [OpenAPI Generator](https://openapi-generator.tech/), publishes to PyPI
+
+## PyPI trusted publishing setup
+
+First publish requires configuring [trusted publishing](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/):
 1. Go to https://pypi.org/manage/account/publishing/
-2. Add a new pending publisher:
-   - **PyPI project name**: `pyincusd`
-   - **Owner**: `anonhostpi`
-   - **Repository**: `pyincusd`
-   - **Workflow name**: `publish.yaml`
-   - **Environment**: `pypi`
+2. Add pending publisher: owner=`anonhostpi`, repo=`pyincusd`, workflow=`publish.yaml`, environment=`pypi`
