@@ -3,4 +3,4 @@ __pycache__/
 dist/
 *.egg-info/
 rest-api.yaml
-pyincusd/
+.build-output/

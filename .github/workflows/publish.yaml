@@ -138,65 +138,24 @@ jobs:
         with:
           packages-dir: pyincusd/dist/
 
-      - name: Update repo README with latest version
-        run: |
-          VERSION="${{ needs.check-release.outputs.version }}"
-          TAG="${{ needs.check-release.outputs.tag }}"
-          cat > README.md << EOF
-          # pyincusd
-
-          [![PyPI version](https://img.shields.io/pypi/v/pyincusd)](https://pypi.org/project/pyincusd/)
-          [![Incus version](https://img.shields.io/badge/incus-${VERSION}-blue)](https://github.com/lxc/incus/releases/tag/${TAG})
-
-          Auto-generated Python client for the [Incus](https://linuxcontainers.org/incus/) daemon REST API.
-
-          **Latest: ${VERSION}** — generated from [\`lxc/incus@${TAG}\`](https://github.com/lxc/incus/tree/${TAG})
-
-          ## Install
-
-          \`\`\`bash
-          pip install pyincusd
-          \`\`\`
-
-          ## Usage
-
-          \`\`\`python
-          import pyincusd
-          from pyincusd.api import instances_api
-
-          config = pyincusd.Configuration()
-          config.host = "http+unix://%2Frun%2Fincus%2Funix.socket"
-
-          with pyincusd.ApiClient(config) as client:
-              api = instances_api.InstancesApi(client)
-              instances = api.instances_get()
-          \`\`\`
-
-          ## How it works
-
-          A [GitHub Actions workflow](.github/workflows/publish.yaml) runs every night:
-          1. Checks the latest [lxc/incus](https://github.com/lxc/incus/releases) release
-          2. Compares against what's on PyPI
-          3. If new: generates a typed Python client via [OpenAPI Generator](https://openapi-generator.tech/), publishes to PyPI
-
-          ## PyPI trusted publishing setup
-
-          First publish requires configuring [trusted publishing](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/):
-          1. Go to https://pypi.org/manage/account/publishing/
-          2. Add pending publisher: owner=\`anonhostpi\`, repo=\`pyincusd\`, workflow=\`publish.yaml\`, environment=\`pypi\`
-          EOF
-          sed -i 's/^          //' README.md
-
-      - name: Commit + push README update
+      - name: Commit generated package + docs to repo
         run: |
           VERSION="${{ needs.check-release.outputs.version }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+
+          # Remove old generated files (clean slate per version)
+          git rm -rf --ignore-unmatch docs/ pyincusd/ 2>/dev/null || true
+
+          # Copy generated output into the repo root
+          # (the generator outputs to pyincusd/ — move contents up)
+          cp -r pyincusd/docs docs
+          cp -r pyincusd/pyincusd pyincusd
+          cp pyincusd/README.md README.md
+
+          git add docs/ pyincusd/ README.md
           git diff --cached --quiet || git commit -m "pyincusd ${VERSION}"
           git push
-          # gh release tags the current HEAD — make sure we're on the
-          # commit that includes the updated README
           git pull --ff-only
 
       - name: Create GitHub release with artifacts
