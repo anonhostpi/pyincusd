@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **str** | Backup name | [optional] 
 **optimized_storage** | **bool** | Whether to use a pool-optimized binary format (instead of plain tarball) | [optional] 
 **root_only** | **bool** | Whether to ignore dependent volumes | [optional] 
-**target** | [**BackupTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/BackupTarget.md) |  | [optional] 
+**target** | [**BackupTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/BackupTarget.md) |  | [optional] 
 
 ## Example
 

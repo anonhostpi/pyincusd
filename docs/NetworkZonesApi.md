@@ -4,20 +4,20 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_zone_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_delete) | **DELETE** /1.0/network-zones/{zone} | Delete the network zone
-[**network_zone_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_get) | **GET** /1.0/network-zones/{zone} | Get the network zone
-[**network_zone_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_patch) | **PATCH** /1.0/network-zones/{zone} | Partially update the network zone
-[**network_zone_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_put) | **PUT** /1.0/network-zones/{zone} | Update the network zone
-[**network_zone_record_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_record_delete) | **DELETE** /1.0/network-zones/{zone}/records/{name} | Delete the network zone record
-[**network_zone_record_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_record_get) | **GET** /1.0/network-zones/{zone}/records/{name} | Get the network zone record
-[**network_zone_record_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_record_patch) | **PATCH** /1.0/network-zones/{zone}/records/{name} | Partially update the network zone record
-[**network_zone_record_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_record_put) | **PUT** /1.0/network-zones/{zone}/records/{name} | Update the network zone record
-[**network_zone_records_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_records_get) | **GET** /1.0/network-zones/{zone}/records | Get the network zone records
-[**network_zone_records_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_records_get_recursion1) | **GET** /1.0/network-zones/{zone}/records?recursion&#x3D;1 | Get the network zone records
-[**network_zone_records_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zone_records_post) | **POST** /1.0/network-zones/{zone}/records | Add a network zone record
-[**network_zones_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zones_get) | **GET** /1.0/network-zones | Get the network zones
-[**network_zones_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zones_get_recursion1) | **GET** /1.0/network-zones?recursion&#x3D;1 | Get the network zones
-[**network_zones_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesApi.md#network_zones_post) | **POST** /1.0/network-zones | Add a network zone
+[**network_zone_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_delete) | **DELETE** /1.0/network-zones/{zone} | Delete the network zone
+[**network_zone_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_get) | **GET** /1.0/network-zones/{zone} | Get the network zone
+[**network_zone_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_patch) | **PATCH** /1.0/network-zones/{zone} | Partially update the network zone
+[**network_zone_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_put) | **PUT** /1.0/network-zones/{zone} | Update the network zone
+[**network_zone_record_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_record_delete) | **DELETE** /1.0/network-zones/{zone}/records/{name} | Delete the network zone record
+[**network_zone_record_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_record_get) | **GET** /1.0/network-zones/{zone}/records/{name} | Get the network zone record
+[**network_zone_record_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_record_patch) | **PATCH** /1.0/network-zones/{zone}/records/{name} | Partially update the network zone record
+[**network_zone_record_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_record_put) | **PUT** /1.0/network-zones/{zone}/records/{name} | Update the network zone record
+[**network_zone_records_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_records_get) | **GET** /1.0/network-zones/{zone}/records | Get the network zone records
+[**network_zone_records_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_records_get_recursion1) | **GET** /1.0/network-zones/{zone}/records?recursion&#x3D;1 | Get the network zone records
+[**network_zone_records_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zone_records_post) | **POST** /1.0/network-zones/{zone}/records | Add a network zone record
+[**network_zones_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zones_get) | **GET** /1.0/network-zones | Get the network zones
+[**network_zones_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zones_get_recursion1) | **GET** /1.0/network-zones?recursion&#x3D;1 | Get the network zones
+[**network_zones_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesApi.md#network_zones_post) | **POST** /1.0/network-zones | Add a network zone
 
 
 # **network_zone_delete**
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZoneGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneGet200Response.md)
+[**NetworkZoneGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneGet200Response.md)
 
 ### Authorization
 
@@ -208,12 +208,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZonePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonePut.md)| zone configuration | 
+ **zone** | [**NetworkZonePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonePut.md)| zone configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -283,12 +283,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZonePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonePut.md)| zone configuration | 
+ **zone** | [**NetworkZonePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonePut.md)| zone configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZoneRecordGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordGet200Response.md)
+[**NetworkZoneRecordGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordGet200Response.md)
 
 ### Authorization
 
@@ -499,12 +499,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZoneRecordPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordPut.md)| zone record configuration | 
+ **zone** | [**NetworkZoneRecordPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordPut.md)| zone record configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -574,12 +574,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZoneRecordPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordPut.md)| zone record configuration | 
+ **zone** | [**NetworkZoneRecordPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordPut.md)| zone record configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -653,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZoneRecordsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordsGet200Response.md)
+[**NetworkZoneRecordsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordsGet200Response.md)
 
 ### Authorization
 
@@ -725,7 +725,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZoneRecordsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordsGetRecursion1200Response.md)
+[**NetworkZoneRecordsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -793,12 +793,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZoneRecordsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZoneRecordsPost.md)| zone | 
+ **zone** | [**NetworkZoneRecordsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZoneRecordsPost.md)| zone | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -873,7 +873,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZonesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesGet200Response.md)
+[**NetworkZonesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesGet200Response.md)
 
 ### Authorization
 
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkZonesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesGetRecursion1200Response.md)
+[**NetworkZonesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -1015,12 +1015,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **zone** | [**NetworkZonesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/NetworkZonesPost.md)| zone | 
+ **zone** | [**NetworkZonesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkZonesPost.md)| zone | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/ServerPut200Response.md)
 
 ### Authorization
 

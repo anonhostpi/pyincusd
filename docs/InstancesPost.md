@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **str** | Instance name | [optional] 
 **profiles** | **List[str]** | List of profiles applied to the instance | [optional] 
 **restore** | **str** | If set, instance will be restored to the provided snapshot name | [optional] 
-**source** | [**InstanceSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/InstanceSource.md) |  | [optional] 
+**source** | [**InstanceSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/InstanceSource.md) |  | [optional] 
 **start** | **bool** | Whether to start the instance after creation | [optional] 
 **stateful** | **bool** | Whether the instance currently has saved state on disk | [optional] 
 **type** | **str** |  | [optional] 

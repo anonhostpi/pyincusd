@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backups** | [**List[StorageBucketBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/StorageBucketBackup.md) | List of backups. | [optional] 
+**backups** | [**List[StorageBucketBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/StorageBucketBackup.md) | List of backups. | [optional] 
 **config** | **object** | Storage bucket configuration map | [optional] 
 **description** | **str** | Description of the storage bucket | [optional] 
-**keys** | [**List[StorageBucketKey]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post6/docs/StorageBucketKey.md) | List of keys. | [optional] 
+**keys** | [**List[StorageBucketKey]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/StorageBucketKey.md) | List of keys. | [optional] 
 **location** | **str** | What cluster member this record was found on | [optional] 
 **name** | **str** | Bucket name | [optional] 
 **project** | **str** | Project name | [optional] 
