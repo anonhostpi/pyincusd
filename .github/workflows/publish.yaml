@@ -43,7 +43,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
-      id-token: write # PyPI trusted publishing (no API token needed)
+      contents: write # for committing README + creating releases
+      id-token: write # for PyPI trusted publishing
     steps:
       - uses: actions/checkout@v6
 
@@ -72,10 +73,10 @@ jobs:
       - name: Patch generated pyproject.toml
         run: |
           VERSION="${{ needs.check-release.outputs.version }}"
-          cat > pyincusd/pyproject.toml << EOF
+          cat > pyincusd/pyproject.toml << 'TOML'
           [project]
           name = "pyincusd"
-          version = "${VERSION}"
+          version = "VERSION_PLACEHOLDER"
           description = "Auto-generated Python client for the Incus daemon REST API"
           readme = "README.md"
           license = {text = "Apache-2.0"}
@@ -95,21 +96,34 @@ jobs:
           [build-system]
           requires = ["setuptools>=68"]
           build-backend = "setuptools.build_meta"
-          EOF
-
-          # Dedent (the heredoc above is indented due to YAML context)
+          TOML
           sed -i 's/^          //' pyincusd/pyproject.toml
+          sed -i "s/VERSION_PLACEHOLDER/${VERSION}/" pyincusd/pyproject.toml
 
-      - name: Patch generated README
+      - name: Build wheel + sdist
+        run: |
+          pip install build
+          cd pyincusd
+          python -m build
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.14.0
+        with:
+          packages-dir: pyincusd/dist/
+
+      - name: Update repo README with latest version
         run: |
           VERSION="${{ needs.check-release.outputs.version }}"
           TAG="${{ needs.check-release.outputs.tag }}"
-          cat > pyincusd/README.md << EOF
+          cat > README.md << EOF
           # pyincusd
+
+          [![PyPI version](https://img.shields.io/pypi/v/pyincusd)](https://pypi.org/project/pyincusd/)
+          [![Incus version](https://img.shields.io/badge/incus-${VERSION}-blue)](https://github.com/lxc/incus/releases/tag/${TAG})
 
           Auto-generated Python client for the [Incus](https://linuxcontainers.org/incus/) daemon REST API.
 
-          **Version ${VERSION}** — generated from [\`lxc/incus@${TAG}\`](https://github.com/lxc/incus/tree/${TAG}) Swagger spec.
+          **Latest: ${VERSION}** — generated from [\`lxc/incus@${TAG}\`](https://github.com/lxc/incus/tree/${TAG})
 
           ## Install
 
@@ -131,25 +145,49 @@ jobs:
               instances = api.instances_get()
           \`\`\`
 
-          ## Regeneration
+          ## How it works
 
-          This package is automatically regenerated nightly by
-          [GitHub Actions](https://github.com/anonhostpi/pyincusd/actions)
-          whenever a new Incus release is published.
+          A [GitHub Actions workflow](.github/workflows/publish.yaml) runs every night:
+          1. Checks the latest [lxc/incus](https://github.com/lxc/incus/releases) release
+          2. Compares against what's on PyPI
+          3. If new: generates a typed Python client via [OpenAPI Generator](https://openapi-generator.tech/), publishes to PyPI
 
-          Generated using [OpenAPI Generator](https://openapi-generator.tech/)
-          from the [Incus REST API spec](https://github.com/lxc/incus/blob/main/doc/rest-api.yaml).
+          ## PyPI trusted publishing setup
+
+          First publish requires configuring [trusted publishing](https://docs.pypi.org/trusted-publishers/creating-a-project-through-oidc/):
+          1. Go to https://pypi.org/manage/account/publishing/
+          2. Add pending publisher: owner=\`anonhostpi\`, repo=\`pyincusd\`, workflow=\`publish.yaml\`, environment=\`pypi\`
           EOF
+          sed -i 's/^          //' README.md
 
-          sed -i 's/^          //' pyincusd/README.md
-
-      - name: Build wheel + sdist
+      - name: Commit + push README update
         run: |
-          pip install build
-          cd pyincusd
-          python -m build
+          VERSION="${{ needs.check-release.outputs.version }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "pyincusd ${VERSION}"
+          git push
 
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1.14.0
-        with:
-          packages-dir: pyincusd/dist/
+      - name: Create GitHub release with artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ needs.check-release.outputs.version }}"
+          TAG="${{ needs.check-release.outputs.tag }}"
+
+          # Collect the wheel and sdist
+          WHEEL=$(ls pyincusd/dist/*.whl)
+          SDIST=$(ls pyincusd/dist/*.tar.gz)
+
+          gh release create "v${VERSION}" \
+            --title "pyincusd ${VERSION}" \
+            --notes "Auto-generated Python client for Incus ${VERSION}.
+
+          Built from [\`lxc/incus@${TAG}\`](https://github.com/lxc/incus/tree/${TAG}) Swagger spec.
+
+          Install: \`pip install pyincusd==${VERSION}\`
+
+          PyPI: https://pypi.org/project/pyincusd/${VERSION}/" \
+            "${WHEEL}" \
+            "${SDIST}"
