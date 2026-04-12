@@ -52,6 +52,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_delete(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -70,6 +71,8 @@ class NetworkZonesApi:
 
         Removes the network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -95,6 +98,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_delete_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -122,6 +126,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_delete_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -140,6 +145,8 @@ class NetworkZonesApi:
 
         Removes the network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -165,6 +172,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_delete_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -192,6 +200,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_delete_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -210,6 +219,8 @@ class NetworkZonesApi:
 
         Removes the network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -235,6 +246,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_delete_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -257,6 +269,7 @@ class NetworkZonesApi:
 
     def _network_zone_delete_serialize(
         self,
+        zone,
         project,
         _request_auth,
         _content_type,
@@ -279,6 +292,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -323,6 +338,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_get(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -341,6 +357,8 @@ class NetworkZonesApi:
 
         Gets a specific network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -366,6 +384,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_get_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -392,6 +411,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_get_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -410,6 +430,8 @@ class NetworkZonesApi:
 
         Gets a specific network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -435,6 +457,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_get_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -461,6 +484,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_get_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -479,6 +503,8 @@ class NetworkZonesApi:
 
         Gets a specific network zone.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -504,6 +530,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_get_serialize(
+            zone=zone,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -525,6 +552,7 @@ class NetworkZonesApi:
 
     def _network_zone_get_serialize(
         self,
+        zone,
         project,
         _request_auth,
         _content_type,
@@ -547,6 +575,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -591,7 +621,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_patch(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -610,8 +641,10 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -638,6 +671,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_patch_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -666,7 +700,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_patch_with_http_info(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -685,8 +720,10 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -713,6 +750,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_patch_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -741,7 +779,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_patch_without_preload_content(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -760,8 +799,10 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -788,6 +829,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_patch_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -812,6 +854,7 @@ class NetworkZonesApi:
     def _network_zone_patch_serialize(
         self,
         zone,
+        zone2,
         project,
         _request_auth,
         _content_type,
@@ -834,6 +877,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -842,8 +887,8 @@ class NetworkZonesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if zone is not None:
-            _body_params = zone
+        if zone2 is not None:
+            _body_params = zone2
 
 
         # set the HTTP header `Accept`
@@ -893,7 +938,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_put(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -912,8 +958,10 @@ class NetworkZonesApi:
 
         Updates the entire network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -940,6 +988,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_put_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -968,7 +1017,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_put_with_http_info(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -987,8 +1037,10 @@ class NetworkZonesApi:
 
         Updates the entire network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1015,6 +1067,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_put_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1043,7 +1096,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_put_without_preload_content(
         self,
-        zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1062,8 +1116,10 @@ class NetworkZonesApi:
 
         Updates the entire network zone configuration.
 
-        :param zone: zone configuration (required)
-        :type zone: NetworkZonePut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone configuration (required)
+        :type zone2: NetworkZonePut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1090,6 +1146,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_put_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1114,6 +1171,7 @@ class NetworkZonesApi:
     def _network_zone_put_serialize(
         self,
         zone,
+        zone2,
         project,
         _request_auth,
         _content_type,
@@ -1136,6 +1194,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -1144,8 +1204,8 @@ class NetworkZonesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if zone is not None:
-            _body_params = zone
+        if zone2 is not None:
+            _body_params = zone2
 
 
         # set the HTTP header `Accept`
@@ -1195,6 +1255,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_delete(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1213,6 +1275,10 @@ class NetworkZonesApi:
 
         Removes the network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1238,6 +1304,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_delete_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1265,6 +1333,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_delete_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1283,6 +1353,10 @@ class NetworkZonesApi:
 
         Removes the network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1308,6 +1382,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_delete_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1335,6 +1411,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_delete_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1353,6 +1431,10 @@ class NetworkZonesApi:
 
         Removes the network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1378,6 +1460,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_delete_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1400,6 +1484,8 @@ class NetworkZonesApi:
 
     def _network_zone_record_delete_serialize(
         self,
+        zone,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -1422,6 +1508,10 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1466,6 +1556,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_get(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1484,6 +1576,10 @@ class NetworkZonesApi:
 
         Gets a specific network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1509,6 +1605,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_get_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1535,6 +1633,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_get_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1553,6 +1653,10 @@ class NetworkZonesApi:
 
         Gets a specific network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1578,6 +1682,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_get_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1604,6 +1710,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_get_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1622,6 +1730,10 @@ class NetworkZonesApi:
 
         Gets a specific network zone record.
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1647,6 +1759,8 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_record_get_serialize(
+            zone=zone,
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1668,6 +1782,8 @@ class NetworkZonesApi:
 
     def _network_zone_record_get_serialize(
         self,
+        zone,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -1690,6 +1806,10 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1734,7 +1854,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_patch(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1753,8 +1875,12 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1781,6 +1907,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_patch_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1809,7 +1937,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_patch_with_http_info(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1828,8 +1958,12 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1856,6 +1990,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_patch_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1884,7 +2020,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_patch_without_preload_content(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1903,8 +2041,12 @@ class NetworkZonesApi:
 
         Updates a subset of the network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1931,6 +2073,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_patch_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1955,6 +2099,8 @@ class NetworkZonesApi:
     def _network_zone_record_patch_serialize(
         self,
         zone,
+        name,
+        zone2,
         project,
         _request_auth,
         _content_type,
@@ -1977,6 +2123,10 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1985,8 +2135,8 @@ class NetworkZonesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if zone is not None:
-            _body_params = zone
+        if zone2 is not None:
+            _body_params = zone2
 
 
         # set the HTTP header `Accept`
@@ -2036,7 +2186,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_put(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2055,8 +2207,12 @@ class NetworkZonesApi:
 
         Updates the entire network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2083,6 +2239,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_put_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2111,7 +2269,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_put_with_http_info(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2130,8 +2290,12 @@ class NetworkZonesApi:
 
         Updates the entire network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2158,6 +2322,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_put_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2186,7 +2352,9 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_record_put_without_preload_content(
         self,
-        zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        zone2: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2205,8 +2373,12 @@ class NetworkZonesApi:
 
         Updates the entire network zone record configuration.
 
-        :param zone: zone record configuration (required)
-        :type zone: NetworkZoneRecordPut
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param zone2: zone record configuration (required)
+        :type zone2: NetworkZoneRecordPut
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2233,6 +2405,8 @@ class NetworkZonesApi:
 
         _param = self._network_zone_record_put_serialize(
             zone=zone,
+            name=name,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2257,6 +2431,8 @@ class NetworkZonesApi:
     def _network_zone_record_put_serialize(
         self,
         zone,
+        name,
+        zone2,
         project,
         _request_auth,
         _content_type,
@@ -2279,6 +2455,10 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2287,8 +2467,8 @@ class NetworkZonesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if zone is not None:
-            _body_params = zone
+        if zone2 is not None:
+            _body_params = zone2
 
 
         # set the HTTP header `Accept`
@@ -2338,6 +2518,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2357,6 +2538,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (URLs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2384,6 +2567,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2411,6 +2595,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2430,6 +2615,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (URLs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2457,6 +2644,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2484,6 +2672,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2503,6 +2692,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (URLs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2530,6 +2721,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2552,6 +2744,7 @@ class NetworkZonesApi:
 
     def _network_zone_records_get_serialize(
         self,
+        zone,
         project,
         filter,
         _request_auth,
@@ -2575,6 +2768,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -2623,6 +2818,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get_recursion1(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2642,6 +2838,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (structs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2669,6 +2867,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_recursion1_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2696,6 +2895,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get_recursion1_with_http_info(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2715,6 +2915,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (structs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2742,6 +2944,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_recursion1_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2769,6 +2972,7 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_get_recursion1_without_preload_content(
         self,
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2788,6 +2992,8 @@ class NetworkZonesApi:
 
         Returns a list of network zone records (structs).
 
+        :param zone: Path parameter: zone (required)
+        :type zone: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -2815,6 +3021,7 @@ class NetworkZonesApi:
         """ # noqa: E501
 
         _param = self._network_zone_records_get_recursion1_serialize(
+            zone=zone,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -2837,6 +3044,7 @@ class NetworkZonesApi:
 
     def _network_zone_records_get_recursion1_serialize(
         self,
+        zone,
         project,
         filter,
         _request_auth,
@@ -2860,6 +3068,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -2908,7 +3118,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_post(
         self,
-        zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2927,8 +3138,10 @@ class NetworkZonesApi:
 
         Creates a new network zone record.
 
-        :param zone: zone (required)
-        :type zone: NetworkZoneRecordsPost
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone (required)
+        :type zone2: NetworkZoneRecordsPost
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2955,6 +3168,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_records_post_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2982,7 +3196,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_post_with_http_info(
         self,
-        zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -3001,8 +3216,10 @@ class NetworkZonesApi:
 
         Creates a new network zone record.
 
-        :param zone: zone (required)
-        :type zone: NetworkZoneRecordsPost
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone (required)
+        :type zone2: NetworkZoneRecordsPost
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3029,6 +3246,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_records_post_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3056,7 +3274,8 @@ class NetworkZonesApi:
     @validate_call
     async def network_zone_records_post_without_preload_content(
         self,
-        zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
+        zone: Annotated[StrictStr, Field(description="Path parameter: zone")],
+        zone2: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -3075,8 +3294,10 @@ class NetworkZonesApi:
 
         Creates a new network zone record.
 
-        :param zone: zone (required)
-        :type zone: NetworkZoneRecordsPost
+        :param zone: Path parameter: zone (required)
+        :type zone: str
+        :param zone2: zone (required)
+        :type zone2: NetworkZoneRecordsPost
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3103,6 +3324,7 @@ class NetworkZonesApi:
 
         _param = self._network_zone_records_post_serialize(
             zone=zone,
+            zone2=zone2,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3126,6 +3348,7 @@ class NetworkZonesApi:
     def _network_zone_records_post_serialize(
         self,
         zone,
+        zone2,
         project,
         _request_auth,
         _content_type,
@@ -3148,6 +3371,8 @@ class NetworkZonesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if zone is not None:
+            _path_params['zone'] = zone
         # process the query parameters
         if project is not None:
             
@@ -3156,8 +3381,8 @@ class NetworkZonesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if zone is not None:
-            _body_params = zone
+        if zone2 is not None:
+            _body_params = zone2
 
 
         # set the HTTP header `Accept`

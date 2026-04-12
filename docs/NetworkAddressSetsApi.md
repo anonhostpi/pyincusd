@@ -4,18 +4,18 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_address_set_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_set_delete) | **DELETE** /1.0/network-address-sets/{name} | Delete the network address set
-[**network_address_set_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_set_get) | **GET** /1.0/network-address-sets/{name} | Get the network address set
-[**network_address_set_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_set_patch) | **PATCH** /1.0/network-address-sets/{name} | Partially update the network address set
-[**network_address_set_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_set_post) | **POST** /1.0/network-address-sets/{name} | Rename the network address set
-[**network_address_set_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_set_put) | **PUT** /1.0/network-address-sets/{name} | Update the network address set
-[**network_address_sets_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_sets_get) | **GET** /1.0/network-address-sets | Get the network address sets
-[**network_address_sets_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_sets_get_recursion1) | **GET** /1.0/network-address-sets?recursion&#x3D;1 | Get the network address sets
-[**network_address_sets_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsApi.md#network_address_sets_post) | **POST** /1.0/network-address-sets | Add a network address set
+[**network_address_set_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_set_delete) | **DELETE** /1.0/network-address-sets/{name} | Delete the network address set
+[**network_address_set_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_set_get) | **GET** /1.0/network-address-sets/{name} | Get the network address set
+[**network_address_set_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_set_patch) | **PATCH** /1.0/network-address-sets/{name} | Partially update the network address set
+[**network_address_set_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_set_post) | **POST** /1.0/network-address-sets/{name} | Rename the network address set
+[**network_address_set_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_set_put) | **PUT** /1.0/network-address-sets/{name} | Update the network address set
+[**network_address_sets_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_sets_get) | **GET** /1.0/network-address-sets | Get the network address sets
+[**network_address_sets_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_sets_get_recursion1) | **GET** /1.0/network-address-sets?recursion&#x3D;1 | Get the network address sets
+[**network_address_sets_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsApi.md#network_address_sets_post) | **POST** /1.0/network-address-sets | Add a network address set
 
 
 # **network_address_set_delete**
-> ServerPut200Response network_address_set_delete(project=project)
+> ServerPut200Response network_address_set_delete(name, project=project)
 
 Delete the network address set
 
@@ -41,11 +41,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAddressSetsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the network address set
-        api_response = await api_instance.network_address_set_delete(project=project)
+        api_response = await api_instance.network_address_set_delete(name, project=project)
         print("The response of NetworkAddressSetsApi->network_address_set_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,11 +60,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -86,7 +88,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_address_set_get**
-> NetworkAddressSetGet200Response network_address_set_get(project=project)
+> NetworkAddressSetGet200Response network_address_set_get(name, project=project)
 
 Get the network address set
 
@@ -112,11 +114,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAddressSetsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the network address set
-        api_response = await api_instance.network_address_set_get(project=project)
+        api_response = await api_instance.network_address_set_get(name, project=project)
         print("The response of NetworkAddressSetsApi->network_address_set_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -130,11 +133,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**NetworkAddressSetGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetGet200Response.md)
+[**NetworkAddressSetGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetGet200Response.md)
 
 ### Authorization
 
@@ -156,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_address_set_patch**
-> ServerPut200Response network_address_set_patch(address_set, project=project)
+> ServerPut200Response network_address_set_patch(name, address_set, project=project)
 
 Partially update the network address set
 
@@ -183,12 +187,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAddressSetsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     address_set = pyincusd.NetworkAddressSetPut() # NetworkAddressSetPut | Address set configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Partially update the network address set
-        api_response = await api_instance.network_address_set_patch(address_set, project=project)
+        api_response = await api_instance.network_address_set_patch(name, address_set, project=project)
         print("The response of NetworkAddressSetsApi->network_address_set_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -202,12 +207,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetPut.md)| Address set configuration | 
+ **name** | **str**| Path parameter: name | 
+ **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetPut.md)| Address set configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -231,7 +237,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_address_set_post**
-> ServerPut200Response network_address_set_post(address_set, project=project)
+> ServerPut200Response network_address_set_post(name, address_set, project=project)
 
 Rename the network address set
 
@@ -258,12 +264,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAddressSetsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     address_set = pyincusd.NetworkAddressSetPost() # NetworkAddressSetPost | Address set rename request
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Rename the network address set
-        api_response = await api_instance.network_address_set_post(address_set, project=project)
+        api_response = await api_instance.network_address_set_post(name, address_set, project=project)
         print("The response of NetworkAddressSetsApi->network_address_set_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -277,12 +284,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetPost.md)| Address set rename request | 
+ **name** | **str**| Path parameter: name | 
+ **address_set** | [**NetworkAddressSetPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetPost.md)| Address set rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -305,7 +313,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_address_set_put**
-> ServerPut200Response network_address_set_put(address_set, project=project)
+> ServerPut200Response network_address_set_put(name, address_set, project=project)
 
 Update the network address set
 
@@ -332,12 +340,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAddressSetsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     address_set = pyincusd.NetworkAddressSetPut() # NetworkAddressSetPut | Address set configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Update the network address set
-        api_response = await api_instance.network_address_set_put(address_set, project=project)
+        api_response = await api_instance.network_address_set_put(name, address_set, project=project)
         print("The response of NetworkAddressSetsApi->network_address_set_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -351,12 +360,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetPut.md)| Address set configuration | 
+ **name** | **str**| Path parameter: name | 
+ **address_set** | [**NetworkAddressSetPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetPut.md)| Address set configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -432,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAddressSetsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsGet200Response.md)
+[**NetworkAddressSetsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsGet200Response.md)
 
 ### Authorization
 
@@ -506,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAddressSetsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsGetRecursion1200Response.md)
+[**NetworkAddressSetsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -574,12 +584,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address_set** | [**NetworkAddressSetsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAddressSetsPost.md)| address set | 
+ **address_set** | [**NetworkAddressSetsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAddressSetsPost.md)| address set | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 

@@ -4,19 +4,19 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_acl_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_delete) | **DELETE** /1.0/network-acls/{name} | Delete the network ACL
-[**network_acl_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_get) | **GET** /1.0/network-acls/{name} | Get the network ACL
-[**network_acl_log_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_log_get) | **GET** /1.0/network-acls/{name}/log | Get the network ACL log
-[**network_acl_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_patch) | **PATCH** /1.0/network-acls/{name} | Partially update the network ACL
-[**network_acl_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_post) | **POST** /1.0/network-acls/{name} | Rename the network ACL
-[**network_acl_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acl_put) | **PUT** /1.0/network-acls/{name} | Update the network ACL
-[**network_acls_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acls_get) | **GET** /1.0/network-acls | Get the network ACLs
-[**network_acls_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acls_get_recursion1) | **GET** /1.0/network-acls?recursion&#x3D;1 | Get the network ACLs
-[**network_acls_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsApi.md#network_acls_post) | **POST** /1.0/network-acls | Add a network ACL
+[**network_acl_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_delete) | **DELETE** /1.0/network-acls/{name} | Delete the network ACL
+[**network_acl_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_get) | **GET** /1.0/network-acls/{name} | Get the network ACL
+[**network_acl_log_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_log_get) | **GET** /1.0/network-acls/{name}/log | Get the network ACL log
+[**network_acl_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_patch) | **PATCH** /1.0/network-acls/{name} | Partially update the network ACL
+[**network_acl_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_post) | **POST** /1.0/network-acls/{name} | Rename the network ACL
+[**network_acl_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acl_put) | **PUT** /1.0/network-acls/{name} | Update the network ACL
+[**network_acls_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acls_get) | **GET** /1.0/network-acls | Get the network ACLs
+[**network_acls_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acls_get_recursion1) | **GET** /1.0/network-acls?recursion&#x3D;1 | Get the network ACLs
+[**network_acls_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsApi.md#network_acls_post) | **POST** /1.0/network-acls | Add a network ACL
 
 
 # **network_acl_delete**
-> ServerPut200Response network_acl_delete(project=project)
+> ServerPut200Response network_acl_delete(name, project=project)
 
 Delete the network ACL
 
@@ -42,11 +42,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the network ACL
-        api_response = await api_instance.network_acl_delete(project=project)
+        api_response = await api_instance.network_acl_delete(name, project=project)
         print("The response of NetworkAclsApi->network_acl_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -60,11 +61,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -87,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_acl_get**
-> NetworkAclGet200Response network_acl_get(project=project)
+> NetworkAclGet200Response network_acl_get(name, project=project)
 
 Get the network ACL
 
@@ -113,11 +115,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the network ACL
-        api_response = await api_instance.network_acl_get(project=project)
+        api_response = await api_instance.network_acl_get(name, project=project)
         print("The response of NetworkAclsApi->network_acl_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -131,11 +134,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**NetworkAclGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclGet200Response.md)
+[**NetworkAclGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclGet200Response.md)
 
 ### Authorization
 
@@ -157,7 +161,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_acl_log_get**
-> network_acl_log_get(project=project)
+> network_acl_log_get(name, project=project)
 
 Get the network ACL log
 
@@ -182,11 +186,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the network ACL log
-        await api_instance.network_acl_log_get(project=project)
+        await api_instance.network_acl_log_get(name, project=project)
     except Exception as e:
         print("Exception when calling NetworkAclsApi->network_acl_log_get: %s\n" % e)
 ```
@@ -198,6 +203,7 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
@@ -224,7 +230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_acl_patch**
-> ServerPut200Response network_acl_patch(acl, project=project)
+> ServerPut200Response network_acl_patch(name, acl, project=project)
 
 Partially update the network ACL
 
@@ -251,12 +257,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     acl = pyincusd.NetworkACLPut() # NetworkACLPut | ACL configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Partially update the network ACL
-        api_response = await api_instance.network_acl_patch(acl, project=project)
+        api_response = await api_instance.network_acl_patch(name, acl, project=project)
         print("The response of NetworkAclsApi->network_acl_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -270,12 +277,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkACLPut.md)| ACL configuration | 
+ **name** | **str**| Path parameter: name | 
+ **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkACLPut.md)| ACL configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -299,7 +307,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_acl_post**
-> ServerPut200Response network_acl_post(acl, project=project)
+> ServerPut200Response network_acl_post(name, acl, project=project)
 
 Rename the network ACL
 
@@ -326,12 +334,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     acl = pyincusd.NetworkACLPost() # NetworkACLPost | ACL rename request
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Rename the network ACL
-        api_response = await api_instance.network_acl_post(acl, project=project)
+        api_response = await api_instance.network_acl_post(name, acl, project=project)
         print("The response of NetworkAclsApi->network_acl_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -345,12 +354,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acl** | [**NetworkACLPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkACLPost.md)| ACL rename request | 
+ **name** | **str**| Path parameter: name | 
+ **acl** | [**NetworkACLPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkACLPost.md)| ACL rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -373,7 +383,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_acl_put**
-> ServerPut200Response network_acl_put(acl, project=project)
+> ServerPut200Response network_acl_put(name, acl, project=project)
 
 Update the network ACL
 
@@ -400,12 +410,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkAclsApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     acl = pyincusd.NetworkACLPut() # NetworkACLPut | ACL configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Update the network ACL
-        api_response = await api_instance.network_acl_put(acl, project=project)
+        api_response = await api_instance.network_acl_put(name, acl, project=project)
         print("The response of NetworkAclsApi->network_acl_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -419,12 +430,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkACLPut.md)| ACL configuration | 
+ **name** | **str**| Path parameter: name | 
+ **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkACLPut.md)| ACL configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -500,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAclsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsGet200Response.md)
+[**NetworkAclsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsGet200Response.md)
 
 ### Authorization
 
@@ -574,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAclsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkAclsGetRecursion1200Response.md)
+[**NetworkAclsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkAclsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -642,12 +654,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acl** | [**NetworkACLsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkACLsPost.md)| ACL | 
+ **acl** | [**NetworkACLsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkACLsPost.md)| ACL | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 

@@ -86,6 +86,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -105,6 +107,10 @@ class StorageApi:
 
         Removes the storage bucket.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -132,6 +138,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -160,6 +168,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -179,6 +189,10 @@ class StorageApi:
 
         Removes the storage bucket.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -206,6 +220,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -234,6 +250,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -253,6 +271,10 @@ class StorageApi:
 
         Removes the storage bucket.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -280,6 +302,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -303,6 +327,8 @@ class StorageApi:
 
     def _storage_pool_bucket_delete_serialize(
         self,
+        name,
+        bucket_name,
         project,
         target,
         _request_auth,
@@ -326,6 +352,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -374,6 +404,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -392,6 +424,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -417,6 +453,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -443,6 +481,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -461,6 +501,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -486,6 +530,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -512,6 +558,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -530,6 +578,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -555,6 +607,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -576,6 +630,8 @@ class StorageApi:
 
     def _storage_pool_bucket_get_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         _request_auth,
         _content_type,
@@ -598,6 +654,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -642,6 +702,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -660,6 +722,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket with all details (backups and keys).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -685,6 +751,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -711,6 +779,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -729,6 +799,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket with all details (backups and keys).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -754,6 +828,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -780,6 +856,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -798,6 +876,10 @@ class StorageApi:
 
         Gets a specific storage pool bucket with all details (backups and keys).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -823,6 +905,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -844,6 +928,8 @@ class StorageApi:
 
     def _storage_pool_bucket_get_recursion1_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         _request_auth,
         _content_type,
@@ -866,6 +952,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -910,6 +1000,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -929,6 +1022,12 @@ class StorageApi:
 
         Removes the storage bucket key.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -956,6 +1055,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -984,6 +1086,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -1003,6 +1108,12 @@ class StorageApi:
 
         Removes the storage bucket key.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -1030,6 +1141,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -1058,6 +1172,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -1077,6 +1194,12 @@ class StorageApi:
 
         Removes the storage bucket key.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -1104,6 +1227,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_delete_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -1127,6 +1253,9 @@ class StorageApi:
 
     def _storage_pool_bucket_key_delete_serialize(
         self,
+        name,
+        bucket_name,
+        key_name,
         project,
         target,
         _request_auth,
@@ -1150,6 +1279,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if key_name is not None:
+            _path_params['keyName'] = key_name
         # process the query parameters
         if project is not None:
             
@@ -1198,6 +1333,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1216,6 +1354,12 @@ class StorageApi:
 
         Gets a specific storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1241,6 +1385,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1267,6 +1414,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1285,6 +1435,12 @@ class StorageApi:
 
         Gets a specific storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1310,6 +1466,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1336,6 +1495,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1354,6 +1516,12 @@ class StorageApi:
 
         Gets a specific storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1379,6 +1547,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1400,6 +1571,9 @@ class StorageApi:
 
     def _storage_pool_bucket_key_get_serialize(
         self,
+        pool_name,
+        bucket_name,
+        key_name,
         project,
         _request_auth,
         _content_type,
@@ -1422,6 +1596,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if key_name is not None:
+            _path_params['keyName'] = key_name
         # process the query parameters
         if project is not None:
             
@@ -1466,6 +1646,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1485,6 +1667,10 @@ class StorageApi:
 
         Creates a new storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketKeysPost
         :param project: Project name
@@ -1512,6 +1698,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -1540,6 +1728,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1559,6 +1749,10 @@ class StorageApi:
 
         Creates a new storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketKeysPost
         :param project: Project name
@@ -1586,6 +1780,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -1614,6 +1810,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1633,6 +1831,10 @@ class StorageApi:
 
         Creates a new storage pool bucket key.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketKeysPost
         :param project: Project name
@@ -1660,6 +1862,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -1683,6 +1887,8 @@ class StorageApi:
 
     def _storage_pool_bucket_key_post_serialize(
         self,
+        pool_name,
+        bucket_name,
         bucket,
         project,
         _request_auth,
@@ -1706,6 +1912,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -1765,6 +1975,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1785,6 +1998,12 @@ class StorageApi:
 
         Updates the entire storage bucket key configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param storage_bucket: Storage bucket key configuration (required)
         :type storage_bucket: StorageBucketKeyPut
         :param project: Project name
@@ -1814,6 +2033,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -1844,6 +2066,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1864,6 +2089,12 @@ class StorageApi:
 
         Updates the entire storage bucket key configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param storage_bucket: Storage bucket key configuration (required)
         :type storage_bucket: StorageBucketKeyPut
         :param project: Project name
@@ -1893,6 +2124,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -1923,6 +2157,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_key_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        key_name: Annotated[StrictStr, Field(description="Path parameter: keyName")],
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1943,6 +2180,12 @@ class StorageApi:
 
         Updates the entire storage bucket key configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param key_name: Path parameter: keyName (required)
+        :type key_name: str
         :param storage_bucket: Storage bucket key configuration (required)
         :type storage_bucket: StorageBucketKeyPut
         :param project: Project name
@@ -1972,6 +2215,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_key_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
+            key_name=key_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -1997,6 +2243,9 @@ class StorageApi:
 
     def _storage_pool_bucket_key_put_serialize(
         self,
+        name,
+        bucket_name,
+        key_name,
         storage_bucket,
         project,
         target,
@@ -2021,6 +2270,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if key_name is not None:
+            _path_params['keyName'] = key_name
         # process the query parameters
         if project is not None:
             
@@ -2084,6 +2339,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2102,6 +2359,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2127,6 +2388,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2153,6 +2416,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2171,6 +2436,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2196,6 +2465,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2222,6 +2493,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2240,6 +2513,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2265,6 +2542,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2286,6 +2565,8 @@ class StorageApi:
 
     def _storage_pool_bucket_keys_get_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         _request_auth,
         _content_type,
@@ -2308,6 +2589,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -2352,6 +2637,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2370,6 +2657,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2395,6 +2686,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2421,6 +2714,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2439,6 +2734,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2464,6 +2763,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2490,6 +2791,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_keys_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2508,6 +2811,10 @@ class StorageApi:
 
         Returns a list of storage pool bucket keys (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2533,6 +2840,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_keys_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2554,6 +2863,8 @@ class StorageApi:
 
     def _storage_pool_bucket_keys_get_recursion1_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         _request_auth,
         _content_type,
@@ -2576,6 +2887,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -2620,6 +2935,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2640,6 +2957,10 @@ class StorageApi:
 
         Updates a subset of the storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -2669,6 +2990,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_patch_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -2699,6 +3022,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2719,6 +3044,10 @@ class StorageApi:
 
         Updates a subset of the storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -2748,6 +3077,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_patch_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -2778,6 +3109,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2798,6 +3131,10 @@ class StorageApi:
 
         Updates a subset of the storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -2827,6 +3164,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_patch_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -2852,6 +3191,8 @@ class StorageApi:
 
     def _storage_pool_bucket_patch_serialize(
         self,
+        name,
+        bucket_name,
         storage_bucket,
         project,
         target,
@@ -2876,6 +3217,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -2939,6 +3284,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2958,6 +3304,8 @@ class StorageApi:
 
         Creates a new storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketsPost
         :param project: Project name
@@ -2985,6 +3333,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_post_serialize(
+            pool_name=pool_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -3013,6 +3362,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3032,6 +3382,8 @@ class StorageApi:
 
         Creates a new storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketsPost
         :param project: Project name
@@ -3059,6 +3411,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_post_serialize(
+            pool_name=pool_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -3087,6 +3440,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3106,6 +3460,8 @@ class StorageApi:
 
         Creates a new storage pool bucket.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param bucket: Bucket (required)
         :type bucket: StorageBucketsPost
         :param project: Project name
@@ -3133,6 +3489,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_post_serialize(
+            pool_name=pool_name,
             bucket=bucket,
             project=project,
             _request_auth=_request_auth,
@@ -3156,6 +3513,7 @@ class StorageApi:
 
     def _storage_pool_bucket_post_serialize(
         self,
+        pool_name,
         bucket,
         project,
         _request_auth,
@@ -3179,6 +3537,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -3238,6 +3598,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3258,6 +3620,10 @@ class StorageApi:
 
         Updates the entire storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -3287,6 +3653,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -3317,6 +3685,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3337,6 +3707,10 @@ class StorageApi:
 
         Updates the entire storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -3366,6 +3740,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -3396,6 +3772,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_bucket_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3416,6 +3794,10 @@ class StorageApi:
 
         Updates the entire storage bucket configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param storage_bucket: Storage bucket configuration (required)
         :type storage_bucket: StorageBucketPut
         :param project: Project name
@@ -3445,6 +3827,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_bucket_put_serialize(
+            name=name,
+            bucket_name=bucket_name,
             storage_bucket=storage_bucket,
             project=project,
             target=target,
@@ -3470,6 +3854,8 @@ class StorageApi:
 
     def _storage_pool_bucket_put_serialize(
         self,
+        name,
+        bucket_name,
         storage_bucket,
         project,
         target,
@@ -3494,6 +3880,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -3557,6 +3947,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -3576,6 +3969,12 @@ class StorageApi:
 
         Deletes a new storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -3603,6 +4002,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_delete_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -3631,6 +4033,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -3650,6 +4055,12 @@ class StorageApi:
 
         Deletes a new storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -3677,6 +4088,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_delete_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -3705,6 +4119,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -3724,6 +4141,12 @@ class StorageApi:
 
         Deletes a new storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -3751,6 +4174,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_delete_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -3774,6 +4200,9 @@ class StorageApi:
 
     def _storage_pool_buckets_backup_delete_serialize(
         self,
+        pool_name,
+        bucket_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -3797,6 +4226,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -3845,6 +4280,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_export_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -3864,6 +4302,12 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -3891,6 +4335,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_export_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -3918,6 +4365,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_export_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -3937,6 +4387,12 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -3964,6 +4420,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_export_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -3991,6 +4450,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_export_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4010,6 +4472,12 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4037,6 +4505,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_export_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4059,6 +4530,9 @@ class StorageApi:
 
     def _storage_pool_buckets_backup_export_get_serialize(
         self,
+        pool_name,
+        bucket_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -4082,6 +4556,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -4130,6 +4610,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4149,6 +4632,12 @@ class StorageApi:
 
         Gets a specific storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4176,6 +4665,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4203,6 +4695,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4222,6 +4717,12 @@ class StorageApi:
 
         Gets a specific storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4249,6 +4750,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4276,6 +4780,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4295,6 +4802,12 @@ class StorageApi:
 
         Gets a specific storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4322,6 +4835,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4344,6 +4860,9 @@ class StorageApi:
 
     def _storage_pool_buckets_backup_get_serialize(
         self,
+        pool_name,
+        bucket_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -4367,6 +4886,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -4415,6 +4940,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4435,6 +4963,12 @@ class StorageApi:
 
         Renames a storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param bucket_rename: Storage bucket backup (required)
         :type bucket_rename: StorageBucketBackupPost
         :param project: Project name
@@ -4464,6 +4998,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             bucket_rename=bucket_rename,
             project=project,
             target=target,
@@ -4493,6 +5030,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4513,6 +5053,12 @@ class StorageApi:
 
         Renames a storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param bucket_rename: Storage bucket backup (required)
         :type bucket_rename: StorageBucketBackupPost
         :param project: Project name
@@ -4542,6 +5088,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             bucket_rename=bucket_rename,
             project=project,
             target=target,
@@ -4571,6 +5120,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backup_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4591,6 +5143,12 @@ class StorageApi:
 
         Renames a storage bucket backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param bucket_rename: Storage bucket backup (required)
         :type bucket_rename: StorageBucketBackupPost
         :param project: Project name
@@ -4620,6 +5178,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backup_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
+            backup_name=backup_name,
             bucket_rename=bucket_rename,
             project=project,
             target=target,
@@ -4644,6 +5205,9 @@ class StorageApi:
 
     def _storage_pool_buckets_backup_post_serialize(
         self,
+        pool_name,
+        bucket_name,
+        backup_name,
         bucket_rename,
         project,
         target,
@@ -4668,6 +5232,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -4731,6 +5301,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4750,6 +5322,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4777,6 +5353,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4804,6 +5382,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4823,6 +5403,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4850,6 +5434,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4877,6 +5463,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -4896,6 +5484,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -4923,6 +5515,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -4945,6 +5539,8 @@ class StorageApi:
 
     def _storage_pool_buckets_backups_get_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         target,
         _request_auth,
@@ -4968,6 +5564,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -5016,6 +5616,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -5035,6 +5637,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -5062,6 +5668,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -5089,6 +5697,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -5108,6 +5718,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -5135,6 +5749,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -5162,6 +5778,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -5181,6 +5799,10 @@ class StorageApi:
 
         Returns a list of storage bucket backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -5208,6 +5830,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -5230,6 +5854,8 @@ class StorageApi:
 
     def _storage_pool_buckets_backups_get_recursion1_serialize(
         self,
+        pool_name,
+        bucket_name,
         project,
         target,
         _request_auth,
@@ -5253,6 +5879,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -5301,6 +5931,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5321,6 +5953,10 @@ class StorageApi:
 
         Creates a new storage bucket backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Storage bucket backup (required)
         :type bucket: StorageBucketBackupsPost
         :param project: Project name
@@ -5350,6 +5986,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             target=target,
@@ -5379,6 +6017,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5399,6 +6039,10 @@ class StorageApi:
 
         Creates a new storage bucket backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Storage bucket backup (required)
         :type bucket: StorageBucketBackupsPost
         :param project: Project name
@@ -5428,6 +6072,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             target=target,
@@ -5457,6 +6103,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_backups_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        bucket_name: Annotated[StrictStr, Field(description="Path parameter: bucketName")],
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5477,6 +6125,10 @@ class StorageApi:
 
         Creates a new storage bucket backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param bucket_name: Path parameter: bucketName (required)
+        :type bucket_name: str
         :param bucket: Storage bucket backup (required)
         :type bucket: StorageBucketBackupsPost
         :param project: Project name
@@ -5506,6 +6158,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_backups_post_serialize(
+            pool_name=pool_name,
+            bucket_name=bucket_name,
             bucket=bucket,
             project=project,
             target=target,
@@ -5530,6 +6184,8 @@ class StorageApi:
 
     def _storage_pool_buckets_backups_post_serialize(
         self,
+        pool_name,
+        bucket_name,
         bucket,
         project,
         target,
@@ -5554,6 +6210,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if bucket_name is not None:
+            _path_params['bucketName'] = bucket_name
         # process the query parameters
         if project is not None:
             
@@ -5618,6 +6278,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5638,6 +6299,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -5667,6 +6330,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -5695,6 +6359,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5715,6 +6380,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -5744,6 +6411,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -5772,6 +6440,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5792,6 +6461,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -5821,6 +6492,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -5844,6 +6516,7 @@ class StorageApi:
 
     def _storage_pool_buckets_get_serialize(
         self,
+        pool_name,
         project,
         all_projects,
         filter,
@@ -5868,6 +6541,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -5920,6 +6595,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5940,6 +6616,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -5969,6 +6647,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -5997,6 +6676,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -6017,6 +6697,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -6046,6 +6728,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -6074,6 +6757,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -6094,6 +6778,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -6123,6 +6809,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -6146,6 +6833,7 @@ class StorageApi:
 
     def _storage_pool_buckets_get_recursion1_serialize(
         self,
+        pool_name,
         project,
         all_projects,
         filter,
@@ -6170,6 +6858,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -6222,6 +6912,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion2(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -6242,6 +6933,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets with all details (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -6271,6 +6964,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion2_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -6299,6 +6993,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion2_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -6319,6 +7014,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets with all details (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -6348,6 +7045,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion2_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -6376,6 +7074,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_buckets_get_recursion2_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -6396,6 +7095,8 @@ class StorageApi:
 
         Returns a list of storage pool buckets with all details (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param all_projects: Retrieve storage pool buckets from all projects
@@ -6425,6 +7126,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_buckets_get_recursion2_serialize(
+            pool_name=pool_name,
             project=project,
             all_projects=all_projects,
             filter=filter,
@@ -6448,6 +7150,7 @@ class StorageApi:
 
     def _storage_pool_buckets_get_recursion2_serialize(
         self,
+        pool_name,
         project,
         all_projects,
         filter,
@@ -6472,6 +7175,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -6524,6 +7229,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -6543,6 +7249,8 @@ class StorageApi:
 
         Gets a specific storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -6570,6 +7278,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -6597,6 +7306,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -6616,6 +7326,8 @@ class StorageApi:
 
         Gets a specific storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -6643,6 +7355,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -6670,6 +7383,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -6689,6 +7403,8 @@ class StorageApi:
 
         Gets a specific storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -6716,6 +7432,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -6738,6 +7455,7 @@ class StorageApi:
 
     def _storage_pool_get_serialize(
         self,
+        pool_name,
         project,
         target,
         _request_auth,
@@ -6761,6 +7479,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -6809,6 +7529,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_patch(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6829,6 +7550,8 @@ class StorageApi:
 
         Updates a subset of the storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -6858,6 +7581,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_patch_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -6888,6 +7612,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_patch_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6908,6 +7633,8 @@ class StorageApi:
 
         Updates a subset of the storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -6937,6 +7664,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_patch_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -6967,6 +7695,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_patch_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6987,6 +7716,8 @@ class StorageApi:
 
         Updates a subset of the storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -7016,6 +7747,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_patch_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -7041,6 +7773,7 @@ class StorageApi:
 
     def _storage_pool_patch_serialize(
         self,
+        pool_name,
         storage_pool,
         project,
         target,
@@ -7065,6 +7798,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -7128,6 +7863,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_put(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7148,6 +7884,8 @@ class StorageApi:
 
         Updates the entire storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -7177,6 +7915,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_put_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -7207,6 +7946,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_put_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7227,6 +7967,8 @@ class StorageApi:
 
         Updates the entire storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -7256,6 +7998,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_put_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -7286,6 +8029,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_put_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7306,6 +8050,8 @@ class StorageApi:
 
         Updates the entire storage pool configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param storage_pool: Storage pool configuration (required)
         :type storage_pool: StoragePoolPut
         :param project: Project name
@@ -7335,6 +8081,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_put_serialize(
+            pool_name=pool_name,
             storage_pool=storage_pool,
             project=project,
             target=target,
@@ -7360,6 +8107,7 @@ class StorageApi:
 
     def _storage_pool_put_serialize(
         self,
+        pool_name,
         storage_pool,
         project,
         target,
@@ -7384,6 +8132,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -7447,6 +8197,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_resources(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
             None,
@@ -7465,6 +8216,8 @@ class StorageApi:
 
         Gets the usage information for the storage pool.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param target: Cluster member name
         :type target: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7490,6 +8243,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_resources_serialize(
+            name=name,
             target=target,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7516,6 +8270,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_resources_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
             None,
@@ -7534,6 +8289,8 @@ class StorageApi:
 
         Gets the usage information for the storage pool.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param target: Cluster member name
         :type target: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7559,6 +8316,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_resources_serialize(
+            name=name,
             target=target,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7585,6 +8343,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_resources_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
             None,
@@ -7603,6 +8362,8 @@ class StorageApi:
 
         Gets the usage information for the storage pool.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param target: Cluster member name
         :type target: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7628,6 +8389,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_resources_serialize(
+            name=name,
             target=target,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7649,6 +8411,7 @@ class StorageApi:
 
     def _storage_pool_resources_serialize(
         self,
+        name,
         target,
         _request_auth,
         _content_type,
@@ -7671,6 +8434,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if target is not None:
             
@@ -7715,6 +8480,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7734,6 +8502,12 @@ class StorageApi:
 
         Removes the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -7761,6 +8535,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -7789,6 +8566,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7808,6 +8588,12 @@ class StorageApi:
 
         Removes the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -7835,6 +8621,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -7863,6 +8652,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7882,6 +8674,12 @@ class StorageApi:
 
         Removes the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -7909,6 +8707,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -7932,6 +8733,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_delete_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -7955,6 +8759,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -8003,6 +8813,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -8023,6 +8836,12 @@ class StorageApi:
 
         Removes the file.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8052,6 +8871,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -8082,6 +8904,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -8102,6 +8927,12 @@ class StorageApi:
 
         Removes the file.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8131,6 +8962,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -8161,6 +8995,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -8181,6 +9018,12 @@ class StorageApi:
 
         Removes the file.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8210,6 +9053,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -8235,6 +9081,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_files_delete_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         path,
         project,
         x_incus_force,
@@ -8259,6 +9108,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if path is not None:
             
@@ -8309,6 +9164,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8328,6 +9186,12 @@ class StorageApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8355,6 +9219,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8384,6 +9251,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8403,6 +9273,12 @@ class StorageApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8430,6 +9306,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8459,6 +9338,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8478,6 +9360,12 @@ class StorageApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8505,6 +9393,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8529,6 +9420,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_files_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         path,
         project,
         _request_auth,
@@ -8552,6 +9446,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if path is not None:
             
@@ -8601,6 +9501,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_head(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8620,6 +9523,12 @@ class StorageApi:
 
         Gets the file or directory metadata.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8647,6 +9556,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_head_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8676,6 +9588,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_head_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8695,6 +9610,12 @@ class StorageApi:
 
         Gets the file or directory metadata.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8722,6 +9643,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_head_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8751,6 +9675,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_head_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8770,6 +9697,12 @@ class StorageApi:
 
         Gets the file or directory metadata.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8797,6 +9730,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_head_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8821,6 +9757,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_files_head_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         path,
         project,
         _request_auth,
@@ -8844,6 +9783,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if path is not None:
             
@@ -8892,6 +9837,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -8916,6 +9864,12 @@ class StorageApi:
 
         Creates a new file in the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -8953,6 +9907,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -8987,6 +9944,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -9011,6 +9971,12 @@ class StorageApi:
 
         Creates a new file in the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -9048,6 +10014,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -9082,6 +10051,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_files_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -9106,6 +10078,12 @@ class StorageApi:
 
         Creates a new file in the storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -9143,6 +10121,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_files_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -9172,6 +10153,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_files_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         path,
         project,
         x_incus_uid,
@@ -9200,6 +10184,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if path is not None:
             
@@ -9271,6 +10261,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9290,6 +10283,12 @@ class StorageApi:
 
         Gets a specific storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9317,6 +10316,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9344,6 +10346,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9363,6 +10368,12 @@ class StorageApi:
 
         Gets a specific storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9390,6 +10401,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9417,6 +10431,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9436,6 +10453,12 @@ class StorageApi:
 
         Gets a specific storage volume.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9463,6 +10486,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9485,6 +10511,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -9508,6 +10537,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -9556,6 +10591,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9575,6 +10613,12 @@ class StorageApi:
 
         Gets a specific storage volume with all details (backups, snapshots and state0..
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9602,6 +10646,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9629,6 +10676,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9648,6 +10698,12 @@ class StorageApi:
 
         Gets a specific storage volume with all details (backups, snapshots and state0..
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9675,6 +10731,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9702,6 +10761,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -9721,6 +10783,12 @@ class StorageApi:
 
         Gets a specific storage volume with all details (backups, snapshots and state0..
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -9748,6 +10816,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -9770,6 +10841,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_get_recursion1_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -9793,6 +10867,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -9841,6 +10921,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_patch(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9861,6 +10944,12 @@ class StorageApi:
 
         Updates a subset of the storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -9890,6 +10979,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -9920,6 +11012,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_patch_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9940,6 +11035,12 @@ class StorageApi:
 
         Updates a subset of the storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -9969,6 +11070,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -9999,6 +11103,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_patch_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10019,6 +11126,12 @@ class StorageApi:
 
         Updates a subset of the storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -10048,6 +11161,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -10073,6 +11189,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_patch_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         storage_volume,
         project,
         target,
@@ -10097,6 +11216,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -10160,6 +11285,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         migration: Annotated[Optional[StorageVolumePost], Field(description="Migration request")] = None,
@@ -10180,6 +11308,12 @@ class StorageApi:
 
         Renames, moves a storage volume between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -10209,6 +11343,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             migration=migration,
@@ -10238,6 +11375,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         migration: Annotated[Optional[StorageVolumePost], Field(description="Migration request")] = None,
@@ -10258,6 +11398,12 @@ class StorageApi:
 
         Renames, moves a storage volume between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -10287,6 +11433,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             migration=migration,
@@ -10316,6 +11465,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         migration: Annotated[Optional[StorageVolumePost], Field(description="Migration request")] = None,
@@ -10336,6 +11488,12 @@ class StorageApi:
 
         Renames, moves a storage volume between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -10365,6 +11523,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             migration=migration,
@@ -10389,6 +11550,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         migration,
@@ -10413,6 +11577,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -10476,6 +11646,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_put(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10496,6 +11669,12 @@ class StorageApi:
 
         Updates the entire storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -10525,6 +11704,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -10555,6 +11737,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_put_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10575,6 +11760,12 @@ class StorageApi:
 
         Updates the entire storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -10604,6 +11795,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -10634,6 +11828,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_put_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10654,6 +11851,12 @@ class StorageApi:
 
         Updates the entire storage volume configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param storage_volume: Storage volume configuration (required)
         :type storage_volume: StorageVolumePut
         :param project: Project name
@@ -10683,6 +11886,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             storage_volume=storage_volume,
             project=project,
             target=target,
@@ -10708,6 +11914,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_put_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         storage_volume,
         project,
         target,
@@ -10732,6 +11941,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -10795,6 +12010,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_sftp_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10812,6 +12030,12 @@ class StorageApi:
 
         Upgrades the request to an SFTP connection of the storage volume's filesystem.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10835,6 +12059,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_sftp_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10862,6 +12089,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_sftp_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10879,6 +12109,12 @@ class StorageApi:
 
         Upgrades the request to an SFTP connection of the storage volume's filesystem.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10902,6 +12138,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_sftp_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10929,6 +12168,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_sftp_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10946,6 +12188,12 @@ class StorageApi:
 
         Upgrades the request to an SFTP connection of the storage volume's filesystem.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10969,6 +12217,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_sftp_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10991,6 +12242,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_sftp_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         _request_auth,
         _content_type,
         _headers,
@@ -11012,6 +12266,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -11053,6 +12313,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_state_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -11072,6 +12335,12 @@ class StorageApi:
 
         Gets a specific storage volume state (usage data).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11099,6 +12368,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_state_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -11126,6 +12398,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_state_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -11145,6 +12420,12 @@ class StorageApi:
 
         Gets a specific storage volume state (usage data).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11172,6 +12453,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_state_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -11199,6 +12483,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volume_type_state_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -11218,6 +12505,12 @@ class StorageApi:
 
         Gets a specific storage volume state (usage data).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11245,6 +12538,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volume_type_state_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -11267,6 +12563,9 @@ class StorageApi:
 
     def _storage_pool_volume_type_state_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -11290,6 +12589,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -11338,6 +12643,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11358,6 +12664,8 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11387,6 +12695,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11415,6 +12724,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11435,6 +12745,8 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11464,6 +12776,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11492,6 +12805,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11512,6 +12826,8 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11541,6 +12857,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11564,6 +12881,7 @@ class StorageApi:
 
     def _storage_pool_volumes_get_serialize(
         self,
+        pool_name,
         project,
         target,
         filter,
@@ -11588,6 +12906,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -11640,6 +12960,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11660,6 +12981,8 @@ class StorageApi:
 
         Returns a list of storage volumes (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11689,6 +13012,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11717,6 +13041,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11737,6 +13062,8 @@ class StorageApi:
 
         Returns a list of storage volumes (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11766,6 +13093,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11794,6 +13122,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -11814,6 +13143,8 @@ class StorageApi:
 
         Returns a list of storage volumes (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -11843,6 +13174,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_get_recursion1_serialize(
+            pool_name=pool_name,
             project=project,
             target=target,
             filter=filter,
@@ -11866,6 +13198,7 @@ class StorageApi:
 
     def _storage_pool_volumes_get_recursion1_serialize(
         self,
+        pool_name,
         project,
         target,
         filter,
@@ -11890,6 +13223,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -11942,6 +13277,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11962,6 +13298,8 @@ class StorageApi:
 
         Creates a new storage volume. Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -11991,6 +13329,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_post_serialize(
+            pool_name=pool_name,
             volume=volume,
             project=project,
             target=target,
@@ -12021,6 +13360,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12041,6 +13381,8 @@ class StorageApi:
 
         Creates a new storage volume. Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -12070,6 +13412,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_post_serialize(
+            pool_name=pool_name,
             volume=volume,
             project=project,
             target=target,
@@ -12100,6 +13443,7 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12120,6 +13464,8 @@ class StorageApi:
 
         Creates a new storage volume. Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -12149,6 +13495,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_post_serialize(
+            pool_name=pool_name,
             volume=volume,
             project=project,
             target=target,
@@ -12174,6 +13521,7 @@ class StorageApi:
 
     def _storage_pool_volumes_post_serialize(
         self,
+        pool_name,
         volume,
         project,
         target,
@@ -12198,6 +13546,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             
@@ -12261,6 +13611,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12280,6 +13634,14 @@ class StorageApi:
 
         Deletes a new storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12307,6 +13669,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12335,6 +13701,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12354,6 +13724,14 @@ class StorageApi:
 
         Deletes a new storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12381,6 +13759,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12409,6 +13791,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12428,6 +13814,14 @@ class StorageApi:
 
         Deletes a new storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12455,6 +13849,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12478,6 +13876,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backup_delete_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -12501,6 +13903,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -12549,6 +13959,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_export_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12568,6 +13982,14 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12595,6 +14017,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_export_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12622,6 +14048,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_export_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12641,6 +14071,14 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12668,6 +14106,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_export_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12695,6 +14137,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_export_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12714,6 +14160,14 @@ class StorageApi:
 
         Download the raw backup file from the server.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12741,6 +14195,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_export_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12763,6 +14221,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backup_export_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -12786,6 +14248,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -12834,6 +14304,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12853,6 +14327,14 @@ class StorageApi:
 
         Gets a specific storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12880,6 +14362,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12907,6 +14393,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12926,6 +14416,14 @@ class StorageApi:
 
         Gets a specific storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -12953,6 +14451,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -12980,6 +14482,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -12999,6 +14505,14 @@ class StorageApi:
 
         Gets a specific storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13026,6 +14540,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13048,6 +14566,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backup_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        backup_name,
         project,
         target,
         _request_auth,
@@ -13071,6 +14593,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -13119,6 +14649,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13139,6 +14673,14 @@ class StorageApi:
 
         Renames a storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param volume_rename: Storage volume backup (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -13168,6 +14710,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -13197,6 +14743,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13217,6 +14767,14 @@ class StorageApi:
 
         Renames a storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param volume_rename: Storage volume backup (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -13246,6 +14804,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -13275,6 +14837,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backup_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        backup_name: Annotated[StrictStr, Field(description="Path parameter: backupName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13295,6 +14861,14 @@ class StorageApi:
 
         Renames a storage volume backup.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param backup_name: Path parameter: backupName (required)
+        :type backup_name: str
         :param volume_rename: Storage volume backup (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -13324,6 +14898,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backup_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            backup_name=backup_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -13348,6 +14926,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backup_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        backup_name,
         volume_rename,
         project,
         target,
@@ -13372,6 +14954,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if backup_name is not None:
+            _path_params['backupName'] = backup_name
         # process the query parameters
         if project is not None:
             
@@ -13435,6 +15025,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13454,6 +15047,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13481,6 +15080,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13508,6 +15110,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13527,6 +15132,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13554,6 +15165,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13581,6 +15195,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13600,6 +15217,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13627,6 +15250,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13649,6 +15275,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backups_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -13672,6 +15301,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -13720,6 +15355,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13739,6 +15377,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13766,6 +15410,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13793,6 +15440,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13812,6 +15462,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13839,6 +15495,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13866,6 +15525,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -13885,6 +15547,12 @@ class StorageApi:
 
         Returns a list of storage volume backups (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -13912,6 +15580,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -13934,6 +15605,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backups_get_recursion1_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -13957,6 +15631,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -14005,6 +15685,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14025,6 +15708,12 @@ class StorageApi:
 
         Creates a new storage volume backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume backup (required)
         :type volume: StorageVolumeBackupsPost
         :param project: Project name
@@ -14054,6 +15743,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -14083,6 +15775,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14103,6 +15798,12 @@ class StorageApi:
 
         Creates a new storage volume backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume backup (required)
         :type volume: StorageVolumeBackupsPost
         :param project: Project name
@@ -14132,6 +15833,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -14161,6 +15865,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_backups_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14181,6 +15888,12 @@ class StorageApi:
 
         Creates a new storage volume backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume backup (required)
         :type volume: StorageVolumeBackupsPost
         :param project: Project name
@@ -14210,6 +15923,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_backups_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -14234,6 +15950,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_backups_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         volume,
         project,
         target,
@@ -14258,6 +15977,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -14322,6 +16047,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14341,6 +16068,10 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14368,6 +16099,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14395,6 +16128,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14414,6 +16149,10 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14441,6 +16180,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14468,6 +16209,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14487,6 +16230,10 @@ class StorageApi:
 
         Returns a list of storage volumes (URLs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14514,6 +16261,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14536,6 +16285,8 @@ class StorageApi:
 
     def _storage_pool_volumes_type_get_serialize(
         self,
+        pool_name,
+        type,
         project,
         target,
         _request_auth,
@@ -14559,6 +16310,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
         # process the query parameters
         if project is not None:
             
@@ -14607,6 +16362,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14626,6 +16383,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14653,6 +16414,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14680,6 +16443,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14699,6 +16464,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14726,6 +16495,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14753,6 +16524,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14772,6 +16545,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14799,6 +16576,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14821,6 +16600,8 @@ class StorageApi:
 
     def _storage_pool_volumes_type_get_recursion1_serialize(
         self,
+        pool_name,
+        type,
         project,
         target,
         _request_auth,
@@ -14844,6 +16625,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
         # process the query parameters
         if project is not None:
             
@@ -14892,6 +16677,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion2(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14911,6 +16698,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) including all details (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -14938,6 +16729,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion2_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -14965,6 +16758,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion2_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -14984,6 +16779,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) including all details (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15011,6 +16810,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion2_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15038,6 +16839,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_get_recursion2_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15057,6 +16860,10 @@ class StorageApi:
 
         Returns a list of storage volumes (structs) including all details (type specific endpoint).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15084,6 +16891,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_get_recursion2_serialize(
+            pool_name=pool_name,
+            type=type,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15106,6 +16915,8 @@ class StorageApi:
 
     def _storage_pool_volumes_type_get_recursion2_serialize(
         self,
+        pool_name,
+        type,
         project,
         target,
         _request_auth,
@@ -15129,6 +16940,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
         # process the query parameters
         if project is not None:
             
@@ -15177,6 +16992,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15197,6 +17014,10 @@ class StorageApi:
 
         Creates a new storage volume (type specific endpoint). Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -15226,6 +17047,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
             volume=volume,
             project=project,
             target=target,
@@ -15256,6 +17079,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15276,6 +17101,10 @@ class StorageApi:
 
         Creates a new storage volume (type specific endpoint). Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -15305,6 +17134,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
             volume=volume,
             project=project,
             target=target,
@@ -15335,6 +17166,8 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15355,6 +17188,10 @@ class StorageApi:
 
         Creates a new storage volume (type specific endpoint). Will return an empty sync response on simple volume creation but an operation on copy or migration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
         :param volume: Storage volume (required)
         :type volume: StorageVolumesPost
         :param project: Project name
@@ -15384,6 +17221,8 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_post_serialize(
+            pool_name=pool_name,
+            type=type,
             volume=volume,
             project=project,
             target=target,
@@ -15409,6 +17248,8 @@ class StorageApi:
 
     def _storage_pool_volumes_type_post_serialize(
         self,
+        pool_name,
+        type,
         volume,
         project,
         target,
@@ -15433,6 +17274,10 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
         # process the query parameters
         if project is not None:
             
@@ -15496,6 +17341,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15515,6 +17364,14 @@ class StorageApi:
 
         Deletes a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15542,6 +17399,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15570,6 +17431,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15589,6 +17454,14 @@ class StorageApi:
 
         Deletes a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15616,6 +17489,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15644,6 +17521,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15663,6 +17544,14 @@ class StorageApi:
 
         Deletes a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15690,6 +17579,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_delete_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15713,6 +17606,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshot_delete_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        snapshot_name,
         project,
         target,
         _request_auth,
@@ -15736,6 +17633,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if snapshot_name is not None:
+            _path_params['snapshotName'] = snapshot_name
         # process the query parameters
         if project is not None:
             
@@ -15784,6 +17689,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15803,6 +17712,14 @@ class StorageApi:
 
         Gets a specific storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15830,6 +17747,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15857,6 +17778,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15876,6 +17801,14 @@ class StorageApi:
 
         Gets a specific storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15903,6 +17836,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15930,6 +17867,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -15949,6 +17890,14 @@ class StorageApi:
 
         Gets a specific storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -15976,6 +17925,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -15998,6 +17951,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshot_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        snapshot_name,
         project,
         target,
         _request_auth,
@@ -16021,6 +17978,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if snapshot_name is not None:
+            _path_params['snapshotName'] = snapshot_name
         # process the query parameters
         if project is not None:
             
@@ -16069,6 +18034,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_patch(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16089,6 +18058,14 @@ class StorageApi:
 
         Updates a subset of the storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16118,6 +18095,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16148,6 +18129,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_patch_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16168,6 +18153,14 @@ class StorageApi:
 
         Updates a subset of the storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16197,6 +18190,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16227,6 +18224,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_patch_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16247,6 +18248,14 @@ class StorageApi:
 
         Updates a subset of the storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16276,6 +18285,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_patch_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16301,6 +18314,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshot_patch_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        snapshot_name,
         storage_volume_snapshot,
         project,
         target,
@@ -16325,6 +18342,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if snapshot_name is not None:
+            _path_params['snapshotName'] = snapshot_name
         # process the query parameters
         if project is not None:
             
@@ -16388,6 +18413,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16408,6 +18437,14 @@ class StorageApi:
 
         Renames a storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param volume_rename: Storage volume snapshot (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -16437,6 +18474,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -16466,6 +18507,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16486,6 +18531,14 @@ class StorageApi:
 
         Renames a storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param volume_rename: Storage volume snapshot (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -16515,6 +18568,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -16544,6 +18601,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16564,6 +18625,14 @@ class StorageApi:
 
         Renames a storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param volume_rename: Storage volume snapshot (required)
         :type volume_rename: StorageVolumeSnapshotPost
         :param project: Project name
@@ -16593,6 +18662,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             volume_rename=volume_rename,
             project=project,
             target=target,
@@ -16617,6 +18690,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshot_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        snapshot_name,
         volume_rename,
         project,
         target,
@@ -16641,6 +18718,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if snapshot_name is not None:
+            _path_params['snapshotName'] = snapshot_name
         # process the query parameters
         if project is not None:
             
@@ -16704,6 +18789,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_put(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16724,6 +18813,14 @@ class StorageApi:
 
         Updates the entire storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16753,6 +18850,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16783,6 +18884,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_put_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16803,6 +18908,14 @@ class StorageApi:
 
         Updates the entire storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16832,6 +18945,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16862,6 +18979,10 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshot_put_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
+        snapshot_name: Annotated[StrictStr, Field(description="Path parameter: snapshotName")],
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -16882,6 +19003,14 @@ class StorageApi:
 
         Updates the entire storage volume snapshot configuration.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
+        :param snapshot_name: Path parameter: snapshotName (required)
+        :type snapshot_name: str
         :param storage_volume_snapshot: Storage volume snapshot configuration (required)
         :type storage_volume_snapshot: StorageVolumeSnapshotPut
         :param project: Project name
@@ -16911,6 +19040,10 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshot_put_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            snapshot_name=snapshot_name,
             storage_volume_snapshot=storage_volume_snapshot,
             project=project,
             target=target,
@@ -16936,6 +19069,10 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshot_put_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
+        snapshot_name,
         storage_volume_snapshot,
         project,
         target,
@@ -16960,6 +19097,14 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        if snapshot_name is not None:
+            _path_params['snapshotName'] = snapshot_name
         # process the query parameters
         if project is not None:
             
@@ -17023,6 +19168,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17042,6 +19190,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17069,6 +19223,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17096,6 +19253,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17115,6 +19275,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17142,6 +19308,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17169,6 +19338,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17188,6 +19360,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (URLs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17215,6 +19393,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17237,6 +19418,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshots_get_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -17260,6 +19444,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -17308,6 +19498,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get_recursion1(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17327,6 +19520,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17354,6 +19553,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17381,6 +19583,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get_recursion1_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17400,6 +19605,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17427,6 +19638,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17454,6 +19668,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_get_recursion1_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -17473,6 +19690,12 @@ class StorageApi:
 
         Returns a list of storage volume snapshots (structs).
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -17500,6 +19723,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_get_recursion1_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -17522,6 +19748,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshots_get_recursion1_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         project,
         target,
         _request_auth,
@@ -17545,6 +19774,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -17593,6 +19828,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_post(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17613,6 +19851,12 @@ class StorageApi:
 
         Creates a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume snapshot (required)
         :type volume: StorageVolumeSnapshotsPost
         :param project: Project name
@@ -17642,6 +19886,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -17671,6 +19918,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_post_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17691,6 +19941,12 @@ class StorageApi:
 
         Creates a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume snapshot (required)
         :type volume: StorageVolumeSnapshotsPost
         :param project: Project name
@@ -17720,6 +19976,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -17749,6 +20008,9 @@ class StorageApi:
     @validate_call
     async def storage_pool_volumes_type_snapshots_post_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
+        type: Annotated[StrictStr, Field(description="Path parameter: type")],
+        volume_name: Annotated[StrictStr, Field(description="Path parameter: volumeName")],
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17769,6 +20031,12 @@ class StorageApi:
 
         Creates a new storage volume snapshot.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
+        :param type: Path parameter: type (required)
+        :type type: str
+        :param volume_name: Path parameter: volumeName (required)
+        :type volume_name: str
         :param volume: Storage volume snapshot (required)
         :type volume: StorageVolumeSnapshotsPost
         :param project: Project name
@@ -17798,6 +20066,9 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pool_volumes_type_snapshots_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
             volume=volume,
             project=project,
             target=target,
@@ -17822,6 +20093,9 @@ class StorageApi:
 
     def _storage_pool_volumes_type_snapshots_post_serialize(
         self,
+        pool_name,
+        type,
+        volume_name,
         volume,
         project,
         target,
@@ -17846,6 +20120,12 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
         # process the query parameters
         if project is not None:
             
@@ -17909,6 +20189,7 @@ class StorageApi:
     @validate_call
     async def storage_pools_delete(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -17927,6 +20208,8 @@ class StorageApi:
 
         Removes the storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -17952,6 +20235,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pools_delete_serialize(
+            pool_name=pool_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -17979,6 +20263,7 @@ class StorageApi:
     @validate_call
     async def storage_pools_delete_with_http_info(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -17997,6 +20282,8 @@ class StorageApi:
 
         Removes the storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -18022,6 +20309,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pools_delete_serialize(
+            pool_name=pool_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18049,6 +20337,7 @@ class StorageApi:
     @validate_call
     async def storage_pools_delete_without_preload_content(
         self,
+        pool_name: Annotated[StrictStr, Field(description="Path parameter: poolName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -18067,6 +20356,8 @@ class StorageApi:
 
         Removes the storage pool.
 
+        :param pool_name: Path parameter: poolName (required)
+        :type pool_name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -18092,6 +20383,7 @@ class StorageApi:
         """ # noqa: E501
 
         _param = self._storage_pools_delete_serialize(
+            pool_name=pool_name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -18114,6 +20406,7 @@ class StorageApi:
 
     def _storage_pools_delete_serialize(
         self,
+        pool_name,
         project,
         _request_auth,
         _content_type,
@@ -18136,6 +20429,8 @@ class StorageApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
         # process the query parameters
         if project is not None:
             

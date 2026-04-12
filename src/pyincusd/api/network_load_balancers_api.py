@@ -48,6 +48,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_delete(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -66,6 +68,10 @@ class NetworkLoadBalancersApi:
 
         Removes the network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -91,6 +97,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_delete_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -118,6 +126,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_delete_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -136,6 +146,10 @@ class NetworkLoadBalancersApi:
 
         Removes the network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -161,6 +175,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_delete_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -188,6 +204,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_delete_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -206,6 +224,10 @@ class NetworkLoadBalancersApi:
 
         Removes the network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -231,6 +253,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_delete_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -253,6 +277,8 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_delete_serialize(
         self,
+        network_name,
+        listen_address,
         project,
         _request_auth,
         _content_type,
@@ -275,6 +301,10 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
+        if listen_address is not None:
+            _path_params['listenAddress'] = listen_address
         # process the query parameters
         if project is not None:
             
@@ -319,6 +349,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -337,6 +369,10 @@ class NetworkLoadBalancersApi:
 
         Gets a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -362,6 +398,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -388,6 +426,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -406,6 +446,10 @@ class NetworkLoadBalancersApi:
 
         Gets a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -431,6 +475,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -457,6 +503,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -475,6 +523,10 @@ class NetworkLoadBalancersApi:
 
         Gets a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -500,6 +552,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -521,6 +575,8 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_get_serialize(
         self,
+        network_name,
+        listen_address,
         project,
         _request_auth,
         _content_type,
@@ -543,6 +599,10 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
+        if listen_address is not None:
+            _path_params['listenAddress'] = listen_address
         # process the query parameters
         if project is not None:
             
@@ -587,6 +647,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get_recursion1(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -606,6 +667,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (structs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -633,6 +696,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_recursion1_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -660,6 +724,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get_recursion1_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -679,6 +744,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (structs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -706,6 +773,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_recursion1_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -733,6 +801,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_get_recursion1_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -752,6 +821,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (structs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -779,6 +850,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_get_recursion1_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -801,6 +873,7 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_get_recursion1_serialize(
         self,
+        network_name,
         project,
         filter,
         _request_auth,
@@ -824,6 +897,8 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
         # process the query parameters
         if project is not None:
             
@@ -872,6 +947,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_patch(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -891,6 +968,10 @@ class NetworkLoadBalancersApi:
 
         Updates a subset of the network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -918,6 +999,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_patch_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -947,6 +1030,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_patch_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -966,6 +1051,10 @@ class NetworkLoadBalancersApi:
 
         Updates a subset of the network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -993,6 +1082,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_patch_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -1022,6 +1113,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_patch_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1041,6 +1134,10 @@ class NetworkLoadBalancersApi:
 
         Updates a subset of the network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -1068,6 +1165,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_patch_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -1092,6 +1191,8 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_patch_serialize(
         self,
+        network_name,
+        listen_address,
         load_balancer,
         project,
         _request_auth,
@@ -1115,6 +1216,10 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
+        if listen_address is not None:
+            _path_params['listenAddress'] = listen_address
         # process the query parameters
         if project is not None:
             
@@ -1174,6 +1279,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_put(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1193,6 +1300,10 @@ class NetworkLoadBalancersApi:
 
         Updates the entire network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -1220,6 +1331,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_put_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -1249,6 +1362,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_put_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1268,6 +1383,10 @@ class NetworkLoadBalancersApi:
 
         Updates the entire network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -1295,6 +1414,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_put_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -1324,6 +1445,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_put_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1343,6 +1466,10 @@ class NetworkLoadBalancersApi:
 
         Updates the entire network address load balancer configuration.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param load_balancer: Address load balancer configuration (required)
         :type load_balancer: NetworkLoadBalancerPut
         :param project: Project name
@@ -1370,6 +1497,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_put_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -1394,6 +1523,8 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_put_serialize(
         self,
+        network_name,
+        listen_address,
         load_balancer,
         project,
         _request_auth,
@@ -1417,6 +1548,10 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
+        if listen_address is not None:
+            _path_params['listenAddress'] = listen_address
         # process the query parameters
         if project is not None:
             
@@ -1476,6 +1611,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_state_get(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1494,6 +1631,10 @@ class NetworkLoadBalancersApi:
 
         Get the current state of a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1519,6 +1660,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_state_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1545,6 +1688,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_state_get_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1563,6 +1708,10 @@ class NetworkLoadBalancersApi:
 
         Get the current state of a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1588,6 +1737,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_state_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1614,6 +1765,8 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancer_state_get_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
+        listen_address: Annotated[StrictStr, Field(description="Path parameter: listenAddress")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1632,6 +1785,10 @@ class NetworkLoadBalancersApi:
 
         Get the current state of a specific network address load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
+        :param listen_address: Path parameter: listenAddress (required)
+        :type listen_address: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1657,6 +1814,8 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancer_state_get_serialize(
+            network_name=network_name,
+            listen_address=listen_address,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1678,6 +1837,8 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancer_state_get_serialize(
         self,
+        network_name,
+        listen_address,
         project,
         _request_auth,
         _content_type,
@@ -1700,6 +1861,10 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
+        if listen_address is not None:
+            _path_params['listenAddress'] = listen_address
         # process the query parameters
         if project is not None:
             
@@ -1744,6 +1909,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_get(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1763,6 +1929,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (URLs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -1790,6 +1958,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_get_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -1817,6 +1986,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_get_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1836,6 +2006,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (URLs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -1863,6 +2035,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_get_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -1890,6 +2063,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_get_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1909,6 +2083,8 @@ class NetworkLoadBalancersApi:
 
         Returns a list of network address load balancers (URLs).
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param project: Project name
         :type project: str
         :param filter: Collection filter
@@ -1936,6 +2112,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_get_serialize(
+            network_name=network_name,
             project=project,
             filter=filter,
             _request_auth=_request_auth,
@@ -1958,6 +2135,7 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancers_get_serialize(
         self,
+        network_name,
         project,
         filter,
         _request_auth,
@@ -1981,6 +2159,8 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
         # process the query parameters
         if project is not None:
             
@@ -2029,6 +2209,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_post(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2048,6 +2229,8 @@ class NetworkLoadBalancersApi:
 
         Creates a new network load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param load_balancer: Load Balancer (required)
         :type load_balancer: NetworkLoadBalancersPost
         :param project: Project name
@@ -2075,6 +2258,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_post_serialize(
+            network_name=network_name,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -2103,6 +2287,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_post_with_http_info(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2122,6 +2307,8 @@ class NetworkLoadBalancersApi:
 
         Creates a new network load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param load_balancer: Load Balancer (required)
         :type load_balancer: NetworkLoadBalancersPost
         :param project: Project name
@@ -2149,6 +2336,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_post_serialize(
+            network_name=network_name,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -2177,6 +2365,7 @@ class NetworkLoadBalancersApi:
     @validate_call
     async def network_load_balancers_post_without_preload_content(
         self,
+        network_name: Annotated[StrictStr, Field(description="Path parameter: networkName")],
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2196,6 +2385,8 @@ class NetworkLoadBalancersApi:
 
         Creates a new network load balancer.
 
+        :param network_name: Path parameter: networkName (required)
+        :type network_name: str
         :param load_balancer: Load Balancer (required)
         :type load_balancer: NetworkLoadBalancersPost
         :param project: Project name
@@ -2223,6 +2414,7 @@ class NetworkLoadBalancersApi:
         """ # noqa: E501
 
         _param = self._network_load_balancers_post_serialize(
+            network_name=network_name,
             load_balancer=load_balancer,
             project=project,
             _request_auth=_request_auth,
@@ -2246,6 +2438,7 @@ class NetworkLoadBalancersApi:
 
     def _network_load_balancers_post_serialize(
         self,
+        network_name,
         load_balancer,
         project,
         _request_auth,
@@ -2269,6 +2462,8 @@ class NetworkLoadBalancersApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if network_name is not None:
+            _path_params['networkName'] = network_name
         # process the query parameters
         if project is not None:
             

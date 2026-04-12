@@ -4,18 +4,18 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**profile_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profile_delete) | **DELETE** /1.0/profiles/{name} | Delete the profile
-[**profile_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profile_get) | **GET** /1.0/profiles/{name} | Get the profile
-[**profile_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profile_patch) | **PATCH** /1.0/profiles/{name} | Partially update the profile
-[**profile_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profile_post) | **POST** /1.0/profiles/{name} | Rename the profile
-[**profile_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profile_put) | **PUT** /1.0/profiles/{name} | Update the profile
-[**profiles_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profiles_get) | **GET** /1.0/profiles | Get the profiles
-[**profiles_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profiles_get_recursion1) | **GET** /1.0/profiles?recursion&#x3D;1 | Get the profiles
-[**profiles_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesApi.md#profiles_post) | **POST** /1.0/profiles | Add a profile
+[**profile_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profile_delete) | **DELETE** /1.0/profiles/{name} | Delete the profile
+[**profile_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profile_get) | **GET** /1.0/profiles/{name} | Get the profile
+[**profile_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profile_patch) | **PATCH** /1.0/profiles/{name} | Partially update the profile
+[**profile_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profile_post) | **POST** /1.0/profiles/{name} | Rename the profile
+[**profile_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profile_put) | **PUT** /1.0/profiles/{name} | Update the profile
+[**profiles_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profiles_get) | **GET** /1.0/profiles | Get the profiles
+[**profiles_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profiles_get_recursion1) | **GET** /1.0/profiles?recursion&#x3D;1 | Get the profiles
+[**profiles_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesApi.md#profiles_post) | **POST** /1.0/profiles | Add a profile
 
 
 # **profile_delete**
-> ServerPut200Response profile_delete(project=project)
+> ServerPut200Response profile_delete(name, project=project)
 
 Delete the profile
 
@@ -41,11 +41,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProfilesApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the profile
-        api_response = await api_instance.profile_delete(project=project)
+        api_response = await api_instance.profile_delete(name, project=project)
         print("The response of ProfilesApi->profile_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,11 +60,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -86,7 +88,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **profile_get**
-> ProfileGet200Response profile_get(project=project)
+> ProfileGet200Response profile_get(name, project=project)
 
 Get the profile
 
@@ -112,11 +114,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProfilesApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the profile
-        api_response = await api_instance.profile_get(project=project)
+        api_response = await api_instance.profile_get(name, project=project)
         print("The response of ProfilesApi->profile_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -130,11 +133,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ProfileGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfileGet200Response.md)
+[**ProfileGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfileGet200Response.md)
 
 ### Authorization
 
@@ -156,7 +160,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **profile_patch**
-> ServerPut200Response profile_patch(profile, project=project)
+> ServerPut200Response profile_patch(name, profile, project=project)
 
 Partially update the profile
 
@@ -183,12 +187,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProfilesApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     profile = pyincusd.ProfilePut() # ProfilePut | Profile configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Partially update the profile
-        api_response = await api_instance.profile_patch(profile, project=project)
+        api_response = await api_instance.profile_patch(name, profile, project=project)
         print("The response of ProfilesApi->profile_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -202,12 +207,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile** | [**ProfilePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilePut.md)| Profile configuration | 
+ **name** | **str**| Path parameter: name | 
+ **profile** | [**ProfilePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilePut.md)| Profile configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -231,7 +237,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **profile_post**
-> ServerPut200Response profile_post(profile, project=project)
+> ServerPut200Response profile_post(name, profile, project=project)
 
 Rename the profile
 
@@ -258,12 +264,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProfilesApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     profile = pyincusd.ProfilePost() # ProfilePost | Profile rename request
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Rename the profile
-        api_response = await api_instance.profile_post(profile, project=project)
+        api_response = await api_instance.profile_post(name, profile, project=project)
         print("The response of ProfilesApi->profile_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -277,12 +284,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile** | [**ProfilePost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilePost.md)| Profile rename request | 
+ **name** | **str**| Path parameter: name | 
+ **profile** | [**ProfilePost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilePost.md)| Profile rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -305,7 +313,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **profile_put**
-> ServerPut200Response profile_put(profile, project=project)
+> ServerPut200Response profile_put(name, profile, project=project)
 
 Update the profile
 
@@ -332,12 +340,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProfilesApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     profile = pyincusd.ProfilePut() # ProfilePut | Profile configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Update the profile
-        api_response = await api_instance.profile_put(profile, project=project)
+        api_response = await api_instance.profile_put(name, profile, project=project)
         print("The response of ProfilesApi->profile_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -351,12 +360,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile** | [**ProfilePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilePut.md)| Profile configuration | 
+ **name** | **str**| Path parameter: name | 
+ **profile** | [**ProfilePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilePut.md)| Profile configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -432,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProfilesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesGet200Response.md)
+[**ProfilesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesGet200Response.md)
 
 ### Authorization
 
@@ -506,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProfilesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesGetRecursion1200Response.md)
+[**ProfilesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -574,12 +584,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **profile** | [**ProfilesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ProfilesPost.md)| Profile | 
+ **profile** | [**ProfilesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ProfilesPost.md)| Profile | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 

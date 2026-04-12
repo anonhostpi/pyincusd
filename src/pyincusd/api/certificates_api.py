@@ -47,6 +47,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_delete(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -64,6 +65,8 @@ class CertificatesApi:
 
         Removes the certificate from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -87,6 +90,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_delete_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -113,6 +117,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_delete_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -130,6 +135,8 @@ class CertificatesApi:
 
         Removes the certificate from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -153,6 +160,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_delete_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -179,6 +187,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_delete_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -196,6 +205,8 @@ class CertificatesApi:
 
         Removes the certificate from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -219,6 +230,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_delete_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -240,6 +252,7 @@ class CertificatesApi:
 
     def _certificate_delete_serialize(
         self,
+        fingerprint,
         _request_auth,
         _content_type,
         _headers,
@@ -261,6 +274,8 @@ class CertificatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -301,6 +316,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_get(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -318,6 +334,8 @@ class CertificatesApi:
 
         Gets a specific certificate entry from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -341,6 +359,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_get_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -366,6 +385,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_get_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -383,6 +403,8 @@ class CertificatesApi:
 
         Gets a specific certificate entry from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -406,6 +428,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_get_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -431,6 +454,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_get_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -448,6 +472,8 @@ class CertificatesApi:
 
         Gets a specific certificate entry from the trust store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -471,6 +497,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_get_serialize(
+            fingerprint=fingerprint,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -491,6 +518,7 @@ class CertificatesApi:
 
     def _certificate_get_serialize(
         self,
+        fingerprint,
         _request_auth,
         _content_type,
         _headers,
@@ -512,6 +540,8 @@ class CertificatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -552,6 +582,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_patch(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -570,6 +601,8 @@ class CertificatesApi:
 
         Updates a subset of the certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -595,6 +628,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_patch_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -623,6 +657,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_patch_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -641,6 +676,8 @@ class CertificatesApi:
 
         Updates a subset of the certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -666,6 +703,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_patch_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -694,6 +732,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_patch_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -712,6 +751,8 @@ class CertificatesApi:
 
         Updates a subset of the certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -737,6 +778,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_patch_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -760,6 +802,7 @@ class CertificatesApi:
 
     def _certificate_patch_serialize(
         self,
+        fingerprint,
         certificate,
         _request_auth,
         _content_type,
@@ -782,6 +825,8 @@ class CertificatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -837,6 +882,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_put(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -855,6 +901,8 @@ class CertificatesApi:
 
         Updates the entire certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -880,6 +928,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_put_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -908,6 +957,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_put_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -926,6 +976,8 @@ class CertificatesApi:
 
         Updates the entire certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -951,6 +1003,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_put_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -979,6 +1032,7 @@ class CertificatesApi:
     @validate_call
     async def certificate_put_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
             None,
@@ -997,6 +1051,8 @@ class CertificatesApi:
 
         Updates the entire certificate configuration.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param certificate: Certificate configuration (required)
         :type certificate: CertificatePut
         :param _request_timeout: timeout setting for this request. If one
@@ -1022,6 +1078,7 @@ class CertificatesApi:
         """ # noqa: E501
 
         _param = self._certificate_put_serialize(
+            fingerprint=fingerprint,
             certificate=certificate,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1045,6 +1102,7 @@ class CertificatesApi:
 
     def _certificate_put_serialize(
         self,
+        fingerprint,
         certificate,
         _request_auth,
         _content_type,
@@ -1067,6 +1125,8 @@ class CertificatesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         # process the header parameters
         # process the form parameters

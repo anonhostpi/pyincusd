@@ -48,6 +48,7 @@ class ProfilesApi:
     @validate_call
     async def profile_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -66,6 +67,8 @@ class ProfilesApi:
 
         Removes the profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -91,6 +94,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -118,6 +122,7 @@ class ProfilesApi:
     @validate_call
     async def profile_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -136,6 +141,8 @@ class ProfilesApi:
 
         Removes the profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -161,6 +168,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -188,6 +196,7 @@ class ProfilesApi:
     @validate_call
     async def profile_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -206,6 +215,8 @@ class ProfilesApi:
 
         Removes the profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -231,6 +242,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -253,6 +265,7 @@ class ProfilesApi:
 
     def _profile_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -275,6 +288,8 @@ class ProfilesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -319,6 +334,7 @@ class ProfilesApi:
     @validate_call
     async def profile_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -337,6 +353,8 @@ class ProfilesApi:
 
         Gets a specific profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -362,6 +380,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -388,6 +407,7 @@ class ProfilesApi:
     @validate_call
     async def profile_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -406,6 +426,8 @@ class ProfilesApi:
 
         Gets a specific profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -431,6 +453,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -457,6 +480,7 @@ class ProfilesApi:
     @validate_call
     async def profile_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -475,6 +499,8 @@ class ProfilesApi:
 
         Gets a specific profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -500,6 +526,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -521,6 +548,7 @@ class ProfilesApi:
 
     def _profile_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -543,6 +571,8 @@ class ProfilesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -587,6 +617,7 @@ class ProfilesApi:
     @validate_call
     async def profile_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -606,6 +637,8 @@ class ProfilesApi:
 
         Updates a subset of the profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -633,6 +666,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_patch_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -662,6 +696,7 @@ class ProfilesApi:
     @validate_call
     async def profile_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -681,6 +716,8 @@ class ProfilesApi:
 
         Updates a subset of the profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -708,6 +745,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_patch_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -737,6 +775,7 @@ class ProfilesApi:
     @validate_call
     async def profile_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -756,6 +795,8 @@ class ProfilesApi:
 
         Updates a subset of the profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -783,6 +824,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_patch_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -807,6 +849,7 @@ class ProfilesApi:
 
     def _profile_patch_serialize(
         self,
+        name,
         profile,
         project,
         _request_auth,
@@ -830,6 +873,8 @@ class ProfilesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -889,6 +934,7 @@ class ProfilesApi:
     @validate_call
     async def profile_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -908,6 +954,8 @@ class ProfilesApi:
 
         Renames an existing profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile rename request (required)
         :type profile: ProfilePost
         :param project: Project name
@@ -935,6 +983,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_post_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -963,6 +1012,7 @@ class ProfilesApi:
     @validate_call
     async def profile_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -982,6 +1032,8 @@ class ProfilesApi:
 
         Renames an existing profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile rename request (required)
         :type profile: ProfilePost
         :param project: Project name
@@ -1009,6 +1061,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_post_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -1037,6 +1090,7 @@ class ProfilesApi:
     @validate_call
     async def profile_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1056,6 +1110,8 @@ class ProfilesApi:
 
         Renames an existing profile.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile rename request (required)
         :type profile: ProfilePost
         :param project: Project name
@@ -1083,6 +1139,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_post_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -1106,6 +1163,7 @@ class ProfilesApi:
 
     def _profile_post_serialize(
         self,
+        name,
         profile,
         project,
         _request_auth,
@@ -1129,6 +1187,8 @@ class ProfilesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1188,6 +1248,7 @@ class ProfilesApi:
     @validate_call
     async def profile_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1207,6 +1268,8 @@ class ProfilesApi:
 
         Updates the entire profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -1234,6 +1297,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_put_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -1263,6 +1327,7 @@ class ProfilesApi:
     @validate_call
     async def profile_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1282,6 +1347,8 @@ class ProfilesApi:
 
         Updates the entire profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -1309,6 +1376,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_put_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -1338,6 +1406,7 @@ class ProfilesApi:
     @validate_call
     async def profile_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1357,6 +1426,8 @@ class ProfilesApi:
 
         Updates the entire profile configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param profile: Profile configuration (required)
         :type profile: ProfilePut
         :param project: Project name
@@ -1384,6 +1455,7 @@ class ProfilesApi:
         """ # noqa: E501
 
         _param = self._profile_put_serialize(
+            name=name,
             profile=profile,
             project=project,
             _request_auth=_request_auth,
@@ -1408,6 +1480,7 @@ class ProfilesApi:
 
     def _profile_put_serialize(
         self,
+        name,
         profile,
         project,
         _request_auth,
@@ -1431,6 +1504,8 @@ class ProfilesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             

@@ -4,17 +4,17 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_forward_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forward_delete) | **DELETE** /1.0/networks/{networkName}/forwards/{listenAddress} | Delete the network address forward
-[**network_forward_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forward_get) | **GET** /1.0/networks/{networkName}/forwards/{listenAddress} | Get the network address forward
-[**network_forward_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forward_get_recursion1) | **GET** /1.0/networks/{networkName}/forwards?recursion&#x3D;1 | Get the network address forwards
-[**network_forward_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forward_patch) | **PATCH** /1.0/networks/{networkName}/forwards/{listenAddress} | Partially update the network address forward
-[**network_forward_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forward_put) | **PUT** /1.0/networks/{networkName}/forwards/{listenAddress} | Update the network address forward
-[**network_forwards_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forwards_get) | **GET** /1.0/networks/{networkName}/forwards | Get the network address forwards
-[**network_forwards_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsApi.md#network_forwards_post) | **POST** /1.0/networks/{networkName}/forwards | Add a network address forward
+[**network_forward_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forward_delete) | **DELETE** /1.0/networks/{networkName}/forwards/{listenAddress} | Delete the network address forward
+[**network_forward_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forward_get) | **GET** /1.0/networks/{networkName}/forwards/{listenAddress} | Get the network address forward
+[**network_forward_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forward_get_recursion1) | **GET** /1.0/networks/{networkName}/forwards?recursion&#x3D;1 | Get the network address forwards
+[**network_forward_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forward_patch) | **PATCH** /1.0/networks/{networkName}/forwards/{listenAddress} | Partially update the network address forward
+[**network_forward_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forward_put) | **PUT** /1.0/networks/{networkName}/forwards/{listenAddress} | Update the network address forward
+[**network_forwards_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forwards_get) | **GET** /1.0/networks/{networkName}/forwards | Get the network address forwards
+[**network_forwards_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsApi.md#network_forwards_post) | **POST** /1.0/networks/{networkName}/forwards | Add a network address forward
 
 
 # **network_forward_delete**
-> ServerPut200Response network_forward_delete(project=project)
+> ServerPut200Response network_forward_delete(network_name, listen_address, project=project)
 
 Delete the network address forward
 
@@ -40,11 +40,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
+    listen_address = 'listen_address_example' # str | Path parameter: listenAddress
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the network address forward
-        api_response = await api_instance.network_forward_delete(project=project)
+        api_response = await api_instance.network_forward_delete(network_name, listen_address, project=project)
         print("The response of NetworkForwardsApi->network_forward_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -58,11 +60,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **network_name** | **str**| Path parameter: networkName | 
+ **listen_address** | **str**| Path parameter: listenAddress | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -85,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forward_get**
-> NetworkForwardGet200Response network_forward_get(project=project)
+> NetworkForwardGet200Response network_forward_get(network_name, listen_address, project=project)
 
 Get the network address forward
 
@@ -111,11 +115,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
+    listen_address = 'listen_address_example' # str | Path parameter: listenAddress
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the network address forward
-        api_response = await api_instance.network_forward_get(project=project)
+        api_response = await api_instance.network_forward_get(network_name, listen_address, project=project)
         print("The response of NetworkForwardsApi->network_forward_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -129,11 +135,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **network_name** | **str**| Path parameter: networkName | 
+ **listen_address** | **str**| Path parameter: listenAddress | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**NetworkForwardGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardGet200Response.md)
+[**NetworkForwardGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardGet200Response.md)
 
 ### Authorization
 
@@ -155,7 +163,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forward_get_recursion1**
-> NetworkForwardGetRecursion1200Response network_forward_get_recursion1(project=project, filter=filter)
+> NetworkForwardGetRecursion1200Response network_forward_get_recursion1(network_name, project=project, filter=filter)
 
 Get the network address forwards
 
@@ -181,12 +189,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
     project = 'project_example' # str | Project name (optional)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the network address forwards
-        api_response = await api_instance.network_forward_get_recursion1(project=project, filter=filter)
+        api_response = await api_instance.network_forward_get_recursion1(network_name, project=project, filter=filter)
         print("The response of NetworkForwardsApi->network_forward_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -200,12 +209,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **network_name** | **str**| Path parameter: networkName | 
  **project** | **str**| Project name | [optional] 
  **filter** | **str**| Collection filter | [optional] 
 
 ### Return type
 
-[**NetworkForwardGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardGetRecursion1200Response.md)
+[**NetworkForwardGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -227,7 +237,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forward_patch**
-> ServerPut200Response network_forward_patch(forward, project=project)
+> ServerPut200Response network_forward_patch(network_name, listen_address, forward, project=project)
 
 Partially update the network address forward
 
@@ -254,12 +264,14 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
+    listen_address = 'listen_address_example' # str | Path parameter: listenAddress
     forward = pyincusd.NetworkForwardPut() # NetworkForwardPut | Address forward configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Partially update the network address forward
-        api_response = await api_instance.network_forward_patch(forward, project=project)
+        api_response = await api_instance.network_forward_patch(network_name, listen_address, forward, project=project)
         print("The response of NetworkForwardsApi->network_forward_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -273,12 +285,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **forward** | [**NetworkForwardPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardPut.md)| Address forward configuration | 
+ **network_name** | **str**| Path parameter: networkName | 
+ **listen_address** | **str**| Path parameter: listenAddress | 
+ **forward** | [**NetworkForwardPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardPut.md)| Address forward configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -302,7 +316,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forward_put**
-> ServerPut200Response network_forward_put(forward, project=project)
+> ServerPut200Response network_forward_put(network_name, listen_address, forward, project=project)
 
 Update the network address forward
 
@@ -329,12 +343,14 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
+    listen_address = 'listen_address_example' # str | Path parameter: listenAddress
     forward = pyincusd.NetworkForwardPut() # NetworkForwardPut | Address forward configuration
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Update the network address forward
-        api_response = await api_instance.network_forward_put(forward, project=project)
+        api_response = await api_instance.network_forward_put(network_name, listen_address, forward, project=project)
         print("The response of NetworkForwardsApi->network_forward_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -348,12 +364,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **forward** | [**NetworkForwardPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardPut.md)| Address forward configuration | 
+ **network_name** | **str**| Path parameter: networkName | 
+ **listen_address** | **str**| Path parameter: listenAddress | 
+ **forward** | [**NetworkForwardPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardPut.md)| Address forward configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -377,7 +395,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forwards_get**
-> NetworkForwardsGet200Response network_forwards_get(project=project, filter=filter)
+> NetworkForwardsGet200Response network_forwards_get(network_name, project=project, filter=filter)
 
 Get the network address forwards
 
@@ -403,12 +421,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
     project = 'project_example' # str | Project name (optional)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the network address forwards
-        api_response = await api_instance.network_forwards_get(project=project, filter=filter)
+        api_response = await api_instance.network_forwards_get(network_name, project=project, filter=filter)
         print("The response of NetworkForwardsApi->network_forwards_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -422,12 +441,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **network_name** | **str**| Path parameter: networkName | 
  **project** | **str**| Project name | [optional] 
  **filter** | **str**| Collection filter | [optional] 
 
 ### Return type
 
-[**NetworkForwardsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsGet200Response.md)
+[**NetworkForwardsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsGet200Response.md)
 
 ### Authorization
 
@@ -449,7 +469,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_forwards_post**
-> ServerPut200Response network_forwards_post(forward, project=project)
+> ServerPut200Response network_forwards_post(network_name, forward, project=project)
 
 Add a network address forward
 
@@ -476,12 +496,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkForwardsApi(api_client)
+    network_name = 'network_name_example' # str | Path parameter: networkName
     forward = pyincusd.NetworkForwardsPost() # NetworkForwardsPost | Forward
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Add a network address forward
-        api_response = await api_instance.network_forwards_post(forward, project=project)
+        api_response = await api_instance.network_forwards_post(network_name, forward, project=project)
         print("The response of NetworkForwardsApi->network_forwards_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -495,12 +516,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **forward** | [**NetworkForwardsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkForwardsPost.md)| Forward | 
+ **network_name** | **str**| Path parameter: networkName | 
+ **forward** | [**NetworkForwardsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkForwardsPost.md)| Forward | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 

@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field
+from pydantic import Field, StrictStr
 from typing_extensions import Annotated
 from pyincusd.models.cluster_group_get200_response import ClusterGroupGet200Response
 from pyincusd.models.cluster_group_post import ClusterGroupPost
@@ -46,6 +46,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,6 +64,8 @@ class ClusterGroupsApi:
 
         Removes the cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -86,6 +89,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -112,6 +116,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -129,6 +134,8 @@ class ClusterGroupsApi:
 
         Removes the cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,6 +159,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,6 +186,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -195,6 +204,8 @@ class ClusterGroupsApi:
 
         Removes the cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -218,6 +229,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -239,6 +251,7 @@ class ClusterGroupsApi:
 
     def _cluster_group_delete_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -260,6 +273,8 @@ class ClusterGroupsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -300,6 +315,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -317,6 +333,8 @@ class ClusterGroupsApi:
 
         Gets a specific cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -340,6 +358,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -365,6 +384,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -382,6 +402,8 @@ class ClusterGroupsApi:
 
         Gets a specific cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -405,6 +427,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -430,6 +453,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -447,6 +471,8 @@ class ClusterGroupsApi:
 
         Gets a specific cluster group.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -470,6 +496,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -490,6 +517,7 @@ class ClusterGroupsApi:
 
     def _cluster_group_get_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -511,6 +539,8 @@ class ClusterGroupsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -551,6 +581,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -569,6 +600,8 @@ class ClusterGroupsApi:
 
         Updates the cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -594,6 +627,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_patch_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -622,6 +656,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -640,6 +675,8 @@ class ClusterGroupsApi:
 
         Updates the cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -665,6 +702,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_patch_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -693,6 +731,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -711,6 +750,8 @@ class ClusterGroupsApi:
 
         Updates the cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -736,6 +777,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_patch_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -759,6 +801,7 @@ class ClusterGroupsApi:
 
     def _cluster_group_patch_serialize(
         self,
+        name,
         cluster_group,
         _request_auth,
         _content_type,
@@ -781,6 +824,8 @@ class ClusterGroupsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -836,7 +881,8 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_post(
         self,
-        name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        name2: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -854,8 +900,10 @@ class ClusterGroupsApi:
 
         Renames an existing cluster group.
 
-        :param name: Cluster group rename request (required)
-        :type name: ClusterGroupPost
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param name2: Cluster group rename request (required)
+        :type name2: ClusterGroupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -880,6 +928,7 @@ class ClusterGroupsApi:
 
         _param = self._cluster_group_post_serialize(
             name=name,
+            name2=name2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -906,7 +955,8 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_post_with_http_info(
         self,
-        name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        name2: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -924,8 +974,10 @@ class ClusterGroupsApi:
 
         Renames an existing cluster group.
 
-        :param name: Cluster group rename request (required)
-        :type name: ClusterGroupPost
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param name2: Cluster group rename request (required)
+        :type name2: ClusterGroupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -950,6 +1002,7 @@ class ClusterGroupsApi:
 
         _param = self._cluster_group_post_serialize(
             name=name,
+            name2=name2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -976,7 +1029,8 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_post_without_preload_content(
         self,
-        name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        name2: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -994,8 +1048,10 @@ class ClusterGroupsApi:
 
         Renames an existing cluster group.
 
-        :param name: Cluster group rename request (required)
-        :type name: ClusterGroupPost
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param name2: Cluster group rename request (required)
+        :type name2: ClusterGroupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1020,6 +1076,7 @@ class ClusterGroupsApi:
 
         _param = self._cluster_group_post_serialize(
             name=name,
+            name2=name2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1042,6 +1099,7 @@ class ClusterGroupsApi:
     def _cluster_group_post_serialize(
         self,
         name,
+        name2,
         _request_auth,
         _content_type,
         _headers,
@@ -1063,12 +1121,14 @@ class ClusterGroupsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if name is not None:
-            _body_params = name
+        if name2 is not None:
+            _body_params = name2
 
 
         # set the HTTP header `Accept`
@@ -1118,6 +1178,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -1136,6 +1197,8 @@ class ClusterGroupsApi:
 
         Updates the entire cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1161,6 +1224,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_put_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1189,6 +1253,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -1207,6 +1272,8 @@ class ClusterGroupsApi:
 
         Updates the entire cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1232,6 +1299,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_put_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1260,6 +1328,7 @@ class ClusterGroupsApi:
     @validate_call
     async def cluster_group_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
             None,
@@ -1278,6 +1347,8 @@ class ClusterGroupsApi:
 
         Updates the entire cluster group configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster_group: cluster group configuration (required)
         :type cluster_group: ClusterGroupPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1303,6 +1374,7 @@ class ClusterGroupsApi:
         """ # noqa: E501
 
         _param = self._cluster_group_put_serialize(
+            name=name,
             cluster_group=cluster_group,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1326,6 +1398,7 @@ class ClusterGroupsApi:
 
     def _cluster_group_put_serialize(
         self,
+        name,
         cluster_group,
         _request_auth,
         _content_type,
@@ -1348,6 +1421,8 @@ class ClusterGroupsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters

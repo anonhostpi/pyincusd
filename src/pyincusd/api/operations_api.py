@@ -45,6 +45,7 @@ class OperationsApi:
     @validate_call
     async def operation_delete(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,6 +63,8 @@ class OperationsApi:
 
         Cancels the operation if supported.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -85,6 +88,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_delete_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -111,6 +115,7 @@ class OperationsApi:
     @validate_call
     async def operation_delete_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -128,6 +133,8 @@ class OperationsApi:
 
         Cancels the operation if supported.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -151,6 +158,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_delete_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -177,6 +185,7 @@ class OperationsApi:
     @validate_call
     async def operation_delete_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -194,6 +203,8 @@ class OperationsApi:
 
         Cancels the operation if supported.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -217,6 +228,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_delete_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -238,6 +250,7 @@ class OperationsApi:
 
     def _operation_delete_serialize(
         self,
+        id,
         _request_auth,
         _content_type,
         _headers,
@@ -259,6 +272,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -299,6 +314,7 @@ class OperationsApi:
     @validate_call
     async def operation_get(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -316,6 +332,8 @@ class OperationsApi:
 
         Gets the operation state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -339,6 +357,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_get_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -364,6 +383,7 @@ class OperationsApi:
     @validate_call
     async def operation_get_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -381,6 +401,8 @@ class OperationsApi:
 
         Gets the operation state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -404,6 +426,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_get_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -429,6 +452,7 @@ class OperationsApi:
     @validate_call
     async def operation_get_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -446,6 +470,8 @@ class OperationsApi:
 
         Gets the operation state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -469,6 +495,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_get_serialize(
+            id=id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -489,6 +516,7 @@ class OperationsApi:
 
     def _operation_get_serialize(
         self,
+        id,
         _request_auth,
         _content_type,
         _headers,
@@ -510,6 +538,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -550,6 +580,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
             None,
@@ -568,6 +599,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param timeout: Timeout in seconds (-1 means never)
         :type timeout: int
         :param _request_timeout: timeout setting for this request. If one
@@ -593,6 +626,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_serialize(
+            id=id,
             timeout=timeout,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -619,6 +653,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
             None,
@@ -637,6 +672,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param timeout: Timeout in seconds (-1 means never)
         :type timeout: int
         :param _request_timeout: timeout setting for this request. If one
@@ -662,6 +699,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_serialize(
+            id=id,
             timeout=timeout,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -688,6 +726,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
             None,
@@ -706,6 +745,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param timeout: Timeout in seconds (-1 means never)
         :type timeout: int
         :param _request_timeout: timeout setting for this request. If one
@@ -731,6 +772,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_serialize(
+            id=id,
             timeout=timeout,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -752,6 +794,7 @@ class OperationsApi:
 
     def _operation_wait_get_serialize(
         self,
+        id,
         timeout,
         _request_auth,
         _content_type,
@@ -774,6 +817,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         if timeout is not None:
             
@@ -818,6 +863,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get_untrusted(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -837,6 +883,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.  When accessed by an untrusted user, the secret token must be provided.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param timeout: Timeout in seconds (-1 means never)
@@ -864,6 +912,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_untrusted_serialize(
+            id=id,
             secret=secret,
             timeout=timeout,
             _request_auth=_request_auth,
@@ -891,6 +940,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get_untrusted_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -910,6 +960,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.  When accessed by an untrusted user, the secret token must be provided.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param timeout: Timeout in seconds (-1 means never)
@@ -937,6 +989,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_untrusted_serialize(
+            id=id,
             secret=secret,
             timeout=timeout,
             _request_auth=_request_auth,
@@ -964,6 +1017,7 @@ class OperationsApi:
     @validate_call
     async def operation_wait_get_untrusted_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -983,6 +1037,8 @@ class OperationsApi:
 
         Waits for the operation to reach a final state (or timeout) and retrieve its final state.  When accessed by an untrusted user, the secret token must be provided.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param timeout: Timeout in seconds (-1 means never)
@@ -1010,6 +1066,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_wait_get_untrusted_serialize(
+            id=id,
             secret=secret,
             timeout=timeout,
             _request_auth=_request_auth,
@@ -1032,6 +1089,7 @@ class OperationsApi:
 
     def _operation_wait_get_untrusted_serialize(
         self,
+        id,
         secret,
         timeout,
         _request_auth,
@@ -1055,6 +1113,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         if secret is not None:
             
@@ -1103,6 +1163,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1121,6 +1182,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1146,6 +1209,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1172,6 +1236,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1190,6 +1255,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1215,6 +1282,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1241,6 +1309,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1259,6 +1328,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1284,6 +1355,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1305,6 +1377,7 @@ class OperationsApi:
 
     def _operation_websocket_get_serialize(
         self,
+        id,
         secret,
         _request_auth,
         _content_type,
@@ -1327,6 +1400,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         if secret is not None:
             
@@ -1371,6 +1446,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get_untrusted(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1389,6 +1465,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.  The untrusted endpoint is used by the target server to connect to the source server. Authentication is performed through the secret token.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1414,6 +1492,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_untrusted_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1440,6 +1519,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get_untrusted_with_http_info(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1458,6 +1538,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.  The untrusted endpoint is used by the target server to connect to the source server. Authentication is performed through the secret token.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1483,6 +1565,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_untrusted_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1509,6 +1592,7 @@ class OperationsApi:
     @validate_call
     async def operation_websocket_get_untrusted_without_preload_content(
         self,
+        id: Annotated[StrictStr, Field(description="Path parameter: id")],
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
             None,
@@ -1527,6 +1611,8 @@ class OperationsApi:
 
         Connects to an associated websocket stream for the operation. This should almost never be done directly by a client, instead it's meant for server to server communication with the client only relaying the connection information to the servers.  The untrusted endpoint is used by the target server to connect to the source server. Authentication is performed through the secret token.
 
+        :param id: Path parameter: id (required)
+        :type id: str
         :param secret: Authentication token
         :type secret: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1552,6 +1638,7 @@ class OperationsApi:
         """ # noqa: E501
 
         _param = self._operation_websocket_get_untrusted_serialize(
+            id=id,
             secret=secret,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1573,6 +1660,7 @@ class OperationsApi:
 
     def _operation_websocket_get_untrusted_serialize(
         self,
+        id,
         secret,
         _request_auth,
         _content_type,
@@ -1595,6 +1683,8 @@ class OperationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
         # process the query parameters
         if secret is not None:
             

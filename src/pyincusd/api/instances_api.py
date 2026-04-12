@@ -73,6 +73,7 @@ class InstancesApi:
     @validate_call
     async def instance_access(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -91,6 +92,8 @@ class InstancesApi:
 
         Gets the access information for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -116,6 +119,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_access_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -143,6 +147,7 @@ class InstancesApi:
     @validate_call
     async def instance_access_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -161,6 +166,8 @@ class InstancesApi:
 
         Gets the access information for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -186,6 +193,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_access_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -213,6 +221,7 @@ class InstancesApi:
     @validate_call
     async def instance_access_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -231,6 +240,8 @@ class InstancesApi:
 
         Gets the access information for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -256,6 +267,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_access_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -278,6 +290,7 @@ class InstancesApi:
 
     def _instance_access_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -300,6 +313,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -344,6 +359,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -362,6 +379,10 @@ class InstancesApi:
 
         Deletes the instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -387,6 +408,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_delete_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -414,6 +437,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -432,6 +457,10 @@ class InstancesApi:
 
         Deletes the instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -457,6 +486,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_delete_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -484,6 +515,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -502,6 +535,10 @@ class InstancesApi:
 
         Deletes the instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -527,6 +564,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_delete_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -549,6 +588,8 @@ class InstancesApi:
 
     def _instance_backup_delete_serialize(
         self,
+        name,
+        backup,
         project,
         _request_auth,
         _content_type,
@@ -571,6 +612,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if backup is not None:
+            _path_params['backup'] = backup
         # process the query parameters
         if project is not None:
             
@@ -615,6 +660,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_export(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -633,6 +680,10 @@ class InstancesApi:
 
         Download the raw backup file(s) from the server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -658,6 +709,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_export_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -684,6 +737,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_export_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -702,6 +757,10 @@ class InstancesApi:
 
         Download the raw backup file(s) from the server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -727,6 +786,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_export_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -753,6 +814,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_export_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -771,6 +834,10 @@ class InstancesApi:
 
         Download the raw backup file(s) from the server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -796,6 +863,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_export_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -817,6 +886,8 @@ class InstancesApi:
 
     def _instance_backup_export_serialize(
         self,
+        name,
+        backup,
         project,
         _request_auth,
         _content_type,
@@ -839,6 +910,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if backup is not None:
+            _path_params['backup'] = backup
         # process the query parameters
         if project is not None:
             
@@ -883,6 +958,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -901,6 +978,10 @@ class InstancesApi:
 
         Gets a specific instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -926,6 +1007,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_get_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -952,6 +1035,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -970,6 +1055,10 @@ class InstancesApi:
 
         Gets a specific instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -995,6 +1084,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_get_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1021,6 +1112,8 @@ class InstancesApi:
     @validate_call
     async def instance_backup_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1039,6 +1132,10 @@ class InstancesApi:
 
         Gets a specific instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1064,6 +1161,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_get_serialize(
+            name=name,
+            backup=backup,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1085,6 +1184,8 @@ class InstancesApi:
 
     def _instance_backup_get_serialize(
         self,
+        name,
+        backup,
         project,
         _request_auth,
         _content_type,
@@ -1107,6 +1208,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if backup is not None:
+            _path_params['backup'] = backup
         # process the query parameters
         if project is not None:
             
@@ -1151,8 +1256,10 @@ class InstancesApi:
     @validate_call
     async def instance_backup_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
+        backup2: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1170,10 +1277,14 @@ class InstancesApi:
 
         Renames an instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
-        :param backup: Backup rename
-        :type backup: InstanceBackupPost
+        :param backup2: Backup rename
+        :type backup2: InstanceBackupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1197,8 +1308,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_post_serialize(
-            project=project,
+            name=name,
             backup=backup,
+            project=project,
+            backup2=backup2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1225,8 +1338,10 @@ class InstancesApi:
     @validate_call
     async def instance_backup_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
+        backup2: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1244,10 +1359,14 @@ class InstancesApi:
 
         Renames an instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
-        :param backup: Backup rename
-        :type backup: InstanceBackupPost
+        :param backup2: Backup rename
+        :type backup2: InstanceBackupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1271,8 +1390,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_post_serialize(
-            project=project,
+            name=name,
             backup=backup,
+            project=project,
+            backup2=backup2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1299,8 +1420,10 @@ class InstancesApi:
     @validate_call
     async def instance_backup_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        backup: Annotated[StrictStr, Field(description="Path parameter: backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
+        backup2: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1318,10 +1441,14 @@ class InstancesApi:
 
         Renames an instance backup.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param backup: Path parameter: backup (required)
+        :type backup: str
         :param project: Project name
         :type project: str
-        :param backup: Backup rename
-        :type backup: InstanceBackupPost
+        :param backup2: Backup rename
+        :type backup2: InstanceBackupPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1345,8 +1472,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backup_post_serialize(
-            project=project,
+            name=name,
             backup=backup,
+            project=project,
+            backup2=backup2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1368,8 +1497,10 @@ class InstancesApi:
 
     def _instance_backup_post_serialize(
         self,
-        project,
+        name,
         backup,
+        project,
+        backup2,
         _request_auth,
         _content_type,
         _headers,
@@ -1391,6 +1522,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if backup is not None:
+            _path_params['backup'] = backup
         # process the query parameters
         if project is not None:
             
@@ -1399,8 +1534,8 @@ class InstancesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if backup is not None:
-            _body_params = backup
+        if backup2 is not None:
+            _body_params = backup2
 
 
         # set the HTTP header `Accept`
@@ -1450,6 +1585,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1468,6 +1604,8 @@ class InstancesApi:
 
         Returns a list of instance backups (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1493,6 +1631,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1519,6 +1658,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1537,6 +1677,8 @@ class InstancesApi:
 
         Returns a list of instance backups (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1562,6 +1704,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1588,6 +1731,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1606,6 +1750,8 @@ class InstancesApi:
 
         Returns a list of instance backups (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1631,6 +1777,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1652,6 +1799,7 @@ class InstancesApi:
 
     def _instance_backups_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -1674,6 +1822,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1718,6 +1868,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get_recursion1(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1736,6 +1887,8 @@ class InstancesApi:
 
         Returns a list of instance backups (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1761,6 +1914,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1787,6 +1941,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get_recursion1_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1805,6 +1960,8 @@ class InstancesApi:
 
         Returns a list of instance backups (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1830,6 +1987,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1856,6 +2014,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_get_recursion1_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1874,6 +2033,8 @@ class InstancesApi:
 
         Returns a list of instance backups (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1899,6 +2060,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1920,6 +2082,7 @@ class InstancesApi:
 
     def _instance_backups_get_recursion1_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -1942,6 +2105,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1986,6 +2151,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
         _request_timeout: Union[
@@ -2005,6 +2171,8 @@ class InstancesApi:
 
         Creates a new backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param backup: Backup request
@@ -2032,6 +2200,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_post_serialize(
+            name=name,
             project=project,
             backup=backup,
             _request_auth=_request_auth,
@@ -2060,6 +2229,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
         _request_timeout: Union[
@@ -2079,6 +2249,8 @@ class InstancesApi:
 
         Creates a new backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param backup: Backup request
@@ -2106,6 +2278,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_post_serialize(
+            name=name,
             project=project,
             backup=backup,
             _request_auth=_request_auth,
@@ -2134,6 +2307,7 @@ class InstancesApi:
     @validate_call
     async def instance_backups_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
         _request_timeout: Union[
@@ -2153,6 +2327,8 @@ class InstancesApi:
 
         Creates a new backup.  If the `Accept` header is set to `application/octet-stream`, this directly streams the backup tarball to the client without any intermediate operation.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param backup: Backup request
@@ -2180,6 +2356,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_backups_post_serialize(
+            name=name,
             project=project,
             backup=backup,
             _request_auth=_request_auth,
@@ -2203,6 +2380,7 @@ class InstancesApi:
 
     def _instance_backups_post_serialize(
         self,
+        name,
         project,
         backup,
         _request_auth,
@@ -2226,6 +2404,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2286,6 +2466,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2304,6 +2485,8 @@ class InstancesApi:
 
         Clears the console log buffer.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2329,6 +2512,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2357,6 +2541,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2375,6 +2560,8 @@ class InstancesApi:
 
         Clears the console log buffer.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2400,6 +2587,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2428,6 +2616,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -2446,6 +2635,8 @@ class InstancesApi:
 
         Clears the console log buffer.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -2471,6 +2662,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2494,6 +2686,7 @@ class InstancesApi:
 
     def _instance_console_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -2516,6 +2709,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2560,6 +2755,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
         _request_timeout: Union[
@@ -2579,6 +2775,8 @@ class InstancesApi:
 
         Gets the console output for the instance either as text log or as vga screendump.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param type: Console type
@@ -2606,6 +2804,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_get_serialize(
+            name=name,
             project=project,
             type=type,
             _request_auth=_request_auth,
@@ -2635,6 +2834,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
         _request_timeout: Union[
@@ -2654,6 +2854,8 @@ class InstancesApi:
 
         Gets the console output for the instance either as text log or as vga screendump.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param type: Console type
@@ -2681,6 +2883,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_get_serialize(
+            name=name,
             project=project,
             type=type,
             _request_auth=_request_auth,
@@ -2710,6 +2913,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
         _request_timeout: Union[
@@ -2729,6 +2933,8 @@ class InstancesApi:
 
         Gets the console output for the instance either as text log or as vga screendump.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param type: Console type
@@ -2756,6 +2962,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_get_serialize(
+            name=name,
             project=project,
             type=type,
             _request_auth=_request_auth,
@@ -2780,6 +2987,7 @@ class InstancesApi:
 
     def _instance_console_get_serialize(
         self,
+        name,
         project,
         type,
         _request_auth,
@@ -2803,6 +3011,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2851,6 +3061,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
         _request_timeout: Union[
@@ -2870,6 +3081,8 @@ class InstancesApi:
 
         Connects to the console of an instance.  The returned operation metadata will contain two websockets, one for data and one for control.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param console: Console request
@@ -2897,6 +3110,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_post_serialize(
+            name=name,
             project=project,
             console=console,
             _request_auth=_request_auth,
@@ -2925,6 +3139,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
         _request_timeout: Union[
@@ -2944,6 +3159,8 @@ class InstancesApi:
 
         Connects to the console of an instance.  The returned operation metadata will contain two websockets, one for data and one for control.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param console: Console request
@@ -2971,6 +3188,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_post_serialize(
+            name=name,
             project=project,
             console=console,
             _request_auth=_request_auth,
@@ -2999,6 +3217,7 @@ class InstancesApi:
     @validate_call
     async def instance_console_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
         _request_timeout: Union[
@@ -3018,6 +3237,8 @@ class InstancesApi:
 
         Connects to the console of an instance.  The returned operation metadata will contain two websockets, one for data and one for control.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param console: Console request
@@ -3045,6 +3266,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_console_post_serialize(
+            name=name,
             project=project,
             console=console,
             _request_auth=_request_auth,
@@ -3068,6 +3290,7 @@ class InstancesApi:
 
     def _instance_console_post_serialize(
         self,
+        name,
         project,
         console,
         _request_auth,
@@ -3091,6 +3314,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -3150,6 +3375,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_memory_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
         _request_timeout: Union[
@@ -3169,6 +3395,8 @@ class InstancesApi:
 
         Returns memory debug information of a running instance. Only supported for VMs.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param format: Memory dump format
@@ -3196,6 +3424,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_memory_get_serialize(
+            name=name,
             project=project,
             format=format,
             _request_auth=_request_auth,
@@ -3225,6 +3454,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_memory_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
         _request_timeout: Union[
@@ -3244,6 +3474,8 @@ class InstancesApi:
 
         Returns memory debug information of a running instance. Only supported for VMs.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param format: Memory dump format
@@ -3271,6 +3503,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_memory_get_serialize(
+            name=name,
             project=project,
             format=format,
             _request_auth=_request_auth,
@@ -3300,6 +3533,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_memory_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
         _request_timeout: Union[
@@ -3319,6 +3553,8 @@ class InstancesApi:
 
         Returns memory debug information of a running instance. Only supported for VMs.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param format: Memory dump format
@@ -3346,6 +3582,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_memory_get_serialize(
+            name=name,
             project=project,
             format=format,
             _request_auth=_request_auth,
@@ -3370,6 +3607,7 @@ class InstancesApi:
 
     def _instance_debug_memory_get_serialize(
         self,
+        name,
         project,
         format,
         _request_auth,
@@ -3393,6 +3631,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -3441,6 +3681,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_repair_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
         _request_timeout: Union[
@@ -3460,6 +3701,8 @@ class InstancesApi:
 
         Runs an internal repair action on the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -3487,6 +3730,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_repair_post_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -3516,6 +3760,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_repair_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
         _request_timeout: Union[
@@ -3535,6 +3780,8 @@ class InstancesApi:
 
         Runs an internal repair action on the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -3562,6 +3809,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_repair_post_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -3591,6 +3839,7 @@ class InstancesApi:
     @validate_call
     async def instance_debug_repair_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
         _request_timeout: Union[
@@ -3610,6 +3859,8 @@ class InstancesApi:
 
         Runs an internal repair action on the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -3637,6 +3888,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_debug_repair_post_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -3661,6 +3913,7 @@ class InstancesApi:
 
     def _instance_debug_repair_post_serialize(
         self,
+        name,
         project,
         state,
         _request_auth,
@@ -3684,6 +3937,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -3730,6 +3985,7 @@ class InstancesApi:
     @validate_call
     async def instance_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -3748,6 +4004,8 @@ class InstancesApi:
 
         Deletes a specific instance.  This also deletes anything owned by the instance such as snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3773,6 +4031,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3800,6 +4059,7 @@ class InstancesApi:
     @validate_call
     async def instance_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -3818,6 +4078,8 @@ class InstancesApi:
 
         Deletes a specific instance.  This also deletes anything owned by the instance such as snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3843,6 +4105,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3870,6 +4133,7 @@ class InstancesApi:
     @validate_call
     async def instance_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -3888,6 +4152,8 @@ class InstancesApi:
 
         Deletes a specific instance.  This also deletes anything owned by the instance such as snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -3913,6 +4179,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3935,6 +4202,7 @@ class InstancesApi:
 
     def _instance_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -3957,6 +4225,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -4001,6 +4271,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4019,6 +4291,10 @@ class InstancesApi:
 
         Removes the exec record-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4044,6 +4320,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4072,6 +4350,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4090,6 +4370,10 @@ class InstancesApi:
 
         Removes the exec record-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4115,6 +4399,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4143,6 +4429,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4161,6 +4449,10 @@ class InstancesApi:
 
         Removes the exec record-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4186,6 +4478,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4209,6 +4503,8 @@ class InstancesApi:
 
     def _instance_exec_output_delete_serialize(
         self,
+        name,
+        filename,
         project,
         _request_auth,
         _content_type,
@@ -4231,6 +4527,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if filename is not None:
+            _path_params['filename'] = filename
         # process the query parameters
         if project is not None:
             
@@ -4275,6 +4575,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4293,6 +4595,10 @@ class InstancesApi:
 
         Gets the exec-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4318,6 +4624,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4346,6 +4654,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4364,6 +4674,10 @@ class InstancesApi:
 
         Gets the exec-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4389,6 +4703,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4417,6 +4733,8 @@ class InstancesApi:
     @validate_call
     async def instance_exec_output_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4435,6 +4753,10 @@ class InstancesApi:
 
         Gets the exec-output file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4460,6 +4782,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_output_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4483,6 +4807,8 @@ class InstancesApi:
 
     def _instance_exec_output_get_serialize(
         self,
+        name,
+        filename,
         project,
         _request_auth,
         _content_type,
@@ -4505,6 +4831,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if filename is not None:
+            _path_params['filename'] = filename
         # process the query parameters
         if project is not None:
             
@@ -4550,6 +4880,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_outputs_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4568,6 +4899,8 @@ class InstancesApi:
 
         Returns a list of exec record-output files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4593,6 +4926,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_outputs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4620,6 +4954,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_outputs_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4638,6 +4973,8 @@ class InstancesApi:
 
         Returns a list of exec record-output files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4663,6 +5000,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_outputs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4690,6 +5028,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_outputs_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -4708,6 +5047,8 @@ class InstancesApi:
 
         Returns a list of exec record-output files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -4733,6 +5074,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_outputs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4755,6 +5097,7 @@ class InstancesApi:
 
     def _instance_exec_outputs_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -4777,6 +5120,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -4821,6 +5166,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
         _request_timeout: Union[
@@ -4840,6 +5186,8 @@ class InstancesApi:
 
         Executes a command inside an instance.  The returned operation metadata will contain either 2 or 4 websockets. In non-interactive mode, you'll get one websocket for each of stdin, stdout and stderr. In interactive mode, a single bi-directional websocket is used for stdin and stdout/stderr.  An additional \"control\" socket is always added on top which can be used for out of band communications. This allows sending signals and window sizing information through.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param var_exec: Exec request
@@ -4867,6 +5215,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_post_serialize(
+            name=name,
             project=project,
             var_exec=var_exec,
             _request_auth=_request_auth,
@@ -4895,6 +5244,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
         _request_timeout: Union[
@@ -4914,6 +5264,8 @@ class InstancesApi:
 
         Executes a command inside an instance.  The returned operation metadata will contain either 2 or 4 websockets. In non-interactive mode, you'll get one websocket for each of stdin, stdout and stderr. In interactive mode, a single bi-directional websocket is used for stdin and stdout/stderr.  An additional \"control\" socket is always added on top which can be used for out of band communications. This allows sending signals and window sizing information through.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param var_exec: Exec request
@@ -4941,6 +5293,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_post_serialize(
+            name=name,
             project=project,
             var_exec=var_exec,
             _request_auth=_request_auth,
@@ -4969,6 +5322,7 @@ class InstancesApi:
     @validate_call
     async def instance_exec_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
         _request_timeout: Union[
@@ -4988,6 +5342,8 @@ class InstancesApi:
 
         Executes a command inside an instance.  The returned operation metadata will contain either 2 or 4 websockets. In non-interactive mode, you'll get one websocket for each of stdin, stdout and stderr. In interactive mode, a single bi-directional websocket is used for stdin and stdout/stderr.  An additional \"control\" socket is always added on top which can be used for out of band communications. This allows sending signals and window sizing information through.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param var_exec: Exec request
@@ -5015,6 +5371,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_exec_post_serialize(
+            name=name,
             project=project,
             var_exec=var_exec,
             _request_auth=_request_auth,
@@ -5038,6 +5395,7 @@ class InstancesApi:
 
     def _instance_exec_post_serialize(
         self,
+        name,
         project,
         var_exec,
         _request_auth,
@@ -5061,6 +5419,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -5120,6 +5480,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -5140,6 +5501,8 @@ class InstancesApi:
 
         Removes the file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5169,6 +5532,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_delete_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -5199,6 +5563,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -5219,6 +5584,8 @@ class InstancesApi:
 
         Removes the file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5248,6 +5615,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_delete_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -5278,6 +5646,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_force: Annotated[Optional[Any], Field(description="Perform recursive deletion")] = None,
@@ -5298,6 +5667,8 @@ class InstancesApi:
 
         Removes the file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5327,6 +5698,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_delete_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_force=x_incus_force,
@@ -5352,6 +5724,7 @@ class InstancesApi:
 
     def _instance_files_delete_serialize(
         self,
+        name,
         path,
         project,
         x_incus_force,
@@ -5376,6 +5749,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -5426,6 +5801,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5445,6 +5821,8 @@ class InstancesApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5472,6 +5850,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_get_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5501,6 +5880,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5520,6 +5900,8 @@ class InstancesApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5547,6 +5929,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_get_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5576,6 +5959,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5595,6 +5979,8 @@ class InstancesApi:
 
         Gets the file content. If it's a directory, a json list of files will be returned instead.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5622,6 +6008,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_get_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5646,6 +6033,7 @@ class InstancesApi:
 
     def _instance_files_get_serialize(
         self,
+        name,
         path,
         project,
         _request_auth,
@@ -5669,6 +6057,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -5718,6 +6108,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_head(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5737,6 +6128,8 @@ class InstancesApi:
 
         Gets the file or directory metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5764,6 +6157,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_head_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5793,6 +6187,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_head_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5812,6 +6207,8 @@ class InstancesApi:
 
         Gets the file or directory metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5839,6 +6236,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_head_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5868,6 +6266,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_head_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -5887,6 +6286,8 @@ class InstancesApi:
 
         Gets the file or directory metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -5914,6 +6315,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_head_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -5938,6 +6340,7 @@ class InstancesApi:
 
     def _instance_files_head_serialize(
         self,
+        name,
         path,
         project,
         _request_auth,
@@ -5961,6 +6364,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -6009,6 +6414,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -6033,6 +6439,8 @@ class InstancesApi:
 
         Creates a new file in the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -6070,6 +6478,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_post_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -6104,6 +6513,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -6128,6 +6538,8 @@ class InstancesApi:
 
         Creates a new file in the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -6165,6 +6577,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_post_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -6199,6 +6612,7 @@ class InstancesApi:
     @validate_call
     async def instance_files_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_uid: Annotated[Optional[Any], Field(description="File owner UID")] = None,
@@ -6223,6 +6637,8 @@ class InstancesApi:
 
         Creates a new file in the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Path to the file
         :type path: str
         :param project: Project name
@@ -6260,6 +6676,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_files_post_serialize(
+            name=name,
             path=path,
             project=project,
             x_incus_uid=x_incus_uid,
@@ -6289,6 +6706,7 @@ class InstancesApi:
 
     def _instance_files_post_serialize(
         self,
+        name,
         path,
         project,
         x_incus_uid,
@@ -6317,6 +6735,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -6388,6 +6808,7 @@ class InstancesApi:
     @validate_call
     async def instance_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6406,6 +6827,8 @@ class InstancesApi:
 
         Gets a specific instance (basic struct).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6431,6 +6854,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6457,6 +6881,7 @@ class InstancesApi:
     @validate_call
     async def instance_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6475,6 +6900,8 @@ class InstancesApi:
 
         Gets a specific instance (basic struct).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6500,6 +6927,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6526,6 +6954,7 @@ class InstancesApi:
     @validate_call
     async def instance_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6544,6 +6973,8 @@ class InstancesApi:
 
         Gets a specific instance (basic struct).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6569,6 +7000,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6590,6 +7022,7 @@ class InstancesApi:
 
     def _instance_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -6612,6 +7045,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -6656,6 +7091,7 @@ class InstancesApi:
     @validate_call
     async def instance_get_recursion1(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6674,6 +7110,8 @@ class InstancesApi:
 
         Gets a specific instance (full struct).  recursion=1 also includes information about state, snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6699,6 +7137,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6725,6 +7164,7 @@ class InstancesApi:
     @validate_call
     async def instance_get_recursion1_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6743,6 +7183,8 @@ class InstancesApi:
 
         Gets a specific instance (full struct).  recursion=1 also includes information about state, snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6768,6 +7210,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6794,6 +7237,7 @@ class InstancesApi:
     @validate_call
     async def instance_get_recursion1_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6812,6 +7256,8 @@ class InstancesApi:
 
         Gets a specific instance (full struct).  recursion=1 also includes information about state, snapshots and backups.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6837,6 +7283,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6858,6 +7305,7 @@ class InstancesApi:
 
     def _instance_get_recursion1_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -6880,6 +7328,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -6924,6 +7374,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6942,6 +7394,10 @@ class InstancesApi:
 
         Removes the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6967,6 +7423,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6995,6 +7453,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7013,6 +7473,10 @@ class InstancesApi:
 
         Removes the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7038,6 +7502,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7066,6 +7532,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7084,6 +7552,10 @@ class InstancesApi:
 
         Removes the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7109,6 +7581,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_delete_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7132,6 +7606,8 @@ class InstancesApi:
 
     def _instance_log_delete_serialize(
         self,
+        name,
+        filename,
         project,
         _request_auth,
         _content_type,
@@ -7154,6 +7630,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if filename is not None:
+            _path_params['filename'] = filename
         # process the query parameters
         if project is not None:
             
@@ -7198,6 +7678,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7216,6 +7698,10 @@ class InstancesApi:
 
         Gets the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7241,6 +7727,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7269,6 +7757,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7287,6 +7777,10 @@ class InstancesApi:
 
         Gets the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7312,6 +7806,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7340,6 +7836,8 @@ class InstancesApi:
     @validate_call
     async def instance_log_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        filename: Annotated[StrictStr, Field(description="Path parameter: filename")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7358,6 +7856,10 @@ class InstancesApi:
 
         Gets the log file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param filename: Path parameter: filename (required)
+        :type filename: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7383,6 +7885,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_log_get_serialize(
+            name=name,
+            filename=filename,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7406,6 +7910,8 @@ class InstancesApi:
 
     def _instance_log_get_serialize(
         self,
+        name,
+        filename,
         project,
         _request_auth,
         _content_type,
@@ -7428,6 +7934,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if filename is not None:
+            _path_params['filename'] = filename
         # process the query parameters
         if project is not None:
             
@@ -7473,6 +7983,7 @@ class InstancesApi:
     @validate_call
     async def instance_logs_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7491,6 +8002,8 @@ class InstancesApi:
 
         Returns a list of log files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7516,6 +8029,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_logs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7543,6 +8057,7 @@ class InstancesApi:
     @validate_call
     async def instance_logs_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7561,6 +8076,8 @@ class InstancesApi:
 
         Returns a list of log files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7586,6 +8103,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_logs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7613,6 +8131,7 @@ class InstancesApi:
     @validate_call
     async def instance_logs_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7631,6 +8150,8 @@ class InstancesApi:
 
         Returns a list of log files (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7656,6 +8177,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_logs_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7678,6 +8200,7 @@ class InstancesApi:
 
     def _instance_logs_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -7700,6 +8223,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -7744,6 +8269,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7762,6 +8288,8 @@ class InstancesApi:
 
         Gets the image metadata for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7787,6 +8315,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7813,6 +8342,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7831,6 +8361,8 @@ class InstancesApi:
 
         Gets the image metadata for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7856,6 +8388,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7882,6 +8415,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7900,6 +8434,8 @@ class InstancesApi:
 
         Gets the image metadata for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7925,6 +8461,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7946,6 +8483,7 @@ class InstancesApi:
 
     def _instance_metadata_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -7968,6 +8506,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -8012,6 +8552,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8031,6 +8572,8 @@ class InstancesApi:
 
         Updates a subset of the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8058,6 +8601,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_patch_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8087,6 +8631,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8106,6 +8651,8 @@ class InstancesApi:
 
         Updates a subset of the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8133,6 +8680,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_patch_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8162,6 +8710,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8181,6 +8730,8 @@ class InstancesApi:
 
         Updates a subset of the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8208,6 +8759,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_patch_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8232,6 +8784,7 @@ class InstancesApi:
 
     def _instance_metadata_patch_serialize(
         self,
+        name,
         metadata,
         project,
         _request_auth,
@@ -8255,6 +8808,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -8314,6 +8869,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8333,6 +8889,8 @@ class InstancesApi:
 
         Updates the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8360,6 +8918,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_put_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8389,6 +8948,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8408,6 +8968,8 @@ class InstancesApi:
 
         Updates the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8435,6 +8997,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_put_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8464,6 +9027,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8483,6 +9047,8 @@ class InstancesApi:
 
         Updates the instance image metadata.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param metadata: Image metadata (required)
         :type metadata: ImageMetadata
         :param project: Project name
@@ -8510,6 +9076,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_put_serialize(
+            name=name,
             metadata=metadata,
             project=project,
             _request_auth=_request_auth,
@@ -8534,6 +9101,7 @@ class InstancesApi:
 
     def _instance_metadata_put_serialize(
         self,
+        name,
         metadata,
         project,
         _request_auth,
@@ -8557,6 +9125,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -8616,6 +9186,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8635,6 +9206,8 @@ class InstancesApi:
 
         Removes the template file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -8662,6 +9235,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_delete_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8691,6 +9265,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8710,6 +9285,8 @@ class InstancesApi:
 
         Removes the template file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -8737,6 +9314,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_delete_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8766,6 +9344,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -8785,6 +9364,8 @@ class InstancesApi:
 
         Removes the template file.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -8812,6 +9393,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_delete_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -8836,6 +9418,7 @@ class InstancesApi:
 
     def _instance_metadata_templates_delete_serialize(
         self,
+        name,
         path,
         project,
         _request_auth,
@@ -8859,6 +9442,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -8907,6 +9492,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         _request_timeout: Union[
@@ -8926,6 +9512,8 @@ class InstancesApi:
 
         If no path specified, returns a list of template file names. If a path is specified, returns the file content.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param path: Template name
@@ -8953,6 +9541,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_get_serialize(
+            name=name,
             project=project,
             path=path,
             _request_auth=_request_auth,
@@ -8982,6 +9571,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         _request_timeout: Union[
@@ -9001,6 +9591,8 @@ class InstancesApi:
 
         If no path specified, returns a list of template file names. If a path is specified, returns the file content.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param path: Template name
@@ -9028,6 +9620,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_get_serialize(
+            name=name,
             project=project,
             path=path,
             _request_auth=_request_auth,
@@ -9057,6 +9650,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         _request_timeout: Union[
@@ -9076,6 +9670,8 @@ class InstancesApi:
 
         If no path specified, returns a list of template file names. If a path is specified, returns the file content.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param path: Template name
@@ -9103,6 +9699,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_get_serialize(
+            name=name,
             project=project,
             path=path,
             _request_auth=_request_auth,
@@ -9127,6 +9724,7 @@ class InstancesApi:
 
     def _instance_metadata_templates_get_serialize(
         self,
+        name,
         project,
         path,
         _request_auth,
@@ -9150,6 +9748,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -9199,6 +9799,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -9218,6 +9819,8 @@ class InstancesApi:
 
         Creates a new image template file for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -9245,6 +9848,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_post_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -9274,6 +9878,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -9293,6 +9898,8 @@ class InstancesApi:
 
         Creates a new image template file for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -9320,6 +9927,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_post_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -9349,6 +9957,7 @@ class InstancesApi:
     @validate_call
     async def instance_metadata_templates_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -9368,6 +9977,8 @@ class InstancesApi:
 
         Creates a new image template file for the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param path: Template name
         :type path: str
         :param project: Project name
@@ -9395,6 +10006,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_metadata_templates_post_serialize(
+            name=name,
             path=path,
             project=project,
             _request_auth=_request_auth,
@@ -9419,6 +10031,7 @@ class InstancesApi:
 
     def _instance_metadata_templates_post_serialize(
         self,
+        name,
         path,
         project,
         _request_auth,
@@ -9442,6 +10055,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if path is not None:
             
@@ -9503,6 +10118,7 @@ class InstancesApi:
     @validate_call
     async def instance_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -9522,6 +10138,8 @@ class InstancesApi:
 
         Updates a subset of the instance configuration
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -9549,6 +10167,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_patch_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -9577,6 +10196,7 @@ class InstancesApi:
     @validate_call
     async def instance_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -9596,6 +10216,8 @@ class InstancesApi:
 
         Updates a subset of the instance configuration
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -9623,6 +10245,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_patch_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -9651,6 +10274,7 @@ class InstancesApi:
     @validate_call
     async def instance_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -9670,6 +10294,8 @@ class InstancesApi:
 
         Updates a subset of the instance configuration
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -9697,6 +10323,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_patch_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -9720,6 +10347,7 @@ class InstancesApi:
 
     def _instance_patch_serialize(
         self,
+        name,
         project,
         instance,
         _request_auth,
@@ -9743,6 +10371,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -9802,6 +10432,7 @@ class InstancesApi:
     @validate_call
     async def instance_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
         _request_timeout: Union[
@@ -9821,6 +10452,8 @@ class InstancesApi:
 
         Renames, moves an instance between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param migration: Migration request
@@ -9848,6 +10481,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_post_serialize(
+            name=name,
             project=project,
             migration=migration,
             _request_auth=_request_auth,
@@ -9876,6 +10510,7 @@ class InstancesApi:
     @validate_call
     async def instance_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
         _request_timeout: Union[
@@ -9895,6 +10530,8 @@ class InstancesApi:
 
         Renames, moves an instance between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param migration: Migration request
@@ -9922,6 +10559,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_post_serialize(
+            name=name,
             project=project,
             migration=migration,
             _request_auth=_request_auth,
@@ -9950,6 +10588,7 @@ class InstancesApi:
     @validate_call
     async def instance_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
         _request_timeout: Union[
@@ -9969,6 +10608,8 @@ class InstancesApi:
 
         Renames, moves an instance between pools or migrates an instance to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param migration: Migration request
@@ -9996,6 +10637,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_post_serialize(
+            name=name,
             project=project,
             migration=migration,
             _request_auth=_request_auth,
@@ -10019,6 +10661,7 @@ class InstancesApi:
 
     def _instance_post_serialize(
         self,
+        name,
         project,
         migration,
         _request_auth,
@@ -10042,6 +10685,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -10101,6 +10746,7 @@ class InstancesApi:
     @validate_call
     async def instance_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -10120,6 +10766,8 @@ class InstancesApi:
 
         Updates the instance configuration or trigger a snapshot restore.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -10147,6 +10795,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_put_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -10175,6 +10824,7 @@ class InstancesApi:
     @validate_call
     async def instance_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -10194,6 +10844,8 @@ class InstancesApi:
 
         Updates the instance configuration or trigger a snapshot restore.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -10221,6 +10873,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_put_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -10249,6 +10902,7 @@ class InstancesApi:
     @validate_call
     async def instance_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
         _request_timeout: Union[
@@ -10268,6 +10922,8 @@ class InstancesApi:
 
         Updates the instance configuration or trigger a snapshot restore.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param instance: Update request
@@ -10295,6 +10951,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_put_serialize(
+            name=name,
             project=project,
             instance=instance,
             _request_auth=_request_auth,
@@ -10318,6 +10975,7 @@ class InstancesApi:
 
     def _instance_put_serialize(
         self,
+        name,
         project,
         instance,
         _request_auth,
@@ -10341,6 +10999,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -10400,6 +11060,7 @@ class InstancesApi:
     @validate_call
     async def instance_rebuild_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -10419,6 +11080,8 @@ class InstancesApi:
 
         Rebuild an instance using an alternate image or as empty.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param instance: InstanceRebuild request (required)
         :type instance: InstanceRebuildPost
         :param project: Project name
@@ -10446,6 +11109,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_rebuild_post_serialize(
+            name=name,
             instance=instance,
             project=project,
             _request_auth=_request_auth,
@@ -10476,6 +11140,7 @@ class InstancesApi:
     @validate_call
     async def instance_rebuild_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -10495,6 +11160,8 @@ class InstancesApi:
 
         Rebuild an instance using an alternate image or as empty.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param instance: InstanceRebuild request (required)
         :type instance: InstanceRebuildPost
         :param project: Project name
@@ -10522,6 +11189,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_rebuild_post_serialize(
+            name=name,
             instance=instance,
             project=project,
             _request_auth=_request_auth,
@@ -10552,6 +11220,7 @@ class InstancesApi:
     @validate_call
     async def instance_rebuild_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -10571,6 +11240,8 @@ class InstancesApi:
 
         Rebuild an instance using an alternate image or as empty.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param instance: InstanceRebuild request (required)
         :type instance: InstanceRebuildPost
         :param project: Project name
@@ -10598,6 +11269,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_rebuild_post_serialize(
+            name=name,
             instance=instance,
             project=project,
             _request_auth=_request_auth,
@@ -10623,6 +11295,7 @@ class InstancesApi:
 
     def _instance_rebuild_post_serialize(
         self,
+        name,
         instance,
         project,
         _request_auth,
@@ -10646,6 +11319,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -10705,6 +11380,7 @@ class InstancesApi:
     @validate_call
     async def instance_sftp(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10722,6 +11398,8 @@ class InstancesApi:
 
         Upgrades the request to an SFTP connection of the instance's filesystem.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10745,6 +11423,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_sftp_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10772,6 +11451,7 @@ class InstancesApi:
     @validate_call
     async def instance_sftp_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10789,6 +11469,8 @@ class InstancesApi:
 
         Upgrades the request to an SFTP connection of the instance's filesystem.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10812,6 +11494,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_sftp_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10839,6 +11522,7 @@ class InstancesApi:
     @validate_call
     async def instance_sftp_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -10856,6 +11540,8 @@ class InstancesApi:
 
         Upgrades the request to an SFTP connection of the instance's filesystem.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -10879,6 +11565,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_sftp_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -10901,6 +11588,7 @@ class InstancesApi:
 
     def _instance_sftp_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -10922,6 +11610,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -10963,6 +11653,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -10981,6 +11673,10 @@ class InstancesApi:
 
         Deletes the instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11006,6 +11702,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_delete_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11033,6 +11731,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -11051,6 +11751,10 @@ class InstancesApi:
 
         Deletes the instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11076,6 +11780,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_delete_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11103,6 +11809,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -11121,6 +11829,10 @@ class InstancesApi:
 
         Deletes the instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11146,6 +11858,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_delete_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11168,6 +11882,8 @@ class InstancesApi:
 
     def _instance_snapshot_delete_serialize(
         self,
+        name,
+        snapshot,
         project,
         _request_auth,
         _content_type,
@@ -11190,6 +11906,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if snapshot is not None:
+            _path_params['snapshot'] = snapshot
         # process the query parameters
         if project is not None:
             
@@ -11234,6 +11954,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -11252,6 +11974,10 @@ class InstancesApi:
 
         Gets a specific instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11277,6 +12003,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_get_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11303,6 +12031,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -11321,6 +12051,10 @@ class InstancesApi:
 
         Gets a specific instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11346,6 +12080,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_get_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11372,6 +12108,8 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -11390,6 +12128,10 @@ class InstancesApi:
 
         Gets a specific instance snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -11415,6 +12157,8 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_get_serialize(
+            name=name,
+            snapshot=snapshot,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -11436,6 +12180,8 @@ class InstancesApi:
 
     def _instance_snapshot_get_serialize(
         self,
+        name,
+        snapshot,
         project,
         _request_auth,
         _content_type,
@@ -11458,6 +12204,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if snapshot is not None:
+            _path_params['snapshot'] = snapshot
         # process the query parameters
         if project is not None:
             
@@ -11502,8 +12252,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11521,10 +12273,14 @@ class InstancesApi:
 
         Updates a subset of the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11548,8 +12304,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_patch_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11576,8 +12334,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11595,10 +12355,14 @@ class InstancesApi:
 
         Updates a subset of the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11622,8 +12386,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_patch_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11650,8 +12416,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11669,10 +12437,14 @@ class InstancesApi:
 
         Updates a subset of the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11696,8 +12468,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_patch_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11719,8 +12493,10 @@ class InstancesApi:
 
     def _instance_snapshot_patch_serialize(
         self,
-        project,
+        name,
         snapshot,
+        project,
+        snapshot2,
         _request_auth,
         _content_type,
         _headers,
@@ -11742,6 +12518,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if snapshot is not None:
+            _path_params['snapshot'] = snapshot
         # process the query parameters
         if project is not None:
             
@@ -11750,8 +12530,8 @@ class InstancesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if snapshot is not None:
-            _body_params = snapshot
+        if snapshot2 is not None:
+            _body_params = snapshot2
 
 
         # set the HTTP header `Accept`
@@ -11801,8 +12581,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11820,10 +12602,14 @@ class InstancesApi:
 
         Renames or migrates an instance snapshot to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot migration
-        :type snapshot: InstanceSnapshotPost
+        :param snapshot2: Snapshot migration
+        :type snapshot2: InstanceSnapshotPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11847,8 +12633,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_post_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11875,8 +12663,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11894,10 +12684,14 @@ class InstancesApi:
 
         Renames or migrates an instance snapshot to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot migration
-        :type snapshot: InstanceSnapshotPost
+        :param snapshot2: Snapshot migration
+        :type snapshot2: InstanceSnapshotPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11921,8 +12715,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_post_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -11949,8 +12745,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11968,10 +12766,14 @@ class InstancesApi:
 
         Renames or migrates an instance snapshot to another server.  The returned operation metadata will vary based on what's requested. For rename or move within the same server, this is a simple background operation with progress data. For migration, in the push case, this will similarly be a background operation with progress data, for the pull case, it will be a websocket operation with a number of secrets to be passed to the target server.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot migration
-        :type snapshot: InstanceSnapshotPost
+        :param snapshot2: Snapshot migration
+        :type snapshot2: InstanceSnapshotPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11995,8 +12797,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_post_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12018,8 +12822,10 @@ class InstancesApi:
 
     def _instance_snapshot_post_serialize(
         self,
-        project,
+        name,
         snapshot,
+        project,
+        snapshot2,
         _request_auth,
         _content_type,
         _headers,
@@ -12041,6 +12847,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if snapshot is not None:
+            _path_params['snapshot'] = snapshot
         # process the query parameters
         if project is not None:
             
@@ -12049,8 +12859,8 @@ class InstancesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if snapshot is not None:
-            _body_params = snapshot
+        if snapshot2 is not None:
+            _body_params = snapshot2
 
 
         # set the HTTP header `Accept`
@@ -12100,8 +12910,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12119,10 +12931,14 @@ class InstancesApi:
 
         Updates the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12146,8 +12962,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_put_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12174,8 +12992,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12193,10 +13013,14 @@ class InstancesApi:
 
         Updates the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12220,8 +13044,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_put_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12248,8 +13074,10 @@ class InstancesApi:
     @validate_call
     async def instance_snapshot_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
+        snapshot: Annotated[StrictStr, Field(description="Path parameter: snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
-        snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
+        snapshot2: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12267,10 +13095,14 @@ class InstancesApi:
 
         Updates the snapshot config.
 
+        :param name: Path parameter: name (required)
+        :type name: str
+        :param snapshot: Path parameter: snapshot (required)
+        :type snapshot: str
         :param project: Project name
         :type project: str
-        :param snapshot: Snapshot update
-        :type snapshot: InstanceSnapshotPut
+        :param snapshot2: Snapshot update
+        :type snapshot2: InstanceSnapshotPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12294,8 +13126,10 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshot_put_serialize(
-            project=project,
+            name=name,
             snapshot=snapshot,
+            project=project,
+            snapshot2=snapshot2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12317,8 +13151,10 @@ class InstancesApi:
 
     def _instance_snapshot_put_serialize(
         self,
-        project,
+        name,
         snapshot,
+        project,
+        snapshot2,
         _request_auth,
         _content_type,
         _headers,
@@ -12340,6 +13176,10 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
+        if snapshot is not None:
+            _path_params['snapshot'] = snapshot
         # process the query parameters
         if project is not None:
             
@@ -12348,8 +13188,8 @@ class InstancesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if snapshot is not None:
-            _body_params = snapshot
+        if snapshot2 is not None:
+            _body_params = snapshot2
 
 
         # set the HTTP header `Accept`
@@ -12399,6 +13239,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12417,6 +13258,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12442,6 +13285,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12468,6 +13312,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12486,6 +13331,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12511,6 +13358,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12537,6 +13385,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12555,6 +13404,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (URLs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12580,6 +13431,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12601,6 +13453,7 @@ class InstancesApi:
 
     def _instance_snapshots_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -12623,6 +13476,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -12667,6 +13522,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get_recursion1(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12685,6 +13541,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12710,6 +13568,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12736,6 +13595,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get_recursion1_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12754,6 +13614,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12779,6 +13641,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12805,6 +13668,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_get_recursion1_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -12823,6 +13687,8 @@ class InstancesApi:
 
         Returns a list of instance snapshots (structs).
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -12848,6 +13714,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_get_recursion1_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -12869,6 +13736,7 @@ class InstancesApi:
 
     def _instance_snapshots_get_recursion1_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -12891,6 +13759,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -12935,6 +13805,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
         _request_timeout: Union[
@@ -12954,6 +13825,8 @@ class InstancesApi:
 
         Creates a new snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param snapshot: Snapshot request
@@ -12981,6 +13854,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_post_serialize(
+            name=name,
             project=project,
             snapshot=snapshot,
             _request_auth=_request_auth,
@@ -13009,6 +13883,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
         _request_timeout: Union[
@@ -13028,6 +13903,8 @@ class InstancesApi:
 
         Creates a new snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param snapshot: Snapshot request
@@ -13055,6 +13932,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_post_serialize(
+            name=name,
             project=project,
             snapshot=snapshot,
             _request_auth=_request_auth,
@@ -13083,6 +13961,7 @@ class InstancesApi:
     @validate_call
     async def instance_snapshots_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
         _request_timeout: Union[
@@ -13102,6 +13981,8 @@ class InstancesApi:
 
         Creates a new snapshot.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param snapshot: Snapshot request
@@ -13129,6 +14010,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_snapshots_post_serialize(
+            name=name,
             project=project,
             snapshot=snapshot,
             _request_auth=_request_auth,
@@ -13152,6 +14034,7 @@ class InstancesApi:
 
     def _instance_snapshots_post_serialize(
         self,
+        name,
         project,
         snapshot,
         _request_auth,
@@ -13175,6 +14058,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -13234,6 +14119,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -13252,6 +14138,8 @@ class InstancesApi:
 
         Gets the runtime state of the instance.  This is a reasonably expensive call as it causes code to be run inside of the instance to retrieve the resource usage and network information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -13277,6 +14165,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -13304,6 +14193,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -13322,6 +14212,8 @@ class InstancesApi:
 
         Gets the runtime state of the instance.  This is a reasonably expensive call as it causes code to be run inside of the instance to retrieve the resource usage and network information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -13347,6 +14239,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -13374,6 +14267,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -13392,6 +14286,8 @@ class InstancesApi:
 
         Gets the runtime state of the instance.  This is a reasonably expensive call as it causes code to be run inside of the instance to retrieve the resource usage and network information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -13417,6 +14313,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -13439,6 +14336,7 @@ class InstancesApi:
 
     def _instance_state_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -13461,6 +14359,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -13505,6 +14405,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
         _request_timeout: Union[
@@ -13524,6 +14425,8 @@ class InstancesApi:
 
         Changes the running state of the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -13551,6 +14454,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_put_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -13579,6 +14483,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
         _request_timeout: Union[
@@ -13598,6 +14503,8 @@ class InstancesApi:
 
         Changes the running state of the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -13625,6 +14532,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_put_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -13653,6 +14561,7 @@ class InstancesApi:
     @validate_call
     async def instance_state_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
         _request_timeout: Union[
@@ -13672,6 +14581,8 @@ class InstancesApi:
 
         Changes the running state of the instance.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param state: State
@@ -13699,6 +14610,7 @@ class InstancesApi:
         """ # noqa: E501
 
         _param = self._instance_state_put_serialize(
+            name=name,
             project=project,
             state=state,
             _request_auth=_request_auth,
@@ -13722,6 +14634,7 @@ class InstancesApi:
 
     def _instance_state_put_serialize(
         self,
+        name,
         project,
         state,
         _request_auth,
@@ -13745,6 +14658,8 @@ class InstancesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             

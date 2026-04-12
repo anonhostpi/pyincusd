@@ -48,6 +48,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -66,6 +67,8 @@ class NetworkAclsApi:
 
         Removes the network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -91,6 +94,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -118,6 +122,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -136,6 +141,8 @@ class NetworkAclsApi:
 
         Removes the network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -161,6 +168,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -188,6 +196,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -206,6 +215,8 @@ class NetworkAclsApi:
 
         Removes the network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -231,6 +242,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -253,6 +265,7 @@ class NetworkAclsApi:
 
     def _network_acl_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -275,6 +288,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -319,6 +334,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -337,6 +353,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -362,6 +380,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -388,6 +407,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -406,6 +426,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -431,6 +453,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -457,6 +480,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -475,6 +499,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -500,6 +526,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -521,6 +548,7 @@ class NetworkAclsApi:
 
     def _network_acl_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -543,6 +571,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -587,6 +617,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_log_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -605,6 +636,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL log entries.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -630,6 +663,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_log_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -656,6 +690,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_log_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -674,6 +709,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL log entries.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -699,6 +736,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_log_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -725,6 +763,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_log_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -743,6 +782,8 @@ class NetworkAclsApi:
 
         Gets a specific network ACL log entries.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -768,6 +809,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_log_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -789,6 +831,7 @@ class NetworkAclsApi:
 
     def _network_acl_log_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -811,6 +854,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -855,6 +900,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -874,6 +920,8 @@ class NetworkAclsApi:
 
         Updates a subset of the network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -901,6 +949,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_patch_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -930,6 +979,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -949,6 +999,8 @@ class NetworkAclsApi:
 
         Updates a subset of the network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -976,6 +1028,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_patch_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1005,6 +1058,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1024,6 +1078,8 @@ class NetworkAclsApi:
 
         Updates a subset of the network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -1051,6 +1107,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_patch_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1075,6 +1132,7 @@ class NetworkAclsApi:
 
     def _network_acl_patch_serialize(
         self,
+        name,
         acl,
         project,
         _request_auth,
@@ -1098,6 +1156,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1157,6 +1217,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1176,6 +1237,8 @@ class NetworkAclsApi:
 
         Renames an existing network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL rename request (required)
         :type acl: NetworkACLPost
         :param project: Project name
@@ -1203,6 +1266,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_post_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1231,6 +1295,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1250,6 +1315,8 @@ class NetworkAclsApi:
 
         Renames an existing network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL rename request (required)
         :type acl: NetworkACLPost
         :param project: Project name
@@ -1277,6 +1344,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_post_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1305,6 +1373,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1324,6 +1393,8 @@ class NetworkAclsApi:
 
         Renames an existing network ACL.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL rename request (required)
         :type acl: NetworkACLPost
         :param project: Project name
@@ -1351,6 +1422,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_post_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1374,6 +1446,7 @@ class NetworkAclsApi:
 
     def _network_acl_post_serialize(
         self,
+        name,
         acl,
         project,
         _request_auth,
@@ -1397,6 +1470,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1456,6 +1531,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1475,6 +1551,8 @@ class NetworkAclsApi:
 
         Updates the entire network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -1502,6 +1580,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_put_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1531,6 +1610,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1550,6 +1630,8 @@ class NetworkAclsApi:
 
         Updates the entire network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -1577,6 +1659,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_put_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1606,6 +1689,7 @@ class NetworkAclsApi:
     @validate_call
     async def network_acl_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1625,6 +1709,8 @@ class NetworkAclsApi:
 
         Updates the entire network ACL configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param acl: ACL configuration (required)
         :type acl: NetworkACLPut
         :param project: Project name
@@ -1652,6 +1738,7 @@ class NetworkAclsApi:
         """ # noqa: E501
 
         _param = self._network_acl_put_serialize(
+            name=name,
             acl=acl,
             project=project,
             _request_auth=_request_auth,
@@ -1676,6 +1763,7 @@ class NetworkAclsApi:
 
     def _network_acl_put_serialize(
         self,
+        name,
         acl,
         project,
         _request_auth,
@@ -1699,6 +1787,8 @@ class NetworkAclsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             

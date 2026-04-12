@@ -48,6 +48,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_delete(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,6 +66,8 @@ class NetworkIntegrationsApi:
 
         Removes the network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,6 +91,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_delete_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -114,6 +118,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_delete_with_http_info(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -131,6 +136,8 @@ class NetworkIntegrationsApi:
 
         Removes the network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -154,6 +161,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_delete_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -180,6 +188,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_delete_without_preload_content(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -197,6 +206,8 @@ class NetworkIntegrationsApi:
 
         Removes the network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -220,6 +231,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_delete_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -241,6 +253,7 @@ class NetworkIntegrationsApi:
 
     def _network_integration_delete_serialize(
         self,
+        integration,
         _request_auth,
         _content_type,
         _headers,
@@ -262,6 +275,8 @@ class NetworkIntegrationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if integration is not None:
+            _path_params['integration'] = integration
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -302,6 +317,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_get(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -319,6 +335,8 @@ class NetworkIntegrationsApi:
 
         Gets a specific network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -342,6 +360,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_get_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -367,6 +386,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_get_with_http_info(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -384,6 +404,8 @@ class NetworkIntegrationsApi:
 
         Gets a specific network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -407,6 +429,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_get_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -432,6 +455,7 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_get_without_preload_content(
         self,
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -449,6 +473,8 @@ class NetworkIntegrationsApi:
 
         Gets a specific network integration.
 
+        :param integration: Path parameter: integration (required)
+        :type integration: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -472,6 +498,7 @@ class NetworkIntegrationsApi:
         """ # noqa: E501
 
         _param = self._network_integration_get_serialize(
+            integration=integration,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -492,6 +519,7 @@ class NetworkIntegrationsApi:
 
     def _network_integration_get_serialize(
         self,
+        integration,
         _request_auth,
         _content_type,
         _headers,
@@ -513,6 +541,8 @@ class NetworkIntegrationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if integration is not None:
+            _path_params['integration'] = integration
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -553,7 +583,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_patch(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -571,8 +602,10 @@ class NetworkIntegrationsApi:
 
         Updates a subset of the network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -597,6 +630,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_patch_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -624,7 +658,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_patch_with_http_info(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -642,8 +677,10 @@ class NetworkIntegrationsApi:
 
         Updates a subset of the network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -668,6 +705,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_patch_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -695,7 +733,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_patch_without_preload_content(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -713,8 +752,10 @@ class NetworkIntegrationsApi:
 
         Updates a subset of the network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -739,6 +780,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_patch_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -762,6 +804,7 @@ class NetworkIntegrationsApi:
     def _network_integration_patch_serialize(
         self,
         integration,
+        integration2,
         _request_auth,
         _content_type,
         _headers,
@@ -783,12 +826,14 @@ class NetworkIntegrationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if integration is not None:
+            _path_params['integration'] = integration
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if integration is not None:
-            _body_params = integration
+        if integration2 is not None:
+            _body_params = integration2
 
 
         # set the HTTP header `Accept`
@@ -838,7 +883,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_post(
         self,
-        integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -856,8 +902,10 @@ class NetworkIntegrationsApi:
 
         Renames the network integration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPost
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -882,6 +930,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_post_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -908,7 +957,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_post_with_http_info(
         self,
-        integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -926,8 +976,10 @@ class NetworkIntegrationsApi:
 
         Renames the network integration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPost
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -952,6 +1004,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_post_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -978,7 +1031,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_post_without_preload_content(
         self,
-        integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -996,8 +1050,10 @@ class NetworkIntegrationsApi:
 
         Renames the network integration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPost
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1022,6 +1078,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_post_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1044,6 +1101,7 @@ class NetworkIntegrationsApi:
     def _network_integration_post_serialize(
         self,
         integration,
+        integration2,
         _request_auth,
         _content_type,
         _headers,
@@ -1065,12 +1123,14 @@ class NetworkIntegrationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if integration is not None:
+            _path_params['integration'] = integration
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if integration is not None:
-            _body_params = integration
+        if integration2 is not None:
+            _body_params = integration2
 
 
         # set the HTTP header `Accept`
@@ -1107,7 +1167,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_put(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1125,8 +1186,10 @@ class NetworkIntegrationsApi:
 
         Updates the entire network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1151,6 +1214,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_put_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1178,7 +1242,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_put_with_http_info(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1196,8 +1261,10 @@ class NetworkIntegrationsApi:
 
         Updates the entire network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1222,6 +1289,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_put_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1249,7 +1317,8 @@ class NetworkIntegrationsApi:
     @validate_call
     async def network_integration_put_without_preload_content(
         self,
-        integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
+        integration: Annotated[StrictStr, Field(description="Path parameter: integration")],
+        integration2: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1267,8 +1336,10 @@ class NetworkIntegrationsApi:
 
         Updates the entire network integration configuration.
 
-        :param integration: integration configuration (required)
-        :type integration: NetworkIntegrationPut
+        :param integration: Path parameter: integration (required)
+        :type integration: str
+        :param integration2: integration configuration (required)
+        :type integration2: NetworkIntegrationPut
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1293,6 +1364,7 @@ class NetworkIntegrationsApi:
 
         _param = self._network_integration_put_serialize(
             integration=integration,
+            integration2=integration2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1316,6 +1388,7 @@ class NetworkIntegrationsApi:
     def _network_integration_put_serialize(
         self,
         integration,
+        integration2,
         _request_auth,
         _content_type,
         _headers,
@@ -1337,12 +1410,14 @@ class NetworkIntegrationsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if integration is not None:
+            _path_params['integration'] = integration
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if integration is not None:
-            _body_params = integration
+        if integration2 is not None:
+            _body_params = integration2
 
 
         # set the HTTP header `Accept`

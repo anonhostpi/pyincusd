@@ -46,6 +46,7 @@ class WarningsApi:
     @validate_call
     async def warning_delete(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,6 +64,8 @@ class WarningsApi:
 
         Removes the warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -86,6 +89,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_delete_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -110,6 +114,7 @@ class WarningsApi:
     @validate_call
     async def warning_delete_with_http_info(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,6 +132,8 @@ class WarningsApi:
 
         Removes the warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -150,6 +157,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_delete_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -174,6 +182,7 @@ class WarningsApi:
     @validate_call
     async def warning_delete_without_preload_content(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -191,6 +200,8 @@ class WarningsApi:
 
         Removes the warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -214,6 +225,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_delete_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -233,6 +245,7 @@ class WarningsApi:
 
     def _warning_delete_serialize(
         self,
+        uuid,
         _request_auth,
         _content_type,
         _headers,
@@ -254,6 +267,8 @@ class WarningsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if uuid is not None:
+            _path_params['uuid'] = uuid
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -294,6 +309,7 @@ class WarningsApi:
     @validate_call
     async def warning_get(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -311,6 +327,8 @@ class WarningsApi:
 
         Gets a specific warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -334,6 +352,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_get_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -359,6 +378,7 @@ class WarningsApi:
     @validate_call
     async def warning_get_with_http_info(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -376,6 +396,8 @@ class WarningsApi:
 
         Gets a specific warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -399,6 +421,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_get_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -424,6 +447,7 @@ class WarningsApi:
     @validate_call
     async def warning_get_without_preload_content(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -441,6 +465,8 @@ class WarningsApi:
 
         Gets a specific warning.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -464,6 +490,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_get_serialize(
+            uuid=uuid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -484,6 +511,7 @@ class WarningsApi:
 
     def _warning_get_serialize(
         self,
+        uuid,
         _request_auth,
         _content_type,
         _headers,
@@ -505,6 +533,8 @@ class WarningsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if uuid is not None:
+            _path_params['uuid'] = uuid
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -545,6 +575,7 @@ class WarningsApi:
     @validate_call
     async def warning_patch(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -563,6 +594,8 @@ class WarningsApi:
 
         Updates a subset of the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -588,6 +621,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_patch_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -615,6 +649,7 @@ class WarningsApi:
     @validate_call
     async def warning_patch_with_http_info(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -633,6 +668,8 @@ class WarningsApi:
 
         Updates a subset of the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -658,6 +695,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_patch_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -685,6 +723,7 @@ class WarningsApi:
     @validate_call
     async def warning_patch_without_preload_content(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -703,6 +742,8 @@ class WarningsApi:
 
         Updates a subset of the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -728,6 +769,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_patch_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -750,6 +792,7 @@ class WarningsApi:
 
     def _warning_patch_serialize(
         self,
+        uuid,
         warning,
         _request_auth,
         _content_type,
@@ -772,6 +815,8 @@ class WarningsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if uuid is not None:
+            _path_params['uuid'] = uuid
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -827,6 +872,7 @@ class WarningsApi:
     @validate_call
     async def warning_put(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -845,6 +891,8 @@ class WarningsApi:
 
         Updates the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -870,6 +918,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_put_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -897,6 +946,7 @@ class WarningsApi:
     @validate_call
     async def warning_put_with_http_info(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -915,6 +965,8 @@ class WarningsApi:
 
         Updates the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -940,6 +992,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_put_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -967,6 +1020,7 @@ class WarningsApi:
     @validate_call
     async def warning_put_without_preload_content(
         self,
+        uuid: Annotated[StrictStr, Field(description="Path parameter: uuid")],
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
             None,
@@ -985,6 +1039,8 @@ class WarningsApi:
 
         Updates the warning status.
 
+        :param uuid: Path parameter: uuid (required)
+        :type uuid: str
         :param warning: Warning status (required)
         :type warning: WarningPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1010,6 +1066,7 @@ class WarningsApi:
         """ # noqa: E501
 
         _param = self._warning_put_serialize(
+            uuid=uuid,
             warning=warning,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1032,6 +1089,7 @@ class WarningsApi:
 
     def _warning_put_serialize(
         self,
+        uuid,
         warning,
         _request_auth,
         _content_type,
@@ -1054,6 +1112,8 @@ class WarningsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if uuid is not None:
+            _path_params['uuid'] = uuid
         # process the query parameters
         # process the header parameters
         # process the form parameters

@@ -4,20 +4,20 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#network_delete) | **DELETE** /1.0/networks/{name} | Delete the network
-[**network_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#network_get) | **GET** /1.0/networks/{name} | Get the network
-[**network_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#network_patch) | **PATCH** /1.0/networks/{name} | Partially update the network
-[**network_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#network_post) | **POST** /1.0/networks/{name} | Rename the network
-[**network_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#network_put) | **PUT** /1.0/networks/{name} | Update the network
-[**networks_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#networks_get) | **GET** /1.0/networks | Get the networks
-[**networks_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#networks_get_recursion1) | **GET** /1.0/networks?recursion&#x3D;1 | Get the networks
-[**networks_leases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#networks_leases_get) | **GET** /1.0/networks/{name}/leases | Get the DHCP leases
-[**networks_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#networks_post) | **POST** /1.0/networks | Add a network
-[**networks_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksApi.md#networks_state_get) | **GET** /1.0/networks/{name}/state | Get the network state
+[**network_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#network_delete) | **DELETE** /1.0/networks/{name} | Delete the network
+[**network_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#network_get) | **GET** /1.0/networks/{name} | Get the network
+[**network_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#network_patch) | **PATCH** /1.0/networks/{name} | Partially update the network
+[**network_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#network_post) | **POST** /1.0/networks/{name} | Rename the network
+[**network_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#network_put) | **PUT** /1.0/networks/{name} | Update the network
+[**networks_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#networks_get) | **GET** /1.0/networks | Get the networks
+[**networks_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#networks_get_recursion1) | **GET** /1.0/networks?recursion&#x3D;1 | Get the networks
+[**networks_leases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#networks_leases_get) | **GET** /1.0/networks/{name}/leases | Get the DHCP leases
+[**networks_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#networks_post) | **POST** /1.0/networks | Add a network
+[**networks_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksApi.md#networks_state_get) | **GET** /1.0/networks/{name}/state | Get the network state
 
 
 # **network_delete**
-> ServerPut200Response network_delete(project=project)
+> ServerPut200Response network_delete(name, project=project)
 
 Delete the network
 
@@ -43,11 +43,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the network
-        api_response = await api_instance.network_delete(project=project)
+        api_response = await api_instance.network_delete(name, project=project)
         print("The response of NetworksApi->network_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,11 +62,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -88,7 +90,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_get**
-> NetworkGet200Response network_get(project=project, target=target)
+> NetworkGet200Response network_get(name, project=project, target=target)
 
 Get the network
 
@@ -114,12 +116,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Get the network
-        api_response = await api_instance.network_get(project=project, target=target)
+        api_response = await api_instance.network_get(name, project=project, target=target)
         print("The response of NetworksApi->network_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -133,12 +136,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**NetworkGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkGet200Response.md)
+[**NetworkGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkGet200Response.md)
 
 ### Authorization
 
@@ -160,7 +164,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_patch**
-> ServerPut200Response network_patch(network, project=project, target=target)
+> ServerPut200Response network_patch(name, network, project=project, target=target)
 
 Partially update the network
 
@@ -187,13 +191,14 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     network = pyincusd.NetworkPut() # NetworkPut | Network configuration
     project = 'project_example' # str | Project name (optional)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Partially update the network
-        api_response = await api_instance.network_patch(network, project=project, target=target)
+        api_response = await api_instance.network_patch(name, network, project=project, target=target)
         print("The response of NetworksApi->network_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -207,13 +212,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkPut.md)| Network configuration | 
+ **name** | **str**| Path parameter: name | 
+ **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkPut.md)| Network configuration | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -237,7 +243,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_post**
-> ServerPut200Response network_post(network, project=project)
+> ServerPut200Response network_post(name, network, project=project)
 
 Rename the network
 
@@ -264,12 +270,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     network = pyincusd.NetworkPost() # NetworkPost | Network rename request
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Rename the network
-        api_response = await api_instance.network_post(network, project=project)
+        api_response = await api_instance.network_post(name, network, project=project)
         print("The response of NetworksApi->network_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -283,12 +290,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | [**NetworkPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkPost.md)| Network rename request | 
+ **name** | **str**| Path parameter: name | 
+ **network** | [**NetworkPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkPost.md)| Network rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -311,7 +319,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **network_put**
-> ServerPut200Response network_put(network, project=project, target=target)
+> ServerPut200Response network_put(name, network, project=project, target=target)
 
 Update the network
 
@@ -338,13 +346,14 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     network = pyincusd.NetworkPut() # NetworkPut | Network configuration
     project = 'project_example' # str | Project name (optional)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Update the network
-        api_response = await api_instance.network_put(network, project=project, target=target)
+        api_response = await api_instance.network_put(name, network, project=project, target=target)
         print("The response of NetworksApi->network_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -358,13 +367,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworkPut.md)| Network configuration | 
+ **name** | **str**| Path parameter: name | 
+ **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworkPut.md)| Network configuration | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -440,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksGet200Response.md)
+[**NetworksGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksGet200Response.md)
 
 ### Authorization
 
@@ -514,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksGetRecursion1200Response.md)
+[**NetworksGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -536,7 +546,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **networks_leases_get**
-> NetworksLeasesGet200Response networks_leases_get(project=project, target=target)
+> NetworksLeasesGet200Response networks_leases_get(name, project=project, target=target)
 
 Get the DHCP leases
 
@@ -562,12 +572,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Get the DHCP leases
-        api_response = await api_instance.networks_leases_get(project=project, target=target)
+        api_response = await api_instance.networks_leases_get(name, project=project, target=target)
         print("The response of NetworksApi->networks_leases_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -581,12 +592,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**NetworksLeasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksLeasesGet200Response.md)
+[**NetworksLeasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksLeasesGet200Response.md)
 
 ### Authorization
 
@@ -656,13 +668,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | [**NetworksPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksPost.md)| Network | 
+ **network** | [**NetworksPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksPost.md)| Network | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -685,7 +697,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **networks_state_get**
-> NetworksStateGet200Response networks_state_get(project=project, target=target)
+> NetworksStateGet200Response networks_state_get(name, project=project, target=target)
 
 Get the network state
 
@@ -711,12 +723,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworksApi(api_client)
+    name = 'name_example' # str | Path parameter: name
     project = 'project_example' # str | Project name (optional)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Get the network state
-        api_response = await api_instance.networks_state_get(project=project, target=target)
+        api_response = await api_instance.networks_state_get(name, project=project, target=target)
         print("The response of NetworksApi->networks_state_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -730,12 +743,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Path parameter: name | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**NetworksStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/NetworksStateGet200Response.md)
+[**NetworksStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/NetworksStateGet200Response.md)
 
 ### Authorization
 

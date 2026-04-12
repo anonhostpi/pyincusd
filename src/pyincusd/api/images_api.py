@@ -55,6 +55,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -73,6 +74,8 @@ class ImagesApi:
 
         Deletes a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -98,6 +101,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -125,6 +129,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -143,6 +148,8 @@ class ImagesApi:
 
         Deletes a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -168,6 +175,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -195,6 +203,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -213,6 +222,8 @@ class ImagesApi:
 
         Deletes a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -238,6 +249,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -260,6 +272,7 @@ class ImagesApi:
 
     def _image_alias_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -282,6 +295,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -326,6 +341,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -344,6 +360,8 @@ class ImagesApi:
 
         Gets a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -369,6 +387,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -395,6 +414,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -413,6 +433,8 @@ class ImagesApi:
 
         Gets a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -438,6 +460,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -464,6 +487,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -482,6 +506,8 @@ class ImagesApi:
 
         Gets a specific image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -507,6 +533,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -528,6 +555,7 @@ class ImagesApi:
 
     def _image_alias_get_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -550,6 +578,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -594,6 +624,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get_untrusted(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -612,6 +643,8 @@ class ImagesApi:
 
         Gets a specific public image alias. This untrusted endpoint only works for aliases pointing to public images.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -637,6 +670,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_untrusted_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -663,6 +697,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get_untrusted_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -681,6 +716,8 @@ class ImagesApi:
 
         Gets a specific public image alias. This untrusted endpoint only works for aliases pointing to public images.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -706,6 +743,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_untrusted_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -732,6 +770,7 @@ class ImagesApi:
     @validate_call
     async def image_alias_get_untrusted_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -750,6 +789,8 @@ class ImagesApi:
 
         Gets a specific public image alias. This untrusted endpoint only works for aliases pointing to public images.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -775,6 +816,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_alias_get_untrusted_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -796,6 +838,7 @@ class ImagesApi:
 
     def _image_alias_get_untrusted_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -818,6 +861,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -862,6 +907,7 @@ class ImagesApi:
     @validate_call
     async def image_delete(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -880,6 +926,8 @@ class ImagesApi:
 
         Removes the image from the image store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -905,6 +953,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_delete_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -932,6 +981,7 @@ class ImagesApi:
     @validate_call
     async def image_delete_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -950,6 +1000,8 @@ class ImagesApi:
 
         Removes the image from the image store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -975,6 +1027,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_delete_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1002,6 +1055,7 @@ class ImagesApi:
     @validate_call
     async def image_delete_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1020,6 +1074,8 @@ class ImagesApi:
 
         Removes the image from the image store.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1045,6 +1101,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_delete_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1067,6 +1124,7 @@ class ImagesApi:
 
     def _image_delete_serialize(
         self,
+        fingerprint,
         project,
         _request_auth,
         _content_type,
@@ -1089,6 +1147,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -1133,6 +1193,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1151,6 +1212,8 @@ class ImagesApi:
 
         Download the raw image file(s) from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1176,6 +1239,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1202,6 +1266,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1220,6 +1285,8 @@ class ImagesApi:
 
         Download the raw image file(s) from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1245,6 +1312,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1271,6 +1339,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1289,6 +1358,8 @@ class ImagesApi:
 
         Download the raw image file(s) from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1314,6 +1385,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1335,6 +1407,7 @@ class ImagesApi:
 
     def _image_export_get_serialize(
         self,
+        fingerprint,
         project,
         _request_auth,
         _content_type,
@@ -1357,6 +1430,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -1402,6 +1477,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get_untrusted(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -1421,6 +1497,8 @@ class ImagesApi:
 
         Download the raw image file(s) of a public image from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -1448,6 +1526,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -1475,6 +1554,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get_untrusted_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -1494,6 +1574,8 @@ class ImagesApi:
 
         Download the raw image file(s) of a public image from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -1521,6 +1603,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -1548,6 +1631,7 @@ class ImagesApi:
     @validate_call
     async def image_export_get_untrusted_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -1567,6 +1651,8 @@ class ImagesApi:
 
         Download the raw image file(s) of a public image from the server. If the image is in split format, a multipart http transfer occurs.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -1594,6 +1680,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_export_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -1616,6 +1703,7 @@ class ImagesApi:
 
     def _image_export_get_untrusted_serialize(
         self,
+        fingerprint,
         project,
         secret,
         _request_auth,
@@ -1639,6 +1727,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -1688,6 +1778,7 @@ class ImagesApi:
     @validate_call
     async def image_get(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1706,6 +1797,8 @@ class ImagesApi:
 
         Gets a specific image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1731,6 +1824,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1757,6 +1851,7 @@ class ImagesApi:
     @validate_call
     async def image_get_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1775,6 +1870,8 @@ class ImagesApi:
 
         Gets a specific image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1800,6 +1897,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1826,6 +1924,7 @@ class ImagesApi:
     @validate_call
     async def image_get_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -1844,6 +1943,8 @@ class ImagesApi:
 
         Gets a specific image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -1869,6 +1970,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1890,6 +1992,7 @@ class ImagesApi:
 
     def _image_get_serialize(
         self,
+        fingerprint,
         project,
         _request_auth,
         _content_type,
@@ -1912,6 +2015,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -1956,6 +2061,7 @@ class ImagesApi:
     @validate_call
     async def image_get_untrusted(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -1975,6 +2081,8 @@ class ImagesApi:
 
         Gets a specific public image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -2002,6 +2110,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -2029,6 +2138,7 @@ class ImagesApi:
     @validate_call
     async def image_get_untrusted_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -2048,6 +2158,8 @@ class ImagesApi:
 
         Gets a specific public image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -2075,6 +2187,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -2102,6 +2215,7 @@ class ImagesApi:
     @validate_call
     async def image_get_untrusted_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
         _request_timeout: Union[
@@ -2121,6 +2235,8 @@ class ImagesApi:
 
         Gets a specific public image.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param secret: Secret token to retrieve a private image
@@ -2148,6 +2264,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_get_untrusted_serialize(
+            fingerprint=fingerprint,
             project=project,
             secret=secret,
             _request_auth=_request_auth,
@@ -2170,6 +2287,7 @@ class ImagesApi:
 
     def _image_get_untrusted_serialize(
         self,
+        fingerprint,
         project,
         secret,
         _request_auth,
@@ -2193,6 +2311,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -2241,6 +2361,7 @@ class ImagesApi:
     @validate_call
     async def image_patch(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2260,6 +2381,8 @@ class ImagesApi:
 
         Updates a subset of the image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2287,6 +2410,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_patch_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2316,6 +2440,7 @@ class ImagesApi:
     @validate_call
     async def image_patch_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2335,6 +2460,8 @@ class ImagesApi:
 
         Updates a subset of the image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2362,6 +2489,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_patch_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2391,6 +2519,7 @@ class ImagesApi:
     @validate_call
     async def image_patch_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2410,6 +2539,8 @@ class ImagesApi:
 
         Updates a subset of the image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2437,6 +2568,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_patch_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2461,6 +2593,7 @@ class ImagesApi:
 
     def _image_patch_serialize(
         self,
+        fingerprint,
         image,
         project,
         _request_auth,
@@ -2484,6 +2617,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -2543,6 +2678,7 @@ class ImagesApi:
     @validate_call
     async def image_put(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2562,6 +2698,8 @@ class ImagesApi:
 
         Updates the entire image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2589,6 +2727,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_put_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2618,6 +2757,7 @@ class ImagesApi:
     @validate_call
     async def image_put_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2637,6 +2777,8 @@ class ImagesApi:
 
         Updates the entire image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2664,6 +2806,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_put_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2693,6 +2836,7 @@ class ImagesApi:
     @validate_call
     async def image_put_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2712,6 +2856,8 @@ class ImagesApi:
 
         Updates the entire image definition.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image configuration (required)
         :type image: ImagePut
         :param project: Project name
@@ -2739,6 +2885,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._image_put_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -2763,6 +2910,7 @@ class ImagesApi:
 
     def _image_put_serialize(
         self,
+        fingerprint,
         image,
         project,
         _request_auth,
@@ -2786,6 +2934,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -2845,6 +2995,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2864,6 +3015,8 @@ class ImagesApi:
 
         Updates a subset of the image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -2891,6 +3044,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_patch_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -2920,6 +3074,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2939,6 +3094,8 @@ class ImagesApi:
 
         Updates a subset of the image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -2966,6 +3123,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_patch_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -2995,6 +3153,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3014,6 +3173,8 @@ class ImagesApi:
 
         Updates a subset of the image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -3041,6 +3202,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_patch_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -3065,6 +3227,7 @@ class ImagesApi:
 
     def _images_alias_patch_serialize(
         self,
+        name,
         image_alias,
         project,
         _request_auth,
@@ -3088,6 +3251,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -3147,6 +3312,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3166,6 +3332,8 @@ class ImagesApi:
 
         Renames an existing image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias rename request (required)
         :type image_alias: ImageAliasesEntryPost
         :param project: Project name
@@ -3193,6 +3361,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_post_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -3221,6 +3390,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3240,6 +3410,8 @@ class ImagesApi:
 
         Renames an existing image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias rename request (required)
         :type image_alias: ImageAliasesEntryPost
         :param project: Project name
@@ -3267,6 +3439,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_post_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -3295,6 +3468,7 @@ class ImagesApi:
     @validate_call
     async def images_alias_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3314,6 +3488,8 @@ class ImagesApi:
 
         Renames an existing image alias.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias rename request (required)
         :type image_alias: ImageAliasesEntryPost
         :param project: Project name
@@ -3341,6 +3517,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_alias_post_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -3364,6 +3541,7 @@ class ImagesApi:
 
     def _images_alias_post_serialize(
         self,
+        name,
         image_alias,
         project,
         _request_auth,
@@ -3387,6 +3565,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -4281,6 +4461,7 @@ class ImagesApi:
     @validate_call
     async def images_aliases_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4300,6 +4481,8 @@ class ImagesApi:
 
         Updates the entire image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -4327,6 +4510,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_aliases_put_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -4356,6 +4540,7 @@ class ImagesApi:
     @validate_call
     async def images_aliases_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4375,6 +4560,8 @@ class ImagesApi:
 
         Updates the entire image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -4402,6 +4589,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_aliases_put_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -4431,6 +4619,7 @@ class ImagesApi:
     @validate_call
     async def images_aliases_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4450,6 +4639,8 @@ class ImagesApi:
 
         Updates the entire image alias configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param image_alias: Image alias configuration (required)
         :type image_alias: ImageAliasesEntryPut
         :param project: Project name
@@ -4477,6 +4668,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_aliases_put_serialize(
+            name=name,
             image_alias=image_alias,
             project=project,
             _request_auth=_request_auth,
@@ -4501,6 +4693,7 @@ class ImagesApi:
 
     def _images_aliases_put_serialize(
         self,
+        name,
         image_alias,
         project,
         _request_auth,
@@ -4524,6 +4717,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -4583,6 +4778,7 @@ class ImagesApi:
     @validate_call
     async def images_export_post(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4602,6 +4798,8 @@ class ImagesApi:
 
         Gets the server to connect to a remote server and push the image to it.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image push request (required)
         :type image: ImageExportPost
         :param project: Project name
@@ -4629,6 +4827,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_export_post_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -4656,6 +4855,7 @@ class ImagesApi:
     @validate_call
     async def images_export_post_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4675,6 +4875,8 @@ class ImagesApi:
 
         Gets the server to connect to a remote server and push the image to it.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image push request (required)
         :type image: ImageExportPost
         :param project: Project name
@@ -4702,6 +4904,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_export_post_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -4729,6 +4932,7 @@ class ImagesApi:
     @validate_call
     async def images_export_post_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4748,6 +4952,8 @@ class ImagesApi:
 
         Gets the server to connect to a remote server and push the image to it.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param image: Image push request (required)
         :type image: ImageExportPost
         :param project: Project name
@@ -4775,6 +4981,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_export_post_serialize(
+            fingerprint=fingerprint,
             image=image,
             project=project,
             _request_auth=_request_auth,
@@ -4797,6 +5004,7 @@ class ImagesApi:
 
     def _images_export_post_serialize(
         self,
+        fingerprint,
         image,
         project,
         _request_auth,
@@ -4820,6 +5028,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -6762,6 +6972,7 @@ class ImagesApi:
     @validate_call
     async def images_refresh_post(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6780,6 +6991,8 @@ class ImagesApi:
 
         This causes the server to check the image source server for an updated version of the image and if available to refresh the local copy with the new version.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6805,6 +7018,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_refresh_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6831,6 +7045,7 @@ class ImagesApi:
     @validate_call
     async def images_refresh_post_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6849,6 +7064,8 @@ class ImagesApi:
 
         This causes the server to check the image source server for an updated version of the image and if available to refresh the local copy with the new version.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6874,6 +7091,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_refresh_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6900,6 +7118,7 @@ class ImagesApi:
     @validate_call
     async def images_refresh_post_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -6918,6 +7137,8 @@ class ImagesApi:
 
         This causes the server to check the image source server for an updated version of the image and if available to refresh the local copy with the new version.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -6943,6 +7164,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_refresh_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -6964,6 +7186,7 @@ class ImagesApi:
 
     def _images_refresh_post_serialize(
         self,
+        fingerprint,
         project,
         _request_auth,
         _content_type,
@@ -6986,6 +7209,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             
@@ -7030,6 +7255,7 @@ class ImagesApi:
     @validate_call
     async def images_secret_post(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7048,6 +7274,8 @@ class ImagesApi:
 
         This generates a background operation including a secret one time key in its metadata which can be used to fetch this image from an untrusted client.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7073,6 +7301,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_secret_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7099,6 +7328,7 @@ class ImagesApi:
     @validate_call
     async def images_secret_post_with_http_info(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7117,6 +7347,8 @@ class ImagesApi:
 
         This generates a background operation including a secret one time key in its metadata which can be used to fetch this image from an untrusted client.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7142,6 +7374,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_secret_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7168,6 +7401,7 @@ class ImagesApi:
     @validate_call
     async def images_secret_post_without_preload_content(
         self,
+        fingerprint: Annotated[StrictStr, Field(description="Path parameter: fingerprint")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -7186,6 +7420,8 @@ class ImagesApi:
 
         This generates a background operation including a secret one time key in its metadata which can be used to fetch this image from an untrusted client.
 
+        :param fingerprint: Path parameter: fingerprint (required)
+        :type fingerprint: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -7211,6 +7447,7 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_secret_post_serialize(
+            fingerprint=fingerprint,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -7232,6 +7469,7 @@ class ImagesApi:
 
     def _images_secret_post_serialize(
         self,
+        fingerprint,
         project,
         _request_auth,
         _content_type,
@@ -7254,6 +7492,8 @@ class ImagesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if fingerprint is not None:
+            _path_params['fingerprint'] = fingerprint
         # process the query parameters
         if project is not None:
             

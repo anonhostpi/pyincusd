@@ -588,6 +588,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -605,6 +606,8 @@ class ClusterApi:
 
         Removes the member from the cluster.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -628,6 +631,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -654,6 +658,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -671,6 +676,8 @@ class ClusterApi:
 
         Removes the member from the cluster.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -694,6 +701,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -720,6 +728,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -737,6 +746,8 @@ class ClusterApi:
 
         Removes the member from the cluster.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -760,6 +771,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_delete_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -781,6 +793,7 @@ class ClusterApi:
 
     def _cluster_member_delete_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -802,6 +815,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -842,6 +857,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -859,6 +875,8 @@ class ClusterApi:
 
         Gets a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -882,6 +900,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -907,6 +926,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -924,6 +944,8 @@ class ClusterApi:
 
         Gets a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -947,6 +969,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -972,6 +995,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -989,6 +1013,8 @@ class ClusterApi:
 
         Gets a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1012,6 +1038,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1032,6 +1059,7 @@ class ClusterApi:
 
     def _cluster_member_get_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -1053,6 +1081,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1093,6 +1123,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1111,6 +1142,8 @@ class ClusterApi:
 
         Updates a subset of the cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1136,6 +1169,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_patch_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1164,6 +1198,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1182,6 +1217,8 @@ class ClusterApi:
 
         Updates a subset of the cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1207,6 +1244,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_patch_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1235,6 +1273,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1253,6 +1292,8 @@ class ClusterApi:
 
         Updates a subset of the cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1278,6 +1319,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_patch_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1301,6 +1343,7 @@ class ClusterApi:
 
     def _cluster_member_patch_serialize(
         self,
+        name,
         cluster,
         _request_auth,
         _content_type,
@@ -1323,6 +1366,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1378,6 +1423,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPost, Field(description="Cluster member rename request")],
         _request_timeout: Union[
             None,
@@ -1396,6 +1442,8 @@ class ClusterApi:
 
         Renames an existing cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member rename request (required)
         :type cluster: ClusterMemberPost
         :param _request_timeout: timeout setting for this request. If one
@@ -1421,6 +1469,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1448,6 +1497,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPost, Field(description="Cluster member rename request")],
         _request_timeout: Union[
             None,
@@ -1466,6 +1516,8 @@ class ClusterApi:
 
         Renames an existing cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member rename request (required)
         :type cluster: ClusterMemberPost
         :param _request_timeout: timeout setting for this request. If one
@@ -1491,6 +1543,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1518,6 +1571,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPost, Field(description="Cluster member rename request")],
         _request_timeout: Union[
             None,
@@ -1536,6 +1590,8 @@ class ClusterApi:
 
         Renames an existing cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member rename request (required)
         :type cluster: ClusterMemberPost
         :param _request_timeout: timeout setting for this request. If one
@@ -1561,6 +1617,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1583,6 +1640,7 @@ class ClusterApi:
 
     def _cluster_member_post_serialize(
         self,
+        name,
         cluster,
         _request_auth,
         _content_type,
@@ -1605,6 +1663,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1660,6 +1720,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1678,6 +1739,8 @@ class ClusterApi:
 
         Updates the entire cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1703,6 +1766,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_put_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1731,6 +1795,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1749,6 +1814,8 @@ class ClusterApi:
 
         Updates the entire cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1774,6 +1841,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_put_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1802,6 +1870,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberPut, Field(description="Cluster member configuration")],
         _request_timeout: Union[
             None,
@@ -1820,6 +1889,8 @@ class ClusterApi:
 
         Updates the entire cluster member configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member configuration (required)
         :type cluster: ClusterMemberPut
         :param _request_timeout: timeout setting for this request. If one
@@ -1845,6 +1916,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_put_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1868,6 +1940,7 @@ class ClusterApi:
 
     def _cluster_member_put_serialize(
         self,
+        name,
         cluster,
         _request_auth,
         _content_type,
@@ -1890,6 +1963,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -1945,6 +2020,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1962,6 +2038,8 @@ class ClusterApi:
 
         Gets state of a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1985,6 +2063,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2010,6 +2089,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2027,6 +2107,8 @@ class ClusterApi:
 
         Gets state of a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2050,6 +2132,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2075,6 +2158,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2092,6 +2176,8 @@ class ClusterApi:
 
         Gets state of a specific cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2115,6 +2201,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_get_serialize(
+            name=name,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2135,6 +2222,7 @@ class ClusterApi:
 
     def _cluster_member_state_get_serialize(
         self,
+        name,
         _request_auth,
         _content_type,
         _headers,
@@ -2156,6 +2244,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters
@@ -2196,6 +2286,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberStatePost, Field(description="Cluster member state")],
         _request_timeout: Union[
             None,
@@ -2214,6 +2305,8 @@ class ClusterApi:
 
         Evacuates or restores a cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member state (required)
         :type cluster: ClusterMemberStatePost
         :param _request_timeout: timeout setting for this request. If one
@@ -2239,6 +2332,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2266,6 +2360,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberStatePost, Field(description="Cluster member state")],
         _request_timeout: Union[
             None,
@@ -2284,6 +2379,8 @@ class ClusterApi:
 
         Evacuates or restores a cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member state (required)
         :type cluster: ClusterMemberStatePost
         :param _request_timeout: timeout setting for this request. If one
@@ -2309,6 +2406,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2336,6 +2434,7 @@ class ClusterApi:
     @validate_call
     async def cluster_member_state_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         cluster: Annotated[ClusterMemberStatePost, Field(description="Cluster member state")],
         _request_timeout: Union[
             None,
@@ -2354,6 +2453,8 @@ class ClusterApi:
 
         Evacuates or restores a cluster member.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param cluster: Cluster member state (required)
         :type cluster: ClusterMemberStatePost
         :param _request_timeout: timeout setting for this request. If one
@@ -2379,6 +2480,7 @@ class ClusterApi:
         """ # noqa: E501
 
         _param = self._cluster_member_state_post_serialize(
+            name=name,
             cluster=cluster,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2401,6 +2503,7 @@ class ClusterApi:
 
     def _cluster_member_state_post_serialize(
         self,
+        name,
         cluster,
         _request_auth,
         _content_type,
@@ -2423,6 +2526,8 @@ class ClusterApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         # process the header parameters
         # process the form parameters

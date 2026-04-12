@@ -50,6 +50,7 @@ class NetworksApi:
     @validate_call
     async def network_delete(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -68,6 +69,8 @@ class NetworksApi:
 
         Removes the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -93,6 +96,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -120,6 +124,7 @@ class NetworksApi:
     @validate_call
     async def network_delete_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -138,6 +143,8 @@ class NetworksApi:
 
         Removes the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -163,6 +170,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -190,6 +198,7 @@ class NetworksApi:
     @validate_call
     async def network_delete_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
@@ -208,6 +217,8 @@ class NetworksApi:
 
         Removes the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param _request_timeout: timeout setting for this request. If one
@@ -233,6 +244,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_delete_serialize(
+            name=name,
             project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -255,6 +267,7 @@ class NetworksApi:
 
     def _network_delete_serialize(
         self,
+        name,
         project,
         _request_auth,
         _content_type,
@@ -277,6 +290,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -321,6 +336,7 @@ class NetworksApi:
     @validate_call
     async def network_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -340,6 +356,8 @@ class NetworksApi:
 
         Gets a specific network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -367,6 +385,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -394,6 +413,7 @@ class NetworksApi:
     @validate_call
     async def network_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -413,6 +433,8 @@ class NetworksApi:
 
         Gets a specific network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -440,6 +462,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -467,6 +490,7 @@ class NetworksApi:
     @validate_call
     async def network_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -486,6 +510,8 @@ class NetworksApi:
 
         Gets a specific network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -513,6 +539,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -535,6 +562,7 @@ class NetworksApi:
 
     def _network_get_serialize(
         self,
+        name,
         project,
         target,
         _request_auth,
@@ -558,6 +586,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -606,6 +636,7 @@ class NetworksApi:
     @validate_call
     async def network_patch(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -626,6 +657,8 @@ class NetworksApi:
 
         Updates a subset of the network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -655,6 +688,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_patch_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -685,6 +719,7 @@ class NetworksApi:
     @validate_call
     async def network_patch_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -705,6 +740,8 @@ class NetworksApi:
 
         Updates a subset of the network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -734,6 +771,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_patch_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -764,6 +802,7 @@ class NetworksApi:
     @validate_call
     async def network_patch_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -784,6 +823,8 @@ class NetworksApi:
 
         Updates a subset of the network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -813,6 +854,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_patch_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -838,6 +880,7 @@ class NetworksApi:
 
     def _network_patch_serialize(
         self,
+        name,
         network,
         project,
         target,
@@ -862,6 +905,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -925,6 +970,7 @@ class NetworksApi:
     @validate_call
     async def network_post(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -944,6 +990,8 @@ class NetworksApi:
 
         Renames an existing network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network rename request (required)
         :type network: NetworkPost
         :param project: Project name
@@ -971,6 +1019,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_post_serialize(
+            name=name,
             network=network,
             project=project,
             _request_auth=_request_auth,
@@ -999,6 +1048,7 @@ class NetworksApi:
     @validate_call
     async def network_post_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1018,6 +1068,8 @@ class NetworksApi:
 
         Renames an existing network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network rename request (required)
         :type network: NetworkPost
         :param project: Project name
@@ -1045,6 +1097,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_post_serialize(
+            name=name,
             network=network,
             project=project,
             _request_auth=_request_auth,
@@ -1073,6 +1126,7 @@ class NetworksApi:
     @validate_call
     async def network_post_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1092,6 +1146,8 @@ class NetworksApi:
 
         Renames an existing network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network rename request (required)
         :type network: NetworkPost
         :param project: Project name
@@ -1119,6 +1175,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_post_serialize(
+            name=name,
             network=network,
             project=project,
             _request_auth=_request_auth,
@@ -1142,6 +1199,7 @@ class NetworksApi:
 
     def _network_post_serialize(
         self,
+        name,
         network,
         project,
         _request_auth,
@@ -1165,6 +1223,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -1224,6 +1284,7 @@ class NetworksApi:
     @validate_call
     async def network_put(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1244,6 +1305,8 @@ class NetworksApi:
 
         Updates the entire network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -1273,6 +1336,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_put_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -1303,6 +1367,7 @@ class NetworksApi:
     @validate_call
     async def network_put_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1323,6 +1388,8 @@ class NetworksApi:
 
         Updates the entire network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -1352,6 +1419,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_put_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -1382,6 +1450,7 @@ class NetworksApi:
     @validate_call
     async def network_put_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1402,6 +1471,8 @@ class NetworksApi:
 
         Updates the entire network configuration.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param network: Network configuration (required)
         :type network: NetworkPut
         :param project: Project name
@@ -1431,6 +1502,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._network_put_serialize(
+            name=name,
             network=network,
             project=project,
             target=target,
@@ -1456,6 +1528,7 @@ class NetworksApi:
 
     def _network_put_serialize(
         self,
+        name,
         network,
         project,
         target,
@@ -1480,6 +1553,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2147,6 +2222,7 @@ class NetworksApi:
     @validate_call
     async def networks_leases_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2166,6 +2242,8 @@ class NetworksApi:
 
         Returns a list of DHCP leases for the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2193,6 +2271,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_leases_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2220,6 +2299,7 @@ class NetworksApi:
     @validate_call
     async def networks_leases_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2239,6 +2319,8 @@ class NetworksApi:
 
         Returns a list of DHCP leases for the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2266,6 +2348,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_leases_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2293,6 +2376,7 @@ class NetworksApi:
     @validate_call
     async def networks_leases_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2312,6 +2396,8 @@ class NetworksApi:
 
         Returns a list of DHCP leases for the network.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2339,6 +2425,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_leases_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2361,6 +2448,7 @@ class NetworksApi:
 
     def _networks_leases_get_serialize(
         self,
+        name,
         project,
         target,
         _request_auth,
@@ -2384,6 +2472,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             
@@ -2748,6 +2838,7 @@ class NetworksApi:
     @validate_call
     async def networks_state_get(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2767,6 +2858,8 @@ class NetworksApi:
 
         Returns the current network state information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2794,6 +2887,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_state_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2821,6 +2915,7 @@ class NetworksApi:
     @validate_call
     async def networks_state_get_with_http_info(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2840,6 +2935,8 @@ class NetworksApi:
 
         Returns the current network state information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2867,6 +2964,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_state_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2894,6 +2992,7 @@ class NetworksApi:
     @validate_call
     async def networks_state_get_without_preload_content(
         self,
+        name: Annotated[StrictStr, Field(description="Path parameter: name")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -2913,6 +3012,8 @@ class NetworksApi:
 
         Returns the current network state information.
 
+        :param name: Path parameter: name (required)
+        :type name: str
         :param project: Project name
         :type project: str
         :param target: Cluster member name
@@ -2940,6 +3041,7 @@ class NetworksApi:
         """ # noqa: E501
 
         _param = self._networks_state_get_serialize(
+            name=name,
             project=project,
             target=target,
             _request_auth=_request_auth,
@@ -2962,6 +3064,7 @@ class NetworksApi:
 
     def _networks_state_get_serialize(
         self,
+        name,
         project,
         target,
         _request_auth,
@@ -2985,6 +3088,8 @@ class NetworksApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if name is not None:
+            _path_params['name'] = name
         # process the query parameters
         if project is not None:
             

@@ -4,18 +4,18 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**operation_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_delete) | **DELETE** /1.0/operations/{id} | Cancel the operation
-[**operation_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_get) | **GET** /1.0/operations/{id} | Get the operation state
-[**operation_wait_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_wait_get) | **GET** /1.0/operations/{id}/wait | Wait for the operation
-[**operation_wait_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_wait_get_untrusted) | **GET** /1.0/operations/{id}/wait?public | Wait for the operation
-[**operation_websocket_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_websocket_get) | **GET** /1.0/operations/{id}/websocket | Get the websocket stream
-[**operation_websocket_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operation_websocket_get_untrusted) | **GET** /1.0/operations/{id}/websocket?public | Get the websocket stream
-[**operations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operations_get) | **GET** /1.0/operations | Get the operations
-[**operations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsApi.md#operations_get_recursion1) | **GET** /1.0/operations?recursion&#x3D;1 | Get the operations
+[**operation_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_delete) | **DELETE** /1.0/operations/{id} | Cancel the operation
+[**operation_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_get) | **GET** /1.0/operations/{id} | Get the operation state
+[**operation_wait_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_wait_get) | **GET** /1.0/operations/{id}/wait | Wait for the operation
+[**operation_wait_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_wait_get_untrusted) | **GET** /1.0/operations/{id}/wait?public | Wait for the operation
+[**operation_websocket_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_websocket_get) | **GET** /1.0/operations/{id}/websocket | Get the websocket stream
+[**operation_websocket_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operation_websocket_get_untrusted) | **GET** /1.0/operations/{id}/websocket?public | Get the websocket stream
+[**operations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operations_get) | **GET** /1.0/operations | Get the operations
+[**operations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsApi.md#operations_get_recursion1) | **GET** /1.0/operations?recursion&#x3D;1 | Get the operations
 
 
 # **operation_delete**
-> ServerPut200Response operation_delete()
+> ServerPut200Response operation_delete(id)
 
 Cancel the operation
 
@@ -41,10 +41,11 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
 
     try:
         # Cancel the operation
-        api_response = await api_instance.operation_delete()
+        api_response = await api_instance.operation_delete(id)
         print("The response of OperationsApi->operation_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -55,11 +56,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -82,7 +86,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operation_get**
-> OperationGet200Response operation_get()
+> OperationGet200Response operation_get(id)
 
 Get the operation state
 
@@ -108,10 +112,11 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
 
     try:
         # Get the operation state
-        api_response = await api_instance.operation_get()
+        api_response = await api_instance.operation_get(id)
         print("The response of OperationsApi->operation_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -122,11 +127,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -148,7 +156,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operation_wait_get**
-> OperationGet200Response operation_wait_get(timeout=timeout)
+> OperationGet200Response operation_wait_get(id, timeout=timeout)
 
 Wait for the operation
 
@@ -174,11 +182,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
     timeout = 56 # int | Timeout in seconds (-1 means never) (optional)
 
     try:
         # Wait for the operation
-        api_response = await api_instance.operation_wait_get(timeout=timeout)
+        api_response = await api_instance.operation_wait_get(id, timeout=timeout)
         print("The response of OperationsApi->operation_wait_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -192,11 +201,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
  **timeout** | **int**| Timeout in seconds (-1 means never) | [optional] 
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -218,7 +228,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operation_wait_get_untrusted**
-> OperationGet200Response operation_wait_get_untrusted(secret=secret, timeout=timeout)
+> OperationGet200Response operation_wait_get_untrusted(id, secret=secret, timeout=timeout)
 
 Wait for the operation
 
@@ -246,12 +256,13 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
     secret = 'secret_example' # str | Authentication token (optional)
     timeout = 56 # int | Timeout in seconds (-1 means never) (optional)
 
     try:
         # Wait for the operation
-        api_response = await api_instance.operation_wait_get_untrusted(secret=secret, timeout=timeout)
+        api_response = await api_instance.operation_wait_get_untrusted(id, secret=secret, timeout=timeout)
         print("The response of OperationsApi->operation_wait_get_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -265,12 +276,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
  **secret** | **str**| Authentication token | [optional] 
  **timeout** | **int**| Timeout in seconds (-1 means never) | [optional] 
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -292,7 +304,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operation_websocket_get**
-> operation_websocket_get(secret=secret)
+> operation_websocket_get(id, secret=secret)
 
 Get the websocket stream
 
@@ -320,11 +332,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
     secret = 'secret_example' # str | Authentication token (optional)
 
     try:
         # Get the websocket stream
-        await api_instance.operation_websocket_get(secret=secret)
+        await api_instance.operation_websocket_get(id, secret=secret)
     except Exception as e:
         print("Exception when calling OperationsApi->operation_websocket_get: %s\n" % e)
 ```
@@ -336,6 +349,7 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
  **secret** | **str**| Authentication token | [optional] 
 
 ### Return type
@@ -362,7 +376,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **operation_websocket_get_untrusted**
-> operation_websocket_get_untrusted(secret=secret)
+> operation_websocket_get_untrusted(id, secret=secret)
 
 Get the websocket stream
 
@@ -393,11 +407,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.OperationsApi(api_client)
+    id = 'id_example' # str | Path parameter: id
     secret = 'secret_example' # str | Authentication token (optional)
 
     try:
         # Get the websocket stream
-        await api_instance.operation_websocket_get_untrusted(secret=secret)
+        await api_instance.operation_websocket_get_untrusted(id, secret=secret)
     except Exception as e:
         print("Exception when calling OperationsApi->operation_websocket_get_untrusted: %s\n" % e)
 ```
@@ -409,6 +424,7 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**| Path parameter: id | 
  **secret** | **str**| Authentication token | [optional] 
 
 ### Return type
@@ -485,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsGet200Response.md)
+[**OperationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsGet200Response.md)
 
 ### Authorization
 
@@ -557,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/OperationsGetRecursion1200Response.md)
+[**OperationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/OperationsGetRecursion1200Response.md)
 
 ### Authorization
 

@@ -4,16 +4,16 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**warning_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warning_delete) | **DELETE** /1.0/warnings/{uuid} | Delete the warning
-[**warning_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warning_get) | **GET** /1.0/warnings/{uuid} | Get the warning
-[**warning_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warning_patch) | **PATCH** /1.0/warnings/{uuid} | Partially update the warning
-[**warning_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warning_put) | **PUT** /1.0/warnings/{uuid} | Update the warning
-[**warnings_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warnings_get) | **GET** /1.0/warnings | List the warnings
-[**warnings_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsApi.md#warnings_get_recursion1) | **GET** /1.0/warnings?recursion&#x3D;1 | Get the warnings
+[**warning_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warning_delete) | **DELETE** /1.0/warnings/{uuid} | Delete the warning
+[**warning_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warning_get) | **GET** /1.0/warnings/{uuid} | Get the warning
+[**warning_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warning_patch) | **PATCH** /1.0/warnings/{uuid} | Partially update the warning
+[**warning_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warning_put) | **PUT** /1.0/warnings/{uuid} | Update the warning
+[**warnings_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warnings_get) | **GET** /1.0/warnings | List the warnings
+[**warnings_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsApi.md#warnings_get_recursion1) | **GET** /1.0/warnings?recursion&#x3D;1 | Get the warnings
 
 
 # **warning_delete**
-> ServerPut200Response warning_delete()
+> ServerPut200Response warning_delete(uuid)
 
 Delete the warning
 
@@ -39,10 +39,11 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.WarningsApi(api_client)
+    uuid = 'uuid_example' # str | Path parameter: uuid
 
     try:
         # Delete the warning
-        api_response = await api_instance.warning_delete()
+        api_response = await api_instance.warning_delete(uuid)
         print("The response of WarningsApi->warning_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -53,11 +54,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| Path parameter: uuid | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -78,7 +82,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **warning_get**
-> WarningGet200Response warning_get()
+> WarningGet200Response warning_get(uuid)
 
 Get the warning
 
@@ -104,10 +108,11 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.WarningsApi(api_client)
+    uuid = 'uuid_example' # str | Path parameter: uuid
 
     try:
         # Get the warning
-        api_response = await api_instance.warning_get()
+        api_response = await api_instance.warning_get(uuid)
         print("The response of WarningsApi->warning_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -118,11 +123,14 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | **str**| Path parameter: uuid | 
 
 ### Return type
 
-[**WarningGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningGet200Response.md)
+[**WarningGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningGet200Response.md)
 
 ### Authorization
 
@@ -144,7 +152,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **warning_patch**
-> ServerPut200Response warning_patch(warning)
+> ServerPut200Response warning_patch(uuid, warning)
 
 Partially update the warning
 
@@ -171,11 +179,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.WarningsApi(api_client)
+    uuid = 'uuid_example' # str | Path parameter: uuid
     warning = pyincusd.WarningPut() # WarningPut | Warning status
 
     try:
         # Partially update the warning
-        api_response = await api_instance.warning_patch(warning)
+        api_response = await api_instance.warning_patch(uuid, warning)
         print("The response of WarningsApi->warning_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -189,11 +198,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **warning** | [**WarningPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningPut.md)| Warning status | 
+ **uuid** | **str**| Path parameter: uuid | 
+ **warning** | [**WarningPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningPut.md)| Warning status | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -216,7 +226,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **warning_put**
-> ServerPut200Response warning_put(warning)
+> ServerPut200Response warning_put(uuid, warning)
 
 Update the warning
 
@@ -243,11 +253,12 @@ configuration = pyincusd.Configuration(
 async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.WarningsApi(api_client)
+    uuid = 'uuid_example' # str | Path parameter: uuid
     warning = pyincusd.WarningPut() # WarningPut | Warning status
 
     try:
         # Update the warning
-        api_response = await api_instance.warning_put(warning)
+        api_response = await api_instance.warning_put(uuid, warning)
         print("The response of WarningsApi->warning_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -261,11 +272,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **warning** | [**WarningPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningPut.md)| Warning status | 
+ **uuid** | **str**| Path parameter: uuid | 
+ **warning** | [**WarningPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningPut.md)| Warning status | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -336,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WarningsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsGet200Response.md)
+[**WarningsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsGet200Response.md)
 
 ### Authorization
 
@@ -405,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WarningsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post12/docs/WarningsGetRecursion1200Response.md)
+[**WarningsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post13/docs/WarningsGetRecursion1200Response.md)
 
 ### Authorization
 
