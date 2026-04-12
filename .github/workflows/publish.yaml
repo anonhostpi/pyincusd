@@ -68,7 +68,9 @@ jobs:
             --skip-validate-spec \
             --additional-properties=packageName=pyincusd \
             --additional-properties=packageVersion=${{ needs.check-release.outputs.version }} \
-            --additional-properties=projectName=pyincusd
+            --additional-properties=projectName=pyincusd \
+            --git-user-id=anonhostpi \
+            --git-repo-id=pyincusd
           # Docker creates files as root — fix ownership for subsequent steps
           sudo chown -R "$(id -u):$(id -g)" pyincusd/
 
