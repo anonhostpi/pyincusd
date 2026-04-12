@@ -168,6 +168,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@v1.14.0
         with:
           packages-dir: pyincusd/dist/
+          skip-existing: true
 
       - name: Commit generated package + docs to repo
         run: |
