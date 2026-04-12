@@ -14,25 +14,28 @@ jobs:
       publish_version: ${{ steps.check.outputs.publish_version }}
       tag: ${{ steps.check.outputs.tag }}
     steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+
       - name: Check for new Incus release
         id: check
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Latest incus release tag (authenticated to avoid rate limits)
+          # Latest incus release tag
           TAG=$(curl -sf -H "Authorization: bearer ${GH_TOKEN}" \
             https://api.github.com/repos/lxc/incus/releases/latest | jq -r '.tag_name')
           VERSION="${TAG#v}"
 
-          # Guard: if we couldn't get a version, bail
           if [ -z "$VERSION" ] || [ "$VERSION" = "null" ]; then
             echo "ERROR: could not determine latest Incus release."
             echo "new_release=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # What's currently on PyPI? (404 = never published)
-          # Extract just the base version (strip .postN suffix for comparison)
+          # Compare against PyPI (strip .postN for base comparison)
           PYPI_RAW=$(curl -sf https://pypi.org/pypi/pyincusd/json | jq -r '.info.version' 2>/dev/null || echo "")
           PYPI_BASE=$(echo "$PYPI_RAW" | sed 's/\.post[0-9]*$//')
 
@@ -40,47 +43,25 @@ jobs:
           echo "pypi current: ${PYPI_RAW:-none} (base: ${PYPI_BASE:-none})"
 
           if [ "$VERSION" != "$PYPI_BASE" ]; then
-            echo "New release detected."
             echo "new_release=true" >> "$GITHUB_OUTPUT"
           else
             echo "Already up to date."
             echo "new_release=false" >> "$GITHUB_OUTPUT"
           fi
 
-          # Determine publish version — if the base version filename was
-          # previously burned on PyPI, auto-increment to .postN
+          # Determine publish version.
+          # If we already have a git tag for this version (meaning we published
+          # it before and the PyPI filename is burned), bump to .postN.
           PUBLISH_VERSION="$VERSION"
-          PYPI_PROJECT=$(curl -sf https://pypi.org/pypi/pyincusd/json 2>/dev/null || echo "")
-          if [ -n "$PYPI_PROJECT" ]; then
-            # Project exists — get ALL released versions and check for conflicts
-            ALL_VERSIONS=$(echo "$PYPI_PROJECT" | jq -r '.releases | keys[]')
-          else
-            ALL_VERSIONS=""
-          fi
+          N=1
+          while git tag -l "v${PUBLISH_VERSION}" | grep -q .; do
+            PUBLISH_VERSION="${VERSION}.post${N}"
+            N=$((N + 1))
+          done
 
-          # Also check the Simple API for burned filenames (survives project deletion)
-          SIMPLE_PAGE=$(curl -sf https://pypi.org/simple/pyincusd/ 2>/dev/null || echo "")
-
-          # Check if the bare version filename exists (current or burned)
-          if echo "$SIMPLE_PAGE" | grep -q "pyincusd-${VERSION}-" || \
-             echo "$ALL_VERSIONS" | grep -qx "$VERSION"; then
-            # Bare version is taken — find the next available .postN
-            N=1
-            while true; do
-              CANDIDATE="${VERSION}.post${N}"
-              if ! echo "$SIMPLE_PAGE" | grep -q "pyincusd-${CANDIDATE}-" && \
-                 ! echo "$ALL_VERSIONS" | grep -qx "$CANDIDATE"; then
-                PUBLISH_VERSION="$CANDIDATE"
-                break
-              fi
-              N=$((N + 1))
-              if [ "$N" -gt 100 ]; then
-                echo "ERROR: could not find available .postN after 100 attempts"
-                echo "new_release=false" >> "$GITHUB_OUTPUT"
-                exit 0
-              fi
-            done
-            echo "Base version burned. Publishing as ${PUBLISH_VERSION}"
+          if [ "$PUBLISH_VERSION" != "$VERSION" ]; then
+            echo "Tag v${VERSION} exists — filename likely burned. Using ${PUBLISH_VERSION}"
+            echo "new_release=true" >> "$GITHUB_OUTPUT"
           fi
 
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
@@ -93,8 +74,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
-      contents: write # for committing README + creating releases
-      id-token: write # for PyPI trusted publishing
+      contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v6
 
@@ -121,16 +102,15 @@ jobs:
             --additional-properties=projectName=pyincusd \
             --git-user-id=anonhostpi \
             --git-repo-id=pyincusd
-          # Docker creates files as root — fix ownership for subsequent steps
           sudo chown -R "$(id -u):$(id -g)" pyincusd/
 
       - name: Fix generated docs
         run: |
-          PUBLISH_VERSION="${{ needs.check-release.outputs.publish_version }}"
           VERSION="${{ needs.check-release.outputs.version }}"
-          BASE="https://github.com/anonhostpi/pyincusd/blob/v${VERSION}"
+          PUBLISH_VERSION="${{ needs.check-release.outputs.publish_version }}"
+          BASE="https://github.com/anonhostpi/pyincusd/blob/v${PUBLISH_VERSION}"
 
-          # Fix pip install: replace git+https block with simple pip install
+          # Fix pip install
           sed -i '/### pip install/,/```$/{
             /### pip install/!{
               /```$/!d
@@ -138,11 +118,11 @@ jobs:
           }' pyincusd/README.md
           sed -i 's|### pip install|### pip install\n\n```sh\npip install pyincusd\n```|' pyincusd/README.md
 
-          # Fix README links: docs/Foo.md → absolute GitHub URL at the release tag
+          # Fix README links to absolute blob/<tag> URLs
           sed -i "s|(docs/|(${BASE}/docs/|g" pyincusd/README.md
           sed -i "s|(pyincusd/|(${BASE}/pyincusd/|g" pyincusd/README.md
 
-          # Fix cross-references inside docs/: (Foo.md → absolute at docs/ level
+          # Fix cross-references inside docs/
           for f in pyincusd/docs/*.md; do
             sed -i "s|(\([A-Z][A-Za-z0-9_]*\.md\)|(${BASE}/docs/\1|g" "$f"
             sed -i "s|(../pyincusd/|(${BASE}/pyincusd/|g" "$f"
@@ -151,7 +131,6 @@ jobs:
       - name: Patch generated pyproject.toml
         run: |
           PUBLISH_VERSION="${{ needs.check-release.outputs.publish_version }}"
-          VERSION="${{ needs.check-release.outputs.version }}"
           cat > pyincusd/pyproject.toml << 'TOML'
           [project]
           name = "pyincusd"
@@ -193,15 +172,11 @@ jobs:
       - name: Commit generated package + docs to repo
         run: |
           PUBLISH_VERSION="${{ needs.check-release.outputs.publish_version }}"
-          VERSION="${{ needs.check-release.outputs.version }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Remove old generated files (clean slate per version)
           git rm -rf --ignore-unmatch docs/ pyincusd/ 2>/dev/null || true
 
-          # Copy generated output into the repo root
-          # (the generator outputs to pyincusd/ — move contents up)
           cp -r pyincusd/docs docs
           cp -r pyincusd/pyincusd pyincusd
           cp pyincusd/README.md README.md
