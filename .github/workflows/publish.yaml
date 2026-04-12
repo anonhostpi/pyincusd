@@ -88,6 +88,9 @@ jobs:
           curl -fsSL -o rest-api.yaml \
             "https://raw.githubusercontent.com/lxc/incus/${{ needs.check-release.outputs.tag }}/doc/rest-api.yaml"
 
+      - name: Fix missing path parameters in Swagger spec
+        run: python patches/fix_spec.py rest-api.yaml rest-api.yaml
+
       - name: Generate Python client via OpenAPI Generator
         run: |
           docker run --rm \
