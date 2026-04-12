@@ -23,7 +23,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from pyincusd.api import images_api
 from pyincusd.api_client import RequestSerialized
 
-_original = None
+# Capture the unpatched method at import time — immune to double-apply pollution
+_original = images_api.ImagesApi._images_post_serialize
 
 
 def _patched_images_post_serialize(
@@ -95,15 +96,9 @@ def _patched_images_post_serialize(
 
 def apply():
     """Patch ImagesApi._images_post_serialize to support file uploads."""
-    global _original
-    if _original is None:
-        _original = images_api.ImagesApi._images_post_serialize
     images_api.ImagesApi._images_post_serialize = _patched_images_post_serialize
 
 
 def revert():
-    """Revert the patch."""
-    global _original
-    if _original is not None:
-        images_api.ImagesApi._images_post_serialize = _original
-        _original = None
+    """Revert to the original unpatched method."""
+    images_api.ImagesApi._images_post_serialize = _original

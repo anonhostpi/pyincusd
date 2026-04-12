@@ -11,8 +11,15 @@ Or apply all patches at once:
     apply_all()
 """
 
+import importlib
+import pkgutil
+
 
 def apply_all():
-    """Apply all available patches."""
-    from pyincusd.patches import image_upload
-    image_upload.apply()
+    """Discover and apply all patches in this package."""
+    for info in pkgutil.iter_modules(__path__):
+        if info.name.startswith("_"):
+            continue
+        mod = importlib.import_module(f"{__name__}.{info.name}")
+        if hasattr(mod, "apply"):
+            mod.apply()

@@ -4,7 +4,7 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_allocations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkAllocationsApi.md#network_allocations_get) | **GET** /1.0/network-allocations | Get the network allocations in use (&#x60;network&#x60;, &#x60;network-forward&#x60; and &#x60;load-balancer&#x60; and &#x60;instance&#x60;)
+[**network_allocations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkAllocationsApi.md#network_allocations_get) | **GET** /1.0/network-allocations | Get the network allocations in use (&#x60;network&#x60;, &#x60;network-forward&#x60; and &#x60;load-balancer&#x60; and &#x60;instance&#x60;)
 
 
 # **network_allocations_get**
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAllocationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post7/docs/NetworkAllocationsGet200Response.md)
+[**NetworkAllocationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post8/docs/NetworkAllocationsGet200Response.md)
 
 ### Authorization
 
