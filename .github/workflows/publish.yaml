@@ -74,15 +74,28 @@ jobs:
           # Docker creates files as root — fix ownership for subsequent steps
           sudo chown -R "$(id -u):$(id -g)" pyincusd/
 
-      - name: Fix generated README install instructions
+      - name: Fix generated docs
         run: |
-          # Replace the git+https install block with a simple pip install
+          VERSION="${{ needs.check-release.outputs.version }}"
+          BASE="https://github.com/anonhostpi/pyincusd/blob/v${VERSION}"
+
+          # Fix pip install: replace git+https block with simple pip install
           sed -i '/### pip install/,/```$/{
             /### pip install/!{
               /```$/!d
             }
           }' pyincusd/README.md
           sed -i 's|### pip install|### pip install\n\n```sh\npip install pyincusd\n```|' pyincusd/README.md
+
+          # Fix README links: docs/Foo.md → absolute GitHub URL at the release tag
+          sed -i "s|(docs/|(${BASE}/docs/|g" pyincusd/README.md
+          sed -i "s|(pyincusd/|(${BASE}/pyincusd/|g" pyincusd/README.md
+
+          # Fix cross-references inside docs/: (Foo.md → absolute at docs/ level
+          for f in pyincusd/docs/*.md; do
+            sed -i "s|(\([A-Z][A-Za-z0-9_]*\.md\)|(${BASE}/docs/\1|g" "$f"
+            sed -i "s|(../pyincusd/|(${BASE}/pyincusd/|g" "$f"
+          done
 
       - name: Patch generated pyproject.toml
         run: |
