@@ -146,6 +146,12 @@ jobs:
                       trust_env=True,
                   )
 
+              def __enter__(self):
+                  return self
+
+              def __exit__(self, *args):
+                  pass
+
               @staticmethod
               def run(coro):
                   """Run an async API call synchronously."""
