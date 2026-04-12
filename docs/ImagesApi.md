@@ -1,34 +1,34 @@
 # pyincusd.ImagesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**image_alias_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_alias_delete) | **DELETE** /1.0/images/aliases/{name} | Delete the image alias
-[**image_alias_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_alias_get) | **GET** /1.0/images/aliases/{name} | Get the image alias
-[**image_alias_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_alias_get_untrusted) | **GET** /1.0/images/aliases/{name}?public | Get the public image alias
-[**image_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_delete) | **DELETE** /1.0/images/{fingerprint} | Delete the image
-[**image_export_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_export_get) | **GET** /1.0/images/{fingerprint}/export | Get the raw image file(s)
-[**image_export_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_export_get_untrusted) | **GET** /1.0/images/{fingerprint}/export?public | Get the raw image file(s)
-[**image_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_get) | **GET** /1.0/images/{fingerprint} | Get the image
-[**image_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_get_untrusted) | **GET** /1.0/images/{fingerprint}?public | Get the public image
-[**image_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_patch) | **PATCH** /1.0/images/{fingerprint} | Partially update the image
-[**image_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#image_put) | **PUT** /1.0/images/{fingerprint} | Update the image
-[**images_alias_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_alias_patch) | **PATCH** /1.0/images/aliases/{name} | Partially update the image alias
-[**images_alias_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_alias_post) | **POST** /1.0/images/aliases/{name} | Rename the image alias
-[**images_aliases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_aliases_get) | **GET** /1.0/images/aliases | Get the image aliases
-[**images_aliases_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_aliases_get_recursion1) | **GET** /1.0/images/aliases?recursion&#x3D;1 | Get the image aliases
-[**images_aliases_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_aliases_post) | **POST** /1.0/images/aliases | Add an image alias
-[**images_aliases_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_aliases_put) | **PUT** /1.0/images/aliases/{name} | Update the image alias
-[**images_export_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_export_post) | **POST** /1.0/images/{fingerprint}/export | Make the server push the image to a remote server
-[**images_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_get) | **GET** /1.0/images | Get the images
-[**images_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_get_recursion1) | **GET** /1.0/images?recursion&#x3D;1 | Get the images
-[**images_get_recursion1_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_get_recursion1_untrusted) | **GET** /1.0/images?public&amp;recursion&#x3D;1 | Get the public images
-[**images_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_get_untrusted) | **GET** /1.0/images?public | Get the public images
-[**images_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_post) | **POST** /1.0/images | Add an image
-[**images_post_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_post_untrusted) | **POST** /1.0/images?public | Add an image
-[**images_refresh_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_refresh_post) | **POST** /1.0/images/{fingerprint}/refresh | Refresh an image
-[**images_secret_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesApi.md#images_secret_post) | **POST** /1.0/images/{fingerprint}/secret | Generate secret for retrieval of the image by an untrusted client
+[**image_alias_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_alias_delete) | **DELETE** /1.0/images/aliases/{name} | Delete the image alias
+[**image_alias_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_alias_get) | **GET** /1.0/images/aliases/{name} | Get the image alias
+[**image_alias_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_alias_get_untrusted) | **GET** /1.0/images/aliases/{name}?public | Get the public image alias
+[**image_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_delete) | **DELETE** /1.0/images/{fingerprint} | Delete the image
+[**image_export_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_export_get) | **GET** /1.0/images/{fingerprint}/export | Get the raw image file(s)
+[**image_export_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_export_get_untrusted) | **GET** /1.0/images/{fingerprint}/export?public | Get the raw image file(s)
+[**image_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_get) | **GET** /1.0/images/{fingerprint} | Get the image
+[**image_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_get_untrusted) | **GET** /1.0/images/{fingerprint}?public | Get the public image
+[**image_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_patch) | **PATCH** /1.0/images/{fingerprint} | Partially update the image
+[**image_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#image_put) | **PUT** /1.0/images/{fingerprint} | Update the image
+[**images_alias_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_alias_patch) | **PATCH** /1.0/images/aliases/{name} | Partially update the image alias
+[**images_alias_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_alias_post) | **POST** /1.0/images/aliases/{name} | Rename the image alias
+[**images_aliases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_aliases_get) | **GET** /1.0/images/aliases | Get the image aliases
+[**images_aliases_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_aliases_get_recursion1) | **GET** /1.0/images/aliases?recursion&#x3D;1 | Get the image aliases
+[**images_aliases_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_aliases_post) | **POST** /1.0/images/aliases | Add an image alias
+[**images_aliases_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_aliases_put) | **PUT** /1.0/images/aliases/{name} | Update the image alias
+[**images_export_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_export_post) | **POST** /1.0/images/{fingerprint}/export | Make the server push the image to a remote server
+[**images_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_get) | **GET** /1.0/images | Get the images
+[**images_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_get_recursion1) | **GET** /1.0/images?recursion&#x3D;1 | Get the images
+[**images_get_recursion1_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_get_recursion1_untrusted) | **GET** /1.0/images?public&amp;recursion&#x3D;1 | Get the public images
+[**images_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_get_untrusted) | **GET** /1.0/images?public | Get the public images
+[**images_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_post) | **POST** /1.0/images | Add an image
+[**images_post_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_post_untrusted) | **POST** /1.0/images?public | Add an image
+[**images_refresh_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_refresh_post) | **POST** /1.0/images/{fingerprint}/refresh | Refresh an image
+[**images_secret_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesApi.md#images_secret_post) | **POST** /1.0/images/{fingerprint}/secret | Generate secret for retrieval of the image by an untrusted client
 
 
 # **image_alias_delete**
@@ -55,14 +55,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the image alias
-        api_response = api_instance.image_alias_delete(project=project)
+        api_response = await api_instance.image_alias_delete(project=project)
         print("The response of ImagesApi->image_alias_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -126,14 +126,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the image alias
-        api_response = api_instance.image_alias_get(project=project)
+        api_response = await api_instance.image_alias_get(project=project)
         print("The response of ImagesApi->image_alias_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageAliasGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasGet200Response.md)
+[**ImageAliasGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasGet200Response.md)
 
 ### Authorization
 
@@ -197,14 +197,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the public image alias
-        api_response = api_instance.image_alias_get_untrusted(project=project)
+        api_response = await api_instance.image_alias_get_untrusted(project=project)
         print("The response of ImagesApi->image_alias_get_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageAliasGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasGet200Response.md)
+[**ImageAliasGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasGet200Response.md)
 
 ### Authorization
 
@@ -267,14 +267,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Delete the image
-        api_response = api_instance.image_delete(project=project)
+        api_response = await api_instance.image_delete(project=project)
         print("The response of ImagesApi->image_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 
@@ -338,14 +338,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the raw image file(s)
-        api_instance.image_export_get(project=project)
+        await api_instance.image_export_get(project=project)
     except Exception as e:
         print("Exception when calling ImagesApi->image_export_get: %s\n" % e)
 ```
@@ -406,7 +406,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -414,7 +414,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the raw image file(s)
-        api_instance.image_export_get_untrusted(project=project, secret=secret)
+        await api_instance.image_export_get_untrusted(project=project, secret=secret)
     except Exception as e:
         print("Exception when calling ImagesApi->image_export_get_untrusted: %s\n" % e)
 ```
@@ -476,14 +476,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the image
-        api_response = api_instance.image_get(project=project)
+        api_response = await api_instance.image_get(project=project)
         print("The response of ImagesApi->image_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageGet200Response.md)
+[**ImageGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageGet200Response.md)
 
 ### Authorization
 
@@ -546,7 +546,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -554,7 +554,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the public image
-        api_response = api_instance.image_get_untrusted(project=project, secret=secret)
+        api_response = await api_instance.image_get_untrusted(project=project, secret=secret)
         print("The response of ImagesApi->image_get_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImageGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageGet200Response.md)
+[**ImageGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageGet200Response.md)
 
 ### Authorization
 
@@ -619,7 +619,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image = pyincusd.ImagePut() # ImagePut | Image configuration
@@ -627,7 +627,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Partially update the image
-        api_response = api_instance.image_patch(image, project=project)
+        api_response = await api_instance.image_patch(image, project=project)
         print("The response of ImagesApi->image_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -641,12 +641,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImagePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagePut.md)| Image configuration | 
+ **image** | [**ImagePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagePut.md)| Image configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -694,7 +694,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image = pyincusd.ImagePut() # ImagePut | Image configuration
@@ -702,7 +702,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Update the image
-        api_response = api_instance.image_put(image, project=project)
+        api_response = await api_instance.image_put(image, project=project)
         print("The response of ImagesApi->image_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -716,12 +716,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImagePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagePut.md)| Image configuration | 
+ **image** | [**ImagePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagePut.md)| Image configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -769,7 +769,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image_alias = pyincusd.ImageAliasesEntryPut() # ImageAliasesEntryPut | Image alias configuration
@@ -777,7 +777,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Partially update the image alias
-        api_response = api_instance.images_alias_patch(image_alias, project=project)
+        api_response = await api_instance.images_alias_patch(image_alias, project=project)
         print("The response of ImagesApi->images_alias_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -791,12 +791,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_alias** | [**ImageAliasesEntryPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasesEntryPut.md)| Image alias configuration | 
+ **image_alias** | [**ImageAliasesEntryPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasesEntryPut.md)| Image alias configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -844,7 +844,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image_alias = pyincusd.ImageAliasesEntryPost() # ImageAliasesEntryPost | Image alias rename request
@@ -852,7 +852,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Rename the image alias
-        api_response = api_instance.images_alias_post(image_alias, project=project)
+        api_response = await api_instance.images_alias_post(image_alias, project=project)
         print("The response of ImagesApi->images_alias_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -866,12 +866,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_alias** | [**ImageAliasesEntryPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasesEntryPost.md)| Image alias rename request | 
+ **image_alias** | [**ImageAliasesEntryPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasesEntryPost.md)| Image alias rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -917,14 +917,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the image aliases
-        api_response = api_instance.images_aliases_get(project=project)
+        api_response = await api_instance.images_aliases_get(project=project)
         print("The response of ImagesApi->images_aliases_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -942,7 +942,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesAliasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesAliasesGet200Response.md)
+[**ImagesAliasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesAliasesGet200Response.md)
 
 ### Authorization
 
@@ -987,14 +987,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Get the image aliases
-        api_response = api_instance.images_aliases_get_recursion1(project=project)
+        api_response = await api_instance.images_aliases_get_recursion1(project=project)
         print("The response of ImagesApi->images_aliases_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -1012,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesAliasesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesAliasesGetRecursion1200Response.md)
+[**ImagesAliasesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesAliasesGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -1058,7 +1058,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image_alias = pyincusd.ImageAliasesPost() # ImageAliasesPost | Image alias
@@ -1066,7 +1066,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Add an image alias
-        api_response = api_instance.images_aliases_post(image_alias, project=project)
+        api_response = await api_instance.images_aliases_post(image_alias, project=project)
         print("The response of ImagesApi->images_aliases_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1080,12 +1080,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_alias** | [**ImageAliasesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasesPost.md)| Image alias | 
+ **image_alias** | [**ImageAliasesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasesPost.md)| Image alias | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -1132,7 +1132,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image_alias = pyincusd.ImageAliasesEntryPut() # ImageAliasesEntryPut | Image alias configuration
@@ -1140,7 +1140,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Update the image alias
-        api_response = api_instance.images_aliases_put(image_alias, project=project)
+        api_response = await api_instance.images_aliases_put(image_alias, project=project)
         print("The response of ImagesApi->images_aliases_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -1154,12 +1154,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_alias** | [**ImageAliasesEntryPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageAliasesEntryPut.md)| Image alias configuration | 
+ **image_alias** | [**ImageAliasesEntryPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageAliasesEntryPut.md)| Image alias configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -1207,7 +1207,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image = pyincusd.ImageExportPost() # ImageExportPost | Image push request
@@ -1215,7 +1215,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Make the server push the image to a remote server
-        api_response = api_instance.images_export_post(image, project=project)
+        api_response = await api_instance.images_export_post(image, project=project)
         print("The response of ImagesApi->images_export_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1229,12 +1229,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImageExportPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImageExportPost.md)| Image push request | 
+ **image** | [**ImageExportPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImageExportPost.md)| Image push request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 
@@ -1279,7 +1279,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -1288,7 +1288,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the images
-        api_response = api_instance.images_get(project=project, filter=filter, all_projects=all_projects)
+        api_response = await api_instance.images_get(project=project, filter=filter, all_projects=all_projects)
         print("The response of ImagesApi->images_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -1308,7 +1308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesGet200Response.md)
+[**ImagesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesGet200Response.md)
 
 ### Authorization
 
@@ -1353,7 +1353,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -1362,7 +1362,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the images
-        api_response = api_instance.images_get_recursion1(project=project, filter=filter, all_projects=all_projects)
+        api_response = await api_instance.images_get_recursion1(project=project, filter=filter, all_projects=all_projects)
         print("The response of ImagesApi->images_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -1382,7 +1382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesGetRecursion1Untrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesGetRecursion1Untrusted200Response.md)
+[**ImagesGetRecursion1Untrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesGetRecursion1Untrusted200Response.md)
 
 ### Authorization
 
@@ -1427,7 +1427,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -1436,7 +1436,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the public images
-        api_response = api_instance.images_get_recursion1_untrusted(project=project, filter=filter, all_projects=all_projects)
+        api_response = await api_instance.images_get_recursion1_untrusted(project=project, filter=filter, all_projects=all_projects)
         print("The response of ImagesApi->images_get_recursion1_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -1456,7 +1456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesGetRecursion1Untrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesGetRecursion1Untrusted200Response.md)
+[**ImagesGetRecursion1Untrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesGetRecursion1Untrusted200Response.md)
 
 ### Authorization
 
@@ -1501,7 +1501,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -1510,7 +1510,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the public images
-        api_response = api_instance.images_get_untrusted(project=project, filter=filter, all_projects=all_projects)
+        api_response = await api_instance.images_get_untrusted(project=project, filter=filter, all_projects=all_projects)
         print("The response of ImagesApi->images_get_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -1530,7 +1530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImagesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesGet200Response.md)
+[**ImagesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesGet200Response.md)
 
 ### Authorization
 
@@ -1575,7 +1575,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -1589,7 +1589,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Add an image
-        api_response = api_instance.images_post(project=project, x_incus_secret=x_incus_secret, x_incus_fingerprint=x_incus_fingerprint, x_incus_aliases=x_incus_aliases, x_incus_properties=x_incus_properties, x_incus_public=x_incus_public, x_incus_filename=x_incus_filename, x_incus_profiles=x_incus_profiles)
+        api_response = await api_instance.images_post(project=project, x_incus_secret=x_incus_secret, x_incus_fingerprint=x_incus_fingerprint, x_incus_aliases=x_incus_aliases, x_incus_properties=x_incus_properties, x_incus_public=x_incus_public, x_incus_filename=x_incus_filename, x_incus_profiles=x_incus_profiles)
         print("The response of ImagesApi->images_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1614,7 +1614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 
@@ -1664,7 +1664,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     image = pyincusd.ImagesPost() # ImagesPost | Image
@@ -1672,7 +1672,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Add an image
-        api_response = api_instance.images_post_untrusted(image, project=project)
+        api_response = await api_instance.images_post_untrusted(image, project=project)
         print("The response of ImagesApi->images_post_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -1686,12 +1686,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image** | [**ImagesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ImagesPost.md)| Image | 
+ **image** | [**ImagesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ImagesPost.md)| Image | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -1739,14 +1739,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Refresh an image
-        api_response = api_instance.images_refresh_post(project=project)
+        api_response = await api_instance.images_refresh_post(project=project)
         print("The response of ImagesApi->images_refresh_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1764,7 +1764,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 
@@ -1811,14 +1811,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ImagesApi(api_client)
     project = 'project_example' # str | Project name (optional)
 
     try:
         # Generate secret for retrieval of the image by an untrusted client
-        api_response = api_instance.images_secret_post(project=project)
+        api_response = await api_instance.images_secret_post(project=project)
         print("The response of ImagesApi->images_secret_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -1836,7 +1836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 

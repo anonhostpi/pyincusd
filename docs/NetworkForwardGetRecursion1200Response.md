@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[NetworkForward]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkForward.md) | List of network address forwards | [optional] 
+**metadata** | [**List[NetworkForward]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkForward.md) | List of network address forwards | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

@@ -46,7 +46,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_delete(
+    async def network_acl_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_delete_with_http_info(
+    async def network_acl_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -174,11 +174,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_delete_without_preload_content(
+    async def network_acl_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -244,7 +244,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -317,7 +317,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_get(
+    async def network_acl_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -374,11 +374,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -386,7 +386,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_get_with_http_info(
+    async def network_acl_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -443,11 +443,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -455,7 +455,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_get_without_preload_content(
+    async def network_acl_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -512,7 +512,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -585,7 +585,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_log_get(
+    async def network_acl_log_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -642,11 +642,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -654,7 +654,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_log_get_with_http_info(
+    async def network_acl_log_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -711,11 +711,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -723,7 +723,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_log_get_without_preload_content(
+    async def network_acl_log_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -780,7 +780,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -853,7 +853,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_patch(
+    async def network_acl_patch(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -916,11 +916,11 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -928,7 +928,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_patch_with_http_info(
+    async def network_acl_patch_with_http_info(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -991,11 +991,11 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1003,7 +1003,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_patch_without_preload_content(
+    async def network_acl_patch_without_preload_content(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1066,7 +1066,7 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1155,7 +1155,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_post(
+    async def network_acl_post(
         self,
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1217,11 +1217,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1229,7 +1229,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_post_with_http_info(
+    async def network_acl_post_with_http_info(
         self,
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1291,11 +1291,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1303,7 +1303,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_post_without_preload_content(
+    async def network_acl_post_without_preload_content(
         self,
         acl: Annotated[NetworkACLPost, Field(description="ACL rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1365,7 +1365,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1454,7 +1454,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_put(
+    async def network_acl_put(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1517,11 +1517,11 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1529,7 +1529,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_put_with_http_info(
+    async def network_acl_put_with_http_info(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1592,11 +1592,11 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1604,7 +1604,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acl_put_without_preload_content(
+    async def network_acl_put_without_preload_content(
         self,
         acl: Annotated[NetworkACLPut, Field(description="ACL configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1667,7 +1667,7 @@ class NetworkAclsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1756,7 +1756,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get(
+    async def network_acls_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -1821,11 +1821,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1833,7 +1833,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get_with_http_info(
+    async def network_acls_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -1898,11 +1898,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1910,7 +1910,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get_without_preload_content(
+    async def network_acls_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -1975,7 +1975,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2058,7 +2058,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get_recursion1(
+    async def network_acls_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -2123,11 +2123,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2135,7 +2135,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get_recursion1_with_http_info(
+    async def network_acls_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -2200,11 +2200,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2212,7 +2212,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_get_recursion1_without_preload_content(
+    async def network_acls_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network ACLs from all projects")] = None,
@@ -2277,7 +2277,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2360,7 +2360,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_post(
+    async def network_acls_post(
         self,
         acl: Annotated[NetworkACLsPost, Field(description="ACL")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2422,11 +2422,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2434,7 +2434,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_post_with_http_info(
+    async def network_acls_post_with_http_info(
         self,
         acl: Annotated[NetworkACLsPost, Field(description="ACL")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2496,11 +2496,11 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2508,7 +2508,7 @@ class NetworkAclsApi:
 
 
     @validate_call
-    def network_acls_post_without_preload_content(
+    async def network_acls_post_without_preload_content(
         self,
         acl: Annotated[NetworkACLsPost, Field(description="ACL")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2570,7 +2570,7 @@ class NetworkAclsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

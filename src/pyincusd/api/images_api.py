@@ -53,7 +53,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_delete(
+    async def image_alias_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -111,11 +111,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -123,7 +123,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_delete_with_http_info(
+    async def image_alias_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -181,11 +181,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -193,7 +193,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_delete_without_preload_content(
+    async def image_alias_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -251,7 +251,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -324,7 +324,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get(
+    async def image_alias_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -381,11 +381,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -393,7 +393,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get_with_http_info(
+    async def image_alias_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -450,11 +450,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -462,7 +462,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get_without_preload_content(
+    async def image_alias_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -519,7 +519,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -592,7 +592,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get_untrusted(
+    async def image_alias_get_untrusted(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -649,11 +649,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -661,7 +661,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get_untrusted_with_http_info(
+    async def image_alias_get_untrusted_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -718,11 +718,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -730,7 +730,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_alias_get_untrusted_without_preload_content(
+    async def image_alias_get_untrusted_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -787,7 +787,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -860,7 +860,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_delete(
+    async def image_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -918,11 +918,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -930,7 +930,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_delete_with_http_info(
+    async def image_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -988,11 +988,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1000,7 +1000,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_delete_without_preload_content(
+    async def image_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1058,7 +1058,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1131,7 +1131,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get(
+    async def image_export_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1188,11 +1188,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1200,7 +1200,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get_with_http_info(
+    async def image_export_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1257,11 +1257,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1269,7 +1269,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get_without_preload_content(
+    async def image_export_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1326,7 +1326,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1400,7 +1400,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get_untrusted(
+    async def image_export_get_untrusted(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -1461,11 +1461,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1473,7 +1473,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get_untrusted_with_http_info(
+    async def image_export_get_untrusted_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -1534,11 +1534,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1546,7 +1546,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_export_get_untrusted_without_preload_content(
+    async def image_export_get_untrusted_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -1607,7 +1607,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1686,7 +1686,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get(
+    async def image_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1743,11 +1743,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1755,7 +1755,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get_with_http_info(
+    async def image_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1812,11 +1812,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1824,7 +1824,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get_without_preload_content(
+    async def image_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1881,7 +1881,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1954,7 +1954,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get_untrusted(
+    async def image_get_untrusted(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -2015,11 +2015,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2027,7 +2027,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get_untrusted_with_http_info(
+    async def image_get_untrusted_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -2088,11 +2088,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2100,7 +2100,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_get_untrusted_without_preload_content(
+    async def image_get_untrusted_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         secret: Annotated[Optional[StrictStr], Field(description="Secret token to retrieve a private image")] = None,
@@ -2161,7 +2161,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2239,7 +2239,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_patch(
+    async def image_patch(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2302,11 +2302,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2314,7 +2314,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_patch_with_http_info(
+    async def image_patch_with_http_info(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2377,11 +2377,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2389,7 +2389,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_patch_without_preload_content(
+    async def image_patch_without_preload_content(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2452,7 +2452,7 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2541,7 +2541,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_put(
+    async def image_put(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2604,11 +2604,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2616,7 +2616,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_put_with_http_info(
+    async def image_put_with_http_info(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2679,11 +2679,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2691,7 +2691,7 @@ class ImagesApi:
 
 
     @validate_call
-    def image_put_without_preload_content(
+    async def image_put_without_preload_content(
         self,
         image: Annotated[ImagePut, Field(description="Image configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2754,7 +2754,7 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2843,7 +2843,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_patch(
+    async def images_alias_patch(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2906,11 +2906,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2918,7 +2918,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_patch_with_http_info(
+    async def images_alias_patch_with_http_info(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2981,11 +2981,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2993,7 +2993,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_patch_without_preload_content(
+    async def images_alias_patch_without_preload_content(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3056,7 +3056,7 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3145,7 +3145,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_post(
+    async def images_alias_post(
         self,
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3207,11 +3207,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3219,7 +3219,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_post_with_http_info(
+    async def images_alias_post_with_http_info(
         self,
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3281,11 +3281,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3293,7 +3293,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_alias_post_without_preload_content(
+    async def images_alias_post_without_preload_content(
         self,
         image_alias: Annotated[ImageAliasesEntryPost, Field(description="Image alias rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3355,7 +3355,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3444,7 +3444,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get(
+    async def images_aliases_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3501,11 +3501,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3513,7 +3513,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get_with_http_info(
+    async def images_aliases_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3570,11 +3570,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3582,7 +3582,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get_without_preload_content(
+    async def images_aliases_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3639,7 +3639,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3712,7 +3712,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get_recursion1(
+    async def images_aliases_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3769,11 +3769,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3781,7 +3781,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get_recursion1_with_http_info(
+    async def images_aliases_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3838,11 +3838,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3850,7 +3850,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_get_recursion1_without_preload_content(
+    async def images_aliases_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3907,7 +3907,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3980,7 +3980,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_post(
+    async def images_aliases_post(
         self,
         image_alias: Annotated[ImageAliasesPost, Field(description="Image alias")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4042,11 +4042,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4054,7 +4054,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_post_with_http_info(
+    async def images_aliases_post_with_http_info(
         self,
         image_alias: Annotated[ImageAliasesPost, Field(description="Image alias")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4116,11 +4116,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4128,7 +4128,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_post_without_preload_content(
+    async def images_aliases_post_without_preload_content(
         self,
         image_alias: Annotated[ImageAliasesPost, Field(description="Image alias")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4190,7 +4190,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4279,7 +4279,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_put(
+    async def images_aliases_put(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4342,11 +4342,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4354,7 +4354,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_put_with_http_info(
+    async def images_aliases_put_with_http_info(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4417,11 +4417,11 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4429,7 +4429,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_aliases_put_without_preload_content(
+    async def images_aliases_put_without_preload_content(
         self,
         image_alias: Annotated[ImageAliasesEntryPut, Field(description="Image alias configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4492,7 +4492,7 @@ class ImagesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4581,7 +4581,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_export_post(
+    async def images_export_post(
         self,
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4642,11 +4642,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4654,7 +4654,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_export_post_with_http_info(
+    async def images_export_post_with_http_info(
         self,
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4715,11 +4715,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4727,7 +4727,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_export_post_without_preload_content(
+    async def images_export_post_without_preload_content(
         self,
         image: Annotated[ImageExportPost, Field(description="Image push request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4788,7 +4788,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4864,7 +4864,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get(
+    async def images_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -4929,11 +4929,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4941,7 +4941,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_with_http_info(
+    async def images_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5006,11 +5006,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5018,7 +5018,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_without_preload_content(
+    async def images_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5083,7 +5083,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5166,7 +5166,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1(
+    async def images_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5231,11 +5231,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5243,7 +5243,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1_with_http_info(
+    async def images_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5308,11 +5308,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5320,7 +5320,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1_without_preload_content(
+    async def images_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5385,7 +5385,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5468,7 +5468,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1_untrusted(
+    async def images_get_recursion1_untrusted(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5533,11 +5533,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5545,7 +5545,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1_untrusted_with_http_info(
+    async def images_get_recursion1_untrusted_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5610,11 +5610,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5622,7 +5622,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_recursion1_untrusted_without_preload_content(
+    async def images_get_recursion1_untrusted_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5687,7 +5687,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5770,7 +5770,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_untrusted(
+    async def images_get_untrusted(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5835,11 +5835,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5847,7 +5847,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_untrusted_with_http_info(
+    async def images_get_untrusted_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5912,11 +5912,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5924,7 +5924,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_get_untrusted_without_preload_content(
+    async def images_get_untrusted_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -5989,7 +5989,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6072,7 +6072,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post(
+    async def images_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
@@ -6158,11 +6158,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6170,7 +6170,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post_with_http_info(
+    async def images_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
@@ -6256,11 +6256,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6268,7 +6268,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post_without_preload_content(
+    async def images_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
@@ -6354,7 +6354,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6461,7 +6461,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post_untrusted(
+    async def images_post_untrusted(
         self,
         image: Annotated[ImagesPost, Field(description="Image")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6523,11 +6523,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6535,7 +6535,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post_untrusted_with_http_info(
+    async def images_post_untrusted_with_http_info(
         self,
         image: Annotated[ImagesPost, Field(description="Image")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6597,11 +6597,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6609,7 +6609,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_post_untrusted_without_preload_content(
+    async def images_post_untrusted_without_preload_content(
         self,
         image: Annotated[ImagesPost, Field(description="Image")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6671,7 +6671,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6760,7 +6760,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_refresh_post(
+    async def images_refresh_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6817,11 +6817,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6829,7 +6829,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_refresh_post_with_http_info(
+    async def images_refresh_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6886,11 +6886,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6898,7 +6898,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_refresh_post_without_preload_content(
+    async def images_refresh_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6955,7 +6955,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7028,7 +7028,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_secret_post(
+    async def images_secret_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7085,11 +7085,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7097,7 +7097,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_secret_post_with_http_info(
+    async def images_secret_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7154,11 +7154,11 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7166,7 +7166,7 @@ class ImagesApi:
 
 
     @validate_call
-    def images_secret_post_without_preload_content(
+    async def images_secret_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7223,7 +7223,7 @@ class ImagesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -1,10 +1,10 @@
 # pyincusd.MetricsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**metrics_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/MetricsApi.md#metrics_get) | **GET** /1.0/metrics | Get metrics
+[**metrics_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/MetricsApi.md#metrics_get) | **GET** /1.0/metrics | Get metrics
 
 
 # **metrics_get**
@@ -30,7 +30,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.MetricsApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -38,7 +38,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get metrics
-        api_response = api_instance.metrics_get(project=project, target=target)
+        api_response = await api_instance.metrics_get(project=project, target=target)
         print("The response of MetricsApi->metrics_get:\n")
         pprint(api_response)
     except Exception as e:

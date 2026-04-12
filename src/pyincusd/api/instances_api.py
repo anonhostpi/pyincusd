@@ -71,7 +71,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_access(
+    async def instance_access(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -129,11 +129,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -141,7 +141,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_access_with_http_info(
+    async def instance_access_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -199,11 +199,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -211,7 +211,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_access_without_preload_content(
+    async def instance_access_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -269,7 +269,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -342,7 +342,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_delete(
+    async def instance_backup_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -400,11 +400,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -412,7 +412,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_delete_with_http_info(
+    async def instance_backup_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -470,11 +470,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -482,7 +482,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_delete_without_preload_content(
+    async def instance_backup_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -540,7 +540,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -613,7 +613,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_export(
+    async def instance_backup_export(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -670,11 +670,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -682,7 +682,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_export_with_http_info(
+    async def instance_backup_export_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -739,11 +739,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -751,7 +751,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_export_without_preload_content(
+    async def instance_backup_export_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -808,7 +808,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -881,7 +881,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_get(
+    async def instance_backup_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -938,11 +938,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -950,7 +950,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_get_with_http_info(
+    async def instance_backup_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1007,11 +1007,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1019,7 +1019,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_get_without_preload_content(
+    async def instance_backup_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1076,7 +1076,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1149,7 +1149,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_post(
+    async def instance_backup_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
@@ -1211,11 +1211,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1223,7 +1223,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_post_with_http_info(
+    async def instance_backup_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
@@ -1285,11 +1285,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1297,7 +1297,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backup_post_without_preload_content(
+    async def instance_backup_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupPost], Field(description="Backup rename")] = None,
@@ -1359,7 +1359,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1448,7 +1448,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get(
+    async def instance_backups_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1505,11 +1505,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1517,7 +1517,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get_with_http_info(
+    async def instance_backups_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1574,11 +1574,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1586,7 +1586,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get_without_preload_content(
+    async def instance_backups_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1643,7 +1643,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1716,7 +1716,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get_recursion1(
+    async def instance_backups_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1773,11 +1773,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1785,7 +1785,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get_recursion1_with_http_info(
+    async def instance_backups_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1842,11 +1842,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1854,7 +1854,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_get_recursion1_without_preload_content(
+    async def instance_backups_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1911,7 +1911,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1984,7 +1984,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_post(
+    async def instance_backups_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
@@ -2046,11 +2046,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2058,7 +2058,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_post_with_http_info(
+    async def instance_backups_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
@@ -2120,11 +2120,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2132,7 +2132,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_backups_post_without_preload_content(
+    async def instance_backups_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         backup: Annotated[Optional[InstanceBackupsPost], Field(description="Backup request")] = None,
@@ -2194,7 +2194,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2284,7 +2284,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_delete(
+    async def instance_console_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2343,11 +2343,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2355,7 +2355,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_delete_with_http_info(
+    async def instance_console_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2414,11 +2414,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2426,7 +2426,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_delete_without_preload_content(
+    async def instance_console_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2485,7 +2485,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2558,7 +2558,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_get(
+    async def instance_console_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
@@ -2621,11 +2621,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2633,7 +2633,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_get_with_http_info(
+    async def instance_console_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
@@ -2696,11 +2696,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2708,7 +2708,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_get_without_preload_content(
+    async def instance_console_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Console type")] = None,
@@ -2771,7 +2771,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2849,7 +2849,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_post(
+    async def instance_console_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
@@ -2911,11 +2911,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2923,7 +2923,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_post_with_http_info(
+    async def instance_console_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
@@ -2985,11 +2985,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2997,7 +2997,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_console_post_without_preload_content(
+    async def instance_console_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         console: Annotated[Optional[InstanceConsolePost], Field(description="Console request")] = None,
@@ -3059,7 +3059,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3148,7 +3148,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_memory_get(
+    async def instance_debug_memory_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
@@ -3211,11 +3211,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3223,7 +3223,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_memory_get_with_http_info(
+    async def instance_debug_memory_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
@@ -3286,11 +3286,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3298,7 +3298,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_memory_get_without_preload_content(
+    async def instance_debug_memory_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         format: Annotated[Optional[StrictStr], Field(description="Memory dump format")] = None,
@@ -3361,7 +3361,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3439,7 +3439,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_repair_post(
+    async def instance_debug_repair_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
@@ -3502,11 +3502,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3514,7 +3514,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_repair_post_with_http_info(
+    async def instance_debug_repair_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
@@ -3577,11 +3577,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3589,7 +3589,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_debug_repair_post_without_preload_content(
+    async def instance_debug_repair_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceDebugRepairPost], Field(description="State")] = None,
@@ -3652,7 +3652,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3728,7 +3728,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_delete(
+    async def instance_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3786,11 +3786,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3798,7 +3798,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_delete_with_http_info(
+    async def instance_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3856,11 +3856,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3868,7 +3868,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_delete_without_preload_content(
+    async def instance_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -3926,7 +3926,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3999,7 +3999,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_delete(
+    async def instance_exec_output_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4058,11 +4058,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4070,7 +4070,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_delete_with_http_info(
+    async def instance_exec_output_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4129,11 +4129,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4141,7 +4141,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_delete_without_preload_content(
+    async def instance_exec_output_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4200,7 +4200,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4273,7 +4273,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_get(
+    async def instance_exec_output_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4332,11 +4332,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4344,7 +4344,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_get_with_http_info(
+    async def instance_exec_output_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4403,11 +4403,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4415,7 +4415,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_output_get_without_preload_content(
+    async def instance_exec_output_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4474,7 +4474,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4548,7 +4548,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_outputs_get(
+    async def instance_exec_outputs_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4606,11 +4606,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4618,7 +4618,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_outputs_get_with_http_info(
+    async def instance_exec_outputs_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4676,11 +4676,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4688,7 +4688,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_outputs_get_without_preload_content(
+    async def instance_exec_outputs_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -4746,7 +4746,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4819,7 +4819,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_post(
+    async def instance_exec_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
@@ -4881,11 +4881,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4893,7 +4893,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_post_with_http_info(
+    async def instance_exec_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
@@ -4955,11 +4955,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4967,7 +4967,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_exec_post_without_preload_content(
+    async def instance_exec_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         var_exec: Annotated[Optional[InstanceExecPost], Field(description="Exec request")] = None,
@@ -5029,7 +5029,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5118,7 +5118,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_delete(
+    async def instance_files_delete(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5185,11 +5185,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5197,7 +5197,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_delete_with_http_info(
+    async def instance_files_delete_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5264,11 +5264,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5276,7 +5276,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_delete_without_preload_content(
+    async def instance_files_delete_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5343,7 +5343,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5424,7 +5424,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_get(
+    async def instance_files_get(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5487,11 +5487,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5499,7 +5499,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_get_with_http_info(
+    async def instance_files_get_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5562,11 +5562,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5574,7 +5574,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_get_without_preload_content(
+    async def instance_files_get_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5637,7 +5637,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5716,7 +5716,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_head(
+    async def instance_files_head(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5779,11 +5779,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5791,7 +5791,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_head_with_http_info(
+    async def instance_files_head_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5854,11 +5854,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5866,7 +5866,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_head_without_preload_content(
+    async def instance_files_head_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5929,7 +5929,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6007,7 +6007,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_post(
+    async def instance_files_post(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6090,11 +6090,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6102,7 +6102,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_post_with_http_info(
+    async def instance_files_post_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6185,11 +6185,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6197,7 +6197,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_files_post_without_preload_content(
+    async def instance_files_post_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6280,7 +6280,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6386,7 +6386,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get(
+    async def instance_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6443,11 +6443,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6455,7 +6455,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get_with_http_info(
+    async def instance_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6512,11 +6512,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6524,7 +6524,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get_without_preload_content(
+    async def instance_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6581,7 +6581,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6654,7 +6654,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get_recursion1(
+    async def instance_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6711,11 +6711,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6723,7 +6723,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get_recursion1_with_http_info(
+    async def instance_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6780,11 +6780,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6792,7 +6792,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_get_recursion1_without_preload_content(
+    async def instance_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6849,7 +6849,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6922,7 +6922,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_delete(
+    async def instance_log_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -6981,11 +6981,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6993,7 +6993,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_delete_with_http_info(
+    async def instance_log_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7052,11 +7052,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7064,7 +7064,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_delete_without_preload_content(
+    async def instance_log_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7123,7 +7123,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7196,7 +7196,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_get(
+    async def instance_log_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7255,11 +7255,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7267,7 +7267,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_get_with_http_info(
+    async def instance_log_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7326,11 +7326,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7338,7 +7338,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_log_get_without_preload_content(
+    async def instance_log_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7397,7 +7397,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7471,7 +7471,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_logs_get(
+    async def instance_logs_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7529,11 +7529,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7541,7 +7541,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_logs_get_with_http_info(
+    async def instance_logs_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7599,11 +7599,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7611,7 +7611,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_logs_get_without_preload_content(
+    async def instance_logs_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7669,7 +7669,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7742,7 +7742,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_get(
+    async def instance_metadata_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7799,11 +7799,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7811,7 +7811,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_get_with_http_info(
+    async def instance_metadata_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7868,11 +7868,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7880,7 +7880,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_get_without_preload_content(
+    async def instance_metadata_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -7937,7 +7937,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8010,7 +8010,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_patch(
+    async def instance_metadata_patch(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8073,11 +8073,11 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8085,7 +8085,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_patch_with_http_info(
+    async def instance_metadata_patch_with_http_info(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8148,11 +8148,11 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8160,7 +8160,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_patch_without_preload_content(
+    async def instance_metadata_patch_without_preload_content(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8223,7 +8223,7 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8312,7 +8312,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_put(
+    async def instance_metadata_put(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8375,11 +8375,11 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8387,7 +8387,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_put_with_http_info(
+    async def instance_metadata_put_with_http_info(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8450,11 +8450,11 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8462,7 +8462,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_put_without_preload_content(
+    async def instance_metadata_put_without_preload_content(
         self,
         metadata: Annotated[ImageMetadata, Field(description="Image metadata")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8525,7 +8525,7 @@ class InstancesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8614,7 +8614,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_delete(
+    async def instance_metadata_templates_delete(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8677,11 +8677,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8689,7 +8689,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_delete_with_http_info(
+    async def instance_metadata_templates_delete_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8752,11 +8752,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8764,7 +8764,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_delete_without_preload_content(
+    async def instance_metadata_templates_delete_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8827,7 +8827,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8905,7 +8905,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_get(
+    async def instance_metadata_templates_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
@@ -8968,11 +8968,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8980,7 +8980,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_get_with_http_info(
+    async def instance_metadata_templates_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
@@ -9043,11 +9043,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9055,7 +9055,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_get_without_preload_content(
+    async def instance_metadata_templates_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
@@ -9118,7 +9118,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9197,7 +9197,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_post(
+    async def instance_metadata_templates_post(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9260,11 +9260,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9272,7 +9272,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_post_with_http_info(
+    async def instance_metadata_templates_post_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9335,11 +9335,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9347,7 +9347,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_metadata_templates_post_without_preload_content(
+    async def instance_metadata_templates_post_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Template name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9410,7 +9410,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9501,7 +9501,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_patch(
+    async def instance_patch(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -9563,11 +9563,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9575,7 +9575,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_patch_with_http_info(
+    async def instance_patch_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -9637,11 +9637,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9649,7 +9649,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_patch_without_preload_content(
+    async def instance_patch_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -9711,7 +9711,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9800,7 +9800,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_post(
+    async def instance_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
@@ -9862,11 +9862,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9874,7 +9874,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_post_with_http_info(
+    async def instance_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
@@ -9936,11 +9936,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9948,7 +9948,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_post_without_preload_content(
+    async def instance_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         migration: Annotated[Optional[InstancePost], Field(description="Migration request")] = None,
@@ -10010,7 +10010,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10099,7 +10099,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_put(
+    async def instance_put(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -10161,11 +10161,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10173,7 +10173,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_put_with_http_info(
+    async def instance_put_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -10235,11 +10235,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10247,7 +10247,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_put_without_preload_content(
+    async def instance_put_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         instance: Annotated[Optional[InstancePut], Field(description="Update request")] = None,
@@ -10309,7 +10309,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10398,7 +10398,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_rebuild_post(
+    async def instance_rebuild_post(
         self,
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10462,11 +10462,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10474,7 +10474,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_rebuild_post_with_http_info(
+    async def instance_rebuild_post_with_http_info(
         self,
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10538,11 +10538,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10550,7 +10550,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_rebuild_post_without_preload_content(
+    async def instance_rebuild_post_without_preload_content(
         self,
         instance: Annotated[InstanceRebuildPost, Field(description="InstanceRebuild request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10614,7 +10614,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10703,7 +10703,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_sftp(
+    async def instance_sftp(
         self,
         _request_timeout: Union[
             None,
@@ -10758,11 +10758,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10770,7 +10770,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_sftp_with_http_info(
+    async def instance_sftp_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -10825,11 +10825,11 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10837,7 +10837,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_sftp_without_preload_content(
+    async def instance_sftp_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -10892,7 +10892,7 @@ class InstancesApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10961,7 +10961,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_delete(
+    async def instance_snapshot_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11019,11 +11019,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11031,7 +11031,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_delete_with_http_info(
+    async def instance_snapshot_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11089,11 +11089,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11101,7 +11101,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_delete_without_preload_content(
+    async def instance_snapshot_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11159,7 +11159,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11232,7 +11232,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_get(
+    async def instance_snapshot_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11289,11 +11289,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11301,7 +11301,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_get_with_http_info(
+    async def instance_snapshot_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11358,11 +11358,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11370,7 +11370,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_get_without_preload_content(
+    async def instance_snapshot_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -11427,7 +11427,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11500,7 +11500,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_patch(
+    async def instance_snapshot_patch(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -11562,11 +11562,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11574,7 +11574,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_patch_with_http_info(
+    async def instance_snapshot_patch_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -11636,11 +11636,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11648,7 +11648,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_patch_without_preload_content(
+    async def instance_snapshot_patch_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -11710,7 +11710,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11799,7 +11799,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_post(
+    async def instance_snapshot_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
@@ -11861,11 +11861,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11873,7 +11873,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_post_with_http_info(
+    async def instance_snapshot_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
@@ -11935,11 +11935,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11947,7 +11947,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_post_without_preload_content(
+    async def instance_snapshot_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPost], Field(description="Snapshot migration")] = None,
@@ -12009,7 +12009,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12098,7 +12098,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_put(
+    async def instance_snapshot_put(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -12160,11 +12160,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12172,7 +12172,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_put_with_http_info(
+    async def instance_snapshot_put_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -12234,11 +12234,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12246,7 +12246,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshot_put_without_preload_content(
+    async def instance_snapshot_put_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotPut], Field(description="Snapshot update")] = None,
@@ -12308,7 +12308,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12397,7 +12397,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get(
+    async def instance_snapshots_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12454,11 +12454,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12466,7 +12466,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get_with_http_info(
+    async def instance_snapshots_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12523,11 +12523,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12535,7 +12535,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get_without_preload_content(
+    async def instance_snapshots_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12592,7 +12592,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12665,7 +12665,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get_recursion1(
+    async def instance_snapshots_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12722,11 +12722,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12734,7 +12734,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get_recursion1_with_http_info(
+    async def instance_snapshots_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12791,11 +12791,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12803,7 +12803,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_get_recursion1_without_preload_content(
+    async def instance_snapshots_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -12860,7 +12860,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12933,7 +12933,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_post(
+    async def instance_snapshots_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
@@ -12995,11 +12995,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13007,7 +13007,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_post_with_http_info(
+    async def instance_snapshots_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
@@ -13069,11 +13069,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13081,7 +13081,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_snapshots_post_without_preload_content(
+    async def instance_snapshots_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         snapshot: Annotated[Optional[InstanceSnapshotsPost], Field(description="Snapshot request")] = None,
@@ -13143,7 +13143,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13232,7 +13232,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_get(
+    async def instance_state_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -13290,11 +13290,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13302,7 +13302,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_get_with_http_info(
+    async def instance_state_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -13360,11 +13360,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13372,7 +13372,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_get_without_preload_content(
+    async def instance_state_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -13430,7 +13430,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13503,7 +13503,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_put(
+    async def instance_state_put(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
@@ -13565,11 +13565,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13577,7 +13577,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_put_with_http_info(
+    async def instance_state_put_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
@@ -13639,11 +13639,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13651,7 +13651,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instance_state_put_without_preload_content(
+    async def instance_state_put_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstanceStatePut], Field(description="State")] = None,
@@ -13713,7 +13713,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13802,7 +13802,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get(
+    async def instances_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -13867,11 +13867,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13879,7 +13879,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_with_http_info(
+    async def instances_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -13944,11 +13944,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13956,7 +13956,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_without_preload_content(
+    async def instances_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14021,7 +14021,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14104,7 +14104,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion1(
+    async def instances_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14169,11 +14169,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14181,7 +14181,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion1_with_http_info(
+    async def instances_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14246,11 +14246,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14258,7 +14258,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion1_without_preload_content(
+    async def instances_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14323,7 +14323,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14406,7 +14406,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion2(
+    async def instances_get_recursion2(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14471,11 +14471,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14483,7 +14483,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion2_with_http_info(
+    async def instances_get_recursion2_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14548,11 +14548,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14560,7 +14560,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_get_recursion2_without_preload_content(
+    async def instances_get_recursion2_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -14625,7 +14625,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14708,7 +14708,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_post(
+    async def instances_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
@@ -14770,11 +14770,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14782,7 +14782,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_post_with_http_info(
+    async def instances_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
@@ -14844,11 +14844,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14856,7 +14856,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_post_without_preload_content(
+    async def instances_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
@@ -14918,7 +14918,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15009,7 +15009,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_put(
+    async def instances_put(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstancesPut], Field(description="State")] = None,
@@ -15071,11 +15071,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15083,7 +15083,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_put_with_http_info(
+    async def instances_put_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstancesPut], Field(description="State")] = None,
@@ -15145,11 +15145,11 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15157,7 +15157,7 @@ class InstancesApi:
 
 
     @validate_call
-    def instances_put_without_preload_content(
+    async def instances_put_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         state: Annotated[Optional[InstancesPut], Field(description="State")] = None,
@@ -15219,7 +15219,7 @@ class InstancesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

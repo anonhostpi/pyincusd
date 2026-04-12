@@ -40,7 +40,7 @@ class NetworkAllocationsApi:
 
 
     @validate_call
-    def network_allocations_get(
+    async def network_allocations_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve entities from all projects")] = None,
@@ -101,11 +101,11 @@ class NetworkAllocationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -113,7 +113,7 @@ class NetworkAllocationsApi:
 
 
     @validate_call
-    def network_allocations_get_with_http_info(
+    async def network_allocations_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve entities from all projects")] = None,
@@ -174,11 +174,11 @@ class NetworkAllocationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class NetworkAllocationsApi:
 
 
     @validate_call
-    def network_allocations_get_without_preload_content(
+    async def network_allocations_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve entities from all projects")] = None,
@@ -247,7 +247,7 @@ class NetworkAllocationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -50,7 +50,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_delete(
+    async def network_zone_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -108,11 +108,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -120,7 +120,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_delete_with_http_info(
+    async def network_zone_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -178,11 +178,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -190,7 +190,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_delete_without_preload_content(
+    async def network_zone_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -248,7 +248,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -321,7 +321,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_get(
+    async def network_zone_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -378,11 +378,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -390,7 +390,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_get_with_http_info(
+    async def network_zone_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -447,11 +447,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -459,7 +459,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_get_without_preload_content(
+    async def network_zone_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -516,7 +516,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -589,7 +589,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_patch(
+    async def network_zone_patch(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -652,11 +652,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -664,7 +664,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_patch_with_http_info(
+    async def network_zone_patch_with_http_info(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -727,11 +727,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -739,7 +739,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_patch_without_preload_content(
+    async def network_zone_patch_without_preload_content(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -802,7 +802,7 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -891,7 +891,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_put(
+    async def network_zone_put(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -954,11 +954,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -966,7 +966,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_put_with_http_info(
+    async def network_zone_put_with_http_info(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1029,11 +1029,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1041,7 +1041,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_put_without_preload_content(
+    async def network_zone_put_without_preload_content(
         self,
         zone: Annotated[NetworkZonePut, Field(description="zone configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1104,7 +1104,7 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1193,7 +1193,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_delete(
+    async def network_zone_record_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1251,11 +1251,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1263,7 +1263,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_delete_with_http_info(
+    async def network_zone_record_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1321,11 +1321,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1333,7 +1333,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_delete_without_preload_content(
+    async def network_zone_record_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1391,7 +1391,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1464,7 +1464,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_get(
+    async def network_zone_record_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1521,11 +1521,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1533,7 +1533,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_get_with_http_info(
+    async def network_zone_record_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1590,11 +1590,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1602,7 +1602,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_get_without_preload_content(
+    async def network_zone_record_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1659,7 +1659,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1732,7 +1732,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_patch(
+    async def network_zone_record_patch(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1795,11 +1795,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1807,7 +1807,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_patch_with_http_info(
+    async def network_zone_record_patch_with_http_info(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1870,11 +1870,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1882,7 +1882,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_patch_without_preload_content(
+    async def network_zone_record_patch_without_preload_content(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1945,7 +1945,7 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2034,7 +2034,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_put(
+    async def network_zone_record_put(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2097,11 +2097,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2109,7 +2109,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_put_with_http_info(
+    async def network_zone_record_put_with_http_info(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2172,11 +2172,11 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2184,7 +2184,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_record_put_without_preload_content(
+    async def network_zone_record_put_without_preload_content(
         self,
         zone: Annotated[NetworkZoneRecordPut, Field(description="zone record configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2247,7 +2247,7 @@ class NetworkZonesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2336,7 +2336,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get(
+    async def network_zone_records_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2397,11 +2397,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2409,7 +2409,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get_with_http_info(
+    async def network_zone_records_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2470,11 +2470,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2482,7 +2482,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get_without_preload_content(
+    async def network_zone_records_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2543,7 +2543,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2621,7 +2621,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get_recursion1(
+    async def network_zone_records_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2682,11 +2682,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2694,7 +2694,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get_recursion1_with_http_info(
+    async def network_zone_records_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2755,11 +2755,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2767,7 +2767,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_get_recursion1_without_preload_content(
+    async def network_zone_records_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -2828,7 +2828,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2906,7 +2906,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_post(
+    async def network_zone_records_post(
         self,
         zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2968,11 +2968,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2980,7 +2980,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_post_with_http_info(
+    async def network_zone_records_post_with_http_info(
         self,
         zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3042,11 +3042,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3054,7 +3054,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zone_records_post_without_preload_content(
+    async def network_zone_records_post_without_preload_content(
         self,
         zone: Annotated[NetworkZoneRecordsPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3116,7 +3116,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3205,7 +3205,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get(
+    async def network_zones_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3270,11 +3270,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3282,7 +3282,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get_with_http_info(
+    async def network_zones_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3347,11 +3347,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3359,7 +3359,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get_without_preload_content(
+    async def network_zones_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3424,7 +3424,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3507,7 +3507,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get_recursion1(
+    async def network_zones_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3572,11 +3572,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3584,7 +3584,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get_recursion1_with_http_info(
+    async def network_zones_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3649,11 +3649,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3661,7 +3661,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_get_recursion1_without_preload_content(
+    async def network_zones_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network zones from all projects")] = None,
@@ -3726,7 +3726,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3809,7 +3809,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_post(
+    async def network_zones_post(
         self,
         zone: Annotated[NetworkZonesPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3871,11 +3871,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3883,7 +3883,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_post_with_http_info(
+    async def network_zones_post_with_http_info(
         self,
         zone: Annotated[NetworkZonesPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3945,11 +3945,11 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3957,7 +3957,7 @@ class NetworkZonesApi:
 
 
     @validate_call
-    def network_zones_post_without_preload_content(
+    async def network_zones_post_without_preload_content(
         self,
         zone: Annotated[NetworkZonesPost, Field(description="zone")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4019,7 +4019,7 @@ class NetworkZonesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[StorageBucketBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/StorageBucketBackup.md) | List of storage bucket backups | [optional] 
+**metadata** | [**List[StorageBucketBackup]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/StorageBucketBackup.md) | List of storage bucket backups | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

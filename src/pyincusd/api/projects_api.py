@@ -49,7 +49,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_access(
+    async def project_access(
         self,
         _request_timeout: Union[
             None,
@@ -103,11 +103,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -115,7 +115,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_access_with_http_info(
+    async def project_access_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -169,11 +169,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -181,7 +181,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_access_without_preload_content(
+    async def project_access_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -235,7 +235,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -303,7 +303,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_delete(
+    async def project_delete(
         self,
         force: Annotated[Optional[StrictBool], Field(description="Delete project and related artifacts")] = None,
         _request_timeout: Union[
@@ -361,11 +361,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -373,7 +373,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_delete_with_http_info(
+    async def project_delete_with_http_info(
         self,
         force: Annotated[Optional[StrictBool], Field(description="Delete project and related artifacts")] = None,
         _request_timeout: Union[
@@ -431,11 +431,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -443,7 +443,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_delete_without_preload_content(
+    async def project_delete_without_preload_content(
         self,
         force: Annotated[Optional[StrictBool], Field(description="Delete project and related artifacts")] = None,
         _request_timeout: Union[
@@ -501,7 +501,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -574,7 +574,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_get(
+    async def project_get(
         self,
         _request_timeout: Union[
             None,
@@ -627,11 +627,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -639,7 +639,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_get_with_http_info(
+    async def project_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -692,11 +692,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -704,7 +704,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_get_without_preload_content(
+    async def project_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -757,7 +757,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -825,7 +825,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_patch(
+    async def project_patch(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -884,11 +884,11 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -896,7 +896,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_patch_with_http_info(
+    async def project_patch_with_http_info(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -955,11 +955,11 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -967,7 +967,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_patch_without_preload_content(
+    async def project_patch_without_preload_content(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -1026,7 +1026,7 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1110,7 +1110,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_post(
+    async def project_post(
         self,
         project: Annotated[ProjectPost, Field(description="Project rename request")],
         _request_timeout: Union[
@@ -1168,11 +1168,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1180,7 +1180,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_post_with_http_info(
+    async def project_post_with_http_info(
         self,
         project: Annotated[ProjectPost, Field(description="Project rename request")],
         _request_timeout: Union[
@@ -1238,11 +1238,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1250,7 +1250,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_post_without_preload_content(
+    async def project_post_without_preload_content(
         self,
         project: Annotated[ProjectPost, Field(description="Project rename request")],
         _request_timeout: Union[
@@ -1308,7 +1308,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1392,7 +1392,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_put(
+    async def project_put(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -1451,11 +1451,11 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1463,7 +1463,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_put_with_http_info(
+    async def project_put_with_http_info(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -1522,11 +1522,11 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1534,7 +1534,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_put_without_preload_content(
+    async def project_put_without_preload_content(
         self,
         project: Annotated[ProjectPut, Field(description="Project configuration")],
         _request_timeout: Union[
@@ -1593,7 +1593,7 @@ class ProjectsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1677,7 +1677,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_state_get(
+    async def project_state_get(
         self,
         _request_timeout: Union[
             None,
@@ -1730,11 +1730,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1742,7 +1742,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_state_get_with_http_info(
+    async def project_state_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1795,11 +1795,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1807,7 +1807,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def project_state_get_without_preload_content(
+    async def project_state_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1860,7 +1860,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1928,7 +1928,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get(
+    async def projects_get(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1985,11 +1985,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1997,7 +1997,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get_with_http_info(
+    async def projects_get_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2054,11 +2054,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2066,7 +2066,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get_without_preload_content(
+    async def projects_get_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2123,7 +2123,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2196,7 +2196,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get_recursion1(
+    async def projects_get_recursion1(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2253,11 +2253,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2265,7 +2265,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get_recursion1_with_http_info(
+    async def projects_get_recursion1_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2322,11 +2322,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2334,7 +2334,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_get_recursion1_without_preload_content(
+    async def projects_get_recursion1_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -2391,7 +2391,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2464,7 +2464,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_post(
+    async def projects_post(
         self,
         project: Annotated[ProjectsPost, Field(description="Project")],
         _request_timeout: Union[
@@ -2522,11 +2522,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2534,7 +2534,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_post_with_http_info(
+    async def projects_post_with_http_info(
         self,
         project: Annotated[ProjectsPost, Field(description="Project")],
         _request_timeout: Union[
@@ -2592,11 +2592,11 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2604,7 +2604,7 @@ class ProjectsApi:
 
 
     @validate_call
-    def projects_post_without_preload_content(
+    async def projects_post_without_preload_content(
         self,
         project: Annotated[ProjectsPost, Field(description="Project")],
         _request_timeout: Union[
@@ -2662,7 +2662,7 @@ class ProjectsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

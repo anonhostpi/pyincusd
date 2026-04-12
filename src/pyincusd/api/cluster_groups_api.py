@@ -44,7 +44,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_delete(
+    async def cluster_group_delete(
         self,
         _request_timeout: Union[
             None,
@@ -98,11 +98,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -110,7 +110,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_delete_with_http_info(
+    async def cluster_group_delete_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -164,11 +164,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -176,7 +176,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_delete_without_preload_content(
+    async def cluster_group_delete_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -230,7 +230,7 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -298,7 +298,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_get(
+    async def cluster_group_get(
         self,
         _request_timeout: Union[
             None,
@@ -351,11 +351,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -363,7 +363,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_get_with_http_info(
+    async def cluster_group_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -416,11 +416,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -428,7 +428,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_get_without_preload_content(
+    async def cluster_group_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -481,7 +481,7 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -549,7 +549,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_patch(
+    async def cluster_group_patch(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -608,11 +608,11 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -620,7 +620,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_patch_with_http_info(
+    async def cluster_group_patch_with_http_info(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -679,11 +679,11 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -691,7 +691,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_patch_without_preload_content(
+    async def cluster_group_patch_without_preload_content(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -750,7 +750,7 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -834,7 +834,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_post(
+    async def cluster_group_post(
         self,
         name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
@@ -892,11 +892,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -904,7 +904,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_post_with_http_info(
+    async def cluster_group_post_with_http_info(
         self,
         name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
@@ -962,11 +962,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -974,7 +974,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_post_without_preload_content(
+    async def cluster_group_post_without_preload_content(
         self,
         name: Annotated[ClusterGroupPost, Field(description="Cluster group rename request")],
         _request_timeout: Union[
@@ -1032,7 +1032,7 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1116,7 +1116,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_put(
+    async def cluster_group_put(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -1175,11 +1175,11 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1187,7 +1187,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_put_with_http_info(
+    async def cluster_group_put_with_http_info(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -1246,11 +1246,11 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1258,7 +1258,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_group_put_without_preload_content(
+    async def cluster_group_put_without_preload_content(
         self,
         cluster_group: Annotated[ClusterGroupPut, Field(description="cluster group configuration")],
         _request_timeout: Union[
@@ -1317,7 +1317,7 @@ class ClusterGroupsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1401,7 +1401,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get(
+    async def cluster_groups_get(
         self,
         _request_timeout: Union[
             None,
@@ -1454,11 +1454,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1466,7 +1466,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get_with_http_info(
+    async def cluster_groups_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1519,11 +1519,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1531,7 +1531,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get_without_preload_content(
+    async def cluster_groups_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1584,7 +1584,7 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1652,7 +1652,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get_recursion1(
+    async def cluster_groups_get_recursion1(
         self,
         _request_timeout: Union[
             None,
@@ -1705,11 +1705,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1717,7 +1717,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get_recursion1_with_http_info(
+    async def cluster_groups_get_recursion1_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1770,11 +1770,11 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1782,7 +1782,7 @@ class ClusterGroupsApi:
 
 
     @validate_call
-    def cluster_groups_get_recursion1_without_preload_content(
+    async def cluster_groups_get_recursion1_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1835,7 +1835,7 @@ class ClusterGroupsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

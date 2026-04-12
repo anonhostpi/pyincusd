@@ -1,19 +1,19 @@
 # pyincusd.ProjectsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**project_access**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_access) | **GET** /1.0/projects/{name}/access | Get who has access to a project
-[**project_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_delete) | **DELETE** /1.0/projects/{name} | Delete the project
-[**project_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_get) | **GET** /1.0/projects/{name} | Get the project
-[**project_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_patch) | **PATCH** /1.0/projects/{name} | Partially update the project
-[**project_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_post) | **POST** /1.0/projects/{name} | Rename the project
-[**project_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_put) | **PUT** /1.0/projects/{name} | Update the project
-[**project_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#project_state_get) | **GET** /1.0/projects/{name}/state | Get the project state
-[**projects_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#projects_get) | **GET** /1.0/projects | Get the projects
-[**projects_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#projects_get_recursion1) | **GET** /1.0/projects?recursion&#x3D;1 | Get the projects
-[**projects_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsApi.md#projects_post) | **POST** /1.0/projects | Add a project
+[**project_access**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_access) | **GET** /1.0/projects/{name}/access | Get who has access to a project
+[**project_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_delete) | **DELETE** /1.0/projects/{name} | Delete the project
+[**project_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_get) | **GET** /1.0/projects/{name} | Get the project
+[**project_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_patch) | **PATCH** /1.0/projects/{name} | Partially update the project
+[**project_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_post) | **POST** /1.0/projects/{name} | Rename the project
+[**project_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_put) | **PUT** /1.0/projects/{name} | Update the project
+[**project_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#project_state_get) | **GET** /1.0/projects/{name}/state | Get the project state
+[**projects_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#projects_get) | **GET** /1.0/projects | Get the projects
+[**projects_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#projects_get_recursion1) | **GET** /1.0/projects?recursion&#x3D;1 | Get the projects
+[**projects_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsApi.md#projects_post) | **POST** /1.0/projects | Add a project
 
 
 # **project_access**
@@ -40,13 +40,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
 
     try:
         # Get who has access to a project
-        api_response = api_instance.project_access()
+        api_response = await api_instance.project_access()
         print("The response of ProjectsApi->project_access:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InstanceAccess200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceAccess200Response.md)
+[**InstanceAccess200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceAccess200Response.md)
 
 ### Authorization
 
@@ -107,14 +107,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     force = True # bool | Delete project and related artifacts (optional)
 
     try:
         # Delete the project
-        api_response = api_instance.project_delete(force=force)
+        api_response = await api_instance.project_delete(force=force)
         print("The response of ProjectsApi->project_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -178,13 +178,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
 
     try:
         # Get the project
-        api_response = api_instance.project_get()
+        api_response = await api_instance.project_get()
         print("The response of ProjectsApi->project_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -199,7 +199,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProjectGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectGet200Response.md)
+[**ProjectGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectGet200Response.md)
 
 ### Authorization
 
@@ -245,14 +245,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     project = pyincusd.ProjectPut() # ProjectPut | Project configuration
 
     try:
         # Partially update the project
-        api_response = api_instance.project_patch(project)
+        api_response = await api_instance.project_patch(project)
         print("The response of ProjectsApi->project_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -266,11 +266,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**ProjectPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectPut.md)| Project configuration | 
+ **project** | [**ProjectPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectPut.md)| Project configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -318,14 +318,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     project = pyincusd.ProjectPost() # ProjectPost | Project rename request
 
     try:
         # Rename the project
-        api_response = api_instance.project_post(project)
+        api_response = await api_instance.project_post(project)
         print("The response of ProjectsApi->project_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -339,11 +339,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**ProjectPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectPost.md)| Project rename request | 
+ **project** | [**ProjectPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectPost.md)| Project rename request | 
 
 ### Return type
 
-[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ClusterMembersPost202Response.md)
+[**ClusterMembersPost202Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ClusterMembersPost202Response.md)
 
 ### Authorization
 
@@ -390,14 +390,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     project = pyincusd.ProjectPut() # ProjectPut | Project configuration
 
     try:
         # Update the project
-        api_response = api_instance.project_put(project)
+        api_response = await api_instance.project_put(project)
         print("The response of ProjectsApi->project_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -411,11 +411,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**ProjectPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectPut.md)| Project configuration | 
+ **project** | [**ProjectPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectPut.md)| Project configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -462,13 +462,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
 
     try:
         # Get the project state
-        api_response = api_instance.project_state_get()
+        api_response = await api_instance.project_state_get()
         print("The response of ProjectsApi->project_state_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -483,7 +483,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProjectStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectStateGet200Response.md)
+[**ProjectStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectStateGet200Response.md)
 
 ### Authorization
 
@@ -528,14 +528,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the projects
-        api_response = api_instance.projects_get(filter=filter)
+        api_response = await api_instance.projects_get(filter=filter)
         print("The response of ProjectsApi->projects_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsGet200Response.md)
+[**ProjectsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsGet200Response.md)
 
 ### Authorization
 
@@ -598,14 +598,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the projects
-        api_response = api_instance.projects_get_recursion1(filter=filter)
+        api_response = await api_instance.projects_get_recursion1(filter=filter)
         print("The response of ProjectsApi->projects_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsGetRecursion1200Response.md)
+[**ProjectsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -669,14 +669,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ProjectsApi(api_client)
     project = pyincusd.ProjectsPost() # ProjectsPost | Project
 
     try:
         # Add a project
-        api_response = api_instance.projects_post(project)
+        api_response = await api_instance.projects_post(project)
         print("The response of ProjectsApi->projects_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -690,11 +690,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project** | [**ProjectsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectsPost.md)| Project | 
+ **project** | [**ProjectsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectsPost.md)| Project | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 

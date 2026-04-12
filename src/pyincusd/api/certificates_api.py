@@ -45,7 +45,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_delete(
+    async def certificate_delete(
         self,
         _request_timeout: Union[
             None,
@@ -99,11 +99,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -111,7 +111,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_delete_with_http_info(
+    async def certificate_delete_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -165,11 +165,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -177,7 +177,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_delete_without_preload_content(
+    async def certificate_delete_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -231,7 +231,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -299,7 +299,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_get(
+    async def certificate_get(
         self,
         _request_timeout: Union[
             None,
@@ -352,11 +352,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -364,7 +364,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_get_with_http_info(
+    async def certificate_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -417,11 +417,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -429,7 +429,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_get_without_preload_content(
+    async def certificate_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -482,7 +482,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -550,7 +550,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_patch(
+    async def certificate_patch(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -609,11 +609,11 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -621,7 +621,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_patch_with_http_info(
+    async def certificate_patch_with_http_info(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -680,11 +680,11 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -692,7 +692,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_patch_without_preload_content(
+    async def certificate_patch_without_preload_content(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -751,7 +751,7 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -835,7 +835,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_put(
+    async def certificate_put(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -894,11 +894,11 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -906,7 +906,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_put_with_http_info(
+    async def certificate_put_with_http_info(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -965,11 +965,11 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -977,7 +977,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificate_put_without_preload_content(
+    async def certificate_put_without_preload_content(
         self,
         certificate: Annotated[CertificatePut, Field(description="Certificate configuration")],
         _request_timeout: Union[
@@ -1036,7 +1036,7 @@ class CertificatesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1120,7 +1120,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get(
+    async def certificates_get(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1177,11 +1177,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1189,7 +1189,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get_with_http_info(
+    async def certificates_get_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1246,11 +1246,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1258,7 +1258,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get_without_preload_content(
+    async def certificates_get_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1315,7 +1315,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1388,7 +1388,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get_recursion1(
+    async def certificates_get_recursion1(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1445,11 +1445,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1457,7 +1457,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get_recursion1_with_http_info(
+    async def certificates_get_recursion1_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1514,11 +1514,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1526,7 +1526,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_get_recursion1_without_preload_content(
+    async def certificates_get_recursion1_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1583,7 +1583,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1656,7 +1656,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post(
+    async def certificates_post(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -1714,11 +1714,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1726,7 +1726,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post_with_http_info(
+    async def certificates_post_with_http_info(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -1784,11 +1784,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1796,7 +1796,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post_without_preload_content(
+    async def certificates_post_without_preload_content(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -1854,7 +1854,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1938,7 +1938,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post_untrusted(
+    async def certificates_post_untrusted(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -1996,11 +1996,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2008,7 +2008,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post_untrusted_with_http_info(
+    async def certificates_post_untrusted_with_http_info(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -2066,11 +2066,11 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2078,7 +2078,7 @@ class CertificatesApi:
 
 
     @validate_call
-    def certificates_post_untrusted_without_preload_content(
+    async def certificates_post_untrusted_without_preload_content(
         self,
         certificate: Annotated[CertificatesPost, Field(description="Certificate")],
         _request_timeout: Union[
@@ -2136,7 +2136,7 @@ class CertificatesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

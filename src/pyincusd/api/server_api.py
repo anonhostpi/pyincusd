@@ -46,7 +46,7 @@ class ServerApi:
 
 
     @validate_call
-    def api_get(
+    async def api_get(
         self,
         _request_timeout: Union[
             None,
@@ -97,11 +97,11 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiGet200Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -109,7 +109,7 @@ class ServerApi:
 
 
     @validate_call
-    def api_get_with_http_info(
+    async def api_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -160,11 +160,11 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiGet200Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -172,7 +172,7 @@ class ServerApi:
 
 
     @validate_call
-    def api_get_without_preload_content(
+    async def api_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -223,7 +223,7 @@ class ServerApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiGet200Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -291,7 +291,7 @@ class ServerApi:
 
 
     @validate_call
-    def events_get(
+    async def events_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Event type(s), comma separated (valid types are logging, operation or lifecycle)")] = None,
@@ -356,11 +356,11 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -368,7 +368,7 @@ class ServerApi:
 
 
     @validate_call
-    def events_get_with_http_info(
+    async def events_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Event type(s), comma separated (valid types are logging, operation or lifecycle)")] = None,
@@ -433,11 +433,11 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -445,7 +445,7 @@ class ServerApi:
 
 
     @validate_call
-    def events_get_without_preload_content(
+    async def events_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Event type(s), comma separated (valid types are logging, operation or lifecycle)")] = None,
@@ -510,7 +510,7 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -593,7 +593,7 @@ class ServerApi:
 
 
     @validate_call
-    def resources_get(
+    async def resources_get(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -650,11 +650,11 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -662,7 +662,7 @@ class ServerApi:
 
 
     @validate_call
-    def resources_get_with_http_info(
+    async def resources_get_with_http_info(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -719,11 +719,11 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -731,7 +731,7 @@ class ServerApi:
 
 
     @validate_call
-    def resources_get_without_preload_content(
+    async def resources_get_without_preload_content(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -788,7 +788,7 @@ class ServerApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -861,7 +861,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get(
+    async def server_get(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -921,11 +921,11 @@ class ServerApi:
             '200': "ServerGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -933,7 +933,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get_with_http_info(
+    async def server_get_with_http_info(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -993,11 +993,11 @@ class ServerApi:
             '200': "ServerGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1005,7 +1005,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get_without_preload_content(
+    async def server_get_without_preload_content(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1065,7 +1065,7 @@ class ServerApi:
             '200': "ServerGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1143,7 +1143,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get_untrusted(
+    async def server_get_untrusted(
         self,
         _request_timeout: Union[
             None,
@@ -1195,11 +1195,11 @@ class ServerApi:
             '200': "ServerGetUntrusted200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1207,7 +1207,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get_untrusted_with_http_info(
+    async def server_get_untrusted_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -1259,11 +1259,11 @@ class ServerApi:
             '200': "ServerGetUntrusted200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1271,7 +1271,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_get_untrusted_without_preload_content(
+    async def server_get_untrusted_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -1323,7 +1323,7 @@ class ServerApi:
             '200': "ServerGetUntrusted200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1391,7 +1391,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_patch(
+    async def server_patch(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1454,11 +1454,11 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1466,7 +1466,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_patch_with_http_info(
+    async def server_patch_with_http_info(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1529,11 +1529,11 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1541,7 +1541,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_patch_without_preload_content(
+    async def server_patch_without_preload_content(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1604,7 +1604,7 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1693,7 +1693,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_put(
+    async def server_put(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1756,11 +1756,11 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1768,7 +1768,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_put_with_http_info(
+    async def server_put_with_http_info(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1831,11 +1831,11 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1843,7 +1843,7 @@ class ServerApi:
 
 
     @validate_call
-    def server_put_without_preload_content(
+    async def server_put_without_preload_content(
         self,
         server: Annotated[ServerPut, Field(description="Server configuration")],
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1906,7 +1906,7 @@ class ServerApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

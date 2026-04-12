@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[Network]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/Network.md) | List of networks | [optional] 
+**metadata** | [**List[Network]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/Network.md) | List of networks | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

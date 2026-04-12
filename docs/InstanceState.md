@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cpu** | [**InstanceStateCPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateCPU.md) |  | [optional] 
-**disk** | [**Dict[str, InstanceStateDisk]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateDisk.md) | Disk usage key/value pairs | [optional] 
-**memory** | [**InstanceStateMemory**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateMemory.md) |  | [optional] 
-**network** | [**Dict[str, InstanceStateNetwork]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateNetwork.md) | Network usage key/value pairs | [optional] 
-**os_info** | [**InstanceStateOSInfo**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateOSInfo.md) |  | [optional] 
+**cpu** | [**InstanceStateCPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateCPU.md) |  | [optional] 
+**disk** | [**Dict[str, InstanceStateDisk]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateDisk.md) | Disk usage key/value pairs | [optional] 
+**memory** | [**InstanceStateMemory**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateMemory.md) |  | [optional] 
+**network** | [**Dict[str, InstanceStateNetwork]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateNetwork.md) | Network usage key/value pairs | [optional] 
+**os_info** | [**InstanceStateOSInfo**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateOSInfo.md) |  | [optional] 
 **pid** | **int** | PID of the runtime | [optional] 
 **processes** | **int** | Number of processes in the instance | [optional] 
 **started_at** | **datetime** | The time that the instance started at  API extension: instance_state_started_at. | [optional] 

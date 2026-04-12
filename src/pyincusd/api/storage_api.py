@@ -84,7 +84,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_delete(
+    async def storage_pool_bucket_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -146,11 +146,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -158,7 +158,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_delete_with_http_info(
+    async def storage_pool_bucket_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -220,11 +220,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -232,7 +232,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_delete_without_preload_content(
+    async def storage_pool_bucket_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -294,7 +294,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -372,7 +372,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get(
+    async def storage_pool_bucket_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -429,11 +429,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -441,7 +441,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get_with_http_info(
+    async def storage_pool_bucket_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -498,11 +498,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -510,7 +510,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get_without_preload_content(
+    async def storage_pool_bucket_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -567,7 +567,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -640,7 +640,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get_recursion1(
+    async def storage_pool_bucket_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -697,11 +697,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -709,7 +709,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get_recursion1_with_http_info(
+    async def storage_pool_bucket_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -766,11 +766,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -778,7 +778,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_get_recursion1_without_preload_content(
+    async def storage_pool_bucket_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -835,7 +835,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -908,7 +908,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_delete(
+    async def storage_pool_bucket_key_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -970,11 +970,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -982,7 +982,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_delete_with_http_info(
+    async def storage_pool_bucket_key_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1044,11 +1044,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1056,7 +1056,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_delete_without_preload_content(
+    async def storage_pool_bucket_key_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -1118,7 +1118,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1196,7 +1196,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_get(
+    async def storage_pool_bucket_key_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1253,11 +1253,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1265,7 +1265,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_get_with_http_info(
+    async def storage_pool_bucket_key_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1322,11 +1322,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1334,7 +1334,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_get_without_preload_content(
+    async def storage_pool_bucket_key_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1391,7 +1391,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1464,7 +1464,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_post(
+    async def storage_pool_bucket_key_post(
         self,
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1526,11 +1526,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1538,7 +1538,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_post_with_http_info(
+    async def storage_pool_bucket_key_post_with_http_info(
         self,
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1600,11 +1600,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1612,7 +1612,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_post_without_preload_content(
+    async def storage_pool_bucket_key_post_without_preload_content(
         self,
         bucket: Annotated[StorageBucketKeysPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1674,7 +1674,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1763,7 +1763,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_put(
+    async def storage_pool_bucket_key_put(
         self,
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1830,11 +1830,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1842,7 +1842,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_put_with_http_info(
+    async def storage_pool_bucket_key_put_with_http_info(
         self,
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1909,11 +1909,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1921,7 +1921,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_key_put_without_preload_content(
+    async def storage_pool_bucket_key_put_without_preload_content(
         self,
         storage_bucket: Annotated[StorageBucketKeyPut, Field(description="Storage bucket key configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1988,7 +1988,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2082,7 +2082,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get(
+    async def storage_pool_bucket_keys_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2139,11 +2139,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2151,7 +2151,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get_with_http_info(
+    async def storage_pool_bucket_keys_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2208,11 +2208,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2220,7 +2220,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get_without_preload_content(
+    async def storage_pool_bucket_keys_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2277,7 +2277,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2350,7 +2350,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get_recursion1(
+    async def storage_pool_bucket_keys_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2407,11 +2407,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2419,7 +2419,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get_recursion1_with_http_info(
+    async def storage_pool_bucket_keys_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2476,11 +2476,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2488,7 +2488,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_keys_get_recursion1_without_preload_content(
+    async def storage_pool_bucket_keys_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -2545,7 +2545,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2618,7 +2618,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_patch(
+    async def storage_pool_bucket_patch(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2685,11 +2685,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2697,7 +2697,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_patch_with_http_info(
+    async def storage_pool_bucket_patch_with_http_info(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2764,11 +2764,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2776,7 +2776,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_patch_without_preload_content(
+    async def storage_pool_bucket_patch_without_preload_content(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2843,7 +2843,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2937,7 +2937,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_post(
+    async def storage_pool_bucket_post(
         self,
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2999,11 +2999,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3011,7 +3011,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_post_with_http_info(
+    async def storage_pool_bucket_post_with_http_info(
         self,
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3073,11 +3073,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3085,7 +3085,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_post_without_preload_content(
+    async def storage_pool_bucket_post_without_preload_content(
         self,
         bucket: Annotated[StorageBucketsPost, Field(description="Bucket")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3147,7 +3147,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3236,7 +3236,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_put(
+    async def storage_pool_bucket_put(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3303,11 +3303,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3315,7 +3315,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_put_with_http_info(
+    async def storage_pool_bucket_put_with_http_info(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3382,11 +3382,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3394,7 +3394,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_bucket_put_without_preload_content(
+    async def storage_pool_bucket_put_without_preload_content(
         self,
         storage_bucket: Annotated[StorageBucketPut, Field(description="Storage bucket configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -3461,7 +3461,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3555,7 +3555,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_delete(
+    async def storage_pool_buckets_backup_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3617,11 +3617,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3629,7 +3629,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_delete_with_http_info(
+    async def storage_pool_buckets_backup_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3691,11 +3691,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3703,7 +3703,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_delete_without_preload_content(
+    async def storage_pool_buckets_backup_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3765,7 +3765,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -3843,7 +3843,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_export_get(
+    async def storage_pool_buckets_backup_export_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3904,11 +3904,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3916,7 +3916,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_export_get_with_http_info(
+    async def storage_pool_buckets_backup_export_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -3977,11 +3977,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -3989,7 +3989,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_export_get_without_preload_content(
+    async def storage_pool_buckets_backup_export_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4050,7 +4050,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4128,7 +4128,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_get(
+    async def storage_pool_buckets_backup_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4189,11 +4189,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4201,7 +4201,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_get_with_http_info(
+    async def storage_pool_buckets_backup_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4262,11 +4262,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4274,7 +4274,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_get_without_preload_content(
+    async def storage_pool_buckets_backup_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4335,7 +4335,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4413,7 +4413,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_post(
+    async def storage_pool_buckets_backup_post(
         self,
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4479,11 +4479,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4491,7 +4491,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_post_with_http_info(
+    async def storage_pool_buckets_backup_post_with_http_info(
         self,
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4557,11 +4557,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4569,7 +4569,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backup_post_without_preload_content(
+    async def storage_pool_buckets_backup_post_without_preload_content(
         self,
         bucket_rename: Annotated[StorageBucketBackupPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -4635,7 +4635,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -4729,7 +4729,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get(
+    async def storage_pool_buckets_backups_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4790,11 +4790,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4802,7 +4802,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get_with_http_info(
+    async def storage_pool_buckets_backups_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4863,11 +4863,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -4875,7 +4875,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get_without_preload_content(
+    async def storage_pool_buckets_backups_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -4936,7 +4936,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5014,7 +5014,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get_recursion1(
+    async def storage_pool_buckets_backups_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5075,11 +5075,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5087,7 +5087,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get_recursion1_with_http_info(
+    async def storage_pool_buckets_backups_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5148,11 +5148,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5160,7 +5160,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_get_recursion1_without_preload_content(
+    async def storage_pool_buckets_backups_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -5221,7 +5221,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5299,7 +5299,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_post(
+    async def storage_pool_buckets_backups_post(
         self,
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5365,11 +5365,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5377,7 +5377,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_post_with_http_info(
+    async def storage_pool_buckets_backups_post_with_http_info(
         self,
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5443,11 +5443,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5455,7 +5455,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_backups_post_without_preload_content(
+    async def storage_pool_buckets_backups_post_without_preload_content(
         self,
         bucket: Annotated[StorageBucketBackupsPost, Field(description="Storage bucket backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -5521,7 +5521,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5616,7 +5616,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get(
+    async def storage_pool_buckets_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -5681,11 +5681,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5693,7 +5693,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_with_http_info(
+    async def storage_pool_buckets_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -5758,11 +5758,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5770,7 +5770,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_without_preload_content(
+    async def storage_pool_buckets_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -5835,7 +5835,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -5918,7 +5918,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion1(
+    async def storage_pool_buckets_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -5983,11 +5983,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -5995,7 +5995,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion1_with_http_info(
+    async def storage_pool_buckets_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -6060,11 +6060,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6072,7 +6072,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion1_without_preload_content(
+    async def storage_pool_buckets_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -6137,7 +6137,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6220,7 +6220,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion2(
+    async def storage_pool_buckets_get_recursion2(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -6285,11 +6285,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6297,7 +6297,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion2_with_http_info(
+    async def storage_pool_buckets_get_recursion2_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -6362,11 +6362,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6374,7 +6374,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_buckets_get_recursion2_without_preload_content(
+    async def storage_pool_buckets_get_recursion2_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve storage pool buckets from all projects")] = None,
@@ -6439,7 +6439,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6522,7 +6522,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_get(
+    async def storage_pool_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6583,11 +6583,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6595,7 +6595,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_get_with_http_info(
+    async def storage_pool_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6656,11 +6656,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6668,7 +6668,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_get_without_preload_content(
+    async def storage_pool_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -6729,7 +6729,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -6807,7 +6807,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_patch(
+    async def storage_pool_patch(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6874,11 +6874,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6886,7 +6886,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_patch_with_http_info(
+    async def storage_pool_patch_with_http_info(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -6953,11 +6953,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -6965,7 +6965,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_patch_without_preload_content(
+    async def storage_pool_patch_without_preload_content(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -7032,7 +7032,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7126,7 +7126,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_put(
+    async def storage_pool_put(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -7193,11 +7193,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7205,7 +7205,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_put_with_http_info(
+    async def storage_pool_put_with_http_info(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -7272,11 +7272,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7284,7 +7284,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_put_without_preload_content(
+    async def storage_pool_put_without_preload_content(
         self,
         storage_pool: Annotated[StoragePoolPut, Field(description="Storage pool configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -7351,7 +7351,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7445,7 +7445,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_resources(
+    async def storage_pool_resources(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7502,11 +7502,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7514,7 +7514,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_resources_with_http_info(
+    async def storage_pool_resources_with_http_info(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7571,11 +7571,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7583,7 +7583,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_resources_without_preload_content(
+    async def storage_pool_resources_without_preload_content(
         self,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
         _request_timeout: Union[
@@ -7640,7 +7640,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -7713,7 +7713,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_delete(
+    async def storage_pool_volume_type_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7775,11 +7775,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7787,7 +7787,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_delete_with_http_info(
+    async def storage_pool_volume_type_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7849,11 +7849,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -7861,7 +7861,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_delete_without_preload_content(
+    async def storage_pool_volume_type_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -7923,7 +7923,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8001,7 +8001,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_delete(
+    async def storage_pool_volume_type_files_delete(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8068,11 +8068,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8080,7 +8080,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_delete_with_http_info(
+    async def storage_pool_volume_type_files_delete_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8147,11 +8147,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8159,7 +8159,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_delete_without_preload_content(
+    async def storage_pool_volume_type_files_delete_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8226,7 +8226,7 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8307,7 +8307,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_get(
+    async def storage_pool_volume_type_files_get(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8370,11 +8370,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8382,7 +8382,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_get_with_http_info(
+    async def storage_pool_volume_type_files_get_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8445,11 +8445,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8457,7 +8457,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_get_without_preload_content(
+    async def storage_pool_volume_type_files_get_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8520,7 +8520,7 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8599,7 +8599,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_head(
+    async def storage_pool_volume_type_files_head(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8662,11 +8662,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8674,7 +8674,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_head_with_http_info(
+    async def storage_pool_volume_type_files_head_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8737,11 +8737,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8749,7 +8749,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_head_without_preload_content(
+    async def storage_pool_volume_type_files_head_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8812,7 +8812,7 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -8890,7 +8890,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_post(
+    async def storage_pool_volume_type_files_post(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -8973,11 +8973,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -8985,7 +8985,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_post_with_http_info(
+    async def storage_pool_volume_type_files_post_with_http_info(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9068,11 +9068,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9080,7 +9080,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_files_post_without_preload_content(
+    async def storage_pool_volume_type_files_post_without_preload_content(
         self,
         path: Annotated[Optional[StrictStr], Field(description="Path to the file")] = None,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9163,7 +9163,7 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9269,7 +9269,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get(
+    async def storage_pool_volume_type_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9330,11 +9330,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9342,7 +9342,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get_with_http_info(
+    async def storage_pool_volume_type_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9403,11 +9403,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9415,7 +9415,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get_without_preload_content(
+    async def storage_pool_volume_type_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9476,7 +9476,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9554,7 +9554,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get_recursion1(
+    async def storage_pool_volume_type_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9615,11 +9615,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9627,7 +9627,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get_recursion1_with_http_info(
+    async def storage_pool_volume_type_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9688,11 +9688,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9700,7 +9700,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_get_recursion1_without_preload_content(
+    async def storage_pool_volume_type_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -9761,7 +9761,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -9839,7 +9839,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_patch(
+    async def storage_pool_volume_type_patch(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9906,11 +9906,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9918,7 +9918,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_patch_with_http_info(
+    async def storage_pool_volume_type_patch_with_http_info(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -9985,11 +9985,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -9997,7 +9997,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_patch_without_preload_content(
+    async def storage_pool_volume_type_patch_without_preload_content(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10064,7 +10064,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10158,7 +10158,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_post(
+    async def storage_pool_volume_type_post(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10224,11 +10224,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10236,7 +10236,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_post_with_http_info(
+    async def storage_pool_volume_type_post_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10302,11 +10302,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10314,7 +10314,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_post_without_preload_content(
+    async def storage_pool_volume_type_post_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -10380,7 +10380,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10474,7 +10474,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_put(
+    async def storage_pool_volume_type_put(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10541,11 +10541,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10553,7 +10553,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_put_with_http_info(
+    async def storage_pool_volume_type_put_with_http_info(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10620,11 +10620,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10632,7 +10632,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_put_without_preload_content(
+    async def storage_pool_volume_type_put_without_preload_content(
         self,
         storage_volume: Annotated[StorageVolumePut, Field(description="Storage volume configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -10699,7 +10699,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -10793,7 +10793,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_sftp_get(
+    async def storage_pool_volume_type_sftp_get(
         self,
         _request_timeout: Union[
             None,
@@ -10848,11 +10848,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10860,7 +10860,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_sftp_get_with_http_info(
+    async def storage_pool_volume_type_sftp_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -10915,11 +10915,11 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -10927,7 +10927,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_sftp_get_without_preload_content(
+    async def storage_pool_volume_type_sftp_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -10982,7 +10982,7 @@ class StorageApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11051,7 +11051,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_state_get(
+    async def storage_pool_volume_type_state_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11112,11 +11112,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11124,7 +11124,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_state_get_with_http_info(
+    async def storage_pool_volume_type_state_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11185,11 +11185,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11197,7 +11197,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volume_type_state_get_without_preload_content(
+    async def storage_pool_volume_type_state_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11258,7 +11258,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11336,7 +11336,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get(
+    async def storage_pool_volumes_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11401,11 +11401,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11413,7 +11413,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get_with_http_info(
+    async def storage_pool_volumes_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11478,11 +11478,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11490,7 +11490,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get_without_preload_content(
+    async def storage_pool_volumes_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11555,7 +11555,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11638,7 +11638,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get_recursion1(
+    async def storage_pool_volumes_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11703,11 +11703,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11715,7 +11715,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get_recursion1_with_http_info(
+    async def storage_pool_volumes_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11780,11 +11780,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -11792,7 +11792,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_get_recursion1_without_preload_content(
+    async def storage_pool_volumes_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -11857,7 +11857,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -11940,7 +11940,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_post(
+    async def storage_pool_volumes_post(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -12007,11 +12007,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12019,7 +12019,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_post_with_http_info(
+    async def storage_pool_volumes_post_with_http_info(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -12086,11 +12086,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12098,7 +12098,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_post_without_preload_content(
+    async def storage_pool_volumes_post_without_preload_content(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -12165,7 +12165,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12259,7 +12259,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_delete(
+    async def storage_pool_volumes_type_backup_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12321,11 +12321,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12333,7 +12333,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_delete_with_http_info(
+    async def storage_pool_volumes_type_backup_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12395,11 +12395,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12407,7 +12407,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_delete_without_preload_content(
+    async def storage_pool_volumes_type_backup_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12469,7 +12469,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12547,7 +12547,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_export_get(
+    async def storage_pool_volumes_type_backup_export_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12608,11 +12608,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12620,7 +12620,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_export_get_with_http_info(
+    async def storage_pool_volumes_type_backup_export_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12681,11 +12681,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12693,7 +12693,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_export_get_without_preload_content(
+    async def storage_pool_volumes_type_backup_export_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12754,7 +12754,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -12832,7 +12832,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_get(
+    async def storage_pool_volumes_type_backup_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12893,11 +12893,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12905,7 +12905,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_get_with_http_info(
+    async def storage_pool_volumes_type_backup_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -12966,11 +12966,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -12978,7 +12978,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_get_without_preload_content(
+    async def storage_pool_volumes_type_backup_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13039,7 +13039,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13117,7 +13117,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_post(
+    async def storage_pool_volumes_type_backup_post(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -13183,11 +13183,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13195,7 +13195,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_post_with_http_info(
+    async def storage_pool_volumes_type_backup_post_with_http_info(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -13261,11 +13261,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13273,7 +13273,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backup_post_without_preload_content(
+    async def storage_pool_volumes_type_backup_post_without_preload_content(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -13339,7 +13339,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13433,7 +13433,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get(
+    async def storage_pool_volumes_type_backups_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13494,11 +13494,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13506,7 +13506,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get_with_http_info(
+    async def storage_pool_volumes_type_backups_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13567,11 +13567,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13579,7 +13579,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get_without_preload_content(
+    async def storage_pool_volumes_type_backups_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13640,7 +13640,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -13718,7 +13718,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get_recursion1(
+    async def storage_pool_volumes_type_backups_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13779,11 +13779,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13791,7 +13791,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get_recursion1_with_http_info(
+    async def storage_pool_volumes_type_backups_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13852,11 +13852,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -13864,7 +13864,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_get_recursion1_without_preload_content(
+    async def storage_pool_volumes_type_backups_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -13925,7 +13925,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14003,7 +14003,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_post(
+    async def storage_pool_volumes_type_backups_post(
         self,
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -14069,11 +14069,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14081,7 +14081,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_post_with_http_info(
+    async def storage_pool_volumes_type_backups_post_with_http_info(
         self,
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -14147,11 +14147,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14159,7 +14159,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_backups_post_without_preload_content(
+    async def storage_pool_volumes_type_backups_post_without_preload_content(
         self,
         volume: Annotated[StorageVolumeBackupsPost, Field(description="Storage volume backup")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -14225,7 +14225,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14320,7 +14320,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get(
+    async def storage_pool_volumes_type_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14381,11 +14381,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14393,7 +14393,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_with_http_info(
+    async def storage_pool_volumes_type_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14454,11 +14454,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14466,7 +14466,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_without_preload_content(
+    async def storage_pool_volumes_type_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14527,7 +14527,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14605,7 +14605,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion1(
+    async def storage_pool_volumes_type_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14666,11 +14666,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14678,7 +14678,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion1_with_http_info(
+    async def storage_pool_volumes_type_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14739,11 +14739,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14751,7 +14751,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion1_without_preload_content(
+    async def storage_pool_volumes_type_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14812,7 +14812,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -14890,7 +14890,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion2(
+    async def storage_pool_volumes_type_get_recursion2(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -14951,11 +14951,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -14963,7 +14963,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion2_with_http_info(
+    async def storage_pool_volumes_type_get_recursion2_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15024,11 +15024,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15036,7 +15036,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_get_recursion2_without_preload_content(
+    async def storage_pool_volumes_type_get_recursion2_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15097,7 +15097,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15175,7 +15175,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_post(
+    async def storage_pool_volumes_type_post(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -15242,11 +15242,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15254,7 +15254,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_post_with_http_info(
+    async def storage_pool_volumes_type_post_with_http_info(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -15321,11 +15321,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15333,7 +15333,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_post_without_preload_content(
+    async def storage_pool_volumes_type_post_without_preload_content(
         self,
         volume: Annotated[StorageVolumesPost, Field(description="Storage volume")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -15400,7 +15400,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15494,7 +15494,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_delete(
+    async def storage_pool_volumes_type_snapshot_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15556,11 +15556,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15568,7 +15568,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_delete_with_http_info(
+    async def storage_pool_volumes_type_snapshot_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15630,11 +15630,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15642,7 +15642,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_delete_without_preload_content(
+    async def storage_pool_volumes_type_snapshot_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15704,7 +15704,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -15782,7 +15782,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_get(
+    async def storage_pool_volumes_type_snapshot_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15843,11 +15843,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15855,7 +15855,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_get_with_http_info(
+    async def storage_pool_volumes_type_snapshot_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15916,11 +15916,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -15928,7 +15928,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_get_without_preload_content(
+    async def storage_pool_volumes_type_snapshot_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -15989,7 +15989,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16067,7 +16067,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_patch(
+    async def storage_pool_volumes_type_snapshot_patch(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16134,11 +16134,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16146,7 +16146,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_patch_with_http_info(
+    async def storage_pool_volumes_type_snapshot_patch_with_http_info(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16213,11 +16213,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16225,7 +16225,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_patch_without_preload_content(
+    async def storage_pool_volumes_type_snapshot_patch_without_preload_content(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16292,7 +16292,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16386,7 +16386,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_post(
+    async def storage_pool_volumes_type_snapshot_post(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16452,11 +16452,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16464,7 +16464,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_post_with_http_info(
+    async def storage_pool_volumes_type_snapshot_post_with_http_info(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16530,11 +16530,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16542,7 +16542,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_post_without_preload_content(
+    async def storage_pool_volumes_type_snapshot_post_without_preload_content(
         self,
         volume_rename: Annotated[StorageVolumeSnapshotPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16608,7 +16608,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -16702,7 +16702,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_put(
+    async def storage_pool_volumes_type_snapshot_put(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16769,11 +16769,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16781,7 +16781,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_put_with_http_info(
+    async def storage_pool_volumes_type_snapshot_put_with_http_info(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16848,11 +16848,11 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -16860,7 +16860,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshot_put_without_preload_content(
+    async def storage_pool_volumes_type_snapshot_put_without_preload_content(
         self,
         storage_volume_snapshot: Annotated[StorageVolumeSnapshotPut, Field(description="Storage volume snapshot configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -16927,7 +16927,7 @@ class StorageApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17021,7 +17021,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get(
+    async def storage_pool_volumes_type_snapshots_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17082,11 +17082,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17094,7 +17094,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get_with_http_info(
+    async def storage_pool_volumes_type_snapshots_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17155,11 +17155,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17167,7 +17167,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get_without_preload_content(
+    async def storage_pool_volumes_type_snapshots_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17228,7 +17228,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17306,7 +17306,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get_recursion1(
+    async def storage_pool_volumes_type_snapshots_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17367,11 +17367,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17379,7 +17379,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get_recursion1_with_http_info(
+    async def storage_pool_volumes_type_snapshots_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17440,11 +17440,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17452,7 +17452,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_get_recursion1_without_preload_content(
+    async def storage_pool_volumes_type_snapshots_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -17513,7 +17513,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17591,7 +17591,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_post(
+    async def storage_pool_volumes_type_snapshots_post(
         self,
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -17657,11 +17657,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17669,7 +17669,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_post_with_http_info(
+    async def storage_pool_volumes_type_snapshots_post_with_http_info(
         self,
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -17735,11 +17735,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17747,7 +17747,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pool_volumes_type_snapshots_post_without_preload_content(
+    async def storage_pool_volumes_type_snapshots_post_without_preload_content(
         self,
         volume: Annotated[StorageVolumeSnapshotsPost, Field(description="Storage volume snapshot")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -17813,7 +17813,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -17907,7 +17907,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_delete(
+    async def storage_pools_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -17965,11 +17965,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -17977,7 +17977,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_delete_with_http_info(
+    async def storage_pools_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -18035,11 +18035,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18047,7 +18047,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_delete_without_preload_content(
+    async def storage_pools_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -18105,7 +18105,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18178,7 +18178,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get(
+    async def storage_pools_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18239,11 +18239,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18251,7 +18251,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get_with_http_info(
+    async def storage_pools_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18312,11 +18312,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18324,7 +18324,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get_without_preload_content(
+    async def storage_pools_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18385,7 +18385,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18463,7 +18463,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get_recursion1(
+    async def storage_pools_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18524,11 +18524,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18536,7 +18536,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get_recursion1_with_http_info(
+    async def storage_pools_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18597,11 +18597,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18609,7 +18609,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_get_recursion1_without_preload_content(
+    async def storage_pools_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -18670,7 +18670,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -18748,7 +18748,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_post(
+    async def storage_pools_post(
         self,
         storage: Annotated[StoragePoolsPost, Field(description="Storage pool")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -18814,11 +18814,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18826,7 +18826,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_post_with_http_info(
+    async def storage_pools_post_with_http_info(
         self,
         storage: Annotated[StoragePoolsPost, Field(description="Storage pool")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -18892,11 +18892,11 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -18904,7 +18904,7 @@ class StorageApi:
 
 
     @validate_call
-    def storage_pools_post_without_preload_content(
+    async def storage_pools_post_without_preload_content(
         self,
         storage: Annotated[StoragePoolsPost, Field(description="Storage pool")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -18970,7 +18970,7 @@ class StorageApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

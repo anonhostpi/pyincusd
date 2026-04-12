@@ -46,7 +46,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_delete(
+    async def profile_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_delete_with_http_info(
+    async def profile_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -174,11 +174,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_delete_without_preload_content(
+    async def profile_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -244,7 +244,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -317,7 +317,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_get(
+    async def profile_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -374,11 +374,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -386,7 +386,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_get_with_http_info(
+    async def profile_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -443,11 +443,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -455,7 +455,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_get_without_preload_content(
+    async def profile_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -512,7 +512,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -585,7 +585,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_patch(
+    async def profile_patch(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -648,11 +648,11 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -660,7 +660,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_patch_with_http_info(
+    async def profile_patch_with_http_info(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -723,11 +723,11 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -735,7 +735,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_patch_without_preload_content(
+    async def profile_patch_without_preload_content(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -798,7 +798,7 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -887,7 +887,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_post(
+    async def profile_post(
         self,
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -949,11 +949,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -961,7 +961,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_post_with_http_info(
+    async def profile_post_with_http_info(
         self,
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1023,11 +1023,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1035,7 +1035,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_post_without_preload_content(
+    async def profile_post_without_preload_content(
         self,
         profile: Annotated[ProfilePost, Field(description="Profile rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1097,7 +1097,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1186,7 +1186,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_put(
+    async def profile_put(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1249,11 +1249,11 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1261,7 +1261,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_put_with_http_info(
+    async def profile_put_with_http_info(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1324,11 +1324,11 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1336,7 +1336,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profile_put_without_preload_content(
+    async def profile_put_without_preload_content(
         self,
         profile: Annotated[ProfilePut, Field(description="Profile configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1399,7 +1399,7 @@ class ProfilesApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1488,7 +1488,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get(
+    async def profiles_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -1553,11 +1553,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1565,7 +1565,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get_with_http_info(
+    async def profiles_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -1630,11 +1630,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1642,7 +1642,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get_without_preload_content(
+    async def profiles_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -1707,7 +1707,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1790,7 +1790,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get_recursion1(
+    async def profiles_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -1855,11 +1855,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1867,7 +1867,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get_recursion1_with_http_info(
+    async def profiles_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -1932,11 +1932,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1944,7 +1944,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_get_recursion1_without_preload_content(
+    async def profiles_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve profiles from all projects")] = None,
@@ -2009,7 +2009,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2092,7 +2092,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_post(
+    async def profiles_post(
         self,
         profile: Annotated[ProfilesPost, Field(description="Profile")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2154,11 +2154,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2166,7 +2166,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_post_with_http_info(
+    async def profiles_post_with_http_info(
         self,
         profile: Annotated[ProfilesPost, Field(description="Profile")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2228,11 +2228,11 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2240,7 +2240,7 @@ class ProfilesApi:
 
 
     @validate_call
-    def profiles_post_without_preload_content(
+    async def profiles_post_without_preload_content(
         self,
         profile: Annotated[ProfilesPost, Field(description="Profile")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2302,7 +2302,7 @@ class ProfilesApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

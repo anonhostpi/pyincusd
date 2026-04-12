@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addresses** | [**List[InstanceStateNetworkAddress]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateNetworkAddress.md) | List of IP addresses | [optional] 
-**counters** | [**InstanceStateNetworkCounters**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/InstanceStateNetworkCounters.md) |  | [optional] 
+**addresses** | [**List[InstanceStateNetworkAddress]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateNetworkAddress.md) | List of IP addresses | [optional] 
+**counters** | [**InstanceStateNetworkCounters**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/InstanceStateNetworkCounters.md) |  | [optional] 
 **host_name** | **str** | Name of the interface on the host | [optional] 
 **hwaddr** | **str** | MAC address | [optional] 
 **mtu** | **int** | MTU (maximum transmit unit) for the interface | [optional] 

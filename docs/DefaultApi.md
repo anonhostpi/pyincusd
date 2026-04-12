@@ -1,10 +1,10 @@
 # pyincusd.DefaultApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**metadata_configuration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/DefaultApi.md#metadata_configuration_get) | **GET** /1.0/metadata/configuration | Get the metadata configuration
+[**metadata_configuration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/DefaultApi.md#metadata_configuration_get) | **GET** /1.0/metadata/configuration | Get the metadata configuration
 
 
 # **metadata_configuration_get**
@@ -31,13 +31,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.DefaultApi(api_client)
 
     try:
         # Get the metadata configuration
-        api_response = api_instance.metadata_configuration_get()
+        api_response = await api_instance.metadata_configuration_get()
         print("The response of DefaultApi->metadata_configuration_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -52,7 +52,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**MetadataConfigurationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/MetadataConfigurationGet200Response.md)
+[**MetadataConfigurationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/MetadataConfigurationGet200Response.md)
 
 ### Authorization
 

@@ -46,7 +46,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_delete(
+    async def network_load_balancer_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_delete_with_http_info(
+    async def network_load_balancer_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -174,11 +174,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_delete_without_preload_content(
+    async def network_load_balancer_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -244,7 +244,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -317,7 +317,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get(
+    async def network_load_balancer_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -374,11 +374,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -386,7 +386,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get_with_http_info(
+    async def network_load_balancer_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -443,11 +443,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -455,7 +455,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get_without_preload_content(
+    async def network_load_balancer_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -512,7 +512,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -585,7 +585,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get_recursion1(
+    async def network_load_balancer_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -646,11 +646,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -658,7 +658,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get_recursion1_with_http_info(
+    async def network_load_balancer_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -719,11 +719,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -731,7 +731,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_get_recursion1_without_preload_content(
+    async def network_load_balancer_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -792,7 +792,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -870,7 +870,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_patch(
+    async def network_load_balancer_patch(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -933,11 +933,11 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -945,7 +945,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_patch_with_http_info(
+    async def network_load_balancer_patch_with_http_info(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1008,11 +1008,11 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1020,7 +1020,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_patch_without_preload_content(
+    async def network_load_balancer_patch_without_preload_content(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1083,7 +1083,7 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1172,7 +1172,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_put(
+    async def network_load_balancer_put(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1235,11 +1235,11 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1247,7 +1247,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_put_with_http_info(
+    async def network_load_balancer_put_with_http_info(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1310,11 +1310,11 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1322,7 +1322,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_put_without_preload_content(
+    async def network_load_balancer_put_without_preload_content(
         self,
         load_balancer: Annotated[NetworkLoadBalancerPut, Field(description="Address load balancer configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1385,7 +1385,7 @@ class NetworkLoadBalancersApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1474,7 +1474,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_state_get(
+    async def network_load_balancer_state_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1531,11 +1531,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1543,7 +1543,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_state_get_with_http_info(
+    async def network_load_balancer_state_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1600,11 +1600,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1612,7 +1612,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancer_state_get_without_preload_content(
+    async def network_load_balancer_state_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1669,7 +1669,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1742,7 +1742,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_get(
+    async def network_load_balancers_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1803,11 +1803,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1815,7 +1815,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_get_with_http_info(
+    async def network_load_balancers_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1876,11 +1876,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1888,7 +1888,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_get_without_preload_content(
+    async def network_load_balancers_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1949,7 +1949,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2027,7 +2027,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_post(
+    async def network_load_balancers_post(
         self,
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2089,11 +2089,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2101,7 +2101,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_post_with_http_info(
+    async def network_load_balancers_post_with_http_info(
         self,
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2163,11 +2163,11 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2175,7 +2175,7 @@ class NetworkLoadBalancersApi:
 
 
     @validate_call
-    def network_load_balancers_post_without_preload_content(
+    async def network_load_balancers_post_without_preload_content(
         self,
         load_balancer: Annotated[NetworkLoadBalancersPost, Field(description="Load Balancer")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2237,7 +2237,7 @@ class NetworkLoadBalancersApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

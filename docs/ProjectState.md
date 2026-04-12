@@ -6,7 +6,7 @@ ProjectState represents the current running state of a project
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resources** | [**Dict[str, ProjectStateResource]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ProjectStateResource.md) | Allocated and used resources | [optional] [readonly] 
+**resources** | [**Dict[str, ProjectStateResource]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ProjectStateResource.md) | Allocated and used resources | [optional] [readonly] 
 
 ## Example
 

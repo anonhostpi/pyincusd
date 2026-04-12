@@ -43,7 +43,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_delete(
+    async def operation_delete(
         self,
         _request_timeout: Union[
             None,
@@ -97,11 +97,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -109,7 +109,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_delete_with_http_info(
+    async def operation_delete_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -163,11 +163,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -175,7 +175,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_delete_without_preload_content(
+    async def operation_delete_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -229,7 +229,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -297,7 +297,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_get(
+    async def operation_get(
         self,
         _request_timeout: Union[
             None,
@@ -350,11 +350,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -362,7 +362,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_get_with_http_info(
+    async def operation_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -415,11 +415,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -427,7 +427,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_get_without_preload_content(
+    async def operation_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -480,7 +480,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -548,7 +548,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get(
+    async def operation_wait_get(
         self,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -605,11 +605,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -617,7 +617,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get_with_http_info(
+    async def operation_wait_get_with_http_info(
         self,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -674,11 +674,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -686,7 +686,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get_without_preload_content(
+    async def operation_wait_get_without_preload_content(
         self,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
         _request_timeout: Union[
@@ -743,7 +743,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -816,7 +816,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get_untrusted(
+    async def operation_wait_get_untrusted(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
@@ -877,11 +877,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -889,7 +889,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get_untrusted_with_http_info(
+    async def operation_wait_get_untrusted_with_http_info(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
@@ -950,11 +950,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -962,7 +962,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_wait_get_untrusted_without_preload_content(
+    async def operation_wait_get_untrusted_without_preload_content(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         timeout: Annotated[Optional[StrictInt], Field(description="Timeout in seconds (-1 means never)")] = None,
@@ -1023,7 +1023,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1101,7 +1101,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get(
+    async def operation_websocket_get(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1158,11 +1158,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1170,7 +1170,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get_with_http_info(
+    async def operation_websocket_get_with_http_info(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1227,11 +1227,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1239,7 +1239,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get_without_preload_content(
+    async def operation_websocket_get_without_preload_content(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1296,7 +1296,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1369,7 +1369,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get_untrusted(
+    async def operation_websocket_get_untrusted(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1426,11 +1426,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1438,7 +1438,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get_untrusted_with_http_info(
+    async def operation_websocket_get_untrusted_with_http_info(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1495,11 +1495,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1507,7 +1507,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operation_websocket_get_untrusted_without_preload_content(
+    async def operation_websocket_get_untrusted_without_preload_content(
         self,
         secret: Annotated[Optional[StrictStr], Field(description="Authentication token")] = None,
         _request_timeout: Union[
@@ -1564,7 +1564,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1637,7 +1637,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get(
+    async def operations_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -1698,11 +1698,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1710,7 +1710,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get_with_http_info(
+    async def operations_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -1771,11 +1771,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1783,7 +1783,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get_without_preload_content(
+    async def operations_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -1844,7 +1844,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1922,7 +1922,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get_recursion1(
+    async def operations_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -1983,11 +1983,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1995,7 +1995,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get_recursion1_with_http_info(
+    async def operations_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -2056,11 +2056,11 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2068,7 +2068,7 @@ class OperationsApi:
 
 
     @validate_call
-    def operations_get_recursion1_without_preload_content(
+    async def operations_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve operations from all projects")] = None,
@@ -2129,7 +2129,7 @@ class OperationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

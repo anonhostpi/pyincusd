@@ -1,17 +1,17 @@
 # pyincusd.CertificatesApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**certificate_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificate_delete) | **DELETE** /1.0/certificates/{fingerprint} | Delete the trusted certificate
-[**certificate_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificate_get) | **GET** /1.0/certificates/{fingerprint} | Get the trusted certificate
-[**certificate_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificate_patch) | **PATCH** /1.0/certificates/{fingerprint} | Partially update the trusted certificate
-[**certificate_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificate_put) | **PUT** /1.0/certificates/{fingerprint} | Update the trusted certificate
-[**certificates_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificates_get) | **GET** /1.0/certificates | Get the trusted certificates
-[**certificates_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificates_get_recursion1) | **GET** /1.0/certificates?recursion&#x3D;1 | Get the trusted certificates
-[**certificates_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificates_post) | **POST** /1.0/certificates | Add a trusted certificate
-[**certificates_post_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesApi.md#certificates_post_untrusted) | **POST** /1.0/certificates?public | Add a trusted certificate
+[**certificate_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificate_delete) | **DELETE** /1.0/certificates/{fingerprint} | Delete the trusted certificate
+[**certificate_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificate_get) | **GET** /1.0/certificates/{fingerprint} | Get the trusted certificate
+[**certificate_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificate_patch) | **PATCH** /1.0/certificates/{fingerprint} | Partially update the trusted certificate
+[**certificate_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificate_put) | **PUT** /1.0/certificates/{fingerprint} | Update the trusted certificate
+[**certificates_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificates_get) | **GET** /1.0/certificates | Get the trusted certificates
+[**certificates_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificates_get_recursion1) | **GET** /1.0/certificates?recursion&#x3D;1 | Get the trusted certificates
+[**certificates_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificates_post) | **POST** /1.0/certificates | Add a trusted certificate
+[**certificates_post_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesApi.md#certificates_post_untrusted) | **POST** /1.0/certificates?public | Add a trusted certificate
 
 
 # **certificate_delete**
@@ -38,13 +38,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
 
     try:
         # Delete the trusted certificate
-        api_response = api_instance.certificate_delete()
+        api_response = await api_instance.certificate_delete()
         print("The response of CertificatesApi->certificate_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -105,13 +105,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
 
     try:
         # Get the trusted certificate
-        api_response = api_instance.certificate_get()
+        api_response = await api_instance.certificate_get()
         print("The response of CertificatesApi->certificate_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**CertificateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificateGet200Response.md)
+[**CertificateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificateGet200Response.md)
 
 ### Authorization
 
@@ -172,14 +172,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     certificate = pyincusd.CertificatePut() # CertificatePut | Certificate configuration
 
     try:
         # Partially update the trusted certificate
-        api_response = api_instance.certificate_patch(certificate)
+        api_response = await api_instance.certificate_patch(certificate)
         print("The response of CertificatesApi->certificate_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -193,11 +193,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate** | [**CertificatePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatePut.md)| Certificate configuration | 
+ **certificate** | [**CertificatePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatePut.md)| Certificate configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -245,14 +245,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     certificate = pyincusd.CertificatePut() # CertificatePut | Certificate configuration
 
     try:
         # Update the trusted certificate
-        api_response = api_instance.certificate_put(certificate)
+        api_response = await api_instance.certificate_put(certificate)
         print("The response of CertificatesApi->certificate_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -266,11 +266,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate** | [**CertificatePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatePut.md)| Certificate configuration | 
+ **certificate** | [**CertificatePut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatePut.md)| Certificate configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -317,14 +317,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the trusted certificates
-        api_response = api_instance.certificates_get(filter=filter)
+        api_response = await api_instance.certificates_get(filter=filter)
         print("The response of CertificatesApi->certificates_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CertificatesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesGet200Response.md)
+[**CertificatesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesGet200Response.md)
 
 ### Authorization
 
@@ -387,14 +387,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the trusted certificates
-        api_response = api_instance.certificates_get_recursion1(filter=filter)
+        api_response = await api_instance.certificates_get_recursion1(filter=filter)
         print("The response of CertificatesApi->certificates_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CertificatesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesGetRecursion1200Response.md)
+[**CertificatesGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -459,14 +459,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     certificate = pyincusd.CertificatesPost() # CertificatesPost | Certificate
 
     try:
         # Add a trusted certificate
-        api_response = api_instance.certificates_post(certificate)
+        api_response = await api_instance.certificates_post(certificate)
         print("The response of CertificatesApi->certificates_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -480,11 +480,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate** | [**CertificatesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesPost.md)| Certificate | 
+ **certificate** | [**CertificatesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesPost.md)| Certificate | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -539,14 +539,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.CertificatesApi(api_client)
     certificate = pyincusd.CertificatesPost() # CertificatesPost | Certificate
 
     try:
         # Add a trusted certificate
-        api_response = api_instance.certificates_post_untrusted(certificate)
+        api_response = await api_instance.certificates_post_untrusted(certificate)
         print("The response of CertificatesApi->certificates_post_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -560,11 +560,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate** | [**CertificatesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/CertificatesPost.md)| Certificate | 
+ **certificate** | [**CertificatesPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/CertificatesPost.md)| Certificate | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 

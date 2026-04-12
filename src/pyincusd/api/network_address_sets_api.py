@@ -46,7 +46,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_delete(
+    async def network_address_set_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_delete_with_http_info(
+    async def network_address_set_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -174,11 +174,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_delete_without_preload_content(
+    async def network_address_set_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -244,7 +244,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -317,7 +317,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_get(
+    async def network_address_set_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -374,11 +374,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -386,7 +386,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_get_with_http_info(
+    async def network_address_set_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -443,11 +443,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -455,7 +455,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_get_without_preload_content(
+    async def network_address_set_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -512,7 +512,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -585,7 +585,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_patch(
+    async def network_address_set_patch(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -648,11 +648,11 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -660,7 +660,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_patch_with_http_info(
+    async def network_address_set_patch_with_http_info(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -723,11 +723,11 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -735,7 +735,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_patch_without_preload_content(
+    async def network_address_set_patch_without_preload_content(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -798,7 +798,7 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -887,7 +887,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_post(
+    async def network_address_set_post(
         self,
         address_set: Annotated[NetworkAddressSetPost, Field(description="Address set rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -949,11 +949,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -961,7 +961,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_post_with_http_info(
+    async def network_address_set_post_with_http_info(
         self,
         address_set: Annotated[NetworkAddressSetPost, Field(description="Address set rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1023,11 +1023,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1035,7 +1035,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_post_without_preload_content(
+    async def network_address_set_post_without_preload_content(
         self,
         address_set: Annotated[NetworkAddressSetPost, Field(description="Address set rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1097,7 +1097,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1186,7 +1186,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_put(
+    async def network_address_set_put(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1249,11 +1249,11 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1261,7 +1261,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_put_with_http_info(
+    async def network_address_set_put_with_http_info(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1324,11 +1324,11 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1336,7 +1336,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_set_put_without_preload_content(
+    async def network_address_set_put_without_preload_content(
         self,
         address_set: Annotated[NetworkAddressSetPut, Field(description="Address set configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1399,7 +1399,7 @@ class NetworkAddressSetsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1488,7 +1488,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get(
+    async def network_address_sets_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -1553,11 +1553,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1565,7 +1565,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get_with_http_info(
+    async def network_address_sets_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -1630,11 +1630,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1642,7 +1642,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get_without_preload_content(
+    async def network_address_sets_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -1707,7 +1707,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1790,7 +1790,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get_recursion1(
+    async def network_address_sets_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -1855,11 +1855,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1867,7 +1867,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get_recursion1_with_http_info(
+    async def network_address_sets_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -1932,11 +1932,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1944,7 +1944,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_get_recursion1_without_preload_content(
+    async def network_address_sets_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve network address sets from all projects")] = None,
@@ -2009,7 +2009,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2092,7 +2092,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_post(
+    async def network_address_sets_post(
         self,
         address_set: Annotated[NetworkAddressSetsPost, Field(description="address set")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2154,11 +2154,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2166,7 +2166,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_post_with_http_info(
+    async def network_address_sets_post_with_http_info(
         self,
         address_set: Annotated[NetworkAddressSetsPost, Field(description="address set")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2228,11 +2228,11 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2240,7 +2240,7 @@ class NetworkAddressSetsApi:
 
 
     @validate_call
-    def network_address_sets_post_without_preload_content(
+    async def network_address_sets_post_without_preload_content(
         self,
         address_set: Annotated[NetworkAddressSetsPost, Field(description="address set")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2302,7 +2302,7 @@ class NetworkAddressSetsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

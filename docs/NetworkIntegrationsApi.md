@@ -1,17 +1,17 @@
 # pyincusd.NetworkIntegrationsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_integration_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integration_delete) | **DELETE** /1.0/network-integrations/{integration} | Delete the network integration
-[**network_integration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integration_get) | **GET** /1.0/network-integrations/{integration} | Get the network integration
-[**network_integration_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integration_patch) | **PATCH** /1.0/network-integrations/{integration} | Partially update the network integration
-[**network_integration_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integration_post) | **POST** /1.0/network-integrations/{integration} | Rename the network integration
-[**network_integration_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integration_put) | **PUT** /1.0/network-integrations/{integration} | Update the network integration
-[**network_integrations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integrations_get) | **GET** /1.0/network-integrations | Get the network integrations
-[**network_integrations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integrations_get_recursion1) | **GET** /1.0/network-integrations?recursion&#x3D;1 | Get the network integrations
-[**network_integrations_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsApi.md#network_integrations_post) | **POST** /1.0/network-integrations | Add a network integration
+[**network_integration_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integration_delete) | **DELETE** /1.0/network-integrations/{integration} | Delete the network integration
+[**network_integration_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integration_get) | **GET** /1.0/network-integrations/{integration} | Get the network integration
+[**network_integration_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integration_patch) | **PATCH** /1.0/network-integrations/{integration} | Partially update the network integration
+[**network_integration_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integration_post) | **POST** /1.0/network-integrations/{integration} | Rename the network integration
+[**network_integration_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integration_put) | **PUT** /1.0/network-integrations/{integration} | Update the network integration
+[**network_integrations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integrations_get) | **GET** /1.0/network-integrations | Get the network integrations
+[**network_integrations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integrations_get_recursion1) | **GET** /1.0/network-integrations?recursion&#x3D;1 | Get the network integrations
+[**network_integrations_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsApi.md#network_integrations_post) | **POST** /1.0/network-integrations | Add a network integration
 
 
 # **network_integration_delete**
@@ -38,13 +38,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
 
     try:
         # Delete the network integration
-        api_response = api_instance.network_integration_delete()
+        api_response = await api_instance.network_integration_delete()
         print("The response of NetworkIntegrationsApi->network_integration_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -105,13 +105,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
 
     try:
         # Get the network integration
-        api_response = api_instance.network_integration_get()
+        api_response = await api_instance.network_integration_get()
         print("The response of NetworkIntegrationsApi->network_integration_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**NetworkIntegrationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationGet200Response.md)
+[**NetworkIntegrationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationGet200Response.md)
 
 ### Authorization
 
@@ -172,14 +172,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     integration = pyincusd.NetworkIntegrationPut() # NetworkIntegrationPut | integration configuration
 
     try:
         # Partially update the network integration
-        api_response = api_instance.network_integration_patch(integration)
+        api_response = await api_instance.network_integration_patch(integration)
         print("The response of NetworkIntegrationsApi->network_integration_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -193,11 +193,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationPut.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationPut.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -245,14 +245,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     integration = pyincusd.NetworkIntegrationPost() # NetworkIntegrationPost | integration configuration
 
     try:
         # Rename the network integration
-        api_response = api_instance.network_integration_post(integration)
+        api_response = await api_instance.network_integration_post(integration)
         print("The response of NetworkIntegrationsApi->network_integration_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -266,11 +266,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationPost.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationPost.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -317,14 +317,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     integration = pyincusd.NetworkIntegrationPut() # NetworkIntegrationPut | integration configuration
 
     try:
         # Update the network integration
-        api_response = api_instance.network_integration_put(integration)
+        api_response = await api_instance.network_integration_put(integration)
         print("The response of NetworkIntegrationsApi->network_integration_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -338,11 +338,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationPut.md)| integration configuration | 
+ **integration** | [**NetworkIntegrationPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationPut.md)| integration configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -389,14 +389,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the network integrations
-        api_response = api_instance.network_integrations_get(filter=filter)
+        api_response = await api_instance.network_integrations_get(filter=filter)
         print("The response of NetworkIntegrationsApi->network_integrations_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkIntegrationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsGet200Response.md)
+[**NetworkIntegrationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsGet200Response.md)
 
 ### Authorization
 
@@ -459,14 +459,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     filter = 'filter_example' # str | Collection filter (optional)
 
     try:
         # Get the network integrations
-        api_response = api_instance.network_integrations_get_recursion1(filter=filter)
+        api_response = await api_instance.network_integrations_get_recursion1(filter=filter)
         print("The response of NetworkIntegrationsApi->network_integrations_get_recursion1:\n")
         pprint(api_response)
     except Exception as e:
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkIntegrationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsGetRecursion1200Response.md)
+[**NetworkIntegrationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -530,14 +530,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.NetworkIntegrationsApi(api_client)
     integration = pyincusd.NetworkIntegrationsPost() # NetworkIntegrationsPost | integration
 
     try:
         # Add a network integration
-        api_response = api_instance.network_integrations_post(integration)
+        api_response = await api_instance.network_integrations_post(integration)
         print("The response of NetworkIntegrationsApi->network_integrations_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -551,11 +551,11 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **integration** | [**NetworkIntegrationsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/NetworkIntegrationsPost.md)| integration | 
+ **integration** | [**NetworkIntegrationsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/NetworkIntegrationsPost.md)| integration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 

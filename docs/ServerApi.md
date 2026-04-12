@@ -1,16 +1,16 @@
 # pyincusd.ServerApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#api_get) | **GET** / | Get the supported API endpoints
-[**events_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#events_get) | **GET** /1.0/events | Get the event stream
-[**resources_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#resources_get) | **GET** /1.0/resources | Get system resources information
-[**server_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#server_get) | **GET** /1.0 | Get the server environment and configuration
-[**server_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#server_get_untrusted) | **GET** /1.0?public | Get the server environment
-[**server_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#server_patch) | **PATCH** /1.0 | Partially update the server configuration
-[**server_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerApi.md#server_put) | **PUT** /1.0 | Update the server configuration
+[**api_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#api_get) | **GET** / | Get the supported API endpoints
+[**events_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#events_get) | **GET** /1.0/events | Get the event stream
+[**resources_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#resources_get) | **GET** /1.0/resources | Get system resources information
+[**server_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#server_get) | **GET** /1.0 | Get the server environment and configuration
+[**server_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#server_get_untrusted) | **GET** /1.0?public | Get the server environment
+[**server_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#server_patch) | **PATCH** /1.0 | Partially update the server configuration
+[**server_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerApi.md#server_put) | **PUT** /1.0 | Update the server configuration
 
 
 # **api_get**
@@ -40,13 +40,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
 
     try:
         # Get the supported API endpoints
-        api_response = api_instance.api_get()
+        api_response = await api_instance.api_get()
         print("The response of ServerApi->api_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ApiGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ApiGet200Response.md)
+[**ApiGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ApiGet200Response.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
     project = 'project_example' # str | Project name (optional)
@@ -113,7 +113,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the event stream
-        api_response = api_instance.events_get(project=project, type=type, all_projects=all_projects)
+        api_response = await api_instance.events_get(project=project, type=type, all_projects=all_projects)
         print("The response of ServerApi->events_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Event**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/Event.md)
+[**Event**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/Event.md)
 
 ### Authorization
 
@@ -178,14 +178,14 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
     target = 'target_example' # str | Cluster member name (optional)
 
     try:
         # Get system resources information
-        api_response = api_instance.resources_get(target=target)
+        api_response = await api_instance.resources_get(target=target)
         print("The response of ServerApi->resources_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourcesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ResourcesGet200Response.md)
+[**ResourcesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ResourcesGet200Response.md)
 
 ### Authorization
 
@@ -248,7 +248,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
     target = 'target_example' # str | Cluster member name (optional)
@@ -256,7 +256,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Get the server environment and configuration
-        api_response = api_instance.server_get(target=target, project=project)
+        api_response = await api_instance.server_get(target=target, project=project)
         print("The response of ServerApi->server_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerGet200Response.md)
+[**ServerGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerGet200Response.md)
 
 ### Authorization
 
@@ -323,13 +323,13 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
 
     try:
         # Get the server environment
-        api_response = api_instance.server_get_untrusted()
+        api_response = await api_instance.server_get_untrusted()
         print("The response of ServerApi->server_get_untrusted:\n")
         pprint(api_response)
     except Exception as e:
@@ -344,7 +344,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerGetUntrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerGetUntrusted200Response.md)
+[**ServerGetUntrusted200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerGetUntrusted200Response.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
     server = pyincusd.ServerPut() # ServerPut | Server configuration
@@ -397,7 +397,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Partially update the server configuration
-        api_response = api_instance.server_patch(server, target=target)
+        api_response = await api_instance.server_patch(server, target=target)
         print("The response of ServerApi->server_patch:\n")
         pprint(api_response)
     except Exception as e:
@@ -411,12 +411,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **server** | [**ServerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut.md)| Server configuration | 
+ **server** | [**ServerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut.md)| Server configuration | 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -464,7 +464,7 @@ configuration = pyincusd.Configuration(
 
 
 # Enter a context with an instance of the API client
-with pyincusd.ApiClient(configuration) as api_client:
+async with pyincusd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = pyincusd.ServerApi(api_client)
     server = pyincusd.ServerPut() # ServerPut | Server configuration
@@ -472,7 +472,7 @@ with pyincusd.ApiClient(configuration) as api_client:
 
     try:
         # Update the server configuration
-        api_response = api_instance.server_put(server, target=target)
+        api_response = await api_instance.server_put(server, target=target)
         print("The response of ServerApi->server_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -486,12 +486,12 @@ with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **server** | [**ServerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut.md)| Server configuration | 
+ **server** | [**ServerPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut.md)| Server configuration | 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ServerPut200Response.md)
 
 ### Authorization
 

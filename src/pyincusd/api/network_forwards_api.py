@@ -45,7 +45,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_delete(
+    async def network_forward_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -103,11 +103,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -115,7 +115,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_delete_with_http_info(
+    async def network_forward_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -173,11 +173,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -185,7 +185,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_delete_without_preload_content(
+    async def network_forward_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -243,7 +243,7 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -316,7 +316,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get(
+    async def network_forward_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -373,11 +373,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -385,7 +385,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get_with_http_info(
+    async def network_forward_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -442,11 +442,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -454,7 +454,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get_without_preload_content(
+    async def network_forward_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -511,7 +511,7 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -584,7 +584,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get_recursion1(
+    async def network_forward_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -645,11 +645,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -657,7 +657,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get_recursion1_with_http_info(
+    async def network_forward_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -718,11 +718,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -730,7 +730,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_get_recursion1_without_preload_content(
+    async def network_forward_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -791,7 +791,7 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -869,7 +869,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_patch(
+    async def network_forward_patch(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -932,11 +932,11 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -944,7 +944,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_patch_with_http_info(
+    async def network_forward_patch_with_http_info(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1007,11 +1007,11 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1019,7 +1019,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_patch_without_preload_content(
+    async def network_forward_patch_without_preload_content(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1082,7 +1082,7 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1171,7 +1171,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_put(
+    async def network_forward_put(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1234,11 +1234,11 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1246,7 +1246,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_put_with_http_info(
+    async def network_forward_put_with_http_info(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1309,11 +1309,11 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1321,7 +1321,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forward_put_without_preload_content(
+    async def network_forward_put_without_preload_content(
         self,
         forward: Annotated[NetworkForwardPut, Field(description="Address forward configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1384,7 +1384,7 @@ class NetworkForwardsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1473,7 +1473,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_get(
+    async def network_forwards_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1534,11 +1534,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1546,7 +1546,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_get_with_http_info(
+    async def network_forwards_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1607,11 +1607,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1619,7 +1619,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_get_without_preload_content(
+    async def network_forwards_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
@@ -1680,7 +1680,7 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1758,7 +1758,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_post(
+    async def network_forwards_post(
         self,
         forward: Annotated[NetworkForwardsPost, Field(description="Forward")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1820,11 +1820,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1832,7 +1832,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_post_with_http_info(
+    async def network_forwards_post_with_http_info(
         self,
         forward: Annotated[NetworkForwardsPost, Field(description="Forward")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1894,11 +1894,11 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1906,7 +1906,7 @@ class NetworkForwardsApi:
 
 
     @validate_call
-    def network_forwards_post_without_preload_content(
+    async def network_forwards_post_without_preload_content(
         self,
         forward: Annotated[NetworkForwardsPost, Field(description="Forward")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1968,7 +1968,7 @@ class NetworkForwardsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

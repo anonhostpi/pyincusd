@@ -48,7 +48,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_delete(
+    async def network_delete(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -106,11 +106,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -118,7 +118,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_delete_with_http_info(
+    async def network_delete_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -176,11 +176,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -188,7 +188,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_delete_without_preload_content(
+    async def network_delete_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -246,7 +246,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -319,7 +319,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_get(
+    async def network_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -380,11 +380,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -392,7 +392,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_get_with_http_info(
+    async def network_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -453,11 +453,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -465,7 +465,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_get_without_preload_content(
+    async def network_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -526,7 +526,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -604,7 +604,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_patch(
+    async def network_patch(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -671,11 +671,11 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -683,7 +683,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_patch_with_http_info(
+    async def network_patch_with_http_info(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -750,11 +750,11 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -762,7 +762,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_patch_without_preload_content(
+    async def network_patch_without_preload_content(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -829,7 +829,7 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -923,7 +923,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_post(
+    async def network_post(
         self,
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -985,11 +985,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -997,7 +997,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_post_with_http_info(
+    async def network_post_with_http_info(
         self,
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1059,11 +1059,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1071,7 +1071,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_post_without_preload_content(
+    async def network_post_without_preload_content(
         self,
         network: Annotated[NetworkPost, Field(description="Network rename request")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1133,7 +1133,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1222,7 +1222,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_put(
+    async def network_put(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1289,11 +1289,11 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1301,7 +1301,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_put_with_http_info(
+    async def network_put_with_http_info(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1368,11 +1368,11 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1380,7 +1380,7 @@ class NetworksApi:
 
 
     @validate_call
-    def network_put_without_preload_content(
+    async def network_put_without_preload_content(
         self,
         network: Annotated[NetworkPut, Field(description="Network configuration")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -1447,7 +1447,7 @@ class NetworksApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1541,7 +1541,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get(
+    async def networks_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -1606,11 +1606,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1618,7 +1618,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get_with_http_info(
+    async def networks_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -1683,11 +1683,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1695,7 +1695,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get_without_preload_content(
+    async def networks_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -1760,7 +1760,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1843,7 +1843,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get_recursion1(
+    async def networks_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -1908,11 +1908,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1920,7 +1920,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get_recursion1_with_http_info(
+    async def networks_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -1985,11 +1985,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1997,7 +1997,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_get_recursion1_without_preload_content(
+    async def networks_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         all_projects: Annotated[Optional[StrictBool], Field(description="Retrieve networks from all projects")] = None,
@@ -2062,7 +2062,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2145,7 +2145,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_leases_get(
+    async def networks_leases_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2206,11 +2206,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2218,7 +2218,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_leases_get_with_http_info(
+    async def networks_leases_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2279,11 +2279,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2291,7 +2291,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_leases_get_without_preload_content(
+    async def networks_leases_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2352,7 +2352,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2430,7 +2430,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_post(
+    async def networks_post(
         self,
         network: Annotated[NetworksPost, Field(description="Network")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2496,11 +2496,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2508,7 +2508,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_post_with_http_info(
+    async def networks_post_with_http_info(
         self,
         network: Annotated[NetworksPost, Field(description="Network")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2574,11 +2574,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2586,7 +2586,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_post_without_preload_content(
+    async def networks_post_without_preload_content(
         self,
         network: Annotated[NetworksPost, Field(description="Network")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
@@ -2652,7 +2652,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2746,7 +2746,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_state_get(
+    async def networks_state_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2807,11 +2807,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2819,7 +2819,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_state_get_with_http_info(
+    async def networks_state_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2880,11 +2880,11 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2892,7 +2892,7 @@ class NetworksApi:
 
 
     @validate_call
-    def networks_state_get_without_preload_content(
+    async def networks_state_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
@@ -2953,7 +2953,7 @@ class NetworksApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -46,7 +46,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_delete(
+    async def network_integration_delete(
         self,
         _request_timeout: Union[
             None,
@@ -100,11 +100,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -112,7 +112,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_delete_with_http_info(
+    async def network_integration_delete_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -166,11 +166,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -178,7 +178,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_delete_without_preload_content(
+    async def network_integration_delete_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -232,7 +232,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -300,7 +300,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_get(
+    async def network_integration_get(
         self,
         _request_timeout: Union[
             None,
@@ -353,11 +353,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -365,7 +365,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_get_with_http_info(
+    async def network_integration_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -418,11 +418,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -430,7 +430,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_get_without_preload_content(
+    async def network_integration_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -483,7 +483,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -551,7 +551,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_patch(
+    async def network_integration_patch(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -610,11 +610,11 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -622,7 +622,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_patch_with_http_info(
+    async def network_integration_patch_with_http_info(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -681,11 +681,11 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -693,7 +693,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_patch_without_preload_content(
+    async def network_integration_patch_without_preload_content(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -752,7 +752,7 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -836,7 +836,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_post(
+    async def network_integration_post(
         self,
         integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -894,11 +894,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -906,7 +906,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_post_with_http_info(
+    async def network_integration_post_with_http_info(
         self,
         integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -964,11 +964,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -976,7 +976,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_post_without_preload_content(
+    async def network_integration_post_without_preload_content(
         self,
         integration: Annotated[NetworkIntegrationPost, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -1034,7 +1034,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1105,7 +1105,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_put(
+    async def network_integration_put(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -1164,11 +1164,11 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1176,7 +1176,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_put_with_http_info(
+    async def network_integration_put_with_http_info(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -1235,11 +1235,11 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1247,7 +1247,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integration_put_without_preload_content(
+    async def network_integration_put_without_preload_content(
         self,
         integration: Annotated[NetworkIntegrationPut, Field(description="integration configuration")],
         _request_timeout: Union[
@@ -1306,7 +1306,7 @@ class NetworkIntegrationsApi:
             '412': "ServerPut412Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1390,7 +1390,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get(
+    async def network_integrations_get(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1447,11 +1447,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1459,7 +1459,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get_with_http_info(
+    async def network_integrations_get_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1516,11 +1516,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1528,7 +1528,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get_without_preload_content(
+    async def network_integrations_get_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1585,7 +1585,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1658,7 +1658,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get_recursion1(
+    async def network_integrations_get_recursion1(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1715,11 +1715,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1727,7 +1727,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get_recursion1_with_http_info(
+    async def network_integrations_get_recursion1_with_http_info(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1784,11 +1784,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1796,7 +1796,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_get_recursion1_without_preload_content(
+    async def network_integrations_get_recursion1_without_preload_content(
         self,
         filter: Annotated[Optional[StrictStr], Field(description="Collection filter")] = None,
         _request_timeout: Union[
@@ -1853,7 +1853,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1926,7 +1926,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_post(
+    async def network_integrations_post(
         self,
         integration: Annotated[NetworkIntegrationsPost, Field(description="integration")],
         _request_timeout: Union[
@@ -1984,11 +1984,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1996,7 +1996,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_post_with_http_info(
+    async def network_integrations_post_with_http_info(
         self,
         integration: Annotated[NetworkIntegrationsPost, Field(description="integration")],
         _request_timeout: Union[
@@ -2054,11 +2054,11 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2066,7 +2066,7 @@ class NetworkIntegrationsApi:
 
 
     @validate_call
-    def network_integrations_post_without_preload_content(
+    async def network_integrations_post_without_preload_content(
         self,
         integration: Annotated[NetworkIntegrationsPost, Field(description="integration")],
         _request_timeout: Union[
@@ -2124,7 +2124,7 @@ class NetworkIntegrationsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

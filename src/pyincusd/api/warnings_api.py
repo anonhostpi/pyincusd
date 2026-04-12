@@ -44,7 +44,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_delete(
+    async def warning_delete(
         self,
         _request_timeout: Union[
             None,
@@ -96,11 +96,11 @@ class WarningsApi:
             '200': "ServerPut200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -108,7 +108,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_delete_with_http_info(
+    async def warning_delete_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -160,11 +160,11 @@ class WarningsApi:
             '200': "ServerPut200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -172,7 +172,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_delete_without_preload_content(
+    async def warning_delete_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -224,7 +224,7 @@ class WarningsApi:
             '200': "ServerPut200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -292,7 +292,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_get(
+    async def warning_get(
         self,
         _request_timeout: Union[
             None,
@@ -345,11 +345,11 @@ class WarningsApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -357,7 +357,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_get_with_http_info(
+    async def warning_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -410,11 +410,11 @@ class WarningsApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -422,7 +422,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_get_without_preload_content(
+    async def warning_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -475,7 +475,7 @@ class WarningsApi:
             '404': "InstanceConsoleGet404Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -543,7 +543,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_patch(
+    async def warning_patch(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -601,11 +601,11 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -613,7 +613,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_patch_with_http_info(
+    async def warning_patch_with_http_info(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -671,11 +671,11 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -683,7 +683,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_patch_without_preload_content(
+    async def warning_patch_without_preload_content(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -741,7 +741,7 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -825,7 +825,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_put(
+    async def warning_put(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -883,11 +883,11 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -895,7 +895,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_put_with_http_info(
+    async def warning_put_with_http_info(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -953,11 +953,11 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -965,7 +965,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warning_put_without_preload_content(
+    async def warning_put_without_preload_content(
         self,
         warning: Annotated[WarningPut, Field(description="Warning status")],
         _request_timeout: Union[
@@ -1023,7 +1023,7 @@ class WarningsApi:
             '403': "ServerPut403Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1107,7 +1107,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get(
+    async def warnings_get(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1163,11 +1163,11 @@ class WarningsApi:
             '200': "WarningsGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1175,7 +1175,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get_with_http_info(
+    async def warnings_get_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1231,11 +1231,11 @@ class WarningsApi:
             '200': "WarningsGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1243,7 +1243,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get_without_preload_content(
+    async def warnings_get_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1299,7 +1299,7 @@ class WarningsApi:
             '200': "WarningsGet200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1372,7 +1372,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get_recursion1(
+    async def warnings_get_recursion1(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1428,11 +1428,11 @@ class WarningsApi:
             '200': "WarningsGetRecursion1200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1440,7 +1440,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get_recursion1_with_http_info(
+    async def warnings_get_recursion1_with_http_info(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1496,11 +1496,11 @@ class WarningsApi:
             '200': "WarningsGetRecursion1200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1508,7 +1508,7 @@ class WarningsApi:
 
 
     @validate_call
-    def warnings_get_recursion1_without_preload_content(
+    async def warnings_get_recursion1_without_preload_content(
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
@@ -1564,7 +1564,7 @@ class WarningsApi:
             '200': "WarningsGetRecursion1200Response",
             '500': "ServerGet500Response",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

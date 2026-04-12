@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_vfs** | **int** | Number of VFs currently configured | [optional] 
 **maximum_vfs** | **int** | Maximum number of supported VFs | [optional] 
-**vfs** | [**List[ResourcesNetworkCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post1/docs/ResourcesNetworkCard.md) | List of VFs (as additional Network devices) | [optional] 
+**vfs** | [**List[ResourcesNetworkCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post2/docs/ResourcesNetworkCard.md) | List of VFs (as additional Network devices) | [optional] 
 
 ## Example
 
