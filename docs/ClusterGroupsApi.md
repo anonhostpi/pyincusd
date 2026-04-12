@@ -4,13 +4,13 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cluster_group_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_group_delete) | **DELETE** /1.0/cluster/groups/{name} | Delete the cluster group.
-[**cluster_group_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_group_get) | **GET** /1.0/cluster/groups/{name} | Get the cluster group
-[**cluster_group_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_group_patch) | **PATCH** /1.0/cluster/groups/{name} | Update the cluster group
-[**cluster_group_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_group_post) | **POST** /1.0/cluster/groups/{name} | Rename the cluster group
-[**cluster_group_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_group_put) | **PUT** /1.0/cluster/groups/{name} | Update the cluster group
-[**cluster_groups_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_groups_get) | **GET** /1.0/cluster/groups | Get the cluster groups
-[**cluster_groups_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsApi.md#cluster_groups_get_recursion1) | **GET** /1.0/cluster/groups?recursion&#x3D;1 | Get the cluster groups
+[**cluster_group_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_group_delete) | **DELETE** /1.0/cluster/groups/{name} | Delete the cluster group.
+[**cluster_group_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_group_get) | **GET** /1.0/cluster/groups/{name} | Get the cluster group
+[**cluster_group_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_group_patch) | **PATCH** /1.0/cluster/groups/{name} | Update the cluster group
+[**cluster_group_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_group_post) | **POST** /1.0/cluster/groups/{name} | Rename the cluster group
+[**cluster_group_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_group_put) | **PUT** /1.0/cluster/groups/{name} | Update the cluster group
+[**cluster_groups_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_groups_get) | **GET** /1.0/cluster/groups | Get the cluster groups
+[**cluster_groups_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsApi.md#cluster_groups_get_recursion1) | **GET** /1.0/cluster/groups?recursion&#x3D;1 | Get the cluster groups
 
 
 # **cluster_group_delete**
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ClusterGroupGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupGet200Response.md)
+[**ClusterGroupGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupGet200Response.md)
 
 ### Authorization
 
@@ -192,11 +192,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_group** | [**ClusterGroupPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupPut.md)| cluster group configuration | 
+ **cluster_group** | [**ClusterGroupPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupPut.md)| cluster group configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -265,11 +265,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | [**ClusterGroupPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupPost.md)| Cluster group rename request | 
+ **name** | [**ClusterGroupPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupPost.md)| Cluster group rename request | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -337,11 +337,11 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster_group** | [**ClusterGroupPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupPut.md)| cluster group configuration | 
+ **cluster_group** | [**ClusterGroupPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupPut.md)| cluster group configuration | 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ClusterGroupsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsGet200Response.md)
+[**ClusterGroupsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsGet200Response.md)
 
 ### Authorization
 
@@ -475,7 +475,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ClusterGroupsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/ClusterGroupsGetRecursion1200Response.md)
+[**ClusterGroupsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/ClusterGroupsGetRecursion1200Response.md)
 
 ### Authorization
 

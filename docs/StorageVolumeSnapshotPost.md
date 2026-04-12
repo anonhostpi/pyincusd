@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **migration** | **bool** | Initiate volume snapshot migration | [optional] 
 **name** | **str** | New snapshot name | [optional] 
-**target** | [**StorageVolumePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post10/docs/StorageVolumePostTarget.md) |  | [optional] 
+**target** | [**StorageVolumePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post11/docs/StorageVolumePostTarget.md) |  | [optional] 
 
 ## Example
 
