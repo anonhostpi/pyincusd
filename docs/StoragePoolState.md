@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inodes** | [**ResourcesStoragePoolInodes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ResourcesStoragePoolInodes.md) |  | [optional] 
-**space** | [**ResourcesStoragePoolSpace**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ResourcesStoragePoolSpace.md) |  | [optional] 
+**inodes** | [**ResourcesStoragePoolInodes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/ResourcesStoragePoolInodes.md) |  | [optional] 
+**space** | [**ResourcesStoragePoolSpace**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/ResourcesStoragePoolSpace.md) |  | [optional] 
 
 ## Example
 

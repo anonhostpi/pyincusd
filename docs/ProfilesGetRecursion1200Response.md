@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[Profile]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/Profile.md) | List of profiles | [optional] 
+**metadata** | [**List[Profile]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/Profile.md) | List of profiles | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

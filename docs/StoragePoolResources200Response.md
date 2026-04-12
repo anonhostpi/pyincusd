@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**ResourcesStoragePool**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post3/docs/ResourcesStoragePool.md) |  | [optional] 
+**metadata** | [**ResourcesStoragePool**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/ResourcesStoragePool.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

@@ -2,12 +2,12 @@
 
 Usage:
     from pyincusd.local import Client
+    from pyincusd.api import instances_api
 
-    with Client() as c:
-        from pyincusd.api import instances_api
-        api = instances_api.InstancesApi(c)
-        result = c.run(api.instances_get())
-        print(result.metadata)
+    c = Client()
+    api = instances_api.InstancesApi(c)
+    result = c.run(api.instances_get())
+    print(result.metadata)
 """
 
 from __future__ import annotations
@@ -31,10 +31,16 @@ class Client(pyincusd.ApiClient):
 
     def _uds_pool(self) -> httpx.AsyncClient:
         return httpx.AsyncClient(
-  transport=httpx.AsyncHTTPTransport(uds=self._socket_path),
-  verify=False,
-  trust_env=True,
+            transport=httpx.AsyncHTTPTransport(uds=self._socket_path),
+            verify=False,
+            trust_env=True,
         )
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        pass
 
     @staticmethod
     def run(coro):
