@@ -120,12 +120,12 @@ jobs:
 
           # Fix README links to absolute blob/<tag> URLs
           sed -i "s|(docs/|(${BASE}/docs/|g" pyincusd/README.md
-          sed -i "s|(pyincusd/|(${BASE}/pyincusd/|g" pyincusd/README.md
+          sed -i "s|(pyincusd/|(${BASE}/src/pyincusd/|g" pyincusd/README.md
 
           # Fix cross-references inside docs/
           for f in pyincusd/docs/*.md; do
             sed -i "s|(\([A-Z][A-Za-z0-9_]*\.md\)|(${BASE}/docs/\1|g" "$f"
-            sed -i "s|(../pyincusd/|(${BASE}/pyincusd/|g" "$f"
+            sed -i "s|(../pyincusd/|(${BASE}/src/pyincusd/|g" "$f"
           done
 
       - name: Patch generated pyproject.toml
