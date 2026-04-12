@@ -123,6 +123,9 @@ text = re.sub(
 p.write_text(text)
 "
 
+          # Fix "All URIs are relative to http://localhost" → point to incusd unix socket docs
+          sed -i 's|All URIs are relative to \*http://localhost\*|All URIs are relative to the incusd API (unix socket or https). See [Incus REST API docs](https://linuxcontainers.org/incus/docs/main/rest-api/).|g' pyincusd/README.md pyincusd/docs/*.md
+
           # Fix README links to absolute blob/<tag> URLs
           sed -i "s|(docs/|(${BASE}/docs/|g" pyincusd/README.md
           sed -i "s|(pyincusd/|(${BASE}/src/pyincusd/|g" pyincusd/README.md
