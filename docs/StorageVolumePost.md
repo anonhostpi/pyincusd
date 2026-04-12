@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **name** | **str** | New volume name | [optional] 
 **pool** | **str** | New storage pool | [optional] 
 **project** | **str** | New project name | [optional] 
-**source** | [**StorageVolumeSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/StorageVolumeSource.md) |  | [optional] 
-**target** | [**StorageVolumePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/StorageVolumePostTarget.md) |  | [optional] 
+**source** | [**StorageVolumeSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/StorageVolumeSource.md) |  | [optional] 
+**target** | [**StorageVolumePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/StorageVolumePostTarget.md) |  | [optional] 
 **volume_only** | **bool** | Whether snapshots should be discarded (migration only) | [optional] 
 
 ## Example

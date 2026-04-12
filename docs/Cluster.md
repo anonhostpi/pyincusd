@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enabled** | **bool** | Whether clustering is enabled | [optional] 
-**member_config** | [**List[ClusterMemberConfigKey]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/ClusterMemberConfigKey.md) | List of member configuration keys (used during join) | [optional] 
+**member_config** | [**List[ClusterMemberConfigKey]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ClusterMemberConfigKey.md) | List of member configuration keys (used during join) | [optional] 
 **server_name** | **str** | Name of the cluster member answering the request | [optional] 
 
 ## Example

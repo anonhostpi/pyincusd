@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | **object** | Advanced configuration for the record | [optional] 
 **description** | **str** | Description of the record | [optional] 
-**entries** | [**List[NetworkZoneRecordEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/NetworkZoneRecordEntry.md) | Entries in the record | [optional] 
+**entries** | [**List[NetworkZoneRecordEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/NetworkZoneRecordEntry.md) | Entries in the record | [optional] 
 
 ## Example
 

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **auth_user_method** | **str** | The current API user login method | [optional] [readonly] 
 **auth_user_name** | **str** | The current API user identifier | [optional] [readonly] 
 **config** | **object** | Server configuration map (refer to doc/server.md) | [optional] 
-**environment** | [**ServerEnvironment**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post4/docs/ServerEnvironment.md) |  | [optional] 
+**environment** | [**ServerEnvironment**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post5/docs/ServerEnvironment.md) |  | [optional] 
 **public** | **bool** | Whether the server is public-only (only public endpoints are implemented) | [optional] [readonly] 
 
 ## Example
