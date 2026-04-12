@@ -167,6 +167,9 @@ jobs:
           "Incus Docs" = "https://linuxcontainers.org/incus/docs/main/rest-api/"
           "Source Spec" = "https://github.com/lxc/incus/blob/main/doc/rest-api.yaml"
 
+          [tool.setuptools.packages.find]
+          where = ["."]
+
           [build-system]
           requires = ["setuptools>=68"]
           build-backend = "setuptools.build_meta"
