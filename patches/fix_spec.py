@@ -1,8 +1,14 @@
-"""Preprocess the Incus Swagger spec to inject missing path parameter declarations.
+"""Preprocess the Incus Swagger spec to fix generator-breaking issues.
 
-The Incus spec uses {placeholders} in URL paths but doesn't declare them
-as `in: path` parameters. This script scans every path, finds undeclared
-placeholders, and adds them as required string path parameters.
+Fix 1: Inject missing path parameter declarations.
+    The Incus spec uses {placeholders} in URL paths but doesn't declare
+    them as `in: path` parameters.
+
+Fix 2: Rewrite POST /1.0/images to use multipart/form-data.
+    The spec declares two `in: body` params (image + raw_image), which
+    is invalid in Swagger 2.0 and causes openapi-generator to drop both,
+    leaving the operation bodyless. Rewrite as multipart with metadata
+    and rootfs file uploads — matches what incusd actually accepts.
 
 Usage:
     python fix_spec.py rest-api.yaml rest-api-fixed.yaml
@@ -11,6 +17,32 @@ Usage:
 import re
 import sys
 import yaml
+
+
+def _fix_images_post(spec):
+    op = spec.get("paths", {}).get("/1.0/images", {}).get("post")
+    if not op:
+        return 0
+    op["consumes"] = ["multipart/form-data"]
+    params = [p for p in op.get("parameters", []) if p.get("in") != "body"]
+    params.extend([
+        {
+            "name": "metadata",
+            "in": "formData",
+            "type": "file",
+            "required": True,
+            "description": "Image metadata tarball (incus.tar.xz)",
+        },
+        {
+            "name": "rootfs",
+            "in": "formData",
+            "type": "file",
+            "required": True,
+            "description": "Image rootfs (squashfs or tarball)",
+        },
+    ])
+    op["parameters"] = params
+    return 1
 
 
 def fix_spec(input_path: str, output_path: str):
@@ -57,10 +89,14 @@ def fix_spec(input_path: str, output_path: str):
                     })
                     fixed_count += 1
 
+    images_post_fixed = _fix_images_post(spec)
+
     with open(output_path, "w") as f:
         yaml.dump(spec, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
 
     print(f"Fixed {fixed_count} missing path parameter declarations.")
+    if images_post_fixed:
+        print("Fixed POST /1.0/images body params (multipart/form-data).")
     print(f"Written to {output_path}")
 
 
