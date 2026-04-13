@@ -19,6 +19,22 @@ import sys
 import yaml
 
 
+def _fix_operation_metadata(spec):
+    """Remove `additionalProperties: {}` on Operation.metadata.
+
+    The generator mis-translates empty-schema additionalProperties as
+    Dict[str, Dict[str, Any]], which rejects flat string values like
+    the image upload response `{"fingerprint": "abc...", "size": "123"}`.
+    Deleting it yields Dict[str, Any] — JSON Schema's "allow anything"
+    default.
+    """
+    op = spec.get("definitions", {}).get("Operation", {}).get("properties", {}).get("metadata")
+    if op is None or op.get("additionalProperties") != {}:
+        return 0
+    del op["additionalProperties"]
+    return 1
+
+
 def _fix_images_post(spec):
     op = spec.get("paths", {}).get("/1.0/images", {}).get("post")
     if not op:
@@ -90,6 +106,7 @@ def fix_spec(input_path: str, output_path: str):
                     fixed_count += 1
 
     images_post_fixed = _fix_images_post(spec)
+    op_metadata_fixed = _fix_operation_metadata(spec)
 
     with open(output_path, "w") as f:
         yaml.dump(spec, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
@@ -97,6 +114,8 @@ def fix_spec(input_path: str, output_path: str):
     print(f"Fixed {fixed_count} missing path parameter declarations.")
     if images_post_fixed:
         print("Fixed POST /1.0/images body params (multipart/form-data).")
+    if op_metadata_fixed:
+        print("Fixed Operation.metadata additionalProperties quirk.")
     print(f"Written to {output_path}")
 
 
