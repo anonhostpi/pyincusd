@@ -6,16 +6,16 @@ NetworkState represents the network state
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**addresses** | [**List[NetworkStateAddress]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateAddress.md) | List of addresses | [optional] 
-**bond** | [**NetworkStateBond**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateBond.md) |  | [optional] 
-**bridge** | [**NetworkStateBridge**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateBridge.md) |  | [optional] 
-**counters** | [**NetworkStateCounters**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateCounters.md) |  | [optional] 
+**addresses** | [**List[NetworkStateAddress]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateAddress.md) | List of addresses | [optional] 
+**bond** | [**NetworkStateBond**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateBond.md) |  | [optional] 
+**bridge** | [**NetworkStateBridge**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateBridge.md) |  | [optional] 
+**counters** | [**NetworkStateCounters**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateCounters.md) |  | [optional] 
 **hwaddr** | **str** | MAC address | [optional] 
 **mtu** | **int** | MTU | [optional] 
-**ovn** | [**NetworkStateOVN**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateOVN.md) |  | [optional] 
+**ovn** | [**NetworkStateOVN**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateOVN.md) |  | [optional] 
 **state** | **str** | Link state | [optional] 
 **type** | **str** | Interface type | [optional] 
-**vlan** | [**NetworkStateVLAN**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkStateVLAN.md) |  | [optional] 
+**vlan** | [**NetworkStateVLAN**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkStateVLAN.md) |  | [optional] 
 
 ## Example
 

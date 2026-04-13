@@ -4,16 +4,16 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#network_delete) | **DELETE** /1.0/networks/{name} | Delete the network
-[**network_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#network_get) | **GET** /1.0/networks/{name} | Get the network
-[**network_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#network_patch) | **PATCH** /1.0/networks/{name} | Partially update the network
-[**network_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#network_post) | **POST** /1.0/networks/{name} | Rename the network
-[**network_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#network_put) | **PUT** /1.0/networks/{name} | Update the network
-[**networks_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#networks_get) | **GET** /1.0/networks | Get the networks
-[**networks_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#networks_get_recursion1) | **GET** /1.0/networks?recursion&#x3D;1 | Get the networks
-[**networks_leases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#networks_leases_get) | **GET** /1.0/networks/{name}/leases | Get the DHCP leases
-[**networks_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#networks_post) | **POST** /1.0/networks | Add a network
-[**networks_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksApi.md#networks_state_get) | **GET** /1.0/networks/{name}/state | Get the network state
+[**network_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#network_delete) | **DELETE** /1.0/networks/{name} | Delete the network
+[**network_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#network_get) | **GET** /1.0/networks/{name} | Get the network
+[**network_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#network_patch) | **PATCH** /1.0/networks/{name} | Partially update the network
+[**network_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#network_post) | **POST** /1.0/networks/{name} | Rename the network
+[**network_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#network_put) | **PUT** /1.0/networks/{name} | Update the network
+[**networks_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#networks_get) | **GET** /1.0/networks | Get the networks
+[**networks_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#networks_get_recursion1) | **GET** /1.0/networks?recursion&#x3D;1 | Get the networks
+[**networks_leases_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#networks_leases_get) | **GET** /1.0/networks/{name}/leases | Get the DHCP leases
+[**networks_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#networks_post) | **POST** /1.0/networks | Add a network
+[**networks_state_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksApi.md#networks_state_get) | **GET** /1.0/networks/{name}/state | Get the network state
 
 
 # **network_delete**
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkGet200Response.md)
+[**NetworkGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkGet200Response.md)
 
 ### Authorization
 
@@ -213,13 +213,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkPut.md)| Network configuration | 
+ **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkPut.md)| Network configuration | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -291,12 +291,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **network** | [**NetworkPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkPost.md)| Network rename request | 
+ **network** | [**NetworkPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkPost.md)| Network rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -368,13 +368,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkPut.md)| Network configuration | 
+ **network** | [**NetworkPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkPut.md)| Network configuration | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksGet200Response.md)
+[**NetworksGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksGet200Response.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksGetRecursion1200Response.md)
+[**NetworksGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksLeasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksLeasesGet200Response.md)
+[**NetworksLeasesGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksLeasesGet200Response.md)
 
 ### Authorization
 
@@ -668,13 +668,13 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | [**NetworksPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksPost.md)| Network | 
+ **network** | [**NetworksPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksPost.md)| Network | 
  **project** | **str**| Project name | [optional] 
  **target** | **str**| Cluster member name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworksStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworksStateGet200Response.md)
+[**NetworksStateGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworksStateGet200Response.md)
 
 ### Authorization
 

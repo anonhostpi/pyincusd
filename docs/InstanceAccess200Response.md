@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[AccessEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/AccessEntry.md) |  | [optional] 
+**metadata** | [**List[AccessEntry]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/AccessEntry.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

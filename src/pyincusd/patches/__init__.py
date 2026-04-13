@@ -2,8 +2,8 @@
 
 Each patch module has an apply() function. Import and call it to opt in:
 
-    from pyincusd.patches import image_upload
-    image_upload.apply()
+    from pyincusd.patches import metadata_config
+    metadata_config.apply()
 
 Or apply all patches at once:
 

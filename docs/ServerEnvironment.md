@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **server_pid** | **int** | PID of the daemon | [optional] 
 **server_version** | **str** | Server version | [optional] 
 **storage** | **str** | List of active storage drivers (separate by \&quot; | \&quot;) | [optional] 
-**storage_supported_drivers** | [**List[ServerStorageDriverInfo]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerStorageDriverInfo.md) | List of supported storage drivers | [optional] 
+**storage_supported_drivers** | [**List[ServerStorageDriverInfo]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ServerStorageDriverInfo.md) | List of supported storage drivers | [optional] 
 **storage_version** | **str** | List of active storage driver versions (separate by \&quot; | \&quot;) | [optional] 
 
 ## Example

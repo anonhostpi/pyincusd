@@ -6,7 +6,7 @@ ResourcesUSB represents the USB devices available on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**devices** | [**List[ResourcesUSBDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ResourcesUSBDevice.md) | List of USB devices | [optional] 
+**devices** | [**List[ResourcesUSBDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesUSBDevice.md) | List of USB devices | [optional] 
 **total** | **int** | Total number of USB devices | [optional] 
 
 ## Example
