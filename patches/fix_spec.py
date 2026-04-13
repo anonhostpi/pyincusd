@@ -20,19 +20,27 @@ import yaml
 
 
 def _fix_operation_metadata(spec):
-    """Remove `additionalProperties: {}` on Operation.metadata.
+    """Loosen Operation.metadata and Operation.resources to Dict[str, Any].
 
-    The generator mis-translates empty-schema additionalProperties as
-    Dict[str, Dict[str, Any]], which rejects flat string values like
+    metadata: The generator mis-translates empty-schema additionalProperties
+    as Dict[str, Dict[str, Any]], which rejects flat string values like
     the image upload response `{"fingerprint": "abc...", "size": "123"}`.
-    Deleting it yields Dict[str, Any] — JSON Schema's "allow anything"
-    default.
+
+    resources: The spec declares values as `array of string`, but the
+    server can return null for entries (e.g. `{"cluster": null}`), which
+    pydantic rejects because List[StrictStr] disallows None.
+
+    Both are fixed by deleting additionalProperties, yielding Dict[str, Any]
+    per JSON Schema's "allow anything" default.
     """
-    op = spec.get("definitions", {}).get("Operation", {}).get("properties", {}).get("metadata")
-    if op is None or op.get("additionalProperties") != {}:
-        return 0
-    del op["additionalProperties"]
-    return 1
+    fixed = 0
+    props = spec.get("definitions", {}).get("Operation", {}).get("properties", {})
+    for name in ("metadata", "resources"):
+        p = props.get(name)
+        if p is not None and "additionalProperties" in p:
+            del p["additionalProperties"]
+            fixed += 1
+    return fixed
 
 
 def _fix_images_post(spec):
