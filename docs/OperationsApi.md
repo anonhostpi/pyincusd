@@ -4,14 +4,14 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**operation_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_delete) | **DELETE** /1.0/operations/{id} | Cancel the operation
-[**operation_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_get) | **GET** /1.0/operations/{id} | Get the operation state
-[**operation_wait_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_wait_get) | **GET** /1.0/operations/{id}/wait | Wait for the operation
-[**operation_wait_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_wait_get_untrusted) | **GET** /1.0/operations/{id}/wait?public | Wait for the operation
-[**operation_websocket_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_websocket_get) | **GET** /1.0/operations/{id}/websocket | Get the websocket stream
-[**operation_websocket_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operation_websocket_get_untrusted) | **GET** /1.0/operations/{id}/websocket?public | Get the websocket stream
-[**operations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operations_get) | **GET** /1.0/operations | Get the operations
-[**operations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsApi.md#operations_get_recursion1) | **GET** /1.0/operations?recursion&#x3D;1 | Get the operations
+[**operation_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_delete) | **DELETE** /1.0/operations/{id} | Cancel the operation
+[**operation_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_get) | **GET** /1.0/operations/{id} | Get the operation state
+[**operation_wait_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_wait_get) | **GET** /1.0/operations/{id}/wait | Wait for the operation
+[**operation_wait_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_wait_get_untrusted) | **GET** /1.0/operations/{id}/wait?public | Wait for the operation
+[**operation_websocket_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_websocket_get) | **GET** /1.0/operations/{id}/websocket | Get the websocket stream
+[**operation_websocket_get_untrusted**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operation_websocket_get_untrusted) | **GET** /1.0/operations/{id}/websocket?public | Get the websocket stream
+[**operations_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operations_get) | **GET** /1.0/operations | Get the operations
+[**operations_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsApi.md#operations_get_recursion1) | **GET** /1.0/operations?recursion&#x3D;1 | Get the operations
 
 
 # **operation_delete**
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationGet200Response.md)
+[**OperationGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationGet200Response.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsGet200Response.md)
+[**OperationsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsGet200Response.md)
 
 ### Authorization
 
@@ -573,7 +573,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OperationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/OperationsGetRecursion1200Response.md)
+[**OperationsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/OperationsGetRecursion1200Response.md)
 
 ### Authorization
 

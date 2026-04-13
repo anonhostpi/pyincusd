@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**Operation**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post14/docs/Operation.md) |  | [optional] 
+**metadata** | [**Operation**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/Operation.md) |  | [optional] 
 **operation** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **status_code** | **int** |  | [optional] 
