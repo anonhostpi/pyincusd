@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[NetworkLease]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/NetworkLease.md) | List of DHCP leases | [optional] 
+**metadata** | [**List[NetworkLease]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/NetworkLease.md) | List of DHCP leases | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

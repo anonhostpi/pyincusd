@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **location** | **str** | What cluster member this record was found on | [optional] 
 **may_cancel** | **bool** | Whether the operation can be canceled | [optional] 
 **metadata** | **object** | Operation specific metadata | [optional] 
-**resources** | **Dict[str, List[str]]** | Affected resources | [optional] 
+**resources** | **object** | Affected resources | [optional] 
 **status** | **str** | Status name | [optional] 
 **status_code** | **int** |  | [optional] 
 **updated_at** | **datetime** | Operation last change | [optional] 

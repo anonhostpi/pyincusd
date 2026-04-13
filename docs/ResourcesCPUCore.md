@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **die** | **int** | What die the CPU is a part of (for chiplet designs) | [optional] 
 **flags** | **List[str]** | List of CPU flags | [optional] 
 **frequency** | **int** | Current frequency | [optional] 
-**threads** | [**List[ResourcesCPUThread]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/ResourcesCPUThread.md) | List of threads | [optional] 
+**threads** | [**List[ResourcesCPUThread]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/ResourcesCPUThread.md) | List of threads | [optional] 
 
 ## Example
 
