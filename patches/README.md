@@ -7,8 +7,8 @@ Opt-in fixes for gaps in the auto-generated code.
 Apply a specific patch:
 
 ```python
-from pyincusd.patches import image_upload
-image_upload.apply()
+from pyincusd.patches import metadata_config
+metadata_config.apply()
 ```
 
 Apply all available patches:
@@ -21,30 +21,17 @@ apply_all()
 Revert a patch:
 
 ```python
-from pyincusd.patches import image_upload
-image_upload.revert()
+from pyincusd.patches import metadata_config
+metadata_config.revert()
 ```
 
-## Available patches
+## Spec preprocessing
 
-### `image_upload`
-
-Enables binary file upload for `ImagesApi.images_post()`. The generated
-method only accepts header parameters but has no way to pass image files.
-This patch adds `body` and `files` parameters to `_images_post_serialize`.
-
-```python
-from pyincusd.patches import image_upload
-image_upload.apply()
-
-api.images_post(
-    x_incus_aliases='[{"name": "my-image"}]',
-    files={
-        "metadata": ("meta.tar.xz", open("meta.tar.xz", "rb"), "application/octet-stream"),
-        "rootfs": ("rootfs.squashfs", open("rootfs.squashfs", "rb"), "application/octet-stream"),
-    },
-)
-```
+`fix_spec.py` is a CI-stage tool (not a runtime patch). It rewrites the
+Incus Swagger spec before code generation to fix generator-breaking
+issues — missing path parameter declarations and the invalid dual-body
+on `POST /1.0/images`. Invoked by the publish workflow, not by
+`apply_all()`.
 
 ## Writing new patches
 

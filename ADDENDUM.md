@@ -32,9 +32,9 @@ apply_all()
 Apply individually:
 
 ```python
-from pyincusd.patches import image_upload
-image_upload.apply()   # enables file upload for images_post()
-image_upload.revert()  # undo
+from pyincusd.patches import metadata_config
+metadata_config.apply()
+metadata_config.revert()  # undo
 ```
 
 New patches are auto-discovered — drop a `.py` with `apply()`/`revert()` in `patches/` and `apply_all()` picks it up.
