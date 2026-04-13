@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **hugepages_size** | **int** | Size of memory huge pages (bytes) | [optional] 
 **hugepages_total** | **int** | Total of memory huge pages (bytes) | [optional] 
 **hugepages_used** | **int** | Used memory huge pages (bytes) | [optional] 
-**nodes** | [**List[ResourcesMemoryNode]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesMemoryNode.md) | List of NUMA memory nodes | [optional] 
+**nodes** | [**List[ResourcesMemoryNode]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesMemoryNode.md) | List of NUMA memory nodes | [optional] 
 **total** | **int** | Total system memory (bytes) | [optional] 
 **used** | **int** | Used system memory (bytes) | [optional] 
 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **config** | **object** | ACL configuration map (refer to doc/network-acls.md) | [optional] 
 **description** | **str** | Description of the ACL | [optional] 
-**egress** | [**List[NetworkACLRule]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkACLRule.md) | List of egress rules (order independent) | [optional] 
-**ingress** | [**List[NetworkACLRule]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/NetworkACLRule.md) | List of ingress rules (order independent) | [optional] 
+**egress** | [**List[NetworkACLRule]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/NetworkACLRule.md) | List of egress rules (order independent) | [optional] 
+**ingress** | [**List[NetworkACLRule]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/NetworkACLRule.md) | List of ingress rules (order independent) | [optional] 
 **name** | **str** | The new name for the ACL | [optional] 
 **project** | **str** | Project name | [optional] 
 **used_by** | **List[str]** | List of URLs of objects using this profile | [optional] [readonly] 

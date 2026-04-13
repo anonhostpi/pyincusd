@@ -6,9 +6,9 @@ ResourcesCPUSocket represents a CPU socket on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address_sizes** | [**ResourcesCPUAddressSizes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesCPUAddressSizes.md) |  | [optional] 
-**cache** | [**List[ResourcesCPUCache]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesCPUCache.md) | List of CPU caches | [optional] 
-**cores** | [**List[ResourcesCPUCore]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesCPUCore.md) | List of CPU cores | [optional] 
+**address_sizes** | [**ResourcesCPUAddressSizes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesCPUAddressSizes.md) |  | [optional] 
+**cache** | [**List[ResourcesCPUCache]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesCPUCache.md) | List of CPU caches | [optional] 
+**cores** | [**List[ResourcesCPUCore]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesCPUCore.md) | List of CPU cores | [optional] 
 **frequency** | **int** | Current CPU frequency (Mhz) | [optional] 
 **frequency_minimum** | **int** | Minimum CPU frequency (Mhz) | [optional] 
 **frequency_turbo** | **int** | Maximum CPU frequency (Mhz) | [optional] 

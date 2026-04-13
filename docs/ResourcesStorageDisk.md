@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **id** | **str** | ID of the disk (device name) | [optional] 
 **model** | **str** | Disk model name | [optional] 
 **numa_node** | **int** | NUMA node the disk is a part of | [optional] 
-**partitions** | [**List[ResourcesStorageDiskPartition]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesStorageDiskPartition.md) | List of partitions | [optional] 
+**partitions** | [**List[ResourcesStorageDiskPartition]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesStorageDiskPartition.md) | List of partitions | [optional] 
 **pci_address** | **str** | PCI address | [optional] 
 **read_only** | **bool** | Whether the disk is read-only | [optional] 
 **removable** | **bool** | Whether the disk is removable (hot-plug) | [optional] 

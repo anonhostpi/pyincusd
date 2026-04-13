@@ -36,7 +36,7 @@ class Operation(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="UUID of the operation")
     location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
     may_cancel: Optional[StrictBool] = Field(default=None, description="Whether the operation can be canceled")
-    metadata: Optional[Dict[str, Dict[str, Any]]] = Field(default=None, description="Operation specific metadata")
+    metadata: Optional[Dict[str, Any]] = Field(default=None, description="Operation specific metadata")
     resources: Optional[Dict[str, List[StrictStr]]] = Field(default=None, description="Affected resources")
     status: Optional[StrictStr] = Field(default=None, description="Status name")
     status_code: Optional[StrictInt] = None

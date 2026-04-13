@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **live** | **bool** | Whether to perform a live migration (requires migration) | [optional] 
 **migration** | **bool** | Whether this is a migration request | [optional] 
 **name** | **str** | New name for the snapshot | [optional] 
-**target** | [**InstancePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/InstancePostTarget.md) |  | [optional] 
+**target** | [**InstancePostTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/InstancePostTarget.md) |  | [optional] 
 
 ## Example
 

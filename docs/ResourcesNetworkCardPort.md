@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **address** | **str** | MAC address | [optional] 
 **auto_negotiation** | **bool** | Whether auto negotiation is used | [optional] 
 **id** | **str** | Port identifier (interface name) | [optional] 
-**infiniband** | [**ResourcesNetworkCardPortInfiniband**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post17/docs/ResourcesNetworkCardPortInfiniband.md) |  | [optional] 
+**infiniband** | [**ResourcesNetworkCardPortInfiniband**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesNetworkCardPortInfiniband.md) |  | [optional] 
 **link_detected** | **bool** | Whether a link was detected | [optional] 
 **link_duplex** | **str** | Duplex type | [optional] 
 **link_speed** | **int** | Current speed (Mbit/s) | [optional] 

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **id** | **str** | UUID of the operation | [optional] 
 **location** | **str** | What cluster member this record was found on | [optional] 
 **may_cancel** | **bool** | Whether the operation can be canceled | [optional] 
-**metadata** | **Dict[str, object]** | Operation specific metadata | [optional] 
+**metadata** | **object** | Operation specific metadata | [optional] 
 **resources** | **Dict[str, List[str]]** | Affected resources | [optional] 
 **status** | **str** | Status name | [optional] 
 **status_code** | **int** |  | [optional] 
