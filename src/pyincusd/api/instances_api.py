@@ -49,6 +49,7 @@ from pyincusd.models.instance_state_put import InstanceStatePut
 from pyincusd.models.instances_get200_response import InstancesGet200Response
 from pyincusd.models.instances_get_recursion1200_response import InstancesGetRecursion1200Response
 from pyincusd.models.instances_get_recursion2200_response import InstancesGetRecursion2200Response
+from pyincusd.models.instances_post import InstancesPost
 from pyincusd.models.instances_put import InstancesPut
 from pyincusd.models.server_put200_response import ServerPut200Response
 
@@ -15627,6 +15628,7 @@ class InstancesApi:
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
+        instance: Annotated[Optional[InstancesPost], Field(description="Instance request")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15648,6 +15650,8 @@ class InstancesApi:
         :type project: str
         :param target: Cluster member
         :type target: str
+        :param instance: Instance request
+        :type instance: InstancesPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15673,6 +15677,7 @@ class InstancesApi:
         _param = self._instances_post_serialize(
             project=project,
             target=target,
+            instance=instance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15701,6 +15706,7 @@ class InstancesApi:
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
+        instance: Annotated[Optional[InstancesPost], Field(description="Instance request")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15722,6 +15728,8 @@ class InstancesApi:
         :type project: str
         :param target: Cluster member
         :type target: str
+        :param instance: Instance request
+        :type instance: InstancesPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15747,6 +15755,7 @@ class InstancesApi:
         _param = self._instances_post_serialize(
             project=project,
             target=target,
+            instance=instance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15775,6 +15784,7 @@ class InstancesApi:
         self,
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         target: Annotated[Optional[StrictStr], Field(description="Cluster member")] = None,
+        instance: Annotated[Optional[InstancesPost], Field(description="Instance request")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -15796,6 +15806,8 @@ class InstancesApi:
         :type project: str
         :param target: Cluster member
         :type target: str
+        :param instance: Instance request
+        :type instance: InstancesPost
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -15821,6 +15833,7 @@ class InstancesApi:
         _param = self._instances_post_serialize(
             project=project,
             target=target,
+            instance=instance,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -15844,6 +15857,7 @@ class InstancesApi:
         self,
         project,
         target,
+        instance,
         _request_auth,
         _content_type,
         _headers,
@@ -15877,6 +15891,8 @@ class InstancesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
+        if instance is not None:
+            _body_params = instance
 
 
         # set the HTTP header `Accept`

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bus_address** | **int** | USB address (bus) | [optional] 
 **device_address** | **int** | USB address (device) | [optional] 
-**interfaces** | [**List[ResourcesUSBDeviceInterface]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesUSBDeviceInterface.md) | List of USB interfaces | [optional] 
+**interfaces** | [**List[ResourcesUSBDeviceInterface]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/ResourcesUSBDeviceInterface.md) | List of USB interfaces | [optional] 
 **product** | **str** | Name of the product | [optional] 
 **product_id** | **str** | USB ID of the product | [optional] 
 **serial** | **str** | USB serial number | [optional] 

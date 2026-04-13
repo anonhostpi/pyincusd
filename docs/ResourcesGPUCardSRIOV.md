@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_vfs** | **int** | Number of VFs currently configured | [optional] 
 **maximum_vfs** | **int** | Maximum number of supported VFs | [optional] 
-**vfs** | [**List[ResourcesGPUCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesGPUCard.md) | List of VFs (as additional GPU devices) | [optional] 
+**vfs** | [**List[ResourcesGPUCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/ResourcesGPUCard.md) | List of VFs (as additional GPU devices) | [optional] 
 
 ## Example
 

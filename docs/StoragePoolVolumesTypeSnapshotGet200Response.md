@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**StorageVolumeSnapshot**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/StorageVolumeSnapshot.md) |  | [optional] 
+**metadata** | [**StorageVolumeSnapshot**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/StorageVolumeSnapshot.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

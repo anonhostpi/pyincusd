@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**Certificate**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/Certificate.md) |  | [optional] 
+**metadata** | [**Certificate**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/Certificate.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

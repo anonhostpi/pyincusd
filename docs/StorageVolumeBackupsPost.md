@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **expires_at** | **datetime** | When the backup expires (gets auto-deleted) | [optional] 
 **name** | **str** | Backup name | [optional] 
 **optimized_storage** | **bool** | Whether to use a pool-optimized binary format (instead of plain tarball) | [optional] 
-**target** | [**BackupTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/BackupTarget.md) |  | [optional] 
+**target** | [**BackupTarget**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/BackupTarget.md) |  | [optional] 
 **volume_only** | **bool** | Whether to ignore snapshots | [optional] 
 
 ## Example

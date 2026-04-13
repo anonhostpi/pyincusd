@@ -6,7 +6,7 @@ ResourcesNetwork represents the network cards available on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cards** | [**List[ResourcesNetworkCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post18/docs/ResourcesNetworkCard.md) | List of network cards | [optional] 
+**cards** | [**List[ResourcesNetworkCard]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post19/docs/ResourcesNetworkCard.md) | List of network cards | [optional] 
 **total** | **int** | Total number of network cards | [optional] 
 
 ## Example
