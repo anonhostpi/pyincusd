@@ -61,6 +61,28 @@ def _fix_images_post(spec):
     return 1
 
 
+def _fix_instances_post(spec):
+    """Drop the secondary `raw_backup` body from POST /1.0/instances.
+
+    Swagger 2.0 forbids multiple `in: body` params on one operation;
+    the generator silently drops both, leaving the operation bodyless.
+    We keep `instance` (the structured create body) and drop
+    `raw_backup` (tarball restore — can be done via a separate client
+    if needed).
+    """
+    op = spec.get("paths", {}).get("/1.0/instances", {}).get("post")
+    if not op:
+        return 0
+    bodies = [p for p in op.get("parameters", []) if p.get("in") == "body"]
+    if len(bodies) <= 1:
+        return 0
+    op["parameters"] = [
+        p for p in op.get("parameters", [])
+        if not (p.get("in") == "body" and p.get("name") == "raw_backup")
+    ]
+    return 1
+
+
 def fix_spec(input_path: str, output_path: str):
     with open(input_path) as f:
         spec = yaml.safe_load(f)
@@ -106,6 +128,7 @@ def fix_spec(input_path: str, output_path: str):
                     fixed_count += 1
 
     images_post_fixed = _fix_images_post(spec)
+    instances_post_fixed = _fix_instances_post(spec)
     op_metadata_fixed = _fix_operation_metadata(spec)
 
     with open(output_path, "w") as f:
@@ -114,6 +137,8 @@ def fix_spec(input_path: str, output_path: str):
     print(f"Fixed {fixed_count} missing path parameter declarations.")
     if images_post_fixed:
         print("Fixed POST /1.0/images body params (multipart/form-data).")
+    if instances_post_fixed:
+        print("Fixed POST /1.0/instances body params (dropped raw_backup).")
     if op_metadata_fixed:
         print("Fixed Operation.metadata additionalProperties quirk.")
     print(f"Written to {output_path}")
