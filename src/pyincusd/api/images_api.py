@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr
-from typing import Any, Optional
+from pydantic import Field, StrictBool, StrictBytes, StrictStr
+from typing import Any, Optional, Tuple, Union
 from typing_extensions import Annotated
 from pyincusd.models.cluster_members_post202_response import ClusterMembersPost202Response
 from pyincusd.models.image_alias_get200_response import ImageAliasGet200Response
@@ -6284,6 +6284,8 @@ class ImagesApi:
     @validate_call
     async def images_post(
         self,
+        metadata: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image metadata tarball (incus.tar.xz)")],
+        rootfs: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image rootfs (squashfs or tarball)")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
         x_incus_fingerprint: Annotated[Optional[Any], Field(description="Expected fingerprint when pushing a raw image")] = None,
@@ -6309,6 +6311,10 @@ class ImagesApi:
 
         Adds a new image to the image store.
 
+        :param metadata: Image metadata tarball (incus.tar.xz) (required)
+        :type metadata: bytes
+        :param rootfs: Image rootfs (squashfs or tarball) (required)
+        :type rootfs: bytes
         :param project: Project name
         :type project: str
         :param x_incus_secret: Push secret for server to server communication
@@ -6348,6 +6354,8 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_post_serialize(
+            metadata=metadata,
+            rootfs=rootfs,
             project=project,
             x_incus_secret=x_incus_secret,
             x_incus_fingerprint=x_incus_fingerprint,
@@ -6382,6 +6390,8 @@ class ImagesApi:
     @validate_call
     async def images_post_with_http_info(
         self,
+        metadata: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image metadata tarball (incus.tar.xz)")],
+        rootfs: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image rootfs (squashfs or tarball)")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
         x_incus_fingerprint: Annotated[Optional[Any], Field(description="Expected fingerprint when pushing a raw image")] = None,
@@ -6407,6 +6417,10 @@ class ImagesApi:
 
         Adds a new image to the image store.
 
+        :param metadata: Image metadata tarball (incus.tar.xz) (required)
+        :type metadata: bytes
+        :param rootfs: Image rootfs (squashfs or tarball) (required)
+        :type rootfs: bytes
         :param project: Project name
         :type project: str
         :param x_incus_secret: Push secret for server to server communication
@@ -6446,6 +6460,8 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_post_serialize(
+            metadata=metadata,
+            rootfs=rootfs,
             project=project,
             x_incus_secret=x_incus_secret,
             x_incus_fingerprint=x_incus_fingerprint,
@@ -6480,6 +6496,8 @@ class ImagesApi:
     @validate_call
     async def images_post_without_preload_content(
         self,
+        metadata: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image metadata tarball (incus.tar.xz)")],
+        rootfs: Annotated[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]], Field(description="Image rootfs (squashfs or tarball)")],
         project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         x_incus_secret: Annotated[Optional[Any], Field(description="Push secret for server to server communication")] = None,
         x_incus_fingerprint: Annotated[Optional[Any], Field(description="Expected fingerprint when pushing a raw image")] = None,
@@ -6505,6 +6523,10 @@ class ImagesApi:
 
         Adds a new image to the image store.
 
+        :param metadata: Image metadata tarball (incus.tar.xz) (required)
+        :type metadata: bytes
+        :param rootfs: Image rootfs (squashfs or tarball) (required)
+        :type rootfs: bytes
         :param project: Project name
         :type project: str
         :param x_incus_secret: Push secret for server to server communication
@@ -6544,6 +6566,8 @@ class ImagesApi:
         """ # noqa: E501
 
         _param = self._images_post_serialize(
+            metadata=metadata,
+            rootfs=rootfs,
             project=project,
             x_incus_secret=x_incus_secret,
             x_incus_fingerprint=x_incus_fingerprint,
@@ -6573,6 +6597,8 @@ class ImagesApi:
 
     def _images_post_serialize(
         self,
+        metadata,
+        rootfs,
         project,
         x_incus_secret,
         x_incus_fingerprint,
@@ -6623,6 +6649,10 @@ class ImagesApi:
         if x_incus_profiles is not None:
             _header_params['X-Incus-profiles'] = x_incus_profiles
         # process the form parameters
+        if metadata is not None:
+            _files['metadata'] = metadata
+        if rootfs is not None:
+            _files['rootfs'] = rootfs
         # process the body parameter
 
 
@@ -6641,7 +6671,7 @@ class ImagesApi:
             _default_content_type = (
                 self.api_client.select_header_content_type(
                     [
-                        'application/json'
+                        'multipart/form-data'
                     ]
                 )
             )

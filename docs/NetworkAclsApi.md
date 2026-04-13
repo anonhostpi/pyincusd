@@ -4,15 +4,15 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**network_acl_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_delete) | **DELETE** /1.0/network-acls/{name} | Delete the network ACL
-[**network_acl_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_get) | **GET** /1.0/network-acls/{name} | Get the network ACL
-[**network_acl_log_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_log_get) | **GET** /1.0/network-acls/{name}/log | Get the network ACL log
-[**network_acl_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_patch) | **PATCH** /1.0/network-acls/{name} | Partially update the network ACL
-[**network_acl_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_post) | **POST** /1.0/network-acls/{name} | Rename the network ACL
-[**network_acl_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acl_put) | **PUT** /1.0/network-acls/{name} | Update the network ACL
-[**network_acls_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acls_get) | **GET** /1.0/network-acls | Get the network ACLs
-[**network_acls_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acls_get_recursion1) | **GET** /1.0/network-acls?recursion&#x3D;1 | Get the network ACLs
-[**network_acls_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsApi.md#network_acls_post) | **POST** /1.0/network-acls | Add a network ACL
+[**network_acl_delete**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_delete) | **DELETE** /1.0/network-acls/{name} | Delete the network ACL
+[**network_acl_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_get) | **GET** /1.0/network-acls/{name} | Get the network ACL
+[**network_acl_log_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_log_get) | **GET** /1.0/network-acls/{name}/log | Get the network ACL log
+[**network_acl_patch**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_patch) | **PATCH** /1.0/network-acls/{name} | Partially update the network ACL
+[**network_acl_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_post) | **POST** /1.0/network-acls/{name} | Rename the network ACL
+[**network_acl_put**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acl_put) | **PUT** /1.0/network-acls/{name} | Update the network ACL
+[**network_acls_get**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acls_get) | **GET** /1.0/network-acls | Get the network ACLs
+[**network_acls_get_recursion1**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acls_get_recursion1) | **GET** /1.0/network-acls?recursion&#x3D;1 | Get the network ACLs
+[**network_acls_post**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsApi.md#network_acls_post) | **POST** /1.0/network-acls | Add a network ACL
 
 
 # **network_acl_delete**
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAclGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclGet200Response.md)
+[**NetworkAclGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclGet200Response.md)
 
 ### Authorization
 
@@ -278,12 +278,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkACLPut.md)| ACL configuration | 
+ **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkACLPut.md)| ACL configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -355,12 +355,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **acl** | [**NetworkACLPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkACLPost.md)| ACL rename request | 
+ **acl** | [**NetworkACLPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkACLPost.md)| ACL rename request | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -431,12 +431,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Path parameter: name | 
- **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkACLPut.md)| ACL configuration | 
+ **acl** | [**NetworkACLPut**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkACLPut.md)| ACL configuration | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAclsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsGet200Response.md)
+[**NetworkAclsGet200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsGet200Response.md)
 
 ### Authorization
 
@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkAclsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkAclsGetRecursion1200Response.md)
+[**NetworkAclsGetRecursion1200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkAclsGetRecursion1200Response.md)
 
 ### Authorization
 
@@ -654,12 +654,12 @@ async with pyincusd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **acl** | [**NetworkACLsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkACLsPost.md)| ACL | 
+ **acl** | [**NetworkACLsPost**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkACLsPost.md)| ACL | 
  **project** | **str**| Project name | [optional] 
 
 ### Return type
 
-[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ServerPut200Response.md)
+[**ServerPut200Response**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ServerPut200Response.md)
 
 ### Authorization
 

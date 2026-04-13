@@ -6,11 +6,11 @@ NetworkLoadBalancersPost represents the fields of a new network load balancer
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backends** | [**List[NetworkLoadBalancerBackend]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkLoadBalancerBackend.md) | Backends (optional) | [optional] 
+**backends** | [**List[NetworkLoadBalancerBackend]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkLoadBalancerBackend.md) | Backends (optional) | [optional] 
 **config** | **object** | Load balancer configuration map (refer to doc/network-load-balancers.md) | [optional] 
 **description** | **str** | Description of the load balancer listen IP | [optional] 
 **listen_address** | **str** | The listen address of the load balancer | [optional] 
-**ports** | [**List[NetworkLoadBalancerPort]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/NetworkLoadBalancerPort.md) | Port forwards (optional) | [optional] 
+**ports** | [**List[NetworkLoadBalancerPort]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/NetworkLoadBalancerPort.md) | Port forwards (optional) | [optional] 
 
 ## Example
 

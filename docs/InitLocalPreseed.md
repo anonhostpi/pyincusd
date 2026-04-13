@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**certificates** | [**List[CertificatesPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/CertificatesPost.md) | Certificates to add | [optional] 
-**cluster_groups** | [**List[ClusterGroupsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ClusterGroupsPost.md) | Cluster groups to add  API extension: init_preseed_cluster_groups. | [optional] 
+**certificates** | [**List[CertificatesPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/CertificatesPost.md) | Certificates to add | [optional] 
+**cluster_groups** | [**List[ClusterGroupsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ClusterGroupsPost.md) | Cluster groups to add  API extension: init_preseed_cluster_groups. | [optional] 
 **config** | **object** | Server configuration map (refer to doc/server.md) | [optional] 
-**networks** | [**List[InitNetworksProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/InitNetworksProjectPost.md) | Networks by project to add | [optional] 
-**profiles** | [**List[InitProfileProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/InitProfileProjectPost.md) | Profiles to add | [optional] 
-**projects** | [**List[ProjectsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/ProjectsPost.md) | Projects to add | [optional] 
-**storage_pools** | [**List[StoragePoolsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/StoragePoolsPost.md) | Storage Pools to add | [optional] 
-**storage_volumes** | [**List[InitStorageVolumesProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post15/docs/InitStorageVolumesProjectPost.md) | Storage Volumes to add | [optional] 
+**networks** | [**List[InitNetworksProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/InitNetworksProjectPost.md) | Networks by project to add | [optional] 
+**profiles** | [**List[InitProfileProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/InitProfileProjectPost.md) | Profiles to add | [optional] 
+**projects** | [**List[ProjectsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/ProjectsPost.md) | Projects to add | [optional] 
+**storage_pools** | [**List[StoragePoolsPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/StoragePoolsPost.md) | Storage Pools to add | [optional] 
+**storage_volumes** | [**List[InitStorageVolumesProjectPost]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post16/docs/InitStorageVolumesProjectPost.md) | Storage Volumes to add | [optional] 
 
 ## Example
 
