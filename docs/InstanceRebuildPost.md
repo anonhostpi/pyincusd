@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**source** | [**InstanceSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/InstanceSource.md) |  | [optional] 
+**source** | [**InstanceSource**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/InstanceSource.md) |  | [optional] 
 
 ## Example
 

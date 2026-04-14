@@ -6,8 +6,8 @@ ResourcesStoragePool represents the resources available to a given storage pool
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inodes** | [**ResourcesStoragePoolInodes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/ResourcesStoragePoolInodes.md) |  | [optional] 
-**space** | [**ResourcesStoragePoolSpace**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/ResourcesStoragePoolSpace.md) |  | [optional] 
+**inodes** | [**ResourcesStoragePoolInodes**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesStoragePoolInodes.md) |  | [optional] 
+**space** | [**ResourcesStoragePoolSpace**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesStoragePoolSpace.md) |  | [optional] 
 
 ## Example
 

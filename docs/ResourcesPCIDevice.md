@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **product_id** | **str** | PCI ID of the product | [optional] 
 **vendor** | **str** | Name of the vendor | [optional] 
 **vendor_id** | **str** | PCI ID of the vendor | [optional] 
-**vpd** | [**ResourcesPCIVPD**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/ResourcesPCIVPD.md) |  | [optional] 
+**vpd** | [**ResourcesPCIVPD**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesPCIVPD.md) |  | [optional] 
 
 ## Example
 

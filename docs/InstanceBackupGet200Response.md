@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**InstanceBackup**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post20/docs/InstanceBackup.md) |  | [optional] 
+**metadata** | [**InstanceBackup**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/InstanceBackup.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 
