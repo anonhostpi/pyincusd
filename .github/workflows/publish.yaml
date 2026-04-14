@@ -3,7 +3,12 @@ name: Publish pyincusd
 on:
   schedule:
     - cron: "0 6 * * *" # daily at 6am UTC
-  workflow_dispatch: {} # manual trigger
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Publish even if the upstream Incus version hasn't changed (bumps .postN)"
+        type: boolean
+        default: false
 
 jobs:
   check-release:
@@ -42,25 +47,24 @@ jobs:
           echo "incus latest: ${VERSION}"
           echo "pypi current: ${PYPI_RAW:-none} (base: ${PYPI_BASE:-none})"
 
-          if [ "$VERSION" != "$PYPI_BASE" ]; then
-            echo "new_release=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "Already up to date."
-            echo "new_release=false" >> "$GITHUB_OUTPUT"
-          fi
-
-          # Determine publish version.
-          # If we already have a git tag for this version (meaning we published
-          # it before and the PyPI filename is burned), bump to .postN.
           PUBLISH_VERSION="$VERSION"
-          N=1
-          while git tag -l "v${PUBLISH_VERSION}" | grep -q .; do
-            PUBLISH_VERSION="${VERSION}.post${N}"
-            N=$((N + 1))
-          done
+          FORCE="${{ github.event.inputs.force || 'false' }}"
 
-          if [ "$PUBLISH_VERSION" != "$VERSION" ]; then
-            echo "Tag v${VERSION} exists — filename likely burned. Using ${PUBLISH_VERSION}"
+          if [ "$VERSION" = "$PYPI_BASE" ] && [ "$FORCE" != "true" ]; then
+            echo "Already up to date and force=false — skipping publish."
+            echo "new_release=false" >> "$GITHUB_OUTPUT"
+          else
+            # Either a new upstream release or a forced republish (e.g. after
+            # updating patches). Bump .postN past any existing git tag so the
+            # PyPI filename is fresh.
+            N=1
+            while git tag -l "v${PUBLISH_VERSION}" | grep -q .; do
+              PUBLISH_VERSION="${VERSION}.post${N}"
+              N=$((N + 1))
+            done
+            if [ "$PUBLISH_VERSION" != "$VERSION" ]; then
+              echo "Tag v${VERSION} exists — using ${PUBLISH_VERSION}"
+            fi
             echo "new_release=true" >> "$GITHUB_OUTPUT"
           fi
 
