@@ -6,16 +6,16 @@ Resources represents the system hardware resources
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cpu** | [**ResourcesCPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesCPU.md) |  | [optional] 
-**gpu** | [**ResourcesGPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesGPU.md) |  | [optional] 
-**load** | [**ResourcesLoad**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesLoad.md) |  | [optional] 
-**memory** | [**ResourcesMemory**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesMemory.md) |  | [optional] 
-**network** | [**ResourcesNetwork**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesNetwork.md) |  | [optional] 
-**pci** | [**ResourcesPCI**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesPCI.md) |  | [optional] 
-**serial** | [**ResourcesSerial**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSerial.md) |  | [optional] 
-**storage** | [**ResourcesStorage**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesStorage.md) |  | [optional] 
-**system** | [**ResourcesSystem**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSystem.md) |  | [optional] 
-**usb** | [**ResourcesUSB**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesUSB.md) |  | [optional] 
+**cpu** | [**ResourcesCPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesCPU.md) |  | [optional] 
+**gpu** | [**ResourcesGPU**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesGPU.md) |  | [optional] 
+**load** | [**ResourcesLoad**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesLoad.md) |  | [optional] 
+**memory** | [**ResourcesMemory**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesMemory.md) |  | [optional] 
+**network** | [**ResourcesNetwork**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesNetwork.md) |  | [optional] 
+**pci** | [**ResourcesPCI**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesPCI.md) |  | [optional] 
+**serial** | [**ResourcesSerial**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSerial.md) |  | [optional] 
+**storage** | [**ResourcesStorage**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesStorage.md) |  | [optional] 
+**system** | [**ResourcesSystem**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSystem.md) |  | [optional] 
+**usb** | [**ResourcesUSB**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesUSB.md) |  | [optional] 
 
 ## Example
 

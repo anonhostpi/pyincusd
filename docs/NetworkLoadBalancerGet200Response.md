@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**NetworkLoadBalancer**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/NetworkLoadBalancer.md) |  | [optional] 
+**metadata** | [**NetworkLoadBalancer**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/NetworkLoadBalancer.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

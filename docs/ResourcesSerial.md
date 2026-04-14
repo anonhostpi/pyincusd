@@ -6,7 +6,7 @@ ResourcesSerial represents the serial devices available on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**devices** | [**List[ResourcesSerialDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSerialDevice.md) | List of serial devices | [optional] 
+**devices** | [**List[ResourcesSerialDevice]**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSerialDevice.md) | List of serial devices | [optional] 
 **total** | **int** | Total number of serial devices | [optional] 
 
 ## Example

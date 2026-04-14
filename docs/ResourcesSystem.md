@@ -6,10 +6,10 @@ ResourcesSystem represents the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chassis** | [**ResourcesSystemChassis**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSystemChassis.md) |  | [optional] 
+**chassis** | [**ResourcesSystemChassis**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSystemChassis.md) |  | [optional] 
 **family** | **str** | System family | [optional] 
-**firmware** | [**ResourcesSystemFirmware**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSystemFirmware.md) |  | [optional] 
-**motherboard** | [**ResourcesSystemMotherboard**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post21/docs/ResourcesSystemMotherboard.md) |  | [optional] 
+**firmware** | [**ResourcesSystemFirmware**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSystemFirmware.md) |  | [optional] 
+**motherboard** | [**ResourcesSystemMotherboard**](https://github.com/anonhostpi/pyincusd/blob/v6.23.0.post22/docs/ResourcesSystemMotherboard.md) |  | [optional] 
 **product** | **str** | System model | [optional] 
 **serial** | **str** | System serial number | [optional] 
 **sku** | **str** | System nanufacturer SKU LENOVO_MT_20HR_BU_Think_FM_ThinkPad X1 Carbon 5th | [optional] 
