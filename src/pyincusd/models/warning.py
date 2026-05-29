@@ -29,17 +29,17 @@ class Warning(BaseModel):
     """
     Warning
     """ # noqa: E501
-    count: Optional[StrictInt] = Field(default=None, description="The number of times this warning occurred")
-    entity_url: Optional[StrictStr] = Field(default=None, description="The entity affected by this warning")
-    first_seen_at: Optional[datetime] = Field(default=None, description="The first time this warning occurred")
-    last_message: Optional[StrictStr] = Field(default=None, description="The warning message")
-    last_seen_at: Optional[datetime] = Field(default=None, description="The last time this warning occurred")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this warning occurred on")
-    project: Optional[StrictStr] = Field(default=None, description="The project the warning occurred in")
-    severity: Optional[StrictStr] = Field(default=None, description="The severity of this warning")
-    status: Optional[StrictStr] = Field(default=None, description="Status of the warning (new, acknowledged, or resolved)")
-    type: Optional[StrictStr] = Field(default=None, description="Type type of warning")
-    uuid: Optional[StrictStr] = Field(default=None, description="UUID of the warning")
+    count: Optional[StrictInt] = Field(default=None, description="The number of times this warning occurred", json_schema_extra={"examples": [1]})
+    entity_url: Optional[StrictStr] = Field(default=None, description="The entity affected by this warning", json_schema_extra={"examples": ["/1.0/instances/c1?project=default"]})
+    first_seen_at: Optional[datetime] = Field(default=None, description="The first time this warning occurred", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    last_message: Optional[StrictStr] = Field(default=None, description="The warning message", json_schema_extra={"examples": ["Couldn't find the CGroup blkio.weight, disk priority will be ignored"]})
+    last_seen_at: Optional[datetime] = Field(default=None, description="The last time this warning occurred", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this warning occurred on", json_schema_extra={"examples": ["server01"]})
+    project: Optional[StrictStr] = Field(default=None, description="The project the warning occurred in", json_schema_extra={"examples": ["default"]})
+    severity: Optional[StrictStr] = Field(default=None, description="The severity of this warning", json_schema_extra={"examples": ["low"]})
+    status: Optional[StrictStr] = Field(default=None, description="Status of the warning (new, acknowledged, or resolved)", json_schema_extra={"examples": ["new"]})
+    type: Optional[StrictStr] = Field(default=None, description="Type type of warning", json_schema_extra={"examples": ["Couldn't find CGroup"]})
+    uuid: Optional[StrictStr] = Field(default=None, description="UUID of the warning", json_schema_extra={"examples": ["e9e9da0d-2538-4351-8047-46d4a8ae4dbb"]})
     __properties: ClassVar[List[str]] = ["count", "entity_url", "first_seen_at", "last_message", "last_seen_at", "location", "project", "severity", "status", "type", "uuid"]
 
     model_config = ConfigDict(

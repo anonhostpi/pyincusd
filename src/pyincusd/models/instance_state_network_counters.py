@@ -28,14 +28,14 @@ class InstanceStateNetworkCounters(BaseModel):
     """
     InstanceStateNetworkCounters represents packet counters as part of the network section of an instance's state.
     """ # noqa: E501
-    bytes_received: Optional[StrictInt] = Field(default=None, description="Number of bytes received")
-    bytes_sent: Optional[StrictInt] = Field(default=None, description="Number of bytes sent")
-    errors_received: Optional[StrictInt] = Field(default=None, description="Number of errors received")
-    errors_sent: Optional[StrictInt] = Field(default=None, description="Number of errors sent")
-    packets_dropped_inbound: Optional[StrictInt] = Field(default=None, description="Number of inbound packets dropped")
-    packets_dropped_outbound: Optional[StrictInt] = Field(default=None, description="Number of outbound packets dropped")
-    packets_received: Optional[StrictInt] = Field(default=None, description="Number of packets received")
-    packets_sent: Optional[StrictInt] = Field(default=None, description="Number of packets sent")
+    bytes_received: Optional[StrictInt] = Field(default=None, description="Number of bytes received", json_schema_extra={"examples": [192021]})
+    bytes_sent: Optional[StrictInt] = Field(default=None, description="Number of bytes sent", json_schema_extra={"examples": [10888579]})
+    errors_received: Optional[StrictInt] = Field(default=None, description="Number of errors received", json_schema_extra={"examples": [14]})
+    errors_sent: Optional[StrictInt] = Field(default=None, description="Number of errors sent", json_schema_extra={"examples": [41]})
+    packets_dropped_inbound: Optional[StrictInt] = Field(default=None, description="Number of inbound packets dropped", json_schema_extra={"examples": [179]})
+    packets_dropped_outbound: Optional[StrictInt] = Field(default=None, description="Number of outbound packets dropped", json_schema_extra={"examples": [541]})
+    packets_received: Optional[StrictInt] = Field(default=None, description="Number of packets received", json_schema_extra={"examples": [1748]})
+    packets_sent: Optional[StrictInt] = Field(default=None, description="Number of packets sent", json_schema_extra={"examples": [964]})
     __properties: ClassVar[List[str]] = ["bytes_received", "bytes_sent", "errors_received", "errors_sent", "packets_dropped_inbound", "packets_dropped_outbound", "packets_received", "packets_sent"]
 
     model_config = ConfigDict(

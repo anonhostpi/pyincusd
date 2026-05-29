@@ -29,8 +29,8 @@ class NetworkZoneRecordPut(BaseModel):
     """
     NetworkZoneRecordPut represents the modifiable fields of a network zone record
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Advanced configuration for the record")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the record")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Advanced configuration for the record", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the record", json_schema_extra={"examples": ["SPF record"]})
     entries: Optional[List[NetworkZoneRecordEntry]] = Field(default=None, description="Entries in the record")
     __properties: ClassVar[List[str]] = ["config", "description", "entries"]
 

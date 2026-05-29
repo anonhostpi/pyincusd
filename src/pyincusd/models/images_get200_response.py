@@ -28,10 +28,10 @@ class ImagesGet200Response(BaseModel):
     """
     Sync response
     """ # noqa: E501
-    metadata: Optional[List[StrictStr]] = Field(default=None, description="List of endpoints")
-    status: Optional[StrictStr] = Field(default=None, description="Status description")
-    status_code: Optional[StrictInt] = Field(default=None, description="Status code")
-    type: Optional[StrictStr] = Field(default=None, description="Response type")
+    metadata: Optional[List[StrictStr]] = Field(default=None, description="List of endpoints", json_schema_extra={"examples": ["[\n  \"/1.0/images/06b86454720d36b20f94e31c6812e05ec51c1b568cf3a8abd273769d213394bb\",\n  \"/1.0/images/084dd79dd1360fd25a2479eb46674c2a5ef3022a40fe03c91ab3603e3402b8e1\"\n]"]})
+    status: Optional[StrictStr] = Field(default=None, description="Status description", json_schema_extra={"examples": ["Success"]})
+    status_code: Optional[StrictInt] = Field(default=None, description="Status code", json_schema_extra={"examples": [200]})
+    type: Optional[StrictStr] = Field(default=None, description="Response type", json_schema_extra={"examples": ["sync"]})
     __properties: ClassVar[List[str]] = ["metadata", "status", "status_code", "type"]
 
     model_config = ConfigDict(

@@ -29,9 +29,9 @@ class Cluster(BaseModel):
     """
     Cluster
     """ # noqa: E501
-    enabled: Optional[StrictBool] = Field(default=None, description="Whether clustering is enabled")
-    member_config: Optional[List[ClusterMemberConfigKey]] = Field(default=None, description="List of member configuration keys (used during join)")
-    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member answering the request")
+    enabled: Optional[StrictBool] = Field(default=None, description="Whether clustering is enabled", json_schema_extra={"examples": [True]})
+    member_config: Optional[List[ClusterMemberConfigKey]] = Field(default=None, description="List of member configuration keys (used during join)", json_schema_extra={"examples": [[]]})
+    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member answering the request", json_schema_extra={"examples": ["server01"]})
     __properties: ClassVar[List[str]] = ["enabled", "member_config", "server_name"]
 
     model_config = ConfigDict(

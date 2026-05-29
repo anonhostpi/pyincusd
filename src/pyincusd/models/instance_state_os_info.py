@@ -28,11 +28,11 @@ class InstanceStateOSInfo(BaseModel):
     """
     InstanceStateOSInfo
     """ # noqa: E501
-    fqdn: Optional[StrictStr] = Field(default=None, description="FQDN of the instance.")
-    hostname: Optional[StrictStr] = Field(default=None, description="Hostname of the instance.")
-    kernel_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel running in the instance.")
-    os: Optional[StrictStr] = Field(default=None, description="Operating system running in the instance.")
-    os_version: Optional[StrictStr] = Field(default=None, description="Version of the operating system.")
+    fqdn: Optional[StrictStr] = Field(default=None, description="FQDN of the instance.", json_schema_extra={"examples": ["myhost.mydomain.local"]})
+    hostname: Optional[StrictStr] = Field(default=None, description="Hostname of the instance.", json_schema_extra={"examples": ["myhost"]})
+    kernel_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel running in the instance.", json_schema_extra={"examples": ["6.1.0-25-amd64"]})
+    os: Optional[StrictStr] = Field(default=None, description="Operating system running in the instance.", json_schema_extra={"examples": ["Debian GNU/Linux"]})
+    os_version: Optional[StrictStr] = Field(default=None, description="Version of the operating system.", json_schema_extra={"examples": ["12 (bookworm)"]})
     __properties: ClassVar[List[str]] = ["fqdn", "hostname", "kernel_version", "os", "os_version"]
 
     model_config = ConfigDict(

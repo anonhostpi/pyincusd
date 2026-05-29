@@ -31,9 +31,9 @@ class NetworkLoadBalancersPost(BaseModel):
     NetworkLoadBalancersPost represents the fields of a new network load balancer
     """ # noqa: E501
     backends: Optional[List[NetworkLoadBalancerBackend]] = Field(default=None, description="Backends (optional)")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Load balancer configuration map (refer to doc/network-load-balancers.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer listen IP")
-    listen_address: Optional[StrictStr] = Field(default=None, description="The listen address of the load balancer")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Load balancer configuration map (refer to doc/network-load-balancers.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer listen IP", json_schema_extra={"examples": ["My public IP load balancer"]})
+    listen_address: Optional[StrictStr] = Field(default=None, description="The listen address of the load balancer", json_schema_extra={"examples": ["192.0.2.1"]})
     ports: Optional[List[NetworkLoadBalancerPort]] = Field(default=None, description="Port forwards (optional)")
     __properties: ClassVar[List[str]] = ["backends", "config", "description", "listen_address", "ports"]
 

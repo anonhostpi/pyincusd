@@ -28,8 +28,8 @@ class ClusterCertificatePut(BaseModel):
     """
     ClusterCertificatePut represents the certificate and key pair for all cluster members
     """ # noqa: E501
-    cluster_certificate: Optional[StrictStr] = Field(default=None, description="The new certificate (X509 PEM encoded) for the cluster")
-    cluster_certificate_key: Optional[StrictStr] = Field(default=None, description="The new certificate key (X509 PEM encoded) for the cluster")
+    cluster_certificate: Optional[StrictStr] = Field(default=None, description="The new certificate (X509 PEM encoded) for the cluster", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    cluster_certificate_key: Optional[StrictStr] = Field(default=None, description="The new certificate key (X509 PEM encoded) for the cluster", json_schema_extra={"examples": ["X509 PEM certificate key"]})
     __properties: ClassVar[List[str]] = ["cluster_certificate", "cluster_certificate_key"]
 
     model_config = ConfigDict(

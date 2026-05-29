@@ -29,12 +29,12 @@ class StorageVolumeSnapshot(BaseModel):
     """
     StorageVolumeSnapshot represents a storage volume snapshot
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)")
-    content_type: Optional[StrictStr] = Field(default=None, description="The content type (filesystem or block)")
-    created_at: Optional[datetime] = Field(default=None, description="Volume snapshot creation timestamp")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume")
-    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)")
-    name: Optional[StrictStr] = Field(default=None, description="Snapshot name")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)", json_schema_extra={"examples": [{"size": "50GiB", "zfs.remove_snapshots": "true"}]})
+    content_type: Optional[StrictStr] = Field(default=None, description="The content type (filesystem or block)", json_schema_extra={"examples": ["filesystem"]})
+    created_at: Optional[datetime] = Field(default=None, description="Volume snapshot creation timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume", json_schema_extra={"examples": ["My custom volume"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Snapshot name", json_schema_extra={"examples": ["snap0"]})
     __properties: ClassVar[List[str]] = ["config", "content_type", "created_at", "description", "expires_at", "name"]
 
     model_config = ConfigDict(

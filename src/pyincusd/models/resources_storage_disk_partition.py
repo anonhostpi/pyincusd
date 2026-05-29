@@ -28,11 +28,11 @@ class ResourcesStorageDiskPartition(BaseModel):
     """
     ResourcesStorageDiskPartition represents a partition on a disk
     """ # noqa: E501
-    device: Optional[StrictStr] = Field(default=None, description="Device number")
-    id: Optional[StrictStr] = Field(default=None, description="ID of the partition (device name)")
-    partition: Optional[StrictInt] = Field(default=None, description="Partition number")
-    read_only: Optional[StrictBool] = Field(default=None, description="Whether the partition is read-only")
-    size: Optional[StrictInt] = Field(default=None, description="Size of the partition (bytes)")
+    device: Optional[StrictStr] = Field(default=None, description="Device number", json_schema_extra={"examples": ["259:1"]})
+    id: Optional[StrictStr] = Field(default=None, description="ID of the partition (device name)", json_schema_extra={"examples": ["nvme0n1p1"]})
+    partition: Optional[StrictInt] = Field(default=None, description="Partition number", json_schema_extra={"examples": [1]})
+    read_only: Optional[StrictBool] = Field(default=None, description="Whether the partition is read-only", json_schema_extra={"examples": [False]})
+    size: Optional[StrictInt] = Field(default=None, description="Size of the partition (bytes)", json_schema_extra={"examples": [254933278208]})
     __properties: ClassVar[List[str]] = ["device", "id", "partition", "read_only", "size"]
 
     model_config = ConfigDict(

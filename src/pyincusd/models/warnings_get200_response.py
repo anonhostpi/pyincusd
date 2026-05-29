@@ -28,10 +28,10 @@ class WarningsGet200Response(BaseModel):
     """
     Sync response
     """ # noqa: E501
-    metadata: Optional[List[StrictStr]] = Field(default=None, description="List of endpoints")
-    status: Optional[StrictStr] = Field(default=None, description="Status description")
-    status_code: Optional[StrictInt] = Field(default=None, description="Status code")
-    type: Optional[StrictStr] = Field(default=None, description="Response type")
+    metadata: Optional[List[StrictStr]] = Field(default=None, description="List of endpoints", json_schema_extra={"examples": ["[\n  \"/1.0/warnings/39c61a48-cc17-40ae-8248-4f7b4cadedf4\",\n  \"/1.0/warnings/951779a5-2820-4d96-b01e-88fe820e5310\"\n]"]})
+    status: Optional[StrictStr] = Field(default=None, description="Status description", json_schema_extra={"examples": ["Success"]})
+    status_code: Optional[StrictInt] = Field(default=None, description="Status code", json_schema_extra={"examples": [200]})
+    type: Optional[StrictStr] = Field(default=None, description="Response type", json_schema_extra={"examples": ["sync"]})
     __properties: ClassVar[List[str]] = ["metadata", "status", "status_code", "type"]
 
     model_config = ConfigDict(

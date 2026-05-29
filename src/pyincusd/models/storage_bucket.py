@@ -28,12 +28,12 @@ class StorageBucket(BaseModel):
     """
     StorageBucket represents the fields of a storage pool bucket
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage bucket configuration map")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    name: Optional[StrictStr] = Field(default=None, description="Bucket name")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    s3_url: Optional[StrictStr] = Field(default=None, description="Bucket S3 URL")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage bucket configuration map", json_schema_extra={"examples": [{"size": "50GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket", json_schema_extra={"examples": ["My custom bucket"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    name: Optional[StrictStr] = Field(default=None, description="Bucket name", json_schema_extra={"examples": ["foo"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    s3_url: Optional[StrictStr] = Field(default=None, description="Bucket S3 URL", json_schema_extra={"examples": ["https://127.0.0.1:8080/foo"]})
     __properties: ClassVar[List[str]] = ["config", "description", "location", "name", "project", "s3_url"]
 
     model_config = ConfigDict(

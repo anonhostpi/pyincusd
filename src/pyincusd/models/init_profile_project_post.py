@@ -28,11 +28,11 @@ class InitProfileProjectPost(BaseModel):
     """
     InitProfileProjectPost
     """ # noqa: E501
-    project: Optional[StrictStr] = Field(default=None, description="Project in which the profile will reside", alias="Project")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration map (refer to doc/instances.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the profile")
-    devices: Optional[Dict[str, Any]] = Field(default=None, description="List of devices")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the new profile")
+    project: Optional[StrictStr] = Field(default=None, description="Project in which the profile will reside", alias="Project", json_schema_extra={"examples": ["\"default\""]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration map (refer to doc/instances.md)", json_schema_extra={"examples": [{"limits.cpu": "4", "limits.memory": "4GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the profile", json_schema_extra={"examples": ["Medium size instances"]})
+    devices: Optional[Dict[str, Any]] = Field(default=None, description="List of devices", json_schema_extra={"examples": [{"eth0": {"name": "eth0", "network": "mybr0", "type": "nic"}, "root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the new profile", json_schema_extra={"examples": ["foo"]})
     __properties: ClassVar[List[str]] = ["Project", "config", "description", "devices", "name"]
 
     model_config = ConfigDict(

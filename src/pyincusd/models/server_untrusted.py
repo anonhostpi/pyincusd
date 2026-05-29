@@ -28,13 +28,13 @@ class ServerUntrusted(BaseModel):
     """
     ServerUntrusted represents a server configuration for an untrusted client
     """ # noqa: E501
-    api_extensions: Optional[List[StrictStr]] = Field(default=None, description="List of supported API extensions")
-    api_status: Optional[StrictStr] = Field(default=None, description="Support status of the current API (one of \"devel\", \"stable\" or \"deprecated\")")
-    api_version: Optional[StrictStr] = Field(default=None, description="API version number")
-    auth: Optional[StrictStr] = Field(default=None, description="Whether the client is trusted (one of \"trusted\" or \"untrusted\")")
-    auth_methods: Optional[List[StrictStr]] = Field(default=None, description="List of supported authentication methods")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)")
-    public: Optional[StrictBool] = Field(default=None, description="Whether the server is public-only (only public endpoints are implemented)")
+    api_extensions: Optional[List[StrictStr]] = Field(default=None, description="List of supported API extensions", json_schema_extra={"examples": [["etag", "patch", "network", "storage"]]})
+    api_status: Optional[StrictStr] = Field(default=None, description="Support status of the current API (one of \"devel\", \"stable\" or \"deprecated\")", json_schema_extra={"examples": ["stable"]})
+    api_version: Optional[StrictStr] = Field(default=None, description="API version number", json_schema_extra={"examples": ["1.0"]})
+    auth: Optional[StrictStr] = Field(default=None, description="Whether the client is trusted (one of \"trusted\" or \"untrusted\")", json_schema_extra={"examples": ["untrusted"]})
+    auth_methods: Optional[List[StrictStr]] = Field(default=None, description="List of supported authentication methods", json_schema_extra={"examples": [["tls"]]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)", json_schema_extra={"examples": [{"core.https_address": ":8443"}]})
+    public: Optional[StrictBool] = Field(default=None, description="Whether the server is public-only (only public endpoints are implemented)", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["api_extensions", "api_status", "api_version", "auth", "auth_methods", "config", "public"]
 
     model_config = ConfigDict(

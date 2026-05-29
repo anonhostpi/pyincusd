@@ -29,7 +29,7 @@ class ProjectState(BaseModel):
     """
     ProjectState represents the current running state of a project
     """ # noqa: E501
-    resources: Optional[Dict[str, ProjectStateResource]] = Field(default=None, description="Allocated and used resources")
+    resources: Optional[Dict[str, ProjectStateResource]] = Field(default=None, description="Allocated and used resources", json_schema_extra={"examples": [{"containers": {"limit": 10, "usage": 4}, "cpu": {"limit": 20, "usage": 16}}]})
     __properties: ClassVar[List[str]] = ["resources"]
 
     model_config = ConfigDict(

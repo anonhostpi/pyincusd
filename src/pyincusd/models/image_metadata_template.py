@@ -28,13 +28,13 @@ class ImageMetadataTemplate(BaseModel):
     """
     ImageMetadataTemplate represents a template entry in image metadata (used in image tarball)
     """ # noqa: E501
-    create_only: Optional[StrictBool] = Field(default=None, description="Whether to trigger only if the file is missing")
-    gid: Optional[StrictStr] = Field(default=None, description="The file owner gid.")
-    mode: Optional[StrictStr] = Field(default=None, description="The file permissions.")
-    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Key/value properties to pass to the template")
-    template: Optional[StrictStr] = Field(default=None, description="The template itself as a valid pongo2 template")
-    uid: Optional[StrictStr] = Field(default=None, description="The file owner uid.")
-    when: Optional[List[StrictStr]] = Field(default=None, description="When to trigger the template (create, copy or start)")
+    create_only: Optional[StrictBool] = Field(default=None, description="Whether to trigger only if the file is missing", json_schema_extra={"examples": [False]})
+    gid: Optional[StrictStr] = Field(default=None, description="The file owner gid.", json_schema_extra={"examples": ["1000"]})
+    mode: Optional[StrictStr] = Field(default=None, description="The file permissions.", json_schema_extra={"examples": ["644"]})
+    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Key/value properties to pass to the template", json_schema_extra={"examples": [{"foo": "bar"}]})
+    template: Optional[StrictStr] = Field(default=None, description="The template itself as a valid pongo2 template", json_schema_extra={"examples": ["pongo2-template"]})
+    uid: Optional[StrictStr] = Field(default=None, description="The file owner uid.", json_schema_extra={"examples": ["1000"]})
+    when: Optional[List[StrictStr]] = Field(default=None, description="When to trigger the template (create, copy or start)", json_schema_extra={"examples": [["create"]]})
     __properties: ClassVar[List[str]] = ["create_only", "gid", "mode", "properties", "template", "uid", "when"]
 
     model_config = ConfigDict(

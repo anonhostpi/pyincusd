@@ -6,7 +6,7 @@ Sync response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**NetworkACL**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/NetworkACL.md) |  | [optional] 
+**metadata** | [**NetworkACL**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/NetworkACL.md) |  | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

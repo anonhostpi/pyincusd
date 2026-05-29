@@ -28,12 +28,12 @@ class NetworkAddressSet(BaseModel):
     """
     Refer to doc/howto/network_address_sets.md for details.
     """ # noqa: E501
-    addresses: Optional[List[StrictStr]] = Field(default=None, description="List of addresses in the set")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Address set configuration map (refer to doc/network-address-sets.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the address set")
-    name: Optional[StrictStr] = Field(default=None, description="The new name of the address set")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile")
+    addresses: Optional[List[StrictStr]] = Field(default=None, description="List of addresses in the set", json_schema_extra={"examples": [["192.0.0.1", "2001:0db8:1234::1"]]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Address set configuration map (refer to doc/network-address-sets.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the address set", json_schema_extra={"examples": ["Web servers"]})
+    name: Optional[StrictStr] = Field(default=None, description="The new name of the address set", json_schema_extra={"examples": ["\"bar\""]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile", json_schema_extra={"examples": [["/1.0/network-acls/foo", "/1.0/network-acls/bar", "/1.0/network-acls/baz"]]})
     __properties: ClassVar[List[str]] = ["addresses", "config", "description", "name", "project", "used_by"]
 
     model_config = ConfigDict(

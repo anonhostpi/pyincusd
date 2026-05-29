@@ -29,13 +29,13 @@ class NetworkACL(BaseModel):
     """
     NetworkACL
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="ACL configuration map (refer to doc/network-acls.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the ACL")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="ACL configuration map (refer to doc/network-acls.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the ACL", json_schema_extra={"examples": ["Web servers"]})
     egress: Optional[List[NetworkACLRule]] = Field(default=None, description="List of egress rules (order independent)")
     ingress: Optional[List[NetworkACLRule]] = Field(default=None, description="List of ingress rules (order independent)")
-    name: Optional[StrictStr] = Field(default=None, description="The new name for the ACL")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile")
+    name: Optional[StrictStr] = Field(default=None, description="The new name for the ACL", json_schema_extra={"examples": ["bar"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile", json_schema_extra={"examples": [["/1.0/instances/c1", "/1.0/instances/v1", "/1.0/networks/mybr0"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "egress", "ingress", "name", "project", "used_by"]
 
     model_config = ConfigDict(

@@ -28,7 +28,7 @@ class NetworkAllocations(BaseModel):
     """
     NetworkAllocations used for displaying network addresses used by a consuming entity e.g, instance, network forward, load-balancer, network...
     """ # noqa: E501
-    addresses: Optional[StrictStr] = Field(default=None, description="The network address of the allocation (in CIDR format)")
+    addresses: Optional[StrictStr] = Field(default=None, description="The network address of the allocation (in CIDR format)", json_schema_extra={"examples": ["192.0.2.1/24"]})
     hwaddr: Optional[StrictStr] = Field(default=None, description="Hwaddr is the MAC address of the entity consuming the network address")
     nat: Optional[StrictBool] = Field(default=None, description="Whether the entity comes from a network that performs egress source NAT")
     type: Optional[StrictStr] = Field(default=None, description="Type of the entity consuming the network address")

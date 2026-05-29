@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,9 @@ class ServerPut200Response(BaseModel):
     """
     ServerPut200Response
     """ # noqa: E501
-    status: Optional[StrictStr] = None
-    status_code: Optional[StrictInt] = None
-    type: Optional[StrictStr] = None
+    status: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Success"]})
+    status_code: Optional[StrictInt] = Field(default=None, json_schema_extra={"examples": [200]})
+    type: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["sync"]})
     __properties: ClassVar[List[str]] = ["status", "status_code", "type"]
 
     model_config = ConfigDict(

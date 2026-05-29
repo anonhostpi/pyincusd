@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,9 +28,9 @@ class ServerGet500Response(BaseModel):
     """
     ServerGet500Response
     """ # noqa: E501
-    error: Optional[StrictStr] = None
-    error_code: Optional[StrictInt] = None
-    type: Optional[StrictStr] = None
+    error: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["internal server error"]})
+    error_code: Optional[StrictInt] = Field(default=None, json_schema_extra={"examples": [500]})
+    type: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["error"]})
     __properties: ClassVar[List[str]] = ["error", "error_code", "type"]
 
     model_config = ConfigDict(

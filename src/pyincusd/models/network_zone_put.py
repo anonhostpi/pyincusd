@@ -28,8 +28,8 @@ class NetworkZonePut(BaseModel):
     """
     NetworkZonePut represents the modifiable fields of a network zone
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone", json_schema_extra={"examples": ["Internal domain"]})
     __properties: ClassVar[List[str]] = ["config", "description"]
 
     model_config = ConfigDict(

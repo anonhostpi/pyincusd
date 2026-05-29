@@ -28,9 +28,9 @@ class ResourcesCPUCache(BaseModel):
     """
     ResourcesCPUCache represents a CPU cache
     """ # noqa: E501
-    level: Optional[StrictInt] = Field(default=None, description="Cache level (usually a number from 1 to 3)")
-    size: Optional[StrictInt] = Field(default=None, description="Size of the cache (in bytes)")
-    type: Optional[StrictStr] = Field(default=None, description="Type of cache (Data, Instruction, Unified, ...)")
+    level: Optional[StrictInt] = Field(default=None, description="Cache level (usually a number from 1 to 3)", json_schema_extra={"examples": [1]})
+    size: Optional[StrictInt] = Field(default=None, description="Size of the cache (in bytes)", json_schema_extra={"examples": [32768]})
+    type: Optional[StrictStr] = Field(default=None, description="Type of cache (Data, Instruction, Unified, ...)", json_schema_extra={"examples": ["Data"]})
     __properties: ClassVar[List[str]] = ["level", "size", "type"]
 
     model_config = ConfigDict(

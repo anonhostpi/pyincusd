@@ -28,10 +28,10 @@ class InstanceConsolePost(BaseModel):
     """
     InstanceConsolePost
     """ # noqa: E501
-    force: Optional[StrictBool] = Field(default=None, description="Forces a connection to the console")
-    height: Optional[StrictInt] = Field(default=None, description="Console height in rows (console type only)")
-    type: Optional[StrictStr] = Field(default=None, description="Type of console to attach to (console or vga)")
-    width: Optional[StrictInt] = Field(default=None, description="Console width in columns (console type only)")
+    force: Optional[StrictBool] = Field(default=None, description="Forces a connection to the console", json_schema_extra={"examples": [True]})
+    height: Optional[StrictInt] = Field(default=None, description="Console height in rows (console type only)", json_schema_extra={"examples": [24]})
+    type: Optional[StrictStr] = Field(default=None, description="Type of console to attach to (console or vga)", json_schema_extra={"examples": ["console"]})
+    width: Optional[StrictInt] = Field(default=None, description="Console width in columns (console type only)", json_schema_extra={"examples": [80]})
     __properties: ClassVar[List[str]] = ["force", "height", "type", "width"]
 
     model_config = ConfigDict(

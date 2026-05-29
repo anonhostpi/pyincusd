@@ -28,14 +28,14 @@ class ResourcesGPUCardNvidia(BaseModel):
     """
     ResourcesGPUCardNvidia represents additional information for NVIDIA GPUs
     """ # noqa: E501
-    architecture: Optional[StrictStr] = Field(default=None, description="Architecture (generation)")
-    brand: Optional[StrictStr] = Field(default=None, description="Brand name")
-    card_device: Optional[StrictStr] = Field(default=None, description="Card device number")
-    card_name: Optional[StrictStr] = Field(default=None, description="Card device name")
-    cuda_version: Optional[StrictStr] = Field(default=None, description="Version of the CUDA API")
-    model: Optional[StrictStr] = Field(default=None, description="Model name")
-    nvrm_version: Optional[StrictStr] = Field(default=None, description="Version of the NVRM (usually driver version)")
-    uuid: Optional[StrictStr] = Field(default=None, description="GPU UUID")
+    architecture: Optional[StrictStr] = Field(default=None, description="Architecture (generation)", json_schema_extra={"examples": ["3.5"]})
+    brand: Optional[StrictStr] = Field(default=None, description="Brand name", json_schema_extra={"examples": ["GeForce"]})
+    card_device: Optional[StrictStr] = Field(default=None, description="Card device number", json_schema_extra={"examples": ["195:0"]})
+    card_name: Optional[StrictStr] = Field(default=None, description="Card device name", json_schema_extra={"examples": ["nvidia0"]})
+    cuda_version: Optional[StrictStr] = Field(default=None, description="Version of the CUDA API", json_schema_extra={"examples": ["11.0"]})
+    model: Optional[StrictStr] = Field(default=None, description="Model name", json_schema_extra={"examples": ["GeForce GT 730"]})
+    nvrm_version: Optional[StrictStr] = Field(default=None, description="Version of the NVRM (usually driver version)", json_schema_extra={"examples": ["450.102.04"]})
+    uuid: Optional[StrictStr] = Field(default=None, description="GPU UUID", json_schema_extra={"examples": ["GPU-6ddadebd-dafe-2db9-f10f-125719770fd3"]})
     __properties: ClassVar[List[str]] = ["architecture", "brand", "card_device", "card_name", "cuda_version", "model", "nvrm_version", "uuid"]
 
     model_config = ConfigDict(

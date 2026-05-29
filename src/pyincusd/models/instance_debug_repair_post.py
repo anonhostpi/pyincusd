@@ -28,7 +28,7 @@ class InstanceDebugRepairPost(BaseModel):
     """
     InstanceDebugRepairPost
     """ # noqa: E501
-    action: Optional[StrictStr] = Field(default=None, description="The desired repair action.")
+    action: Optional[StrictStr] = Field(default=None, description="The desired repair action.", json_schema_extra={"examples": ["rebuild-config-volume"]})
     __properties: ClassVar[List[str]] = ["action"]
 
     model_config = ConfigDict(

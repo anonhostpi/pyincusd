@@ -4,7 +4,7 @@ All URIs are relative to the incusd API (unix socket or https). See [Incus REST 
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**metrics_get**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/MetricsApi.md#metrics_get) | **GET** /1.0/metrics | Get metrics
+[**metrics_get**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/MetricsApi.md#metrics_get) | **GET** /1.0/metrics | Get metrics
 
 
 # **metrics_get**

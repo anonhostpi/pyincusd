@@ -29,9 +29,9 @@ class InstanceSnapshotPost(BaseModel):
     """
     InstanceSnapshotPost
     """ # noqa: E501
-    live: Optional[StrictBool] = Field(default=None, description="Whether to perform a live migration (requires migration)")
-    migration: Optional[StrictBool] = Field(default=None, description="Whether this is a migration request")
-    name: Optional[StrictStr] = Field(default=None, description="New name for the snapshot")
+    live: Optional[StrictBool] = Field(default=None, description="Whether to perform a live migration (requires migration)", json_schema_extra={"examples": [False]})
+    migration: Optional[StrictBool] = Field(default=None, description="Whether this is a migration request", json_schema_extra={"examples": [False]})
+    name: Optional[StrictStr] = Field(default=None, description="New name for the snapshot", json_schema_extra={"examples": ["foo"]})
     target: Optional[InstancePostTarget] = None
     __properties: ClassVar[List[str]] = ["live", "migration", "name", "target"]
 

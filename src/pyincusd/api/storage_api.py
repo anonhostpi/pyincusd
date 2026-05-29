@@ -16,8 +16,8 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictStr
-from typing import Any, Optional
+from pydantic import Field, StrictBool, StrictInt, StrictStr
+from typing import Any, Dict, Optional
 from typing_extensions import Annotated
 from pyincusd.models.cluster_members_post202_response import ClusterMembersPost202Response
 from pyincusd.models.server_put200_response import ServerPut200Response
@@ -11933,6 +11933,8 @@ class StorageApi:
         pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
         type: Annotated[StrictStr, Field(description="Storage volume type")],
         volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        writable: Annotated[Optional[StrictInt], Field(description="Whether to have the volume be writable")] = None,
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -11956,6 +11958,10 @@ class StorageApi:
         :type type: str
         :param volume_name: Storage volume name (required)
         :type volume_name: str
+        :param writable: Whether to have the volume be writable
+        :type writable: int
+        :param project: Project name
+        :type project: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -11982,6 +11988,8 @@ class StorageApi:
             pool_name=pool_name,
             type=type,
             volume_name=volume_name,
+            writable=writable,
+            project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12012,6 +12020,8 @@ class StorageApi:
         pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
         type: Annotated[StrictStr, Field(description="Storage volume type")],
         volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        writable: Annotated[Optional[StrictInt], Field(description="Whether to have the volume be writable")] = None,
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12035,6 +12045,10 @@ class StorageApi:
         :type type: str
         :param volume_name: Storage volume name (required)
         :type volume_name: str
+        :param writable: Whether to have the volume be writable
+        :type writable: int
+        :param project: Project name
+        :type project: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12061,6 +12075,8 @@ class StorageApi:
             pool_name=pool_name,
             type=type,
             volume_name=volume_name,
+            writable=writable,
+            project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12091,6 +12107,8 @@ class StorageApi:
         pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
         type: Annotated[StrictStr, Field(description="Storage volume type")],
         volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        writable: Annotated[Optional[StrictInt], Field(description="Whether to have the volume be writable")] = None,
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -12114,6 +12132,10 @@ class StorageApi:
         :type type: str
         :param volume_name: Storage volume name (required)
         :type volume_name: str
+        :param writable: Whether to have the volume be writable
+        :type writable: int
+        :param project: Project name
+        :type project: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -12140,6 +12162,8 @@ class StorageApi:
             pool_name=pool_name,
             type=type,
             volume_name=volume_name,
+            writable=writable,
+            project=project,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -12165,6 +12189,8 @@ class StorageApi:
         pool_name,
         type,
         volume_name,
+        writable,
+        project,
         _request_auth,
         _content_type,
         _headers,
@@ -12193,6 +12219,14 @@ class StorageApi:
         if volume_name is not None:
             _path_params['volumeName'] = volume_name
         # process the query parameters
+        if writable is not None:
+            
+            _query_params.append(('writable', writable))
+            
+        if project is not None:
+            
+            _query_params.append(('project', project))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -13304,6 +13338,370 @@ class StorageApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/1.0/storage-pools/{poolName}/volumes/{type}/{volumeName}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    async def storage_pool_volume_type_rebuild_post(
+        self,
+        pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
+        type: Annotated[StrictStr, Field(description="Storage volume type")],
+        volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        volume: Annotated[Dict[str, Any], Field(description="Storage volume rebuild request")],
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
+        target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ClusterMembersPost202Response:
+        """Rebuild the storage volume
+
+        Wipes the underlying storage volume and re-creates an empty one with the same configuration. Only allowed for custom volumes without snapshots.
+
+        :param pool_name: Storage pool name (required)
+        :type pool_name: str
+        :param type: Storage volume type (required)
+        :type type: str
+        :param volume_name: Storage volume name (required)
+        :type volume_name: str
+        :param volume: Storage volume rebuild request (required)
+        :type volume: object
+        :param project: Project name
+        :type project: str
+        :param target: Cluster member name
+        :type target: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._storage_pool_volume_type_rebuild_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            volume=volume,
+            project=project,
+            target=target,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "ClusterMembersPost202Response",
+            '400': "ServerPut400Response",
+            '403': "ServerPut403Response",
+            '404': "InstanceConsoleGet404Response",
+            '500': "ServerGet500Response",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    async def storage_pool_volume_type_rebuild_post_with_http_info(
+        self,
+        pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
+        type: Annotated[StrictStr, Field(description="Storage volume type")],
+        volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        volume: Annotated[Dict[str, Any], Field(description="Storage volume rebuild request")],
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
+        target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ClusterMembersPost202Response]:
+        """Rebuild the storage volume
+
+        Wipes the underlying storage volume and re-creates an empty one with the same configuration. Only allowed for custom volumes without snapshots.
+
+        :param pool_name: Storage pool name (required)
+        :type pool_name: str
+        :param type: Storage volume type (required)
+        :type type: str
+        :param volume_name: Storage volume name (required)
+        :type volume_name: str
+        :param volume: Storage volume rebuild request (required)
+        :type volume: object
+        :param project: Project name
+        :type project: str
+        :param target: Cluster member name
+        :type target: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._storage_pool_volume_type_rebuild_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            volume=volume,
+            project=project,
+            target=target,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "ClusterMembersPost202Response",
+            '400': "ServerPut400Response",
+            '403': "ServerPut403Response",
+            '404': "InstanceConsoleGet404Response",
+            '500': "ServerGet500Response",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        await response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    async def storage_pool_volume_type_rebuild_post_without_preload_content(
+        self,
+        pool_name: Annotated[StrictStr, Field(description="Storage pool name")],
+        type: Annotated[StrictStr, Field(description="Storage volume type")],
+        volume_name: Annotated[StrictStr, Field(description="Storage volume name")],
+        volume: Annotated[Dict[str, Any], Field(description="Storage volume rebuild request")],
+        project: Annotated[Optional[StrictStr], Field(description="Project name")] = None,
+        target: Annotated[Optional[StrictStr], Field(description="Cluster member name")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Rebuild the storage volume
+
+        Wipes the underlying storage volume and re-creates an empty one with the same configuration. Only allowed for custom volumes without snapshots.
+
+        :param pool_name: Storage pool name (required)
+        :type pool_name: str
+        :param type: Storage volume type (required)
+        :type type: str
+        :param volume_name: Storage volume name (required)
+        :type volume_name: str
+        :param volume: Storage volume rebuild request (required)
+        :type volume: object
+        :param project: Project name
+        :type project: str
+        :param target: Cluster member name
+        :type target: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._storage_pool_volume_type_rebuild_post_serialize(
+            pool_name=pool_name,
+            type=type,
+            volume_name=volume_name,
+            volume=volume,
+            project=project,
+            target=target,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '202': "ClusterMembersPost202Response",
+            '400': "ServerPut400Response",
+            '403': "ServerPut403Response",
+            '404': "InstanceConsoleGet404Response",
+            '500': "ServerGet500Response",
+        }
+        response_data = await self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _storage_pool_volume_type_rebuild_post_serialize(
+        self,
+        pool_name,
+        type,
+        volume_name,
+        volume,
+        project,
+        target,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if pool_name is not None:
+            _path_params['poolName'] = pool_name
+        if type is not None:
+            _path_params['type'] = type
+        if volume_name is not None:
+            _path_params['volumeName'] = volume_name
+        # process the query parameters
+        if project is not None:
+            
+            _query_params.append(('project', project))
+            
+        if target is not None:
+            
+            _query_params.append(('target', target))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if volume is not None:
+            _body_params = volume
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/1.0/storage-pools/{poolName}/volumes/{type}/{volumeName}/rebuild',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

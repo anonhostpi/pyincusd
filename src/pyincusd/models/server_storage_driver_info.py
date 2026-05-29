@@ -28,9 +28,9 @@ class ServerStorageDriverInfo(BaseModel):
     """
     ServerStorageDriverInfo represents the read-only info about a storage driver
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Name of the driver", alias="Name")
-    remote: Optional[StrictBool] = Field(default=None, description="Whether the driver has remote volumes", alias="Remote")
-    version: Optional[StrictStr] = Field(default=None, description="Version of the driver", alias="Version")
+    name: Optional[StrictStr] = Field(default=None, description="Name of the driver", alias="Name", json_schema_extra={"examples": ["zfs"]})
+    remote: Optional[StrictBool] = Field(default=None, description="Whether the driver has remote volumes", alias="Remote", json_schema_extra={"examples": [False]})
+    version: Optional[StrictStr] = Field(default=None, description="Version of the driver", alias="Version", json_schema_extra={"examples": ["0.8.4-1ubuntu11"]})
     __properties: ClassVar[List[str]] = ["Name", "Remote", "Version"]
 
     model_config = ConfigDict(

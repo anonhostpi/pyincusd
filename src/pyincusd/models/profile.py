@@ -28,12 +28,12 @@ class Profile(BaseModel):
     """
     Profile represents a profile
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration map (refer to doc/instances.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the profile")
-    devices: Optional[Dict[str, Any]] = Field(default=None, description="List of devices")
-    name: Optional[StrictStr] = Field(default=None, description="The profile name")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration map (refer to doc/instances.md)", json_schema_extra={"examples": [{"limits.cpu": "4", "limits.memory": "4GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the profile", json_schema_extra={"examples": ["Medium size instances"]})
+    devices: Optional[Dict[str, Any]] = Field(default=None, description="List of devices", json_schema_extra={"examples": [{"eth0": {"name": "eth0", "network": "mybr0", "type": "nic"}, "root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    name: Optional[StrictStr] = Field(default=None, description="The profile name", json_schema_extra={"examples": ["foo"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile", json_schema_extra={"examples": [["/1.0/instances/c1", "/1.0/instances/v1"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "devices", "name", "project", "used_by"]
 
     model_config = ConfigDict(

@@ -29,19 +29,19 @@ class ResourcesNetworkCardPort(BaseModel):
     """
     ResourcesNetworkCardPort represents a network port on the system
     """ # noqa: E501
-    address: Optional[StrictStr] = Field(default=None, description="MAC address")
-    auto_negotiation: Optional[StrictBool] = Field(default=None, description="Whether auto negotiation is used")
-    id: Optional[StrictStr] = Field(default=None, description="Port identifier (interface name)")
+    address: Optional[StrictStr] = Field(default=None, description="MAC address", json_schema_extra={"examples": ["00:23:a4:01:01:6f"]})
+    auto_negotiation: Optional[StrictBool] = Field(default=None, description="Whether auto negotiation is used", json_schema_extra={"examples": [True]})
+    id: Optional[StrictStr] = Field(default=None, description="Port identifier (interface name)", json_schema_extra={"examples": ["eth0"]})
     infiniband: Optional[ResourcesNetworkCardPortInfiniband] = None
-    link_detected: Optional[StrictBool] = Field(default=None, description="Whether a link was detected")
-    link_duplex: Optional[StrictStr] = Field(default=None, description="Duplex type")
-    link_speed: Optional[StrictInt] = Field(default=None, description="Current speed (Mbit/s)")
-    port: Optional[StrictInt] = Field(default=None, description="Port number")
-    port_type: Optional[StrictStr] = Field(default=None, description="Current port type")
-    protocol: Optional[StrictStr] = Field(default=None, description="Transport protocol")
-    supported_modes: Optional[List[StrictStr]] = Field(default=None, description="List of supported modes")
-    supported_ports: Optional[List[StrictStr]] = Field(default=None, description="List of supported port types")
-    transceiver_type: Optional[StrictStr] = Field(default=None, description="Type of transceiver used")
+    link_detected: Optional[StrictBool] = Field(default=None, description="Whether a link was detected", json_schema_extra={"examples": [True]})
+    link_duplex: Optional[StrictStr] = Field(default=None, description="Duplex type", json_schema_extra={"examples": ["full"]})
+    link_speed: Optional[StrictInt] = Field(default=None, description="Current speed (Mbit/s)", json_schema_extra={"examples": [10000]})
+    port: Optional[StrictInt] = Field(default=None, description="Port number", json_schema_extra={"examples": [0]})
+    port_type: Optional[StrictStr] = Field(default=None, description="Current port type", json_schema_extra={"examples": ["twisted pair"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Transport protocol", json_schema_extra={"examples": ["ethernet"]})
+    supported_modes: Optional[List[StrictStr]] = Field(default=None, description="List of supported modes", json_schema_extra={"examples": [["100baseT/Full", "1000baseT/Full", "2500baseT/Full", "5000baseT/Full", "10000baseT/Full"]]})
+    supported_ports: Optional[List[StrictStr]] = Field(default=None, description="List of supported port types", json_schema_extra={"examples": [["twisted pair"]]})
+    transceiver_type: Optional[StrictStr] = Field(default=None, description="Type of transceiver used", json_schema_extra={"examples": ["internal"]})
     __properties: ClassVar[List[str]] = ["address", "auto_negotiation", "id", "infiniband", "link_detected", "link_duplex", "link_speed", "port", "port_type", "protocol", "supported_modes", "supported_ports", "transceiver_type"]
 
     model_config = ConfigDict(

@@ -28,10 +28,10 @@ class ImageAliasesPost(BaseModel):
     """
     ImageAliasesPost represents a new image alias
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Alias description")
-    name: Optional[StrictStr] = Field(default=None, description="Alias name")
-    target: Optional[StrictStr] = Field(default=None, description="Target fingerprint for the alias")
-    type: Optional[StrictStr] = Field(default=None, description="Alias type (container or virtual-machine)")
+    description: Optional[StrictStr] = Field(default=None, description="Alias description", json_schema_extra={"examples": ["Our preferred Ubuntu image"]})
+    name: Optional[StrictStr] = Field(default=None, description="Alias name", json_schema_extra={"examples": ["ubuntu-22.04"]})
+    target: Optional[StrictStr] = Field(default=None, description="Target fingerprint for the alias", json_schema_extra={"examples": ["06b86454720d36b20f94e31c6812e05ec51c1b568cf3a8abd273769d213394bb"]})
+    type: Optional[StrictStr] = Field(default=None, description="Alias type (container or virtual-machine)", json_schema_extra={"examples": ["container"]})
     __properties: ClassVar[List[str]] = ["description", "name", "target", "type"]
 
     model_config = ConfigDict(

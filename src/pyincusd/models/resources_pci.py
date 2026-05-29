@@ -30,7 +30,7 @@ class ResourcesPCI(BaseModel):
     ResourcesPCI represents the PCI devices available on the system
     """ # noqa: E501
     devices: Optional[List[ResourcesPCIDevice]] = Field(default=None, description="List of PCI devices")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of PCI devices")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of PCI devices", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["devices", "total"]
 
     model_config = ConfigDict(

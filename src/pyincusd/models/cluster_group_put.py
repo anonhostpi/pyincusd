@@ -28,9 +28,9 @@ class ClusterGroupPut(BaseModel):
     """
     ClusterGroupPut
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Cluster group configuration map")
-    description: Optional[StrictStr] = Field(default=None, description="The description of the cluster group")
-    members: Optional[List[StrictStr]] = Field(default=None, description="List of members in this group")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Cluster group configuration map", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="The description of the cluster group", json_schema_extra={"examples": ["amd64 servers"]})
+    members: Optional[List[StrictStr]] = Field(default=None, description="List of members in this group", json_schema_extra={"examples": [["server01", "server02"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "members"]
 
     model_config = ConfigDict(

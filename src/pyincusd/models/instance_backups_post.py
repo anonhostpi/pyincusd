@@ -30,12 +30,12 @@ class InstanceBackupsPost(BaseModel):
     """
     InstanceBackupsPost
     """ # noqa: E501
-    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use")
-    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)")
-    instance_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots")
-    name: Optional[StrictStr] = Field(default=None, description="Backup name")
-    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)")
-    root_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore dependent volumes")
+    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use", json_schema_extra={"examples": ["gzip"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    instance_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots", json_schema_extra={"examples": [False]})
+    name: Optional[StrictStr] = Field(default=None, description="Backup name", json_schema_extra={"examples": ["backup0"]})
+    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)", json_schema_extra={"examples": [True]})
+    root_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore dependent volumes", json_schema_extra={"examples": [False]})
     target: Optional[BackupTarget] = None
     __properties: ClassVar[List[str]] = ["compression_algorithm", "expires_at", "instance_only", "name", "optimized_storage", "root_only", "target"]
 

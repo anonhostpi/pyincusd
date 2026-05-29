@@ -28,8 +28,8 @@ class NetworkIntegrationPut(BaseModel):
     """
     NetworkIntegrationPut represents the modifiable fields of a network integration
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Integration configuration map (refer to doc/network-integrations.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the network integration")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Integration configuration map (refer to doc/network-integrations.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the network integration", json_schema_extra={"examples": ["OVN interconnection for region1"]})
     __properties: ClassVar[List[str]] = ["config", "description"]
 
     model_config = ConfigDict(

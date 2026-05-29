@@ -33,18 +33,18 @@ class StorageVolumeFull(BaseModel):
     StorageVolumeFull
     """ # noqa: E501
     backups: Optional[List[StorageVolumeBackup]] = Field(default=None, description="List of backups.")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)")
-    content_type: Optional[StrictStr] = Field(default=None, description="Volume content type (filesystem or block)")
-    created_at: Optional[datetime] = Field(default=None, description="Volume creation timestamp")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    name: Optional[StrictStr] = Field(default=None, description="Volume name")
-    project: Optional[StrictStr] = Field(default=None, description="Project containing the volume.")
-    restore: Optional[StrictStr] = Field(default=None, description="Name of a snapshot to restore")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)", json_schema_extra={"examples": [{"size": "50GiB", "zfs.remove_snapshots": "true"}]})
+    content_type: Optional[StrictStr] = Field(default=None, description="Volume content type (filesystem or block)", json_schema_extra={"examples": ["filesystem"]})
+    created_at: Optional[datetime] = Field(default=None, description="Volume creation timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume", json_schema_extra={"examples": ["My custom volume"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    name: Optional[StrictStr] = Field(default=None, description="Volume name", json_schema_extra={"examples": ["foo"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project containing the volume.", json_schema_extra={"examples": ["default"]})
+    restore: Optional[StrictStr] = Field(default=None, description="Name of a snapshot to restore", json_schema_extra={"examples": ["snap0"]})
     snapshots: Optional[List[StorageVolumeSnapshot]] = Field(default=None, description="List of snapshots.")
     state: Optional[StorageVolumeState] = None
-    type: Optional[StrictStr] = Field(default=None, description="Volume type")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this storage volume")
+    type: Optional[StrictStr] = Field(default=None, description="Volume type", json_schema_extra={"examples": ["custom"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this storage volume", json_schema_extra={"examples": [["/1.0/instances/blah"]]})
     __properties: ClassVar[List[str]] = ["backups", "config", "content_type", "created_at", "description", "location", "name", "project", "restore", "snapshots", "state", "type", "used_by"]
 
     model_config = ConfigDict(

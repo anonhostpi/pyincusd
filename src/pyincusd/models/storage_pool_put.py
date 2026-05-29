@@ -28,8 +28,8 @@ class StoragePoolPut(BaseModel):
     """
     StoragePoolPut
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage pool configuration map (refer to doc/storage.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage pool")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage pool configuration map (refer to doc/storage.md)", json_schema_extra={"examples": [{"volume.block.filesystem": "ext4", "volume.size": "50GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage pool", json_schema_extra={"examples": ["Local SSD pool"]})
     __properties: ClassVar[List[str]] = ["config", "description"]
 
     model_config = ConfigDict(

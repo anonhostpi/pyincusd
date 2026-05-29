@@ -28,15 +28,15 @@ class ResourcesSerialDevice(BaseModel):
     """
     ResourcesSerialDevice represents a serial device
     """ # noqa: E501
-    device: Optional[StrictStr] = Field(default=None, description="Device number (major:minor)")
-    device_id: Optional[StrictStr] = Field(default=None, description="Path to /dev/serial/by-id entry")
-    device_path: Optional[StrictStr] = Field(default=None, description="Path to /dev/serial/by-path entry")
-    driver: Optional[StrictStr] = Field(default=None, description="kernel driver name (cdc_acm, ftdi_sio, pl2303, cp210x...)")
-    id: Optional[StrictStr] = Field(default=None, description="Kernel device name (e.g. ttyUSB0, ttyACM0)")
-    product: Optional[StrictStr] = Field(default=None, description="USB product name")
-    product_id: Optional[StrictStr] = Field(default=None, description="USB product ID")
-    vendor: Optional[StrictStr] = Field(default=None, description="USB vendor name")
-    vendor_id: Optional[StrictStr] = Field(default=None, description="USB vendor ID")
+    device: Optional[StrictStr] = Field(default=None, description="Device number (major:minor)", json_schema_extra={"examples": ["188:0"]})
+    device_id: Optional[StrictStr] = Field(default=None, description="Path to /dev/serial/by-id entry", json_schema_extra={"examples": ["/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AB0J1234-if00-port0"]})
+    device_path: Optional[StrictStr] = Field(default=None, description="Path to /dev/serial/by-path entry", json_schema_extra={"examples": ["/dev/serial/by-path/pci-0000:00:14.0-usb-0:2:1.0-port0"]})
+    driver: Optional[StrictStr] = Field(default=None, description="kernel driver name (cdc_acm, ftdi_sio, pl2303, cp210x...)", json_schema_extra={"examples": ["cdc_acm"]})
+    id: Optional[StrictStr] = Field(default=None, description="Kernel device name (e.g. ttyUSB0, ttyACM0)", json_schema_extra={"examples": ["ttyUSB0"]})
+    product: Optional[StrictStr] = Field(default=None, description="USB product name", json_schema_extra={"examples": ["Arduino Uno"]})
+    product_id: Optional[StrictStr] = Field(default=None, description="USB product ID", json_schema_extra={"examples": ["0043"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="USB vendor name", json_schema_extra={"examples": ["Arduino LLC"]})
+    vendor_id: Optional[StrictStr] = Field(default=None, description="USB vendor ID", json_schema_extra={"examples": ["2341"]})
     __properties: ClassVar[List[str]] = ["device", "device_id", "device_path", "driver", "id", "product", "product_id", "vendor", "vendor_id"]
 
     model_config = ConfigDict(

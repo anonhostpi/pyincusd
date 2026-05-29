@@ -28,11 +28,11 @@ class ClusterMemberConfigKey(BaseModel):
     """
     The Value field is empty when getting clustering information with GET 1.0/cluster, and should be filled by the joining server when performing a PUT 1.0/cluster join request.
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="A human friendly description key")
-    entity: Optional[StrictStr] = Field(default=None, description="The kind of configuration key (network, storage-pool, ...)")
-    key: Optional[StrictStr] = Field(default=None, description="The name of the key")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the object requiring this key")
-    value: Optional[StrictStr] = Field(default=None, description="The value on the answering cluster member")
+    description: Optional[StrictStr] = Field(default=None, description="A human friendly description key", json_schema_extra={"examples": ["\"source\" property for storage pool \"local\""]})
+    entity: Optional[StrictStr] = Field(default=None, description="The kind of configuration key (network, storage-pool, ...)", json_schema_extra={"examples": ["storage-pool"]})
+    key: Optional[StrictStr] = Field(default=None, description="The name of the key", json_schema_extra={"examples": ["source"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the object requiring this key", json_schema_extra={"examples": ["local"]})
+    value: Optional[StrictStr] = Field(default=None, description="The value on the answering cluster member", json_schema_extra={"examples": ["/dev/sdb"]})
     __properties: ClassVar[List[str]] = ["description", "entity", "key", "name", "value"]
 
     model_config = ConfigDict(

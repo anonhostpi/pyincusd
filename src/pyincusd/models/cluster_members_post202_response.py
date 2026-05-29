@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from pyincusd.models.operation import Operation
 from typing import Optional, Set
@@ -30,10 +30,10 @@ class ClusterMembersPost202Response(BaseModel):
     ClusterMembersPost202Response
     """ # noqa: E501
     metadata: Optional[Operation] = None
-    operation: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
-    status_code: Optional[StrictInt] = None
-    type: Optional[StrictStr] = None
+    operation: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["/1.0/operations/66e83638-9dd7-4a26-aef2-5462814869a1"]})
+    status: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["Operation created"]})
+    status_code: Optional[StrictInt] = Field(default=None, json_schema_extra={"examples": [100]})
+    type: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["async"]})
     __properties: ClassVar[List[str]] = ["metadata", "operation", "status", "status_code", "type"]
 
     model_config = ConfigDict(

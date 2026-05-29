@@ -28,8 +28,8 @@ class ResourcesStoragePoolInodes(BaseModel):
     """
     ResourcesStoragePoolInodes represents the inodes available to a given storage pool
     """ # noqa: E501
-    total: Optional[StrictInt] = Field(default=None, description="Total inodes")
-    used: Optional[StrictInt] = Field(default=None, description="Used inodes")
+    total: Optional[StrictInt] = Field(default=None, description="Total inodes", json_schema_extra={"examples": [30709993797]})
+    used: Optional[StrictInt] = Field(default=None, description="Used inodes", json_schema_extra={"examples": [23937695]})
     __properties: ClassVar[List[str]] = ["total", "used"]
 
     model_config = ConfigDict(

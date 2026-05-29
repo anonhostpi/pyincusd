@@ -35,14 +35,14 @@ class InitLocalPreseed(BaseModel):
     """
     InitLocalPreseed
     """ # noqa: E501
-    certificates: Optional[List[CertificatesPost]] = Field(default=None, description="Certificates to add")
+    certificates: Optional[List[CertificatesPost]] = Field(default=None, description="Certificates to add", json_schema_extra={"examples": ["PEM encoded certificate"]})
     cluster_groups: Optional[List[ClusterGroupsPost]] = Field(default=None, description="Cluster groups to add  API extension: init_preseed_cluster_groups.")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)")
-    networks: Optional[List[InitNetworksProjectPost]] = Field(default=None, description="Networks by project to add")
-    profiles: Optional[List[InitProfileProjectPost]] = Field(default=None, description="Profiles to add")
-    projects: Optional[List[ProjectsPost]] = Field(default=None, description="Projects to add")
-    storage_pools: Optional[List[StoragePoolsPost]] = Field(default=None, description="Storage Pools to add")
-    storage_volumes: Optional[List[InitStorageVolumesProjectPost]] = Field(default=None, description="Storage Volumes to add")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)", json_schema_extra={"examples": [{"core.https_address": ":8443"}]})
+    networks: Optional[List[InitNetworksProjectPost]] = Field(default=None, description="Networks by project to add", json_schema_extra={"examples": ["Network on the \"default\" project"]})
+    profiles: Optional[List[InitProfileProjectPost]] = Field(default=None, description="Profiles to add", json_schema_extra={"examples": ["\"default\" profile with a root disk device"]})
+    projects: Optional[List[ProjectsPost]] = Field(default=None, description="Projects to add", json_schema_extra={"examples": ["\"default\" project"]})
+    storage_pools: Optional[List[StoragePoolsPost]] = Field(default=None, description="Storage Pools to add", json_schema_extra={"examples": ["local dir storage pool"]})
+    storage_volumes: Optional[List[InitStorageVolumesProjectPost]] = Field(default=None, description="Storage Volumes to add", json_schema_extra={"examples": ["local dir storage volume"]})
     __properties: ClassVar[List[str]] = ["certificates", "cluster_groups", "config", "networks", "profiles", "projects", "storage_pools", "storage_volumes"]
 
     model_config = ConfigDict(

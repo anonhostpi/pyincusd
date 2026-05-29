@@ -28,7 +28,7 @@ class WarningPut(BaseModel):
     """
     WarningPut
     """ # noqa: E501
-    status: Optional[StrictStr] = Field(default=None, description="Status of the warning (new, acknowledged, or resolved)")
+    status: Optional[StrictStr] = Field(default=None, description="Status of the warning (new, acknowledged, or resolved)", json_schema_extra={"examples": ["new"]})
     __properties: ClassVar[List[str]] = ["status"]
 
     model_config = ConfigDict(

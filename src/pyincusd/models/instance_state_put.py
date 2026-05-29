@@ -28,10 +28,10 @@ class InstanceStatePut(BaseModel):
     """
     InstanceStatePut
     """ # noqa: E501
-    action: Optional[StrictStr] = Field(default=None, description="State change action (start, stop, restart, freeze, unfreeze)")
-    force: Optional[StrictBool] = Field(default=None, description="Whether to force the action (for stop and restart)")
-    stateful: Optional[StrictBool] = Field(default=None, description="Whether to store the runtime state (for stop)")
-    timeout: Optional[StrictInt] = Field(default=None, description="How long to wait (in s) before giving up (when force isn't set)")
+    action: Optional[StrictStr] = Field(default=None, description="State change action (start, stop, restart, freeze, unfreeze)", json_schema_extra={"examples": ["start"]})
+    force: Optional[StrictBool] = Field(default=None, description="Whether to force the action (for stop and restart)", json_schema_extra={"examples": [False]})
+    stateful: Optional[StrictBool] = Field(default=None, description="Whether to store the runtime state (for stop)", json_schema_extra={"examples": [False]})
+    timeout: Optional[StrictInt] = Field(default=None, description="How long to wait (in s) before giving up (when force isn't set)", json_schema_extra={"examples": [30]})
     __properties: ClassVar[List[str]] = ["action", "force", "stateful", "timeout"]
 
     model_config = ConfigDict(

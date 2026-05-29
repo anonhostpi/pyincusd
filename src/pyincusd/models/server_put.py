@@ -28,7 +28,7 @@ class ServerPut(BaseModel):
     """
     ServerPut represents the modifiable fields of a server configuration
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Server configuration map (refer to doc/server.md)", json_schema_extra={"examples": [{"core.https_address": ":8443"}]})
     __properties: ClassVar[List[str]] = ["config"]
 
     model_config = ConfigDict(

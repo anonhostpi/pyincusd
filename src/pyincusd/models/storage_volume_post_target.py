@@ -28,9 +28,9 @@ class StorageVolumePostTarget(BaseModel):
     """
     StorageVolumePostTarget represents the migration target host and operation
     """ # noqa: E501
-    certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the migration target")
-    operation: Optional[StrictStr] = Field(default=None, description="Remote operation URL (for migration)")
-    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Migration websockets credentials")
+    certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the migration target", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    operation: Optional[StrictStr] = Field(default=None, description="Remote operation URL (for migration)", json_schema_extra={"examples": ["https://1.2.3.4:8443/1.0/operations/1721ae08-b6a8-416a-9614-3f89302466e1"]})
+    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Migration websockets credentials", json_schema_extra={"examples": [{"migration": "random-string"}]})
     __properties: ClassVar[List[str]] = ["certificate", "operation", "secrets"]
 
     model_config = ConfigDict(

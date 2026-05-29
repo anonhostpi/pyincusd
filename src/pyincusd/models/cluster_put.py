@@ -29,13 +29,13 @@ class ClusterPut(BaseModel):
     """
     ClusterPut
     """ # noqa: E501
-    cluster_address: Optional[StrictStr] = Field(default=None, description="The address of the cluster you wish to join")
-    cluster_certificate: Optional[StrictStr] = Field(default=None, description="The expected certificate (X509 PEM encoded) for the cluster")
-    cluster_token: Optional[StrictStr] = Field(default=None, description="The cluster join token for the cluster you're trying to join")
-    enabled: Optional[StrictBool] = Field(default=None, description="Whether clustering is enabled")
-    member_config: Optional[List[ClusterMemberConfigKey]] = Field(default=None, description="List of member configuration keys (used during join)")
-    server_address: Optional[StrictStr] = Field(default=None, description="The local address to use for cluster communication")
-    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member answering the request")
+    cluster_address: Optional[StrictStr] = Field(default=None, description="The address of the cluster you wish to join", json_schema_extra={"examples": ["10.0.0.1:8443"]})
+    cluster_certificate: Optional[StrictStr] = Field(default=None, description="The expected certificate (X509 PEM encoded) for the cluster", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    cluster_token: Optional[StrictStr] = Field(default=None, description="The cluster join token for the cluster you're trying to join", json_schema_extra={"examples": ["blah"]})
+    enabled: Optional[StrictBool] = Field(default=None, description="Whether clustering is enabled", json_schema_extra={"examples": [True]})
+    member_config: Optional[List[ClusterMemberConfigKey]] = Field(default=None, description="List of member configuration keys (used during join)", json_schema_extra={"examples": [[]]})
+    server_address: Optional[StrictStr] = Field(default=None, description="The local address to use for cluster communication", json_schema_extra={"examples": ["10.0.0.2:8443"]})
+    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member answering the request", json_schema_extra={"examples": ["server01"]})
     __properties: ClassVar[List[str]] = ["cluster_address", "cluster_certificate", "cluster_token", "enabled", "member_config", "server_address", "server_name"]
 
     model_config = ConfigDict(

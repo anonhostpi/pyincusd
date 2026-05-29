@@ -28,9 +28,9 @@ class AccessEntry(BaseModel):
     """
     AccessEntry
     """ # noqa: E501
-    identifier: Optional[StrictStr] = Field(default=None, description="Certificate fingerprint")
-    provider: Optional[StrictStr] = Field(default=None, description="Which authorization method the certificate uses")
-    role: Optional[StrictStr] = Field(default=None, description="The role associated with the certificate")
+    identifier: Optional[StrictStr] = Field(default=None, description="Certificate fingerprint", json_schema_extra={"examples": ["636b69519d27ae3b0e398cb7928043846ce1e3842f0ca7a589993dd913ab8cc9"]})
+    provider: Optional[StrictStr] = Field(default=None, description="Which authorization method the certificate uses", json_schema_extra={"examples": ["tls, openfga"]})
+    role: Optional[StrictStr] = Field(default=None, description="The role associated with the certificate", json_schema_extra={"examples": ["admin, view, operator"]})
     __properties: ClassVar[List[str]] = ["identifier", "provider", "role"]
 
     model_config = ConfigDict(

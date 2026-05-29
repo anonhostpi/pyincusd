@@ -28,12 +28,12 @@ class NetworkForwardPort(BaseModel):
     """
     NetworkForwardPort represents a port specification in a network address forward
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the forward port")
-    listen_port: Optional[StrictStr] = Field(default=None, description="ListenPort(s) to forward (comma delimited ranges)")
-    protocol: Optional[StrictStr] = Field(default=None, description="Protocol for port forward (either tcp or udp)")
-    snat: Optional[StrictBool] = Field(default=None, description="SNAT controls whether to apply a matching SNAT rule to new outgoing traffic from the target")
-    target_address: Optional[StrictStr] = Field(default=None, description="TargetAddress to forward ListenPorts to")
-    target_port: Optional[StrictStr] = Field(default=None, description="TargetPort(s) to forward ListenPorts to (allows for many-to-one)")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the forward port", json_schema_extra={"examples": ["My web server forward"]})
+    listen_port: Optional[StrictStr] = Field(default=None, description="ListenPort(s) to forward (comma delimited ranges)", json_schema_extra={"examples": ["80,81,8080-8090"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Protocol for port forward (either tcp or udp)", json_schema_extra={"examples": ["tcp"]})
+    snat: Optional[StrictBool] = Field(default=None, description="SNAT controls whether to apply a matching SNAT rule to new outgoing traffic from the target", json_schema_extra={"examples": [False]})
+    target_address: Optional[StrictStr] = Field(default=None, description="TargetAddress to forward ListenPorts to", json_schema_extra={"examples": ["198.51.100.2"]})
+    target_port: Optional[StrictStr] = Field(default=None, description="TargetPort(s) to forward ListenPorts to (allows for many-to-one)", json_schema_extra={"examples": ["80,81,8080-8090"]})
     __properties: ClassVar[List[str]] = ["description", "listen_port", "protocol", "snat", "target_address", "target_port"]
 
     model_config = ConfigDict(

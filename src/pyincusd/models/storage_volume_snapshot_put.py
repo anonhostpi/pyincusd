@@ -29,8 +29,8 @@ class StorageVolumeSnapshotPut(BaseModel):
     """
     StorageVolumeSnapshotPut represents the modifiable fields of a storage volume
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume")
-    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume", json_schema_extra={"examples": ["My custom volume"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
     __properties: ClassVar[List[str]] = ["description", "expires_at"]
 
     model_config = ConfigDict(

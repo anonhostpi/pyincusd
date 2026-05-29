@@ -29,11 +29,11 @@ class NetworkACLsPost(BaseModel):
     """
     NetworkACLsPost
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="ACL configuration map (refer to doc/network-acls.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the ACL")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="ACL configuration map (refer to doc/network-acls.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the ACL", json_schema_extra={"examples": ["Web servers"]})
     egress: Optional[List[NetworkACLRule]] = Field(default=None, description="List of egress rules (order independent)")
     ingress: Optional[List[NetworkACLRule]] = Field(default=None, description="List of ingress rules (order independent)")
-    name: Optional[StrictStr] = Field(default=None, description="The new name for the ACL")
+    name: Optional[StrictStr] = Field(default=None, description="The new name for the ACL", json_schema_extra={"examples": ["bar"]})
     __properties: ClassVar[List[str]] = ["config", "description", "egress", "ingress", "name"]
 
     model_config = ConfigDict(

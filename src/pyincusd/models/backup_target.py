@@ -28,12 +28,12 @@ class BackupTarget(BaseModel):
     """
     BackupTarget
     """ # noqa: E501
-    access_key: Optional[StrictStr] = Field(default=None, description="AccessKey is the S3 API access key")
-    bucket_name: Optional[StrictStr] = Field(default=None, description="BucketName is the name of the S3 bucket.")
-    path: Optional[StrictStr] = Field(default=None, description="Path is the target path.")
-    protocol: Optional[StrictStr] = Field(default=None, description="Protocol is the upload protocol.")
-    secret_key: Optional[StrictStr] = Field(default=None, description="SecretKey is the S3 API access key")
-    url: Optional[StrictStr] = Field(default=None, description="URL is the HTTPS URL for the backup")
+    access_key: Optional[StrictStr] = Field(default=None, description="AccessKey is the S3 API access key", json_schema_extra={"examples": ["GOOG1234"]})
+    bucket_name: Optional[StrictStr] = Field(default=None, description="BucketName is the name of the S3 bucket.", json_schema_extra={"examples": ["my_bucket"]})
+    path: Optional[StrictStr] = Field(default=None, description="Path is the target path.", json_schema_extra={"examples": ["foo/test.tar"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Protocol is the upload protocol.", json_schema_extra={"examples": ["S3"]})
+    secret_key: Optional[StrictStr] = Field(default=None, description="SecretKey is the S3 API access key", json_schema_extra={"examples": ["secret123"]})
+    url: Optional[StrictStr] = Field(default=None, description="URL is the HTTPS URL for the backup", json_schema_extra={"examples": ["https://storage.googleapis.com"]})
     __properties: ClassVar[List[str]] = ["access_key", "bucket_name", "path", "protocol", "secret_key", "url"]
 
     model_config = ConfigDict(

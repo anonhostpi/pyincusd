@@ -30,12 +30,12 @@ class StorageVolumeBackupsPost(BaseModel):
     """
     StorageVolumeBackupsPost represents the fields available for a new volume backup
     """ # noqa: E501
-    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use")
-    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)")
-    name: Optional[StrictStr] = Field(default=None, description="Backup name")
-    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)")
+    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use", json_schema_extra={"examples": ["gzip"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Backup name", json_schema_extra={"examples": ["backup0"]})
+    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)", json_schema_extra={"examples": [True]})
     target: Optional[BackupTarget] = None
-    volume_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots")
+    volume_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["compression_algorithm", "expires_at", "name", "optimized_storage", "target", "volume_only"]
 
     model_config = ConfigDict(

@@ -31,13 +31,13 @@ class StorageBucketFull(BaseModel):
     StorageBucketFull
     """ # noqa: E501
     backups: Optional[List[StorageBucketBackup]] = Field(default=None, description="List of backups.")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage bucket configuration map")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage bucket configuration map", json_schema_extra={"examples": [{"size": "50GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket", json_schema_extra={"examples": ["My custom bucket"]})
     keys: Optional[List[StorageBucketKey]] = Field(default=None, description="List of keys.")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    name: Optional[StrictStr] = Field(default=None, description="Bucket name")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    s3_url: Optional[StrictStr] = Field(default=None, description="Bucket S3 URL")
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    name: Optional[StrictStr] = Field(default=None, description="Bucket name", json_schema_extra={"examples": ["foo"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    s3_url: Optional[StrictStr] = Field(default=None, description="Bucket S3 URL", json_schema_extra={"examples": ["https://127.0.0.1:8080/foo"]})
     __properties: ClassVar[List[str]] = ["backups", "config", "description", "keys", "location", "name", "project", "s3_url"]
 
     model_config = ConfigDict(

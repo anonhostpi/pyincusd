@@ -29,11 +29,11 @@ class ClusterMemberJoinToken(BaseModel):
     """
     ClusterMemberJoinToken
     """ # noqa: E501
-    addresses: Optional[List[StrictStr]] = Field(default=None, description="The addresses of existing online cluster members")
-    expires_at: Optional[datetime] = Field(default=None, description="The token's expiry date.")
-    fingerprint: Optional[StrictStr] = Field(default=None, description="The fingerprint of the network certificate")
-    secret: Optional[StrictStr] = Field(default=None, description="The random join secret.")
-    server_name: Optional[StrictStr] = Field(default=None, description="The name of the new cluster member")
+    addresses: Optional[List[StrictStr]] = Field(default=None, description="The addresses of existing online cluster members", json_schema_extra={"examples": [["10.98.30.229:8443"]]})
+    expires_at: Optional[datetime] = Field(default=None, description="The token's expiry date.", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    fingerprint: Optional[StrictStr] = Field(default=None, description="The fingerprint of the network certificate", json_schema_extra={"examples": ["57bb0ff4340b5bb28517e062023101adf788c37846dc8b619eb2c3cb4ef29436"]})
+    secret: Optional[StrictStr] = Field(default=None, description="The random join secret.", json_schema_extra={"examples": ["2b2284d44db32675923fe0d2020477e0e9be11801ff70c435e032b97028c35cd"]})
+    server_name: Optional[StrictStr] = Field(default=None, description="The name of the new cluster member", json_schema_extra={"examples": ["server02"]})
     __properties: ClassVar[List[str]] = ["addresses", "expires_at", "fingerprint", "secret", "server_name"]
 
     model_config = ConfigDict(

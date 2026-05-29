@@ -28,13 +28,13 @@ class ResourcesGPUCardDRM(BaseModel):
     """
     ResourcesGPUCardDRM represents the Linux DRM configuration of the GPU
     """ # noqa: E501
-    card_device: Optional[StrictStr] = Field(default=None, description="Card device number")
-    card_name: Optional[StrictStr] = Field(default=None, description="Card device name")
-    control_device: Optional[StrictStr] = Field(default=None, description="Control device number")
-    control_name: Optional[StrictStr] = Field(default=None, description="Control device name")
-    id: Optional[StrictInt] = Field(default=None, description="DRM card ID")
-    render_device: Optional[StrictStr] = Field(default=None, description="Render device number")
-    render_name: Optional[StrictStr] = Field(default=None, description="Render device name")
+    card_device: Optional[StrictStr] = Field(default=None, description="Card device number", json_schema_extra={"examples": ["226:0"]})
+    card_name: Optional[StrictStr] = Field(default=None, description="Card device name", json_schema_extra={"examples": ["card0"]})
+    control_device: Optional[StrictStr] = Field(default=None, description="Control device number", json_schema_extra={"examples": ["226:0"]})
+    control_name: Optional[StrictStr] = Field(default=None, description="Control device name", json_schema_extra={"examples": ["controlD64"]})
+    id: Optional[StrictInt] = Field(default=None, description="DRM card ID", json_schema_extra={"examples": [0]})
+    render_device: Optional[StrictStr] = Field(default=None, description="Render device number", json_schema_extra={"examples": ["226:128"]})
+    render_name: Optional[StrictStr] = Field(default=None, description="Render device name", json_schema_extra={"examples": ["renderD128"]})
     __properties: ClassVar[List[str]] = ["card_device", "card_name", "control_device", "control_name", "id", "render_device", "render_name"]
 
     model_config = ConfigDict(

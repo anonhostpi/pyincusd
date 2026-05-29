@@ -28,11 +28,11 @@ class NetworkIntegration(BaseModel):
     """
     NetworkIntegration
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Integration configuration map (refer to doc/network-integrations.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the network integration")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the integration")
-    type: Optional[StrictStr] = Field(default=None, description="The type of integration")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this network integration")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Integration configuration map (refer to doc/network-integrations.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the network integration", json_schema_extra={"examples": ["OVN interconnection for region1"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the integration", json_schema_extra={"examples": ["region1"]})
+    type: Optional[StrictStr] = Field(default=None, description="The type of integration", json_schema_extra={"examples": ["ovn"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this network integration", json_schema_extra={"examples": [["/1.0/networks/foo", "/1.0/networks/bar"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "name", "type", "used_by"]
 
     model_config = ConfigDict(

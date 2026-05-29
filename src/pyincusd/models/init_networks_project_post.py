@@ -28,11 +28,11 @@ class InitNetworksProjectPost(BaseModel):
     """
     InitNetworksProjectPost
     """ # noqa: E501
-    project: Optional[StrictStr] = Field(default=None, description="Project in which the network will reside", alias="Project")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the profile")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the new network")
-    type: Optional[StrictStr] = Field(default=None, description="The network type (refer to doc/networks.md)")
+    project: Optional[StrictStr] = Field(default=None, description="Project in which the network will reside", alias="Project", json_schema_extra={"examples": ["\"default\""]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)", json_schema_extra={"examples": [{"ipv4.address": "10.0.0.1/24", "ipv4.nat": "true", "ipv6.address": "none"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the profile", json_schema_extra={"examples": ["My new bridge"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the new network", json_schema_extra={"examples": ["mybr1"]})
+    type: Optional[StrictStr] = Field(default=None, description="The network type (refer to doc/networks.md)", json_schema_extra={"examples": ["bridge"]})
     __properties: ClassVar[List[str]] = ["Project", "config", "description", "name", "type"]
 
     model_config = ConfigDict(

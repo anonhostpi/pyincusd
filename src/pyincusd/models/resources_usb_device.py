@@ -29,15 +29,15 @@ class ResourcesUSBDevice(BaseModel):
     """
     ResourcesUSBDevice represents a USB device
     """ # noqa: E501
-    bus_address: Optional[StrictInt] = Field(default=None, description="USB address (bus)")
-    device_address: Optional[StrictInt] = Field(default=None, description="USB address (device)")
+    bus_address: Optional[StrictInt] = Field(default=None, description="USB address (bus)", json_schema_extra={"examples": [1]})
+    device_address: Optional[StrictInt] = Field(default=None, description="USB address (device)", json_schema_extra={"examples": [3]})
     interfaces: Optional[List[ResourcesUSBDeviceInterface]] = Field(default=None, description="List of USB interfaces")
-    product: Optional[StrictStr] = Field(default=None, description="Name of the product")
-    product_id: Optional[StrictStr] = Field(default=None, description="USB ID of the product")
-    serial: Optional[StrictStr] = Field(default=None, description="USB serial number")
-    speed: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Transfer speed (Mbit/s)")
-    vendor: Optional[StrictStr] = Field(default=None, description="Name of the vendor")
-    vendor_id: Optional[StrictStr] = Field(default=None, description="USB ID of the vendor")
+    product: Optional[StrictStr] = Field(default=None, description="Name of the product", json_schema_extra={"examples": ["Hermon USB hidmouse Device"]})
+    product_id: Optional[StrictStr] = Field(default=None, description="USB ID of the product", json_schema_extra={"examples": ["2221"]})
+    serial: Optional[StrictStr] = Field(default=None, description="USB serial number", json_schema_extra={"examples": ["DAE005fp"]})
+    speed: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Transfer speed (Mbit/s)", json_schema_extra={"examples": [12.0]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Name of the vendor", json_schema_extra={"examples": ["ATEN International Co., Ltd"]})
+    vendor_id: Optional[StrictStr] = Field(default=None, description="USB ID of the vendor", json_schema_extra={"examples": ["0557"]})
     __properties: ClassVar[List[str]] = ["bus_address", "device_address", "interfaces", "product", "product_id", "serial", "speed", "vendor", "vendor_id"]
 
     model_config = ConfigDict(

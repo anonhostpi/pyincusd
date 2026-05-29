@@ -29,9 +29,9 @@ class StorageBucketBackupsPost(BaseModel):
     """
     StorageBucketBackupsPost represents the fields available for a new storage bucket backup
     """ # noqa: E501
-    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use")
-    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)")
-    name: Optional[StrictStr] = Field(default=None, description="Backup name")
+    compression_algorithm: Optional[StrictStr] = Field(default=None, description="What compression algorithm to use", json_schema_extra={"examples": ["gzip"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Backup name", json_schema_extra={"examples": ["backup0"]})
     __properties: ClassVar[List[str]] = ["compression_algorithm", "expires_at", "name"]
 
     model_config = ConfigDict(

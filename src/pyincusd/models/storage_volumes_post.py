@@ -29,13 +29,13 @@ class StorageVolumesPost(BaseModel):
     """
     StorageVolumesPost represents the fields of a new storage pool volume
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)")
-    content_type: Optional[StrictStr] = Field(default=None, description="Volume content type (filesystem or block)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume")
-    name: Optional[StrictStr] = Field(default=None, description="Volume name")
-    restore: Optional[StrictStr] = Field(default=None, description="Name of a snapshot to restore")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage volume configuration map (refer to doc/storage.md)", json_schema_extra={"examples": [{"size": "50GiB", "zfs.remove_snapshots": "true"}]})
+    content_type: Optional[StrictStr] = Field(default=None, description="Volume content type (filesystem or block)", json_schema_extra={"examples": ["filesystem"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage volume", json_schema_extra={"examples": ["My custom volume"]})
+    name: Optional[StrictStr] = Field(default=None, description="Volume name", json_schema_extra={"examples": ["foo"]})
+    restore: Optional[StrictStr] = Field(default=None, description="Name of a snapshot to restore", json_schema_extra={"examples": ["snap0"]})
     source: Optional[StorageVolumeSource] = None
-    type: Optional[StrictStr] = Field(default=None, description="Volume type (container, custom, image or virtual-machine)")
+    type: Optional[StrictStr] = Field(default=None, description="Volume type (container, custom, image or virtual-machine)", json_schema_extra={"examples": ["custom"]})
     __properties: ClassVar[List[str]] = ["config", "content_type", "description", "name", "restore", "source", "type"]
 
     model_config = ConfigDict(

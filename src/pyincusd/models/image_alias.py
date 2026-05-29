@@ -28,8 +28,8 @@ class ImageAlias(BaseModel):
     """
     ImageAlias represents an alias from the alias list of an image
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the alias")
-    name: Optional[StrictStr] = Field(default=None, description="Name of the alias")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the alias", json_schema_extra={"examples": ["Our preferred Ubuntu image"]})
+    name: Optional[StrictStr] = Field(default=None, description="Name of the alias", json_schema_extra={"examples": ["ubuntu-22.04"]})
     __properties: ClassVar[List[str]] = ["description", "name"]
 
     model_config = ConfigDict(

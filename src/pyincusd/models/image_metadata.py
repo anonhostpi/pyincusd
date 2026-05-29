@@ -29,10 +29,10 @@ class ImageMetadata(BaseModel):
     """
     ImageMetadata represents image metadata (used in image tarball)
     """ # noqa: E501
-    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name")
-    creation_date: Optional[StrictInt] = Field(default=None, description="Image creation data (as UNIX epoch)")
-    expiry_date: Optional[StrictInt] = Field(default=None, description="Image expiry data (as UNIX epoch)")
-    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties")
+    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name", json_schema_extra={"examples": ["x86_64"]})
+    creation_date: Optional[StrictInt] = Field(default=None, description="Image creation data (as UNIX epoch)", json_schema_extra={"examples": [1620655439]})
+    expiry_date: Optional[StrictInt] = Field(default=None, description="Image expiry data (as UNIX epoch)", json_schema_extra={"examples": [1620685757]})
+    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties", json_schema_extra={"examples": [{"os": "Ubuntu", "release": "jammy", "variant": "cloud"}]})
     templates: Optional[Dict[str, ImageMetadataTemplate]] = Field(default=None, description="Template for files in the image")
     __properties: ClassVar[List[str]] = ["architecture", "creation_date", "expiry_date", "properties", "templates"]
 

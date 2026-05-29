@@ -28,10 +28,10 @@ class InstanceStateNetworkAddress(BaseModel):
     """
     InstanceStateNetworkAddress represents a network address as part of the network section of an instance's state.
     """ # noqa: E501
-    address: Optional[StrictStr] = Field(default=None, description="IP address")
-    family: Optional[StrictStr] = Field(default=None, description="Network family (inet or inet6)")
-    netmask: Optional[StrictStr] = Field(default=None, description="Network mask")
-    scope: Optional[StrictStr] = Field(default=None, description="Address scope (local, link or global)")
+    address: Optional[StrictStr] = Field(default=None, description="IP address", json_schema_extra={"examples": ["fd42:4c81:5770:1eaf:1266:6aff:fe0c:eedd"]})
+    family: Optional[StrictStr] = Field(default=None, description="Network family (inet or inet6)", json_schema_extra={"examples": ["inet6"]})
+    netmask: Optional[StrictStr] = Field(default=None, description="Network mask", json_schema_extra={"examples": ["64"]})
+    scope: Optional[StrictStr] = Field(default=None, description="Address scope (local, link or global)", json_schema_extra={"examples": ["global"]})
     __properties: ClassVar[List[str]] = ["address", "family", "netmask", "scope"]
 
     model_config = ConfigDict(

@@ -29,7 +29,7 @@ class InstanceSnapshotPut(BaseModel):
     """
     InstanceSnapshotPut
     """ # noqa: E501
-    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)")
+    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
     __properties: ClassVar[List[str]] = ["expires_at"]
 
     model_config = ConfigDict(

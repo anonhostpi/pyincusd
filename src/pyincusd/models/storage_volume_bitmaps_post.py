@@ -28,10 +28,10 @@ class StorageVolumeBitmapsPost(BaseModel):
     """
     StorageVolumeBitmapsPost represents the fields available for a new volume bitmap
     """ # noqa: E501
-    disabled: Optional[StrictBool] = Field(default=None, description="The bitmap is created in the disabled state")
-    granularity: Optional[StrictInt] = Field(default=None, description="Granularity of the dirty bitmap in bytes")
-    name: Optional[StrictStr] = Field(default=None, description="Bitmap name")
-    persistent: Optional[StrictBool] = Field(default=None, description="true if the bitmap was stored on disk, is scheduled to be stored on disk, or both")
+    disabled: Optional[StrictBool] = Field(default=None, description="The bitmap is created in the disabled state", json_schema_extra={"examples": [False]})
+    granularity: Optional[StrictInt] = Field(default=None, description="Granularity of the dirty bitmap in bytes", json_schema_extra={"examples": [32768]})
+    name: Optional[StrictStr] = Field(default=None, description="Bitmap name", json_schema_extra={"examples": ["bitmap0"]})
+    persistent: Optional[StrictBool] = Field(default=None, description="true if the bitmap was stored on disk, is scheduled to be stored on disk, or both", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["disabled", "granularity", "name", "persistent"]
 
     model_config = ConfigDict(

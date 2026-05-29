@@ -28,9 +28,9 @@ class NetworkZonesPost(BaseModel):
     """
     NetworkZonesPost represents the fields of a new network zone
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the zone (DNS domain name)")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone", json_schema_extra={"examples": ["Internal domain"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the zone (DNS domain name)", json_schema_extra={"examples": ["example.net"]})
     __properties: ClassVar[List[str]] = ["config", "description", "name"]
 
     model_config = ConfigDict(

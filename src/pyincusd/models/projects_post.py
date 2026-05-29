@@ -28,9 +28,9 @@ class ProjectsPost(BaseModel):
     """
     ProjectsPost represents the fields of a new project
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Project configuration map (refer to doc/projects.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the project")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the new project")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Project configuration map (refer to doc/projects.md)", json_schema_extra={"examples": [{"features.networks": "false", "features.profiles": "true"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the project", json_schema_extra={"examples": ["My new project"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the new project", json_schema_extra={"examples": ["foo"]})
     __properties: ClassVar[List[str]] = ["config", "description", "name"]
 
     model_config = ConfigDict(

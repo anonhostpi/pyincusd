@@ -28,11 +28,11 @@ class ResourcesMemoryNode(BaseModel):
     """
     ResourcesMemoryNode represents the node-specific memory resources available on the system
     """ # noqa: E501
-    hugepages_total: Optional[StrictInt] = Field(default=None, description="Total of memory huge pages (bytes)")
-    hugepages_used: Optional[StrictInt] = Field(default=None, description="Used memory huge pages (bytes)")
-    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node identifier")
-    total: Optional[StrictInt] = Field(default=None, description="Total system memory (bytes)")
-    used: Optional[StrictInt] = Field(default=None, description="Used system memory (bytes)")
+    hugepages_total: Optional[StrictInt] = Field(default=None, description="Total of memory huge pages (bytes)", json_schema_extra={"examples": [214536552448]})
+    hugepages_used: Optional[StrictInt] = Field(default=None, description="Used memory huge pages (bytes)", json_schema_extra={"examples": [214536552448]})
+    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node identifier", json_schema_extra={"examples": [0]})
+    total: Optional[StrictInt] = Field(default=None, description="Total system memory (bytes)", json_schema_extra={"examples": [343597383680]})
+    used: Optional[StrictInt] = Field(default=None, description="Used system memory (bytes)", json_schema_extra={"examples": [264880439296]})
     __properties: ClassVar[List[str]] = ["hugepages_total", "hugepages_used", "numa_node", "total", "used"]
 
     model_config = ConfigDict(

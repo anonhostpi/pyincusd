@@ -28,15 +28,15 @@ class Network(BaseModel):
     """
     Network represents a network
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the profile")
-    locations: Optional[List[StrictStr]] = Field(default=None, description="Cluster members on which the network has been defined")
-    managed: Optional[StrictBool] = Field(default=None, description="Whether this is a managed network")
-    name: Optional[StrictStr] = Field(default=None, description="The network name")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    status: Optional[StrictStr] = Field(default=None, description="The state of the network (for managed network in clusters)")
-    type: Optional[StrictStr] = Field(default=None, description="The network type")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)", json_schema_extra={"examples": [{"ipv4.address": "10.0.0.1/24", "ipv4.nat": "true", "ipv6.address": "none"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the profile", json_schema_extra={"examples": ["My new bridge"]})
+    locations: Optional[List[StrictStr]] = Field(default=None, description="Cluster members on which the network has been defined", json_schema_extra={"examples": [["server01", "server02", "server03"]]})
+    managed: Optional[StrictBool] = Field(default=None, description="Whether this is a managed network", json_schema_extra={"examples": [True]})
+    name: Optional[StrictStr] = Field(default=None, description="The network name", json_schema_extra={"examples": ["mybr0"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    status: Optional[StrictStr] = Field(default=None, description="The state of the network (for managed network in clusters)", json_schema_extra={"examples": ["Created"]})
+    type: Optional[StrictStr] = Field(default=None, description="The network type", json_schema_extra={"examples": ["bridge"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this profile", json_schema_extra={"examples": [["/1.0/profiles/default", "/1.0/instances/c1"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "locations", "managed", "name", "project", "status", "type", "used_by"]
 
     model_config = ConfigDict(

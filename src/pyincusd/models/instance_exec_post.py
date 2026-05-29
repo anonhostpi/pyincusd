@@ -28,16 +28,16 @@ class InstanceExecPost(BaseModel):
     """
     InstanceExecPost
     """ # noqa: E501
-    command: Optional[List[StrictStr]] = Field(default=None, description="Command and its arguments")
-    cwd: Optional[StrictStr] = Field(default=None, description="Current working directory for the command")
-    environment: Optional[Dict[str, StrictStr]] = Field(default=None, description="Additional environment to pass to the command")
-    group: Optional[StrictInt] = Field(default=None, description="GID of the user to spawn the command as")
-    height: Optional[StrictInt] = Field(default=None, description="Terminal height in rows (for interactive)")
-    interactive: Optional[StrictBool] = Field(default=None, description="Whether the command is to be spawned in interactive mode (singled PTY instead of 3 PIPEs)")
+    command: Optional[List[StrictStr]] = Field(default=None, description="Command and its arguments", json_schema_extra={"examples": [["bash"]]})
+    cwd: Optional[StrictStr] = Field(default=None, description="Current working directory for the command", json_schema_extra={"examples": ["/home/foo/"]})
+    environment: Optional[Dict[str, StrictStr]] = Field(default=None, description="Additional environment to pass to the command", json_schema_extra={"examples": [{"FOO": "BAR"}]})
+    group: Optional[StrictInt] = Field(default=None, description="GID of the user to spawn the command as", json_schema_extra={"examples": [1000]})
+    height: Optional[StrictInt] = Field(default=None, description="Terminal height in rows (for interactive)", json_schema_extra={"examples": [24]})
+    interactive: Optional[StrictBool] = Field(default=None, description="Whether the command is to be spawned in interactive mode (singled PTY instead of 3 PIPEs)", json_schema_extra={"examples": [True]})
     record_output: Optional[StrictBool] = Field(default=None, description="Whether to capture the output for later download (requires non-interactive)", alias="record-output")
-    user: Optional[StrictInt] = Field(default=None, description="UID of the user to spawn the command as")
-    wait_for_websocket: Optional[StrictBool] = Field(default=None, description="Whether to wait for all websockets to be connected before spawning the command", alias="wait-for-websocket")
-    width: Optional[StrictInt] = Field(default=None, description="Terminal width in characters (for interactive)")
+    user: Optional[StrictInt] = Field(default=None, description="UID of the user to spawn the command as", json_schema_extra={"examples": [1000]})
+    wait_for_websocket: Optional[StrictBool] = Field(default=None, description="Whether to wait for all websockets to be connected before spawning the command", alias="wait-for-websocket", json_schema_extra={"examples": [True]})
+    width: Optional[StrictInt] = Field(default=None, description="Terminal width in characters (for interactive)", json_schema_extra={"examples": [80]})
     __properties: ClassVar[List[str]] = ["command", "cwd", "environment", "group", "height", "interactive", "record-output", "user", "wait-for-websocket", "width"]
 
     model_config = ConfigDict(

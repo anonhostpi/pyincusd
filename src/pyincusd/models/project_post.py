@@ -28,7 +28,7 @@ class ProjectPost(BaseModel):
     """
     ProjectPost represents the fields required to rename a project
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="The new name for the project")
+    name: Optional[StrictStr] = Field(default=None, description="The new name for the project", json_schema_extra={"examples": ["bar"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

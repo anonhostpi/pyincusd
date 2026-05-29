@@ -30,9 +30,9 @@ class NetworkGet200Response(BaseModel):
     Sync response
     """ # noqa: E501
     metadata: Optional[Network] = None
-    status: Optional[StrictStr] = Field(default=None, description="Status description")
-    status_code: Optional[StrictInt] = Field(default=None, description="Status code")
-    type: Optional[StrictStr] = Field(default=None, description="Response type")
+    status: Optional[StrictStr] = Field(default=None, description="Status description", json_schema_extra={"examples": ["Success"]})
+    status_code: Optional[StrictInt] = Field(default=None, description="Status code", json_schema_extra={"examples": [200]})
+    type: Optional[StrictStr] = Field(default=None, description="Response type", json_schema_extra={"examples": ["sync"]})
     __properties: ClassVar[List[str]] = ["metadata", "status", "status_code", "type"]
 
     model_config = ConfigDict(

@@ -28,11 +28,11 @@ class StorageBucketKey(BaseModel):
     """
     StorageBucketKey represents the fields of a storage pool bucket key
     """ # noqa: E501
-    access_key: Optional[StrictStr] = Field(default=None, description="Access key", alias="access-key")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket key")
-    name: Optional[StrictStr] = Field(default=None, description="Key name")
-    role: Optional[StrictStr] = Field(default=None, description="Whether the key can perform write actions or not.")
-    secret_key: Optional[StrictStr] = Field(default=None, description="Secret key", alias="secret-key")
+    access_key: Optional[StrictStr] = Field(default=None, description="Access key", alias="access-key", json_schema_extra={"examples": ["33UgkaIBLBIxb7O1"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage bucket key", json_schema_extra={"examples": ["My read-only bucket key"]})
+    name: Optional[StrictStr] = Field(default=None, description="Key name", json_schema_extra={"examples": ["my-read-only-key"]})
+    role: Optional[StrictStr] = Field(default=None, description="Whether the key can perform write actions or not.", json_schema_extra={"examples": ["read-only"]})
+    secret_key: Optional[StrictStr] = Field(default=None, description="Secret key", alias="secret-key", json_schema_extra={"examples": ["kDQD6AOgwHgaQI1UIJBJpPaiLgZuJbq0"]})
     __properties: ClassVar[List[str]] = ["access-key", "description", "name", "role", "secret-key"]
 
     model_config = ConfigDict(

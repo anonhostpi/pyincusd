@@ -28,13 +28,13 @@ class StorageVolumeBitmap(BaseModel):
     """
     StorageVolumeBitmap represents a volume bitmap
     """ # noqa: E501
-    busy: Optional[StrictBool] = Field(default=None, description="true if the bitmap is in-use by some operation")
-    count: Optional[StrictInt] = Field(default=None, description="Number of dirty bytes")
-    granularity: Optional[StrictInt] = Field(default=None, description="Granularity of the dirty bitmap in bytes")
-    inconsistent: Optional[StrictBool] = Field(default=None, description="true if this is a persistent bitmap that was improperly stored")
-    name: Optional[StrictStr] = Field(default=None, description="Bitmap name")
-    persistent: Optional[StrictBool] = Field(default=None, description="true if the bitmap was stored on disk, is scheduled to be stored on disk, or both")
-    recording: Optional[StrictBool] = Field(default=None, description="true if the bitmap is recording new writes from the guest")
+    busy: Optional[StrictBool] = Field(default=None, description="true if the bitmap is in-use by some operation", json_schema_extra={"examples": [True]})
+    count: Optional[StrictInt] = Field(default=None, description="Number of dirty bytes", json_schema_extra={"examples": [300]})
+    granularity: Optional[StrictInt] = Field(default=None, description="Granularity of the dirty bitmap in bytes", json_schema_extra={"examples": [32768]})
+    inconsistent: Optional[StrictBool] = Field(default=None, description="true if this is a persistent bitmap that was improperly stored", json_schema_extra={"examples": [True]})
+    name: Optional[StrictStr] = Field(default=None, description="Bitmap name", json_schema_extra={"examples": ["bitmap0"]})
+    persistent: Optional[StrictBool] = Field(default=None, description="true if the bitmap was stored on disk, is scheduled to be stored on disk, or both", json_schema_extra={"examples": [False]})
+    recording: Optional[StrictBool] = Field(default=None, description="true if the bitmap is recording new writes from the guest", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["busy", "count", "granularity", "inconsistent", "name", "persistent", "recording"]
 
     model_config = ConfigDict(

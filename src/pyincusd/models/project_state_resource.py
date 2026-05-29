@@ -28,8 +28,8 @@ class ProjectStateResource(BaseModel):
     """
     ProjectStateResource represents the state of a particular resource in a project
     """ # noqa: E501
-    limit: Optional[StrictInt] = Field(default=None, description="Limit for the resource (-1 if none)", alias="Limit")
-    usage: Optional[StrictInt] = Field(default=None, description="Current usage for the resource", alias="Usage")
+    limit: Optional[StrictInt] = Field(default=None, description="Limit for the resource (-1 if none)", alias="Limit", json_schema_extra={"examples": [10]})
+    usage: Optional[StrictInt] = Field(default=None, description="Current usage for the resource", alias="Usage", json_schema_extra={"examples": [4]})
     __properties: ClassVar[List[str]] = ["Limit", "Usage"]
 
     model_config = ConfigDict(

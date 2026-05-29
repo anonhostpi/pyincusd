@@ -31,15 +31,15 @@ class ImagesPost(BaseModel):
     """
     ImagesPost represents the fields available for a new image
     """ # noqa: E501
-    aliases: Optional[List[ImageAlias]] = Field(default=None, description="Aliases to add to the image")
-    auto_update: Optional[StrictBool] = Field(default=None, description="Whether the image should auto-update when a new build is available")
-    compression_algorithm: Optional[StrictStr] = Field(default=None, description="Compression algorithm to use when turning an instance into an image")
-    expires_at: Optional[datetime] = Field(default=None, description="When the image becomes obsolete")
-    filename: Optional[StrictStr] = Field(default=None, description="Original filename of the image")
-    format: Optional[StrictStr] = Field(default=None, description="Type of image format")
-    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles to use when creating from this image (if none provided by user)")
-    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties")
-    public: Optional[StrictBool] = Field(default=None, description="Whether the image is available to unauthenticated users")
+    aliases: Optional[List[ImageAlias]] = Field(default=None, description="Aliases to add to the image", json_schema_extra={"examples": [[{"name": "foo"}, {"name": "bar"}]]})
+    auto_update: Optional[StrictBool] = Field(default=None, description="Whether the image should auto-update when a new build is available", json_schema_extra={"examples": [True]})
+    compression_algorithm: Optional[StrictStr] = Field(default=None, description="Compression algorithm to use when turning an instance into an image", json_schema_extra={"examples": ["gzip"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the image becomes obsolete", json_schema_extra={"examples": ["2025-03-23T20:00:00-04:00"]})
+    filename: Optional[StrictStr] = Field(default=None, description="Original filename of the image", json_schema_extra={"examples": ["image.tar.xz"]})
+    format: Optional[StrictStr] = Field(default=None, description="Type of image format", json_schema_extra={"examples": ["split"]})
+    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles to use when creating from this image (if none provided by user)", json_schema_extra={"examples": [["default"]]})
+    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties", json_schema_extra={"examples": [{"os": "Ubuntu", "release": "jammy", "variant": "cloud"}]})
+    public: Optional[StrictBool] = Field(default=None, description="Whether the image is available to unauthenticated users", json_schema_extra={"examples": [False]})
     source: Optional[ImagesPostSource] = None
     __properties: ClassVar[List[str]] = ["aliases", "auto_update", "compression_algorithm", "expires_at", "filename", "format", "profiles", "properties", "public", "source"]
 

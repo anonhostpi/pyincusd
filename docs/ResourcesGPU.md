@@ -6,7 +6,7 @@ ResourcesGPU represents the GPU resources available on the system
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cards** | [**List[ResourcesGPUCard]**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/ResourcesGPUCard.md) | List of GPUs | [optional] 
+**cards** | [**List[ResourcesGPUCard]**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/ResourcesGPUCard.md) | List of GPUs | [optional] 
 **total** | **int** | Total number of GPUs | [optional] 
 
 ## Example

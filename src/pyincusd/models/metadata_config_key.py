@@ -28,13 +28,13 @@ class MetadataConfigKey(BaseModel):
     """
     MetadataConfigKey describe a configuration key
     """ # noqa: E501
-    condition: Optional[StrictStr] = Field(default=None, description="Condition specifies the condition that must be met for the option to be taken into account")
-    defaultdesc: Optional[StrictStr] = Field(default=None, description="DefaultDesc specify default value for configuration")
-    liveupdate: Optional[StrictStr] = Field(default=None, description="LiveUpdate specifies whether the server must be restarted for the option to be updated")
-    longdesc: Optional[StrictStr] = Field(default=None, description="LongDesc provides long description for the option")
-    scope: Optional[StrictStr] = Field(default=None, description="Scope defines if option apply to cluster or to the local server")
-    shortdesc: Optional[StrictStr] = Field(default=None, description="ShortDesc provides short description for the configuration")
-    type: Optional[StrictStr] = Field(default=None, description="Type specifies the type of the option")
+    condition: Optional[StrictStr] = Field(default=None, description="Condition specifies the condition that must be met for the option to be taken into account", json_schema_extra={"examples": ["container"]})
+    defaultdesc: Optional[StrictStr] = Field(default=None, description="DefaultDesc specify default value for configuration", json_schema_extra={"examples": ["\"`DHCP on eth0`\""]})
+    liveupdate: Optional[StrictStr] = Field(default=None, description="LiveUpdate specifies whether the server must be restarted for the option to be updated", json_schema_extra={"examples": ["\"no\""]})
+    longdesc: Optional[StrictStr] = Field(default=None, description="LongDesc provides long description for the option", json_schema_extra={"examples": ["\"Specify the kernel modules as a comma-separated list.\""]})
+    scope: Optional[StrictStr] = Field(default=None, description="Scope defines if option apply to cluster or to the local server", json_schema_extra={"examples": ["global"]})
+    shortdesc: Optional[StrictStr] = Field(default=None, description="ShortDesc provides short description for the configuration", json_schema_extra={"examples": ["\"Kernel modules to load before starting the instance\""]})
+    type: Optional[StrictStr] = Field(default=None, description="Type specifies the type of the option", json_schema_extra={"examples": ["string"]})
     __properties: ClassVar[List[str]] = ["condition", "defaultdesc", "liveupdate", "longdesc", "scope", "shortdesc", "type"]
 
     model_config = ConfigDict(

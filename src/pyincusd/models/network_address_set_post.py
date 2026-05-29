@@ -28,7 +28,7 @@ class NetworkAddressSetPost(BaseModel):
     """
     NetworkAddressSetPost
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="The new name of the address set")
+    name: Optional[StrictStr] = Field(default=None, description="The new name of the address set", json_schema_extra={"examples": ["\"bar\""]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

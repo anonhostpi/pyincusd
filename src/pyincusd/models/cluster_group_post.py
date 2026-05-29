@@ -28,7 +28,7 @@ class ClusterGroupPost(BaseModel):
     """
     ClusterGroupPost
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="The new name of the cluster group")
+    name: Optional[StrictStr] = Field(default=None, description="The new name of the cluster group", json_schema_extra={"examples": ["group1"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

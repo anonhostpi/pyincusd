@@ -28,8 +28,8 @@ class ClusterMemberStatePost(BaseModel):
     """
     ClusterMemberStatePost
     """ # noqa: E501
-    action: Optional[StrictStr] = Field(default=None, description="The action to be performed. Valid actions are \"evacuate\" and \"restore\".")
-    mode: Optional[StrictStr] = Field(default=None, description="Override the configured evacuation mode.")
+    action: Optional[StrictStr] = Field(default=None, description="The action to be performed. Valid actions are \"evacuate\" and \"restore\".", json_schema_extra={"examples": ["evacuate"]})
+    mode: Optional[StrictStr] = Field(default=None, description="Override the configured evacuation mode.", json_schema_extra={"examples": ["stop"]})
     __properties: ClassVar[List[str]] = ["action", "mode"]
 
     model_config = ConfigDict(

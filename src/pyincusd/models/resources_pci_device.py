@@ -29,15 +29,15 @@ class ResourcesPCIDevice(BaseModel):
     """
     ResourcesPCIDevice represents a PCI device
     """ # noqa: E501
-    driver: Optional[StrictStr] = Field(default=None, description="Kernel driver currently associated with the GPU")
-    driver_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel driver")
-    iommu_group: Optional[StrictInt] = Field(default=None, description="IOMMU group number")
-    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node the card is a part of")
-    pci_address: Optional[StrictStr] = Field(default=None, description="PCI address")
-    product: Optional[StrictStr] = Field(default=None, description="Name of the product")
-    product_id: Optional[StrictStr] = Field(default=None, description="PCI ID of the product")
-    vendor: Optional[StrictStr] = Field(default=None, description="Name of the vendor")
-    vendor_id: Optional[StrictStr] = Field(default=None, description="PCI ID of the vendor")
+    driver: Optional[StrictStr] = Field(default=None, description="Kernel driver currently associated with the GPU", json_schema_extra={"examples": ["mgag200"]})
+    driver_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel driver", json_schema_extra={"examples": ["5.8.0-36-generic"]})
+    iommu_group: Optional[StrictInt] = Field(default=None, description="IOMMU group number", json_schema_extra={"examples": [20]})
+    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node the card is a part of", json_schema_extra={"examples": [0]})
+    pci_address: Optional[StrictStr] = Field(default=None, description="PCI address", json_schema_extra={"examples": ["0000:07:03.0"]})
+    product: Optional[StrictStr] = Field(default=None, description="Name of the product", json_schema_extra={"examples": ["MGA G200eW WPCM450"]})
+    product_id: Optional[StrictStr] = Field(default=None, description="PCI ID of the product", json_schema_extra={"examples": ["0532"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Name of the vendor", json_schema_extra={"examples": ["Matrox Electronics Systems Ltd."]})
+    vendor_id: Optional[StrictStr] = Field(default=None, description="PCI ID of the vendor", json_schema_extra={"examples": ["102b"]})
     vpd: Optional[ResourcesPCIVPD] = None
     __properties: ClassVar[List[str]] = ["driver", "driver_version", "iommu_group", "numa_node", "pci_address", "product", "product_id", "vendor", "vendor_id", "vpd"]
 

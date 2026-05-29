@@ -30,7 +30,7 @@ class ResourcesGPU(BaseModel):
     ResourcesGPU represents the GPU resources available on the system
     """ # noqa: E501
     cards: Optional[List[ResourcesGPUCard]] = Field(default=None, description="List of GPUs")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of GPUs")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of GPUs", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["cards", "total"]
 
     model_config = ConfigDict(

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**List[NetworkAllocations]**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/NetworkAllocations.md) | List of network allocations used by a consuming entity | [optional] 
+**metadata** | [**List[NetworkAllocations]**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/NetworkAllocations.md) | List of network allocations used by a consuming entity | [optional] 
 **status** | **str** | Status description | [optional] 
 **status_code** | **int** | Status code | [optional] 
 **type** | **str** | Response type | [optional] 

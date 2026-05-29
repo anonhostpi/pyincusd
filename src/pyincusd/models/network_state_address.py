@@ -28,10 +28,10 @@ class NetworkStateAddress(BaseModel):
     """
     NetworkStateAddress represents a network address
     """ # noqa: E501
-    address: Optional[StrictStr] = Field(default=None, description="IP address")
-    family: Optional[StrictStr] = Field(default=None, description="Address family")
-    netmask: Optional[StrictStr] = Field(default=None, description="IP netmask (CIDR)")
-    scope: Optional[StrictStr] = Field(default=None, description="Address scope")
+    address: Optional[StrictStr] = Field(default=None, description="IP address", json_schema_extra={"examples": ["10.0.0.1"]})
+    family: Optional[StrictStr] = Field(default=None, description="Address family", json_schema_extra={"examples": ["inet"]})
+    netmask: Optional[StrictStr] = Field(default=None, description="IP netmask (CIDR)", json_schema_extra={"examples": ["24"]})
+    scope: Optional[StrictStr] = Field(default=None, description="Address scope", json_schema_extra={"examples": ["global"]})
     __properties: ClassVar[List[str]] = ["address", "family", "netmask", "scope"]
 
     model_config = ConfigDict(

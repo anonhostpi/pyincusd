@@ -28,10 +28,10 @@ class NetworkLoadBalancerBackend(BaseModel):
     """
     NetworkLoadBalancerBackend represents a target backend specification in a network load balancer
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer backend")
-    name: Optional[StrictStr] = Field(default=None, description="Name of the load balancer backend")
-    target_address: Optional[StrictStr] = Field(default=None, description="TargetAddress to forward ListenPorts to")
-    target_port: Optional[StrictStr] = Field(default=None, description="TargetPort(s) to forward ListenPorts to (allows for many-to-one)")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer backend", json_schema_extra={"examples": ["C1 webserver"]})
+    name: Optional[StrictStr] = Field(default=None, description="Name of the load balancer backend", json_schema_extra={"examples": ["c1-http"]})
+    target_address: Optional[StrictStr] = Field(default=None, description="TargetAddress to forward ListenPorts to", json_schema_extra={"examples": ["198.51.100.2"]})
+    target_port: Optional[StrictStr] = Field(default=None, description="TargetPort(s) to forward ListenPorts to (allows for many-to-one)", json_schema_extra={"examples": ["80,81,8080-8090"]})
     __properties: ClassVar[List[str]] = ["description", "name", "target_address", "target_port"]
 
     model_config = ConfigDict(

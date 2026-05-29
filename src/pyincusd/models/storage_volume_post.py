@@ -30,13 +30,13 @@ class StorageVolumePost(BaseModel):
     """
     StorageVolumePost represents the fields required to rename a storage pool volume
     """ # noqa: E501
-    migration: Optional[StrictBool] = Field(default=None, description="Initiate volume migration")
-    name: Optional[StrictStr] = Field(default=None, description="New volume name")
-    pool: Optional[StrictStr] = Field(default=None, description="New storage pool")
-    project: Optional[StrictStr] = Field(default=None, description="New project name")
+    migration: Optional[StrictBool] = Field(default=None, description="Initiate volume migration", json_schema_extra={"examples": [False]})
+    name: Optional[StrictStr] = Field(default=None, description="New volume name", json_schema_extra={"examples": ["foo"]})
+    pool: Optional[StrictStr] = Field(default=None, description="New storage pool", json_schema_extra={"examples": ["remote"]})
+    project: Optional[StrictStr] = Field(default=None, description="New project name", json_schema_extra={"examples": ["foo"]})
     source: Optional[StorageVolumeSource] = None
     target: Optional[StorageVolumePostTarget] = None
-    volume_only: Optional[StrictBool] = Field(default=None, description="Whether snapshots should be discarded (migration only)")
+    volume_only: Optional[StrictBool] = Field(default=None, description="Whether snapshots should be discarded (migration only)", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["migration", "name", "pool", "project", "source", "target", "volume_only"]
 
     model_config = ConfigDict(

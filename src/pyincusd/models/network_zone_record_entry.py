@@ -28,9 +28,9 @@ class NetworkZoneRecordEntry(BaseModel):
     """
     NetworkZoneRecordEntry represents the fields in a record entry
     """ # noqa: E501
-    ttl: Optional[StrictInt] = Field(default=None, description="TTL for the entry")
-    type: Optional[StrictStr] = Field(default=None, description="Type of DNS entry")
-    value: Optional[StrictStr] = Field(default=None, description="Value for the record")
+    ttl: Optional[StrictInt] = Field(default=None, description="TTL for the entry", json_schema_extra={"examples": [3600]})
+    type: Optional[StrictStr] = Field(default=None, description="Type of DNS entry", json_schema_extra={"examples": ["TXT"]})
+    value: Optional[StrictStr] = Field(default=None, description="Value for the record", json_schema_extra={"examples": ["v=spf1 mx ~all"]})
     __properties: ClassVar[List[str]] = ["ttl", "type", "value"]
 
     model_config = ConfigDict(

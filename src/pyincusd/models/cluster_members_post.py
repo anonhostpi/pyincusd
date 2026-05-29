@@ -28,7 +28,7 @@ class ClusterMembersPost(BaseModel):
     """
     ClusterMembersPost
     """ # noqa: E501
-    server_name: Optional[StrictStr] = Field(default=None, description="The name of the new cluster member")
+    server_name: Optional[StrictStr] = Field(default=None, description="The name of the new cluster member", json_schema_extra={"examples": ["server02"]})
     __properties: ClassVar[List[str]] = ["server_name"]
 
     model_config = ConfigDict(

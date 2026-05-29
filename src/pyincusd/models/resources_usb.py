@@ -30,7 +30,7 @@ class ResourcesUSB(BaseModel):
     ResourcesUSB represents the USB devices available on the system
     """ # noqa: E501
     devices: Optional[List[ResourcesUSBDevice]] = Field(default=None, description="List of USB devices")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of USB devices")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of USB devices", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["devices", "total"]
 
     model_config = ConfigDict(

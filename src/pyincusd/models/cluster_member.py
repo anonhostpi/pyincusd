@@ -28,17 +28,17 @@ class ClusterMember(BaseModel):
     """
     ClusterMember
     """ # noqa: E501
-    architecture: Optional[StrictStr] = Field(default=None, description="The primary architecture of the cluster member")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Additional configuration information")
-    database: Optional[StrictBool] = Field(default=None, description="Whether the cluster member is a database server")
-    description: Optional[StrictStr] = Field(default=None, description="Cluster member description")
-    failure_domain: Optional[StrictStr] = Field(default=None, description="Name of the failure domain for this cluster member")
-    groups: Optional[List[StrictStr]] = Field(default=None, description="List of cluster groups this member belongs to")
-    message: Optional[StrictStr] = Field(default=None, description="Additional status information")
-    roles: Optional[List[StrictStr]] = Field(default=None, description="List of roles held by this cluster member")
-    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member")
-    status: Optional[StrictStr] = Field(default=None, description="Current status")
-    url: Optional[StrictStr] = Field(default=None, description="URL at which the cluster member can be reached")
+    architecture: Optional[StrictStr] = Field(default=None, description="The primary architecture of the cluster member", json_schema_extra={"examples": ["x86_64"]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Additional configuration information", json_schema_extra={"examples": [{"scheduler.instance": "all"}]})
+    database: Optional[StrictBool] = Field(default=None, description="Whether the cluster member is a database server", json_schema_extra={"examples": [True]})
+    description: Optional[StrictStr] = Field(default=None, description="Cluster member description", json_schema_extra={"examples": ["AMD Epyc 32c/64t"]})
+    failure_domain: Optional[StrictStr] = Field(default=None, description="Name of the failure domain for this cluster member", json_schema_extra={"examples": ["rack1"]})
+    groups: Optional[List[StrictStr]] = Field(default=None, description="List of cluster groups this member belongs to", json_schema_extra={"examples": [["group1", "group2"]]})
+    message: Optional[StrictStr] = Field(default=None, description="Additional status information", json_schema_extra={"examples": ["fully operational"]})
+    roles: Optional[List[StrictStr]] = Field(default=None, description="List of roles held by this cluster member", json_schema_extra={"examples": [["database"]]})
+    server_name: Optional[StrictStr] = Field(default=None, description="Name of the cluster member", json_schema_extra={"examples": ["server01"]})
+    status: Optional[StrictStr] = Field(default=None, description="Current status", json_schema_extra={"examples": ["Online"]})
+    url: Optional[StrictStr] = Field(default=None, description="URL at which the cluster member can be reached", json_schema_extra={"examples": ["https://10.0.0.1:8443"]})
     __properties: ClassVar[List[str]] = ["architecture", "config", "database", "description", "failure_domain", "groups", "message", "roles", "server_name", "status", "url"]
 
     model_config = ConfigDict(

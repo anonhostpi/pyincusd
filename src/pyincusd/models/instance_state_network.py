@@ -32,11 +32,11 @@ class InstanceStateNetwork(BaseModel):
     """ # noqa: E501
     addresses: Optional[List[InstanceStateNetworkAddress]] = Field(default=None, description="List of IP addresses")
     counters: Optional[InstanceStateNetworkCounters] = None
-    host_name: Optional[StrictStr] = Field(default=None, description="Name of the interface on the host")
-    hwaddr: Optional[StrictStr] = Field(default=None, description="MAC address")
-    mtu: Optional[StrictInt] = Field(default=None, description="MTU (maximum transmit unit) for the interface")
-    state: Optional[StrictStr] = Field(default=None, description="Administrative state of the interface (up/down)")
-    type: Optional[StrictStr] = Field(default=None, description="Type of interface (broadcast, loopback, point-to-point, ...)")
+    host_name: Optional[StrictStr] = Field(default=None, description="Name of the interface on the host", json_schema_extra={"examples": ["vethbbcd39c7"]})
+    hwaddr: Optional[StrictStr] = Field(default=None, description="MAC address", json_schema_extra={"examples": ["10:66:6a:0c:ee:dd"]})
+    mtu: Optional[StrictInt] = Field(default=None, description="MTU (maximum transmit unit) for the interface", json_schema_extra={"examples": [1500]})
+    state: Optional[StrictStr] = Field(default=None, description="Administrative state of the interface (up/down)", json_schema_extra={"examples": ["up"]})
+    type: Optional[StrictStr] = Field(default=None, description="Type of interface (broadcast, loopback, point-to-point, ...)", json_schema_extra={"examples": ["broadcast"]})
     __properties: ClassVar[List[str]] = ["addresses", "counters", "host_name", "hwaddr", "mtu", "state", "type"]
 
     model_config = ConfigDict(

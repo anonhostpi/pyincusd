@@ -28,10 +28,10 @@ class NetworkStateCounters(BaseModel):
     """
     NetworkStateCounters represents packet counters
     """ # noqa: E501
-    bytes_received: Optional[StrictInt] = Field(default=None, description="Number of bytes received")
-    bytes_sent: Optional[StrictInt] = Field(default=None, description="Number of bytes sent")
-    packets_received: Optional[StrictInt] = Field(default=None, description="Number of packets received")
-    packets_sent: Optional[StrictInt] = Field(default=None, description="Number of packets sent")
+    bytes_received: Optional[StrictInt] = Field(default=None, description="Number of bytes received", json_schema_extra={"examples": [250542118]})
+    bytes_sent: Optional[StrictInt] = Field(default=None, description="Number of bytes sent", json_schema_extra={"examples": [17524040140]})
+    packets_received: Optional[StrictInt] = Field(default=None, description="Number of packets received", json_schema_extra={"examples": [1182515]})
+    packets_sent: Optional[StrictInt] = Field(default=None, description="Number of packets sent", json_schema_extra={"examples": [1567934]})
     __properties: ClassVar[List[str]] = ["bytes_received", "bytes_sent", "packets_received", "packets_sent"]
 
     model_config = ConfigDict(

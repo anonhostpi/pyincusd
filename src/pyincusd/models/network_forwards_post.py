@@ -29,9 +29,9 @@ class NetworkForwardsPost(BaseModel):
     """
     NetworkForwardsPost represents the fields of a new network address forward
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Forward configuration map (refer to doc/network-forwards.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the forward listen IP")
-    listen_address: Optional[StrictStr] = Field(default=None, description="The listen address of the forward")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Forward configuration map (refer to doc/network-forwards.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the forward listen IP", json_schema_extra={"examples": ["My public IP forward"]})
+    listen_address: Optional[StrictStr] = Field(default=None, description="The listen address of the forward", json_schema_extra={"examples": ["192.0.2.1"]})
     ports: Optional[List[NetworkForwardPort]] = Field(default=None, description="Port forwards (optional)")
     __properties: ClassVar[List[str]] = ["config", "description", "listen_address", "ports"]
 

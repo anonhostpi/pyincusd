@@ -28,16 +28,16 @@ class NetworkACLRule(BaseModel):
     """
     Refer to doc/network-acls.md for details.
     """ # noqa: E501
-    action: Optional[StrictStr] = Field(default=None, description="Action to perform on rule match")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the rule")
-    destination: Optional[StrictStr] = Field(default=None, description="Destination address")
-    destination_port: Optional[StrictStr] = Field(default=None, description="Destination port")
-    icmp_code: Optional[StrictStr] = Field(default=None, description="ICMP message code (for ICMP protocol)")
-    icmp_type: Optional[StrictStr] = Field(default=None, description="Type of ICMP message (for ICMP protocol)")
-    protocol: Optional[StrictStr] = Field(default=None, description="Protocol")
-    source: Optional[StrictStr] = Field(default=None, description="Source address")
-    source_port: Optional[StrictStr] = Field(default=None, description="Source port")
-    state: Optional[StrictStr] = Field(default=None, description="State of the rule")
+    action: Optional[StrictStr] = Field(default=None, description="Action to perform on rule match", json_schema_extra={"examples": ["allow"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the rule", json_schema_extra={"examples": ["Allow DNS queries to Google DNS"]})
+    destination: Optional[StrictStr] = Field(default=None, description="Destination address", json_schema_extra={"examples": ["8.8.8.8/32,8.8.4.4/32"]})
+    destination_port: Optional[StrictStr] = Field(default=None, description="Destination port", json_schema_extra={"examples": ["53"]})
+    icmp_code: Optional[StrictStr] = Field(default=None, description="ICMP message code (for ICMP protocol)", json_schema_extra={"examples": ["0"]})
+    icmp_type: Optional[StrictStr] = Field(default=None, description="Type of ICMP message (for ICMP protocol)", json_schema_extra={"examples": ["8"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Protocol", json_schema_extra={"examples": ["udp"]})
+    source: Optional[StrictStr] = Field(default=None, description="Source address", json_schema_extra={"examples": ["@internal"]})
+    source_port: Optional[StrictStr] = Field(default=None, description="Source port", json_schema_extra={"examples": ["1234"]})
+    state: Optional[StrictStr] = Field(default=None, description="State of the rule", json_schema_extra={"examples": ["enabled"]})
     __properties: ClassVar[List[str]] = ["action", "description", "destination", "destination_port", "icmp_code", "icmp_type", "protocol", "source", "source_port", "state"]
 
     model_config = ConfigDict(

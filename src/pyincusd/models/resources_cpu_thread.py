@@ -28,11 +28,11 @@ class ResourcesCPUThread(BaseModel):
     """
     ResourcesCPUThread represents a CPU thread on the system
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="Thread ID (used for CPU pinning)")
-    isolated: Optional[StrictBool] = Field(default=None, description="Whether the thread has been isolated (outside of normal scheduling)")
-    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node the thread is a part of")
-    online: Optional[StrictBool] = Field(default=None, description="Whether the thread is online (enabled)")
-    thread: Optional[StrictInt] = Field(default=None, description="Thread identifier within the core")
+    id: Optional[StrictInt] = Field(default=None, description="Thread ID (used for CPU pinning)", json_schema_extra={"examples": [0]})
+    isolated: Optional[StrictBool] = Field(default=None, description="Whether the thread has been isolated (outside of normal scheduling)", json_schema_extra={"examples": [False]})
+    numa_node: Optional[StrictInt] = Field(default=None, description="NUMA node the thread is a part of", json_schema_extra={"examples": [0]})
+    online: Optional[StrictBool] = Field(default=None, description="Whether the thread is online (enabled)", json_schema_extra={"examples": [True]})
+    thread: Optional[StrictInt] = Field(default=None, description="Thread identifier within the core", json_schema_extra={"examples": [0]})
     __properties: ClassVar[List[str]] = ["id", "isolated", "numa_node", "online", "thread"]
 
     model_config = ConfigDict(

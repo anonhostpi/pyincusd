@@ -28,10 +28,10 @@ class Project(BaseModel):
     """
     Project represents a project
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Project configuration map (refer to doc/projects.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the project")
-    name: Optional[StrictStr] = Field(default=None, description="The project name")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this project")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Project configuration map (refer to doc/projects.md)", json_schema_extra={"examples": [{"features.networks": "false", "features.profiles": "true"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the project", json_schema_extra={"examples": ["My new project"]})
+    name: Optional[StrictStr] = Field(default=None, description="The project name", json_schema_extra={"examples": ["foo"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this project", json_schema_extra={"examples": [["/1.0/images/0e60015346f06627f10580d56ac7fffd9ea775f6d4f25987217d5eed94910a20", "/1.0/instances/c1", "/1.0/networks/mybr0", "/1.0/profiles/default", "/1.0/storage-pools/default/volumes/custom/blah"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "name", "used_by"]
 
     model_config = ConfigDict(

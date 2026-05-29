@@ -32,28 +32,28 @@ class InstanceFull(BaseModel):
     """
     InstanceFull
     """ # noqa: E501
-    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name")
+    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name", json_schema_extra={"examples": ["x86_64"]})
     backups: Optional[List[InstanceBackup]] = Field(default=None, description="List of backups.")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration (see doc/instances.md)")
-    created_at: Optional[datetime] = Field(default=None, description="Instance creation timestamp")
-    description: Optional[StrictStr] = Field(default=None, description="Instance description")
-    devices: Optional[Dict[str, Any]] = Field(default=None, description="Instance devices (see doc/instances.md)")
-    disk_only: Optional[StrictBool] = Field(default=None, description="Whether only the instances disk should be restored")
-    ephemeral: Optional[StrictBool] = Field(default=None, description="Whether the instance is ephemeral (deleted on shutdown)")
-    expanded_config: Optional[Dict[str, Any]] = Field(default=None, description="Expanded configuration (all profiles and local config merged)")
-    expanded_devices: Optional[Dict[str, Any]] = Field(default=None, description="Expanded devices (all profiles and local devices merged)")
-    last_used_at: Optional[datetime] = Field(default=None, description="Last start timestamp")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this instance is located on")
-    name: Optional[StrictStr] = Field(default=None, description="Instance name")
-    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles applied to the instance")
-    project: Optional[StrictStr] = Field(default=None, description="Instance project name")
-    restore: Optional[StrictStr] = Field(default=None, description="If set, instance will be restored to the provided snapshot name")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration (see doc/instances.md)", json_schema_extra={"examples": [{"security.nesting": "true"}]})
+    created_at: Optional[datetime] = Field(default=None, description="Instance creation timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    description: Optional[StrictStr] = Field(default=None, description="Instance description", json_schema_extra={"examples": ["My test instance"]})
+    devices: Optional[Dict[str, Any]] = Field(default=None, description="Instance devices (see doc/instances.md)", json_schema_extra={"examples": [{"root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    disk_only: Optional[StrictBool] = Field(default=None, description="Whether only the instances disk should be restored", json_schema_extra={"examples": [False]})
+    ephemeral: Optional[StrictBool] = Field(default=None, description="Whether the instance is ephemeral (deleted on shutdown)", json_schema_extra={"examples": [False]})
+    expanded_config: Optional[Dict[str, Any]] = Field(default=None, description="Expanded configuration (all profiles and local config merged)", json_schema_extra={"examples": [{"security.nesting": "true"}]})
+    expanded_devices: Optional[Dict[str, Any]] = Field(default=None, description="Expanded devices (all profiles and local devices merged)", json_schema_extra={"examples": [{"root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    last_used_at: Optional[datetime] = Field(default=None, description="Last start timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this instance is located on", json_schema_extra={"examples": ["server01"]})
+    name: Optional[StrictStr] = Field(default=None, description="Instance name", json_schema_extra={"examples": ["foo"]})
+    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles applied to the instance", json_schema_extra={"examples": [["default"]]})
+    project: Optional[StrictStr] = Field(default=None, description="Instance project name", json_schema_extra={"examples": ["foo"]})
+    restore: Optional[StrictStr] = Field(default=None, description="If set, instance will be restored to the provided snapshot name", json_schema_extra={"examples": ["snap0"]})
     snapshots: Optional[List[InstanceSnapshot]] = Field(default=None, description="List of snapshots.")
     state: Optional[InstanceState] = None
-    stateful: Optional[StrictBool] = Field(default=None, description="Whether the instance currently has saved state on disk")
-    status: Optional[StrictStr] = Field(default=None, description="Instance status (see instance_state)")
+    stateful: Optional[StrictBool] = Field(default=None, description="Whether the instance currently has saved state on disk", json_schema_extra={"examples": [False]})
+    status: Optional[StrictStr] = Field(default=None, description="Instance status (see instance_state)", json_schema_extra={"examples": ["Running"]})
     status_code: Optional[StrictInt] = None
-    type: Optional[StrictStr] = Field(default=None, description="The type of instance (container or virtual-machine)")
+    type: Optional[StrictStr] = Field(default=None, description="The type of instance (container or virtual-machine)", json_schema_extra={"examples": ["container"]})
     __properties: ClassVar[List[str]] = ["architecture", "backups", "config", "created_at", "description", "devices", "disk_only", "ephemeral", "expanded_config", "expanded_devices", "last_used_at", "location", "name", "profiles", "project", "restore", "snapshots", "state", "stateful", "status", "status_code", "type"]
 
     model_config = ConfigDict(

@@ -28,13 +28,13 @@ class NetworkStateBond(BaseModel):
     """
     NetworkStateBond represents bond specific state
     """ # noqa: E501
-    down_delay: Optional[StrictInt] = Field(default=None, description="Delay on link down (ms)")
-    lower_devices: Optional[List[StrictStr]] = Field(default=None, description="List of devices that are part of the bond")
-    mii_frequency: Optional[StrictInt] = Field(default=None, description="How often to check for link state (ms)")
-    mii_state: Optional[StrictStr] = Field(default=None, description="Bond link state")
-    mode: Optional[StrictStr] = Field(default=None, description="Bonding mode")
-    transmit_policy: Optional[StrictStr] = Field(default=None, description="Transmit balancing policy")
-    up_delay: Optional[StrictInt] = Field(default=None, description="Delay on link up (ms)")
+    down_delay: Optional[StrictInt] = Field(default=None, description="Delay on link down (ms)", json_schema_extra={"examples": [0]})
+    lower_devices: Optional[List[StrictStr]] = Field(default=None, description="List of devices that are part of the bond", json_schema_extra={"examples": [["eth0", "eth1"]]})
+    mii_frequency: Optional[StrictInt] = Field(default=None, description="How often to check for link state (ms)", json_schema_extra={"examples": [100]})
+    mii_state: Optional[StrictStr] = Field(default=None, description="Bond link state", json_schema_extra={"examples": ["up"]})
+    mode: Optional[StrictStr] = Field(default=None, description="Bonding mode", json_schema_extra={"examples": ["802.3ad"]})
+    transmit_policy: Optional[StrictStr] = Field(default=None, description="Transmit balancing policy", json_schema_extra={"examples": ["layer3+4"]})
+    up_delay: Optional[StrictInt] = Field(default=None, description="Delay on link up (ms)", json_schema_extra={"examples": [0]})
     __properties: ClassVar[List[str]] = ["down_delay", "lower_devices", "mii_frequency", "mii_state", "mode", "transmit_policy", "up_delay"]
 
     model_config = ConfigDict(

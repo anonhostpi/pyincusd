@@ -28,11 +28,11 @@ class ImageSource(BaseModel):
     """
     ImageSource represents the source of an image
     """ # noqa: E501
-    alias: Optional[StrictStr] = Field(default=None, description="Source alias to download from")
-    certificate: Optional[StrictStr] = Field(default=None, description="Source server certificate (if not trusted by system CA)")
-    image_type: Optional[StrictStr] = Field(default=None, description="Type of image (container or virtual-machine)")
-    protocol: Optional[StrictStr] = Field(default=None, description="Source server protocol")
-    server: Optional[StrictStr] = Field(default=None, description="URL of the source server")
+    alias: Optional[StrictStr] = Field(default=None, description="Source alias to download from", json_schema_extra={"examples": ["jammy"]})
+    certificate: Optional[StrictStr] = Field(default=None, description="Source server certificate (if not trusted by system CA)", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    image_type: Optional[StrictStr] = Field(default=None, description="Type of image (container or virtual-machine)", json_schema_extra={"examples": ["container"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Source server protocol", json_schema_extra={"examples": ["simplestreams"]})
+    server: Optional[StrictStr] = Field(default=None, description="URL of the source server", json_schema_extra={"examples": ["https://images.linuxcontainers.org"]})
     __properties: ClassVar[List[str]] = ["alias", "certificate", "image_type", "protocol", "server"]
 
     model_config = ConfigDict(

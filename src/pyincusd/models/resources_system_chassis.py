@@ -28,10 +28,10 @@ class ResourcesSystemChassis(BaseModel):
     """
     ResourcesSystemChassis represents the system chassis
     """ # noqa: E501
-    serial: Optional[StrictStr] = Field(default=None, description="Chassis serial number")
-    type: Optional[StrictStr] = Field(default=None, description="Chassis type")
-    vendor: Optional[StrictStr] = Field(default=None, description="Chassis vendor")
-    version: Optional[StrictStr] = Field(default=None, description="Chassis version/revision")
+    serial: Optional[StrictStr] = Field(default=None, description="Chassis serial number", json_schema_extra={"examples": ["PY3DD4X9"]})
+    type: Optional[StrictStr] = Field(default=None, description="Chassis type", json_schema_extra={"examples": ["Notebook"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Chassis vendor", json_schema_extra={"examples": ["Lenovo"]})
+    version: Optional[StrictStr] = Field(default=None, description="Chassis version/revision", json_schema_extra={"examples": ["None"]})
     __properties: ClassVar[List[str]] = ["serial", "type", "vendor", "version"]
 
     model_config = ConfigDict(

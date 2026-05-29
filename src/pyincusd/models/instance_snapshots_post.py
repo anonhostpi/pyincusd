@@ -29,9 +29,9 @@ class InstanceSnapshotsPost(BaseModel):
     """
     InstanceSnapshotsPost
     """ # noqa: E501
-    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)")
-    name: Optional[StrictStr] = Field(default=None, description="Snapshot name")
-    stateful: Optional[StrictBool] = Field(default=None, description="Whether the snapshot should include runtime state")
+    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Snapshot name", json_schema_extra={"examples": ["snap0"]})
+    stateful: Optional[StrictBool] = Field(default=None, description="Whether the snapshot should include runtime state", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["expires_at", "name", "stateful"]
 
     model_config = ConfigDict(

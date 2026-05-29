@@ -28,8 +28,8 @@ class ResourcesPCIVPD(BaseModel):
     """
     ResourcesPCIVPD represents VPD entries for a device
     """ # noqa: E501
-    entries: Optional[Dict[str, StrictStr]] = Field(default=None, description="Vendor provided key/value pairs.")
-    product_name: Optional[StrictStr] = Field(default=None, description="Hardware provided product name.")
+    entries: Optional[Dict[str, StrictStr]] = Field(default=None, description="Vendor provided key/value pairs.", json_schema_extra={"examples": [{"EC": "A-5545", "MN": "103C", "V0": "5W PCIeGen2"}]})
+    product_name: Optional[StrictStr] = Field(default=None, description="Hardware provided product name.", json_schema_extra={"examples": ["HP Ethernet 1Gb 4-port 331i Adapter"]})
     __properties: ClassVar[List[str]] = ["entries", "product_name"]
 
     model_config = ConfigDict(

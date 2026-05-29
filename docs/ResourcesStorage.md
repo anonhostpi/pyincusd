@@ -6,7 +6,7 @@ ResourcesStorage represents the local storage
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**disks** | [**List[ResourcesStorageDisk]**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/ResourcesStorageDisk.md) | List of disks | [optional] 
+**disks** | [**List[ResourcesStorageDisk]**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/ResourcesStorageDisk.md) | List of disks | [optional] 
 **total** | **int** | Total number of partitions | [optional] 
 
 ## Example

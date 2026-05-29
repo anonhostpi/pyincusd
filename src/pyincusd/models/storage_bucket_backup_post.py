@@ -28,7 +28,7 @@ class StorageBucketBackupPost(BaseModel):
     """
     StorageBucketBackupPost represents the fields available for the renaming of a bucket backup
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="New backup name")
+    name: Optional[StrictStr] = Field(default=None, description="New backup name", json_schema_extra={"examples": ["backup1"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

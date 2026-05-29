@@ -28,9 +28,9 @@ class InstancePostTarget(BaseModel):
     """
     InstancePostTarget
     """ # noqa: E501
-    certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the migration target")
-    operation: Optional[StrictStr] = Field(default=None, description="The operation URL on the remote target")
-    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Migration websockets credentials")
+    certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the migration target", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    operation: Optional[StrictStr] = Field(default=None, description="The operation URL on the remote target", json_schema_extra={"examples": ["https://1.2.3.4:8443/1.0/operations/5e8e1638-5345-4c2d-bac9-2c79c8577292"]})
+    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Migration websockets credentials", json_schema_extra={"examples": [{"criu": "random-string", "migration": "random-string"}]})
     __properties: ClassVar[List[str]] = ["certificate", "operation", "secrets"]
 
     model_config = ConfigDict(

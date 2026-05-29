@@ -34,12 +34,12 @@ class ResourcesCPUSocket(BaseModel):
     address_sizes: Optional[ResourcesCPUAddressSizes] = None
     cache: Optional[List[ResourcesCPUCache]] = Field(default=None, description="List of CPU caches")
     cores: Optional[List[ResourcesCPUCore]] = Field(default=None, description="List of CPU cores")
-    frequency: Optional[StrictInt] = Field(default=None, description="Current CPU frequency (Mhz)")
-    frequency_minimum: Optional[StrictInt] = Field(default=None, description="Minimum CPU frequency (Mhz)")
-    frequency_turbo: Optional[StrictInt] = Field(default=None, description="Maximum CPU frequency (Mhz)")
-    name: Optional[StrictStr] = Field(default=None, description="Product name")
-    socket: Optional[StrictInt] = Field(default=None, description="Socket number")
-    vendor: Optional[StrictStr] = Field(default=None, description="Vendor name")
+    frequency: Optional[StrictInt] = Field(default=None, description="Current CPU frequency (Mhz)", json_schema_extra={"examples": [3499]})
+    frequency_minimum: Optional[StrictInt] = Field(default=None, description="Minimum CPU frequency (Mhz)", json_schema_extra={"examples": [400]})
+    frequency_turbo: Optional[StrictInt] = Field(default=None, description="Maximum CPU frequency (Mhz)", json_schema_extra={"examples": [3500]})
+    name: Optional[StrictStr] = Field(default=None, description="Product name", json_schema_extra={"examples": ["Intel(R) Core(TM) i5-7300U CPU @ 2.60GHz"]})
+    socket: Optional[StrictInt] = Field(default=None, description="Socket number", json_schema_extra={"examples": [0]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Vendor name", json_schema_extra={"examples": ["GenuineIntel"]})
     __properties: ClassVar[List[str]] = ["address_sizes", "cache", "cores", "frequency", "frequency_minimum", "frequency_turbo", "name", "socket", "vendor"]
 
     model_config = ConfigDict(

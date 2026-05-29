@@ -28,8 +28,8 @@ class ResourcesNetworkCardSRIOV(BaseModel):
     """
     ResourcesNetworkCardSRIOV represents the SRIOV configuration of the network card
     """ # noqa: E501
-    current_vfs: Optional[StrictInt] = Field(default=None, description="Number of VFs currently configured")
-    maximum_vfs: Optional[StrictInt] = Field(default=None, description="Maximum number of supported VFs")
+    current_vfs: Optional[StrictInt] = Field(default=None, description="Number of VFs currently configured", json_schema_extra={"examples": [0]})
+    maximum_vfs: Optional[StrictInt] = Field(default=None, description="Maximum number of supported VFs", json_schema_extra={"examples": [0]})
     vfs: Optional[List[ResourcesNetworkCard]] = Field(default=None, description="List of VFs (as additional Network devices)")
     __properties: ClassVar[List[str]] = ["current_vfs", "maximum_vfs", "vfs"]
 

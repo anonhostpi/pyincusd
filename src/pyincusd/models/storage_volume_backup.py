@@ -29,11 +29,11 @@ class StorageVolumeBackup(BaseModel):
     """
     StorageVolumeBackup represents a volume backup
     """ # noqa: E501
-    created_at: Optional[datetime] = Field(default=None, description="When the backup was created")
-    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)")
-    name: Optional[StrictStr] = Field(default=None, description="Backup name")
-    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)")
-    volume_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots")
+    created_at: Optional[datetime] = Field(default=None, description="When the backup was created", json_schema_extra={"examples": ["2021-03-23T16:38:37.753398689-04:00"]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the backup expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Backup name", json_schema_extra={"examples": ["backup0"]})
+    optimized_storage: Optional[StrictBool] = Field(default=None, description="Whether to use a pool-optimized binary format (instead of plain tarball)", json_schema_extra={"examples": [True]})
+    volume_only: Optional[StrictBool] = Field(default=None, description="Whether to ignore snapshots", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["created_at", "expires_at", "name", "optimized_storage", "volume_only"]
 
     model_config = ConfigDict(

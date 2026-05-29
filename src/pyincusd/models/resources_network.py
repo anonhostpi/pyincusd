@@ -30,7 +30,7 @@ class ResourcesNetwork(BaseModel):
     ResourcesNetwork represents the network cards available on the system
     """ # noqa: E501
     cards: Optional[List[ResourcesNetworkCard]] = Field(default=None, description="List of network cards")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of network cards")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of network cards", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["cards", "total"]
 
     model_config = ConfigDict(

@@ -28,13 +28,13 @@ class StoragePool(BaseModel):
     """
     StoragePool
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage pool configuration map (refer to doc/storage.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the storage pool")
-    driver: Optional[StrictStr] = Field(default=None, description="Storage pool driver (btrfs, ceph, cephfs, cephobject, dir, lvm, lvmcluster or zfs)")
-    locations: Optional[List[StrictStr]] = Field(default=None, description="Cluster members on which the storage pool has been defined")
-    name: Optional[StrictStr] = Field(default=None, description="Storage pool name")
-    status: Optional[StrictStr] = Field(default=None, description="Pool status (Pending, Created, Errored or Unknown)")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this storage pool")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Storage pool configuration map (refer to doc/storage.md)", json_schema_extra={"examples": [{"volume.block.filesystem": "ext4", "volume.size": "50GiB"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the storage pool", json_schema_extra={"examples": ["Local SSD pool"]})
+    driver: Optional[StrictStr] = Field(default=None, description="Storage pool driver (btrfs, ceph, cephfs, cephobject, dir, lvm, lvmcluster or zfs)", json_schema_extra={"examples": ["zfs"]})
+    locations: Optional[List[StrictStr]] = Field(default=None, description="Cluster members on which the storage pool has been defined", json_schema_extra={"examples": [["server01", "server02", "server03"]]})
+    name: Optional[StrictStr] = Field(default=None, description="Storage pool name", json_schema_extra={"examples": ["local"]})
+    status: Optional[StrictStr] = Field(default=None, description="Pool status (Pending, Created, Errored or Unknown)", json_schema_extra={"examples": ["Created"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this storage pool", json_schema_extra={"examples": [["/1.0/profiles/default", "/1.0/instances/c1"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "driver", "locations", "name", "status", "used_by"]
 
     model_config = ConfigDict(

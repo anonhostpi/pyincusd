@@ -29,11 +29,11 @@ class Event(BaseModel):
     """
     Event represents an event entry (over websocket)
     """ # noqa: E501
-    location: Optional[StrictStr] = Field(default=None, description="Originating cluster member")
-    metadata: Optional[Dict[str, Any]] = Field(default=None, description="JSON encoded metadata (see EventLogging, EventLifecycle or Operation)")
-    project: Optional[StrictStr] = Field(default=None, description="Project the event belongs to.")
-    timestamp: Optional[datetime] = Field(default=None, description="Time at which the event was sent")
-    type: Optional[StrictStr] = Field(default=None, description="Event type (one of operation, logging or lifecycle)")
+    location: Optional[StrictStr] = Field(default=None, description="Originating cluster member", json_schema_extra={"examples": ["server01"]})
+    metadata: Optional[Dict[str, Any]] = Field(default=None, description="JSON encoded metadata (see EventLogging, EventLifecycle or Operation)", json_schema_extra={"examples": [{"action": "instance-started", "context": {}, "source": "/1.0/instances/c1"}]})
+    project: Optional[StrictStr] = Field(default=None, description="Project the event belongs to.", json_schema_extra={"examples": ["default"]})
+    timestamp: Optional[datetime] = Field(default=None, description="Time at which the event was sent", json_schema_extra={"examples": ["2021-02-24T19:00:45.452649098-05:00"]})
+    type: Optional[StrictStr] = Field(default=None, description="Event type (one of operation, logging or lifecycle)", json_schema_extra={"examples": ["lifecycle"]})
     __properties: ClassVar[List[str]] = ["location", "metadata", "project", "timestamp", "type"]
 
     model_config = ConfigDict(

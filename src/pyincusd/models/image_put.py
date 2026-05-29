@@ -29,11 +29,11 @@ class ImagePut(BaseModel):
     """
     ImagePut represents the modifiable fields of an image
     """ # noqa: E501
-    auto_update: Optional[StrictBool] = Field(default=None, description="Whether the image should auto-update when a new build is available")
-    expires_at: Optional[datetime] = Field(default=None, description="When the image becomes obsolete")
-    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles to use when creating from this image (if none provided by user)")
-    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties")
-    public: Optional[StrictBool] = Field(default=None, description="Whether the image is available to unauthenticated users")
+    auto_update: Optional[StrictBool] = Field(default=None, description="Whether the image should auto-update when a new build is available", json_schema_extra={"examples": [True]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the image becomes obsolete", json_schema_extra={"examples": ["2025-03-23T20:00:00-04:00"]})
+    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles to use when creating from this image (if none provided by user)", json_schema_extra={"examples": [["default"]]})
+    properties: Optional[Dict[str, StrictStr]] = Field(default=None, description="Descriptive properties", json_schema_extra={"examples": [{"os": "Ubuntu", "release": "jammy", "variant": "cloud"}]})
+    public: Optional[StrictBool] = Field(default=None, description="Whether the image is available to unauthenticated users", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["auto_update", "expires_at", "profiles", "properties", "public"]
 
     model_config = ConfigDict(

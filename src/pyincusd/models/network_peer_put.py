@@ -28,8 +28,8 @@ class NetworkPeerPut(BaseModel):
     """
     NetworkPeerPut represents the modifiable fields of a network peering
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Peer configuration map (refer to doc/network-peers.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the peer")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Peer configuration map (refer to doc/network-peers.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the peer", json_schema_extra={"examples": ["Peering with network1 in project1"]})
     __properties: ClassVar[List[str]] = ["config", "description"]
 
     model_config = ConfigDict(

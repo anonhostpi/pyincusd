@@ -7,7 +7,7 @@ NetworkLoadBalancerStateBackendHealth represents the health of a particular load
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **str** |  | [optional] 
-**ports** | [**List[NetworkLoadBalancerStateBackendHealthPort]**](https://github.com/anonhostpi/pyincusd/blob/v7.0.0/docs/NetworkLoadBalancerStateBackendHealthPort.md) |  | [optional] 
+**ports** | [**List[NetworkLoadBalancerStateBackendHealthPort]**](https://github.com/anonhostpi/pyincusd/blob/v7.1.0/docs/NetworkLoadBalancerStateBackendHealthPort.md) |  | [optional] 
 
 ## Example
 

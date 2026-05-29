@@ -28,8 +28,8 @@ class NetworkPut(BaseModel):
     """
     NetworkPut represents the modifiable fields of a network
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the profile")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Network configuration map (refer to doc/networks.md)", json_schema_extra={"examples": [{"ipv4.address": "10.0.0.1/24", "ipv4.nat": "true", "ipv6.address": "none"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the profile", json_schema_extra={"examples": ["My new bridge"]})
     __properties: ClassVar[List[str]] = ["config", "description"]
 
     model_config = ConfigDict(

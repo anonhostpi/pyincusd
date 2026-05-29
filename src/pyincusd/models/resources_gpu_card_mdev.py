@@ -28,11 +28,11 @@ class ResourcesGPUCardMdev(BaseModel):
     """
     ResourcesGPUCardMdev represents the mediated devices configuration of the GPU
     """ # noqa: E501
-    api: Optional[StrictStr] = Field(default=None, description="The mechanism used by this device")
-    available: Optional[StrictInt] = Field(default=None, description="Number of available devices of this profile")
-    description: Optional[StrictStr] = Field(default=None, description="Profile description")
-    devices: Optional[List[StrictStr]] = Field(default=None, description="List of active devices (UUIDs)")
-    name: Optional[StrictStr] = Field(default=None, description="Profile name")
+    api: Optional[StrictStr] = Field(default=None, description="The mechanism used by this device", json_schema_extra={"examples": ["vfio-pci"]})
+    available: Optional[StrictInt] = Field(default=None, description="Number of available devices of this profile", json_schema_extra={"examples": [2]})
+    description: Optional[StrictStr] = Field(default=None, description="Profile description", json_schema_extra={"examples": ["low_gm_size: 128MB\\nhigh_gm_size: 512MB\\nfence: 4\\nresolution: 1920x1200\\nweight: 4"]})
+    devices: Optional[List[StrictStr]] = Field(default=None, description="List of active devices (UUIDs)", json_schema_extra={"examples": [["42200aac-0977-495c-8c9e-6c51b9092a01", "b4950c00-1437-41d9-88f6-28d61cf9b9ef"]]})
+    name: Optional[StrictStr] = Field(default=None, description="Profile name", json_schema_extra={"examples": ["i915-GVTg_V5_8"]})
     __properties: ClassVar[List[str]] = ["api", "available", "description", "devices", "name"]
 
     model_config = ConfigDict(

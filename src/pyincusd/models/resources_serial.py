@@ -30,7 +30,7 @@ class ResourcesSerial(BaseModel):
     ResourcesSerial represents the serial devices available on the system
     """ # noqa: E501
     devices: Optional[List[ResourcesSerialDevice]] = Field(default=None, description="List of serial devices")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of serial devices")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of serial devices", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["devices", "total"]
 
     model_config = ConfigDict(

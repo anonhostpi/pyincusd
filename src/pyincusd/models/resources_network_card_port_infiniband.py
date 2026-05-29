@@ -28,12 +28,12 @@ class ResourcesNetworkCardPortInfiniband(BaseModel):
     """
     ResourcesNetworkCardPortInfiniband represents the Linux Infiniband configuration for the port
     """ # noqa: E501
-    issm_device: Optional[StrictStr] = Field(default=None, description="ISSM device number")
-    issm_name: Optional[StrictStr] = Field(default=None, description="ISSM device name")
-    mad_device: Optional[StrictStr] = Field(default=None, description="MAD device number")
-    mad_name: Optional[StrictStr] = Field(default=None, description="MAD device name")
-    verb_device: Optional[StrictStr] = Field(default=None, description="Verb device number")
-    verb_name: Optional[StrictStr] = Field(default=None, description="Verb device name")
+    issm_device: Optional[StrictStr] = Field(default=None, description="ISSM device number", json_schema_extra={"examples": ["231:64"]})
+    issm_name: Optional[StrictStr] = Field(default=None, description="ISSM device name", json_schema_extra={"examples": ["issm0"]})
+    mad_device: Optional[StrictStr] = Field(default=None, description="MAD device number", json_schema_extra={"examples": ["231:0"]})
+    mad_name: Optional[StrictStr] = Field(default=None, description="MAD device name", json_schema_extra={"examples": ["umad0"]})
+    verb_device: Optional[StrictStr] = Field(default=None, description="Verb device number", json_schema_extra={"examples": ["231:192"]})
+    verb_name: Optional[StrictStr] = Field(default=None, description="Verb device name", json_schema_extra={"examples": ["uverbs0"]})
     __properties: ClassVar[List[str]] = ["issm_device", "issm_name", "mad_device", "mad_name", "verb_device", "verb_name"]
 
     model_config = ConfigDict(

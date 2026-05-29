@@ -32,16 +32,16 @@ class ResourcesSystem(BaseModel):
     ResourcesSystem represents the system
     """ # noqa: E501
     chassis: Optional[ResourcesSystemChassis] = None
-    family: Optional[StrictStr] = Field(default=None, description="System family")
+    family: Optional[StrictStr] = Field(default=None, description="System family", json_schema_extra={"examples": ["ThinkPad X1 Carbon 5th"]})
     firmware: Optional[ResourcesSystemFirmware] = None
     motherboard: Optional[ResourcesSystemMotherboard] = None
-    product: Optional[StrictStr] = Field(default=None, description="System model")
-    serial: Optional[StrictStr] = Field(default=None, description="System serial number")
+    product: Optional[StrictStr] = Field(default=None, description="System model", json_schema_extra={"examples": ["20HRCTO1WW"]})
+    serial: Optional[StrictStr] = Field(default=None, description="System serial number", json_schema_extra={"examples": ["PY3DD4X9"]})
     sku: Optional[StrictStr] = Field(default=None, description="System nanufacturer SKU LENOVO_MT_20HR_BU_Think_FM_ThinkPad X1 Carbon 5th")
-    type: Optional[StrictStr] = Field(default=None, description="System type (unknown, physical, virtual-machine, container, ...)")
-    uuid: Optional[StrictStr] = Field(default=None, description="System UUID")
-    vendor: Optional[StrictStr] = Field(default=None, description="System vendor")
-    version: Optional[StrictStr] = Field(default=None, description="System version")
+    type: Optional[StrictStr] = Field(default=None, description="System type (unknown, physical, virtual-machine, container, ...)", json_schema_extra={"examples": ["physical"]})
+    uuid: Optional[StrictStr] = Field(default=None, description="System UUID", json_schema_extra={"examples": ["7fa1c0cc-2271-11b2-a85c-aab32a05d71a"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="System vendor", json_schema_extra={"examples": ["LENOVO"]})
+    version: Optional[StrictStr] = Field(default=None, description="System version", json_schema_extra={"examples": ["ThinkPad X1 Carbon 5th"]})
     __properties: ClassVar[List[str]] = ["chassis", "family", "firmware", "motherboard", "product", "serial", "sku", "type", "uuid", "vendor", "version"]
 
     model_config = ConfigDict(

@@ -28,8 +28,8 @@ class ResourcesGPUCardSRIOV(BaseModel):
     """
     ResourcesGPUCardSRIOV represents the SRIOV configuration of the GPU
     """ # noqa: E501
-    current_vfs: Optional[StrictInt] = Field(default=None, description="Number of VFs currently configured")
-    maximum_vfs: Optional[StrictInt] = Field(default=None, description="Maximum number of supported VFs")
+    current_vfs: Optional[StrictInt] = Field(default=None, description="Number of VFs currently configured", json_schema_extra={"examples": [0]})
+    maximum_vfs: Optional[StrictInt] = Field(default=None, description="Maximum number of supported VFs", json_schema_extra={"examples": [0]})
     vfs: Optional[List[ResourcesGPUCard]] = Field(default=None, description="List of VFs (as additional GPU devices)")
     __properties: ClassVar[List[str]] = ["current_vfs", "maximum_vfs", "vfs"]
 

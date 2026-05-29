@@ -39,10 +39,10 @@ class InstanceState(BaseModel):
     memory: Optional[InstanceStateMemory] = None
     network: Optional[Dict[str, InstanceStateNetwork]] = Field(default=None, description="Network usage key/value pairs")
     os_info: Optional[InstanceStateOSInfo] = None
-    pid: Optional[StrictInt] = Field(default=None, description="PID of the runtime")
-    processes: Optional[StrictInt] = Field(default=None, description="Number of processes in the instance")
+    pid: Optional[StrictInt] = Field(default=None, description="PID of the runtime", json_schema_extra={"examples": [7281]})
+    processes: Optional[StrictInt] = Field(default=None, description="Number of processes in the instance", json_schema_extra={"examples": [50]})
     started_at: Optional[datetime] = Field(default=None, description="The time that the instance started at  API extension: instance_state_started_at.")
-    status: Optional[StrictStr] = Field(default=None, description="Current status (Running, Stopped, Frozen or Error)")
+    status: Optional[StrictStr] = Field(default=None, description="Current status (Running, Stopped, Frozen or Error)", json_schema_extra={"examples": ["Running"]})
     status_code: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ["cpu", "disk", "memory", "network", "os_info", "pid", "processes", "started_at", "status", "status_code"]
 

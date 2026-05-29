@@ -28,8 +28,8 @@ class ResourcesStoragePoolSpace(BaseModel):
     """
     ResourcesStoragePoolSpace represents the space available to a given storage pool
     """ # noqa: E501
-    total: Optional[StrictInt] = Field(default=None, description="Total disk space (bytes)")
-    used: Optional[StrictInt] = Field(default=None, description="Used disk space (bytes)")
+    total: Optional[StrictInt] = Field(default=None, description="Total disk space (bytes)", json_schema_extra={"examples": [420100937728]})
+    used: Optional[StrictInt] = Field(default=None, description="Used disk space (bytes)", json_schema_extra={"examples": [343537419776]})
     __properties: ClassVar[List[str]] = ["total", "used"]
 
     model_config = ConfigDict(

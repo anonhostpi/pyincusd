@@ -28,18 +28,18 @@ class ImagesPostSource(BaseModel):
     """
     ImagesPostSource represents the source of a new image
     """ # noqa: E501
-    alias: Optional[StrictStr] = Field(default=None, description="Source alias to download from")
-    certificate: Optional[StrictStr] = Field(default=None, description="Source server certificate (if not trusted by system CA)")
-    fingerprint: Optional[StrictStr] = Field(default=None, description="Source image fingerprint (for type \"image\")")
-    image_type: Optional[StrictStr] = Field(default=None, description="Type of image (container or virtual-machine)")
-    mode: Optional[StrictStr] = Field(default=None, description="Transfer mode (push or pull)")
-    name: Optional[StrictStr] = Field(default=None, description="Instance name (for type \"instance\" or \"snapshot\")")
-    project: Optional[StrictStr] = Field(default=None, description="Source project name")
-    protocol: Optional[StrictStr] = Field(default=None, description="Source server protocol")
-    secret: Optional[StrictStr] = Field(default=None, description="Source image server secret token (when downloading private images)")
-    server: Optional[StrictStr] = Field(default=None, description="URL of the source server")
-    type: Optional[StrictStr] = Field(default=None, description="Type of image source (instance, snapshot, image or url)")
-    url: Optional[StrictStr] = Field(default=None, description="Source URL (for type \"url\")")
+    alias: Optional[StrictStr] = Field(default=None, description="Source alias to download from", json_schema_extra={"examples": ["jammy"]})
+    certificate: Optional[StrictStr] = Field(default=None, description="Source server certificate (if not trusted by system CA)", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    fingerprint: Optional[StrictStr] = Field(default=None, description="Source image fingerprint (for type \"image\")", json_schema_extra={"examples": ["8ae945c52bb2f2df51c923b04022312f99bbb72c356251f54fa89ea7cf1df1d0"]})
+    image_type: Optional[StrictStr] = Field(default=None, description="Type of image (container or virtual-machine)", json_schema_extra={"examples": ["container"]})
+    mode: Optional[StrictStr] = Field(default=None, description="Transfer mode (push or pull)", json_schema_extra={"examples": ["pull"]})
+    name: Optional[StrictStr] = Field(default=None, description="Instance name (for type \"instance\" or \"snapshot\")", json_schema_extra={"examples": ["c1/snap0"]})
+    project: Optional[StrictStr] = Field(default=None, description="Source project name", json_schema_extra={"examples": ["project1"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Source server protocol", json_schema_extra={"examples": ["simplestreams"]})
+    secret: Optional[StrictStr] = Field(default=None, description="Source image server secret token (when downloading private images)", json_schema_extra={"examples": ["RANDOM-STRING"]})
+    server: Optional[StrictStr] = Field(default=None, description="URL of the source server", json_schema_extra={"examples": ["https://images.linuxcontainers.org"]})
+    type: Optional[StrictStr] = Field(default=None, description="Type of image source (instance, snapshot, image or url)", json_schema_extra={"examples": ["instance"]})
+    url: Optional[StrictStr] = Field(default=None, description="Source URL (for type \"url\")", json_schema_extra={"examples": ["https://some-server.com/some-directory/"]})
     __properties: ClassVar[List[str]] = ["alias", "certificate", "fingerprint", "image_type", "mode", "name", "project", "protocol", "secret", "server", "type", "url"]
 
     model_config = ConfigDict(

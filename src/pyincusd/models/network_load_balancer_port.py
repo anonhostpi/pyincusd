@@ -28,10 +28,10 @@ class NetworkLoadBalancerPort(BaseModel):
     """
     NetworkLoadBalancerPort represents a port specification in a network load balancer
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer port")
-    listen_port: Optional[StrictStr] = Field(default=None, description="ListenPort(s) of load balancer (comma delimited ranges)")
-    protocol: Optional[StrictStr] = Field(default=None, description="Protocol for load balancer port (either tcp or udp)")
-    target_backend: Optional[List[StrictStr]] = Field(default=None, description="TargetBackend backend names to load balance ListenPorts to")
+    description: Optional[StrictStr] = Field(default=None, description="Description of the load balancer port", json_schema_extra={"examples": ["My web server load balancer"]})
+    listen_port: Optional[StrictStr] = Field(default=None, description="ListenPort(s) of load balancer (comma delimited ranges)", json_schema_extra={"examples": ["80,81,8080-8090"]})
+    protocol: Optional[StrictStr] = Field(default=None, description="Protocol for load balancer port (either tcp or udp)", json_schema_extra={"examples": ["tcp"]})
+    target_backend: Optional[List[StrictStr]] = Field(default=None, description="TargetBackend backend names to load balance ListenPorts to", json_schema_extra={"examples": [["c1-http", "c2-http"]]})
     __properties: ClassVar[List[str]] = ["description", "listen_port", "protocol", "target_backend"]
 
     model_config = ConfigDict(

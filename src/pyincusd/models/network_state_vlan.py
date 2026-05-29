@@ -28,8 +28,8 @@ class NetworkStateVLAN(BaseModel):
     """
     NetworkStateVLAN represents VLAN specific state
     """ # noqa: E501
-    lower_device: Optional[StrictStr] = Field(default=None, description="Parent device")
-    vid: Optional[StrictInt] = Field(default=None, description="VLAN ID")
+    lower_device: Optional[StrictStr] = Field(default=None, description="Parent device", json_schema_extra={"examples": ["eth0"]})
+    vid: Optional[StrictInt] = Field(default=None, description="VLAN ID", json_schema_extra={"examples": [100]})
     __properties: ClassVar[List[str]] = ["lower_device", "vid"]
 
     model_config = ConfigDict(

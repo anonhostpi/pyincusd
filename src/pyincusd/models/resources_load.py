@@ -28,10 +28,10 @@ class ResourcesLoad(BaseModel):
     """
     ResourcesLoad represents system load information
     """ # noqa: E501
-    average1_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past minute", alias="Average1Min")
-    average5_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past 5 minutes", alias="Average5Min")
-    average10_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past 10 minutes", alias="Average10Min")
-    processes: Optional[StrictInt] = Field(default=None, description="The number of active processes", alias="Processes")
+    average1_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past minute", alias="Average1Min", json_schema_extra={"examples": [0.69]})
+    average5_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past 5 minutes", alias="Average5Min", json_schema_extra={"examples": [1.1]})
+    average10_min: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Load average in the past 10 minutes", alias="Average10Min", json_schema_extra={"examples": [1.29]})
+    processes: Optional[StrictInt] = Field(default=None, description="The number of active processes", alias="Processes", json_schema_extra={"examples": [1234]})
     __properties: ClassVar[List[str]] = ["Average1Min", "Average5Min", "Average10Min", "Processes"]
 
     model_config = ConfigDict(

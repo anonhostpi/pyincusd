@@ -28,11 +28,11 @@ class NetworkZone(BaseModel):
     """
     NetworkZone
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone")
-    name: Optional[StrictStr] = Field(default=None, description="The name of the zone (DNS domain name)")
-    project: Optional[StrictStr] = Field(default=None, description="Project name")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this network zone")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Zone configuration map (refer to doc/network-zones.md)", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the network zone", json_schema_extra={"examples": ["Internal domain"]})
+    name: Optional[StrictStr] = Field(default=None, description="The name of the zone (DNS domain name)", json_schema_extra={"examples": ["example.net"]})
+    project: Optional[StrictStr] = Field(default=None, description="Project name", json_schema_extra={"examples": ["project1"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this network zone", json_schema_extra={"examples": [["/1.0/networks/foo", "/1.0/networks/bar"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "name", "project", "used_by"]
 
     model_config = ConfigDict(

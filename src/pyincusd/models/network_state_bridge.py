@@ -28,12 +28,12 @@ class NetworkStateBridge(BaseModel):
     """
     NetworkStateBridge represents bridge specific state
     """ # noqa: E501
-    forward_delay: Optional[StrictInt] = Field(default=None, description="Delay on port join (ms)")
-    id: Optional[StrictStr] = Field(default=None, description="Bridge ID")
-    stp: Optional[StrictBool] = Field(default=None, description="Whether STP is enabled")
-    upper_devices: Optional[List[StrictStr]] = Field(default=None, description="List of devices that are in the bridge")
-    vlan_default: Optional[StrictInt] = Field(default=None, description="Default VLAN ID")
-    vlan_filtering: Optional[StrictBool] = Field(default=None, description="Whether VLAN filtering is enabled")
+    forward_delay: Optional[StrictInt] = Field(default=None, description="Delay on port join (ms)", json_schema_extra={"examples": [1500]})
+    id: Optional[StrictStr] = Field(default=None, description="Bridge ID", json_schema_extra={"examples": ["8000.0a0f7c6edbd9"]})
+    stp: Optional[StrictBool] = Field(default=None, description="Whether STP is enabled", json_schema_extra={"examples": [False]})
+    upper_devices: Optional[List[StrictStr]] = Field(default=None, description="List of devices that are in the bridge", json_schema_extra={"examples": [["eth0", "eth1"]]})
+    vlan_default: Optional[StrictInt] = Field(default=None, description="Default VLAN ID", json_schema_extra={"examples": [1]})
+    vlan_filtering: Optional[StrictBool] = Field(default=None, description="Whether VLAN filtering is enabled", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["forward_delay", "id", "stp", "upper_devices", "vlan_default", "vlan_filtering"]
 
     model_config = ConfigDict(

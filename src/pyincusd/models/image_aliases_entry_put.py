@@ -28,8 +28,8 @@ class ImageAliasesEntryPut(BaseModel):
     """
     ImageAliasesEntryPut represents the modifiable fields of an image alias
     """ # noqa: E501
-    description: Optional[StrictStr] = Field(default=None, description="Alias description")
-    target: Optional[StrictStr] = Field(default=None, description="Target fingerprint for the alias")
+    description: Optional[StrictStr] = Field(default=None, description="Alias description", json_schema_extra={"examples": ["Our preferred Ubuntu image"]})
+    target: Optional[StrictStr] = Field(default=None, description="Target fingerprint for the alias", json_schema_extra={"examples": ["06b86454720d36b20f94e31c6812e05ec51c1b568cf3a8abd273769d213394bb"]})
     __properties: ClassVar[List[str]] = ["description", "target"]
 
     model_config = ConfigDict(

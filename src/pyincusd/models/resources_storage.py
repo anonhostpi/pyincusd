@@ -30,7 +30,7 @@ class ResourcesStorage(BaseModel):
     ResourcesStorage represents the local storage
     """ # noqa: E501
     disks: Optional[List[ResourcesStorageDisk]] = Field(default=None, description="List of disks")
-    total: Optional[StrictInt] = Field(default=None, description="Total number of partitions")
+    total: Optional[StrictInt] = Field(default=None, description="Total number of partitions", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["disks", "total"]
 
     model_config = ConfigDict(

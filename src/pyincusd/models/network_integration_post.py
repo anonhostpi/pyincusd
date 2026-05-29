@@ -28,7 +28,7 @@ class NetworkIntegrationPost(BaseModel):
     """
     NetworkIntegrationPost represents the fields required to rename a network integration
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="The new name for the network integration")
+    name: Optional[StrictStr] = Field(default=None, description="The new name for the network integration", json_schema_extra={"examples": ["region2"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

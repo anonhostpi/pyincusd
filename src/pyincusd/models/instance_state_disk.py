@@ -28,8 +28,8 @@ class InstanceStateDisk(BaseModel):
     """
     InstanceStateDisk
     """ # noqa: E501
-    total: Optional[StrictInt] = Field(default=None, description="Total size in bytes")
-    usage: Optional[StrictInt] = Field(default=None, description="Disk usage in bytes")
+    total: Optional[StrictInt] = Field(default=None, description="Total size in bytes", json_schema_extra={"examples": [502239232]})
+    usage: Optional[StrictInt] = Field(default=None, description="Disk usage in bytes", json_schema_extra={"examples": [502239232]})
     __properties: ClassVar[List[str]] = ["total", "usage"]
 
     model_config = ConfigDict(

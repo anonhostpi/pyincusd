@@ -28,11 +28,11 @@ class NetworkLease(BaseModel):
     """
     NetworkLease represents a DHCP lease
     """ # noqa: E501
-    address: Optional[StrictStr] = Field(default=None, description="The IP address")
-    hostname: Optional[StrictStr] = Field(default=None, description="The hostname associated with the record")
-    hwaddr: Optional[StrictStr] = Field(default=None, description="The MAC address")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    type: Optional[StrictStr] = Field(default=None, description="The type of record (static or dynamic)")
+    address: Optional[StrictStr] = Field(default=None, description="The IP address", json_schema_extra={"examples": ["10.0.0.98"]})
+    hostname: Optional[StrictStr] = Field(default=None, description="The hostname associated with the record", json_schema_extra={"examples": ["c1"]})
+    hwaddr: Optional[StrictStr] = Field(default=None, description="The MAC address", json_schema_extra={"examples": ["10:66:6a:2c:89:d9"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    type: Optional[StrictStr] = Field(default=None, description="The type of record (static or dynamic)", json_schema_extra={"examples": ["dynamic"]})
     __properties: ClassVar[List[str]] = ["address", "hostname", "hwaddr", "location", "type"]
 
     model_config = ConfigDict(

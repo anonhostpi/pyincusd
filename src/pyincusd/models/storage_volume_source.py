@@ -28,18 +28,18 @@ class StorageVolumeSource(BaseModel):
     """
     StorageVolumeSource represents the creation source for a new storage volume
     """ # noqa: E501
-    certificate: Optional[StrictStr] = Field(default=None, description="Certificate (for migration)")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    mode: Optional[StrictStr] = Field(default=None, description="Whether to use pull or push mode (for migration)")
-    name: Optional[StrictStr] = Field(default=None, description="Source volume name (for copy)")
-    operation: Optional[StrictStr] = Field(default=None, description="Remote operation URL (for migration)")
-    pool: Optional[StrictStr] = Field(default=None, description="Source storage pool (for copy)")
-    project: Optional[StrictStr] = Field(default=None, description="Source project name")
-    refresh: Optional[StrictBool] = Field(default=None, description="Whether existing destination volume should be refreshed")
-    refresh_exclude_older: Optional[StrictBool] = Field(default=None, description="Whether to exclude source snapshots earlier than latest target snapshot")
-    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Map of migration websockets (for migration)")
-    type: Optional[StrictStr] = Field(default=None, description="Source type (copy or migration)")
-    volume_only: Optional[StrictBool] = Field(default=None, description="Whether snapshots should be discarded (for migration)")
+    certificate: Optional[StrictStr] = Field(default=None, description="Certificate (for migration)", json_schema_extra={"examples": ["X509 PEM certificate"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    mode: Optional[StrictStr] = Field(default=None, description="Whether to use pull or push mode (for migration)", json_schema_extra={"examples": ["pull"]})
+    name: Optional[StrictStr] = Field(default=None, description="Source volume name (for copy)", json_schema_extra={"examples": ["foo"]})
+    operation: Optional[StrictStr] = Field(default=None, description="Remote operation URL (for migration)", json_schema_extra={"examples": ["https://1.2.3.4:8443/1.0/operations/1721ae08-b6a8-416a-9614-3f89302466e1"]})
+    pool: Optional[StrictStr] = Field(default=None, description="Source storage pool (for copy)", json_schema_extra={"examples": ["local"]})
+    project: Optional[StrictStr] = Field(default=None, description="Source project name", json_schema_extra={"examples": ["foo"]})
+    refresh: Optional[StrictBool] = Field(default=None, description="Whether existing destination volume should be refreshed", json_schema_extra={"examples": [False]})
+    refresh_exclude_older: Optional[StrictBool] = Field(default=None, description="Whether to exclude source snapshots earlier than latest target snapshot", json_schema_extra={"examples": [False]})
+    secrets: Optional[Dict[str, StrictStr]] = Field(default=None, description="Map of migration websockets (for migration)", json_schema_extra={"examples": [{"rsync": "RANDOM-STRING"}]})
+    type: Optional[StrictStr] = Field(default=None, description="Source type (copy or migration)", json_schema_extra={"examples": ["copy"]})
+    volume_only: Optional[StrictBool] = Field(default=None, description="Whether snapshots should be discarded (for migration)", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["certificate", "location", "mode", "name", "operation", "pool", "project", "refresh", "refresh_exclude_older", "secrets", "type", "volume_only"]
 
     model_config = ConfigDict(

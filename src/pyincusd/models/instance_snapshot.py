@@ -29,20 +29,20 @@ class InstanceSnapshot(BaseModel):
     """
     InstanceSnapshot
     """ # noqa: E501
-    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name")
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration (see doc/instances.md)")
-    created_at: Optional[datetime] = Field(default=None, description="Instance creation timestamp")
-    description: Optional[StrictStr] = Field(default=None, description="Instance description")
-    devices: Optional[Dict[str, Any]] = Field(default=None, description="Instance devices (see doc/instances.md)")
-    ephemeral: Optional[StrictBool] = Field(default=None, description="Whether the instance is ephemeral (deleted on shutdown)")
-    expanded_config: Optional[Dict[str, Any]] = Field(default=None, description="Expanded configuration (all profiles and local config merged)")
-    expanded_devices: Optional[Dict[str, Any]] = Field(default=None, description="Expanded devices (all profiles and local devices merged)")
-    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)")
-    last_used_at: Optional[datetime] = Field(default=None, description="Last start timestamp")
-    name: Optional[StrictStr] = Field(default=None, description="Snapshot name")
-    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles applied to the instance")
-    size: Optional[StrictInt] = Field(default=None, description="Size of the snapshot in bytes")
-    stateful: Optional[StrictBool] = Field(default=None, description="Whether the instance currently has saved state on disk")
+    architecture: Optional[StrictStr] = Field(default=None, description="Architecture name", json_schema_extra={"examples": ["x86_64"]})
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Instance configuration (see doc/instances.md)", json_schema_extra={"examples": [{"security.nesting": "true"}]})
+    created_at: Optional[datetime] = Field(default=None, description="Instance creation timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    description: Optional[StrictStr] = Field(default=None, description="Instance description", json_schema_extra={"examples": ["My description"]})
+    devices: Optional[Dict[str, Any]] = Field(default=None, description="Instance devices (see doc/instances.md)", json_schema_extra={"examples": [{"root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    ephemeral: Optional[StrictBool] = Field(default=None, description="Whether the instance is ephemeral (deleted on shutdown)", json_schema_extra={"examples": [False]})
+    expanded_config: Optional[Dict[str, Any]] = Field(default=None, description="Expanded configuration (all profiles and local config merged)", json_schema_extra={"examples": [{"security.nesting": "true"}]})
+    expanded_devices: Optional[Dict[str, Any]] = Field(default=None, description="Expanded devices (all profiles and local devices merged)", json_schema_extra={"examples": [{"root": {"path": "/", "pool": "default", "type": "disk"}}]})
+    expires_at: Optional[datetime] = Field(default=None, description="When the snapshot expires (gets auto-deleted)", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    last_used_at: Optional[datetime] = Field(default=None, description="Last start timestamp", json_schema_extra={"examples": ["2021-03-23T20:00:00-04:00"]})
+    name: Optional[StrictStr] = Field(default=None, description="Snapshot name", json_schema_extra={"examples": ["foo"]})
+    profiles: Optional[List[StrictStr]] = Field(default=None, description="List of profiles applied to the instance", json_schema_extra={"examples": [["default"]]})
+    size: Optional[StrictInt] = Field(default=None, description="Size of the snapshot in bytes", json_schema_extra={"examples": [143360]})
+    stateful: Optional[StrictBool] = Field(default=None, description="Whether the instance currently has saved state on disk", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["architecture", "config", "created_at", "description", "devices", "ephemeral", "expanded_config", "expanded_devices", "expires_at", "last_used_at", "name", "profiles", "size", "stateful"]
 
     model_config = ConfigDict(

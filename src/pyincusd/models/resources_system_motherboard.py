@@ -28,10 +28,10 @@ class ResourcesSystemMotherboard(BaseModel):
     """
     ResourcesSystemMotherboard represents the motherboard
     """ # noqa: E501
-    product: Optional[StrictStr] = Field(default=None, description="Motherboard model")
-    serial: Optional[StrictStr] = Field(default=None, description="Motherboard serial number")
-    vendor: Optional[StrictStr] = Field(default=None, description="Motherboard vendor")
-    version: Optional[StrictStr] = Field(default=None, description="Motherboard version/revision")
+    product: Optional[StrictStr] = Field(default=None, description="Motherboard model", json_schema_extra={"examples": ["20HRCTO1WW"]})
+    serial: Optional[StrictStr] = Field(default=None, description="Motherboard serial number", json_schema_extra={"examples": ["L3CF4FX003A"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Motherboard vendor", json_schema_extra={"examples": ["Lenovo"]})
+    version: Optional[StrictStr] = Field(default=None, description="Motherboard version/revision", json_schema_extra={"examples": ["None"]})
     __properties: ClassVar[List[str]] = ["product", "serial", "vendor", "version"]
 
     model_config = ConfigDict(

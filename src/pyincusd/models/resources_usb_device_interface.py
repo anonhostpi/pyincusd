@@ -28,13 +28,13 @@ class ResourcesUSBDeviceInterface(BaseModel):
     """
     ResourcesUSBDeviceInterface represents a USB device interface
     """ # noqa: E501
-    var_class: Optional[StrictStr] = Field(default=None, description="Class of USB interface", alias="class")
-    class_id: Optional[StrictInt] = Field(default=None, description="ID of the USB interface class")
-    driver: Optional[StrictStr] = Field(default=None, description="Kernel driver currently associated with the device")
-    driver_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel driver")
-    number: Optional[StrictInt] = Field(default=None, description="Interface number")
-    subclass: Optional[StrictStr] = Field(default=None, description="Sub class of the interface")
-    subclass_id: Optional[StrictInt] = Field(default=None, description="ID of the USB interface sub class")
+    var_class: Optional[StrictStr] = Field(default=None, description="Class of USB interface", alias="class", json_schema_extra={"examples": ["Human Interface Device"]})
+    class_id: Optional[StrictInt] = Field(default=None, description="ID of the USB interface class", json_schema_extra={"examples": [3]})
+    driver: Optional[StrictStr] = Field(default=None, description="Kernel driver currently associated with the device", json_schema_extra={"examples": ["usbhid"]})
+    driver_version: Optional[StrictStr] = Field(default=None, description="Version of the kernel driver", json_schema_extra={"examples": ["5.8.0-36-generic"]})
+    number: Optional[StrictInt] = Field(default=None, description="Interface number", json_schema_extra={"examples": [0]})
+    subclass: Optional[StrictStr] = Field(default=None, description="Sub class of the interface", json_schema_extra={"examples": ["Boot Interface Subclass"]})
+    subclass_id: Optional[StrictInt] = Field(default=None, description="ID of the USB interface sub class", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["class", "class_id", "driver", "driver_version", "number", "subclass", "subclass_id"]
 
     model_config = ConfigDict(

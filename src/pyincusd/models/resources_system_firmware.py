@@ -28,9 +28,9 @@ class ResourcesSystemFirmware(BaseModel):
     """
     ResourcesSystemFirmware represents the system firmware
     """ # noqa: E501
-    var_date: Optional[StrictStr] = Field(default=None, description="Firmware build date", alias="date")
-    vendor: Optional[StrictStr] = Field(default=None, description="Firmware vendor")
-    version: Optional[StrictStr] = Field(default=None, description="Firmware version")
+    var_date: Optional[StrictStr] = Field(default=None, description="Firmware build date", alias="date", json_schema_extra={"examples": ["10/14/2020"]})
+    vendor: Optional[StrictStr] = Field(default=None, description="Firmware vendor", json_schema_extra={"examples": ["Lenovo"]})
+    version: Optional[StrictStr] = Field(default=None, description="Firmware version", json_schema_extra={"examples": ["N1MET64W (1.49)"]})
     __properties: ClassVar[List[str]] = ["date", "vendor", "version"]
 
     model_config = ConfigDict(

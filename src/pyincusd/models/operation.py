@@ -29,18 +29,18 @@ class Operation(BaseModel):
     """
     Operation represents a background operation
     """ # noqa: E501
-    var_class: Optional[StrictStr] = Field(default=None, description="Type of operation (task, token or websocket)", alias="class")
-    created_at: Optional[datetime] = Field(default=None, description="Operation creation time")
-    description: Optional[StrictStr] = Field(default=None, description="Description of the operation")
-    err: Optional[StrictStr] = Field(default=None, description="Operation error message")
-    id: Optional[StrictStr] = Field(default=None, description="UUID of the operation")
-    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on")
-    may_cancel: Optional[StrictBool] = Field(default=None, description="Whether the operation can be canceled")
-    metadata: Optional[Dict[str, Any]] = Field(default=None, description="Operation specific metadata")
-    resources: Optional[Dict[str, Any]] = Field(default=None, description="Affected resources")
-    status: Optional[StrictStr] = Field(default=None, description="Status name")
+    var_class: Optional[StrictStr] = Field(default=None, description="Type of operation (task, token or websocket)", alias="class", json_schema_extra={"examples": ["websocket"]})
+    created_at: Optional[datetime] = Field(default=None, description="Operation creation time", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
+    description: Optional[StrictStr] = Field(default=None, description="Description of the operation", json_schema_extra={"examples": ["Executing command"]})
+    err: Optional[StrictStr] = Field(default=None, description="Operation error message", json_schema_extra={"examples": ["Some error message"]})
+    id: Optional[StrictStr] = Field(default=None, description="UUID of the operation", json_schema_extra={"examples": ["6916c8a6-9b7d-4abd-90b3-aedfec7ec7da"]})
+    location: Optional[StrictStr] = Field(default=None, description="What cluster member this record was found on", json_schema_extra={"examples": ["server01"]})
+    may_cancel: Optional[StrictBool] = Field(default=None, description="Whether the operation can be canceled", json_schema_extra={"examples": [False]})
+    metadata: Optional[Dict[str, Any]] = Field(default=None, description="Operation specific metadata", json_schema_extra={"examples": [{"command": ["bash"], "environment": {"HOME": "/root", "LANG": "C.UTF-8", "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", "TERM": "xterm", "USER": "root"}, "fds": {"0": "da3046cf02c0116febf4ef3fe4eaecdf308e720c05e5a9c730ce1a6f15417f66", "1": "05896879d8692607bd6e4a09475667da3b5f6714418ab0ee0e5720b4c57f754b"}, "interactive": True}]})
+    resources: Optional[Dict[str, Any]] = Field(default=None, description="Affected resources", json_schema_extra={"examples": [{"instances": ["/1.0/instances/foo"]}]})
+    status: Optional[StrictStr] = Field(default=None, description="Status name", json_schema_extra={"examples": ["Running"]})
     status_code: Optional[StrictInt] = None
-    updated_at: Optional[datetime] = Field(default=None, description="Operation last change")
+    updated_at: Optional[datetime] = Field(default=None, description="Operation last change", json_schema_extra={"examples": ["2021-03-23T17:38:37.753398689-04:00"]})
     __properties: ClassVar[List[str]] = ["class", "created_at", "description", "err", "id", "location", "may_cancel", "metadata", "resources", "status", "status_code", "updated_at"]
 
     model_config = ConfigDict(

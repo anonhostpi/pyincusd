@@ -28,11 +28,11 @@ class ClusterGroup(BaseModel):
     """
     ClusterGroup
     """ # noqa: E501
-    config: Optional[Dict[str, Any]] = Field(default=None, description="Cluster group configuration map")
-    description: Optional[StrictStr] = Field(default=None, description="The description of the cluster group")
-    members: Optional[List[StrictStr]] = Field(default=None, description="List of members in this group")
-    name: Optional[StrictStr] = Field(default=None, description="The new name of the cluster group")
-    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this cluster group")
+    config: Optional[Dict[str, Any]] = Field(default=None, description="Cluster group configuration map", json_schema_extra={"examples": [{"user.mykey": "foo"}]})
+    description: Optional[StrictStr] = Field(default=None, description="The description of the cluster group", json_schema_extra={"examples": ["amd64 servers"]})
+    members: Optional[List[StrictStr]] = Field(default=None, description="List of members in this group", json_schema_extra={"examples": [["server01", "server02"]]})
+    name: Optional[StrictStr] = Field(default=None, description="The new name of the cluster group", json_schema_extra={"examples": ["group1"]})
+    used_by: Optional[List[StrictStr]] = Field(default=None, description="List of URLs of objects using this cluster group", json_schema_extra={"examples": [["/1.0/cluster/members/server01", "/1.0/project/default"]]})
     __properties: ClassVar[List[str]] = ["config", "description", "members", "name", "used_by"]
 
     model_config = ConfigDict(

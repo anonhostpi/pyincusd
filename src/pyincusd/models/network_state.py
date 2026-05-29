@@ -38,11 +38,11 @@ class NetworkState(BaseModel):
     bond: Optional[NetworkStateBond] = None
     bridge: Optional[NetworkStateBridge] = None
     counters: Optional[NetworkStateCounters] = None
-    hwaddr: Optional[StrictStr] = Field(default=None, description="MAC address")
-    mtu: Optional[StrictInt] = Field(default=None, description="MTU")
+    hwaddr: Optional[StrictStr] = Field(default=None, description="MAC address", json_schema_extra={"examples": ["10:66:6a:5a:83:57"]})
+    mtu: Optional[StrictInt] = Field(default=None, description="MTU", json_schema_extra={"examples": [1500]})
     ovn: Optional[NetworkStateOVN] = None
-    state: Optional[StrictStr] = Field(default=None, description="Link state")
-    type: Optional[StrictStr] = Field(default=None, description="Interface type")
+    state: Optional[StrictStr] = Field(default=None, description="Link state", json_schema_extra={"examples": ["up"]})
+    type: Optional[StrictStr] = Field(default=None, description="Interface type", json_schema_extra={"examples": ["broadcast"]})
     vlan: Optional[NetworkStateVLAN] = None
     __properties: ClassVar[List[str]] = ["addresses", "bond", "bridge", "counters", "hwaddr", "mtu", "ovn", "state", "type", "vlan"]
 

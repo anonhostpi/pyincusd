@@ -28,7 +28,7 @@ class ImageAliasesEntryPost(BaseModel):
     """
     ImageAliasesEntryPost represents the required fields to rename an image alias
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Alias name")
+    name: Optional[StrictStr] = Field(default=None, description="Alias name", json_schema_extra={"examples": ["ubuntu-22.04"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(
